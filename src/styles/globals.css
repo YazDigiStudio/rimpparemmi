@@ -66,6 +66,75 @@ a {
   animation: modalEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Hero section — svh fixes mobile browser address bar issue */
+.hero-section {
+  height: 100vh;
+  height: 100svh;
+}
+
+/* Hero title — pushed up above phone home bar / gesture area */
+.hero-title {
+  bottom: 8%;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    bottom: 14%;
+  }
+}
+
+/* Hero overlay — responsive positioning and sizing */
+.hero-overlay {
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 320px;
+  padding: 1.75rem 2rem;
+}
+
+.hero-overlay p {
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-overlay a {
+  font-size: 0.8rem;
+  padding: 0.6rem 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    right: 1rem;
+    top: auto;
+    bottom: calc(8% + 5rem);
+    transform: none;
+    max-width: 65vw;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.55rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 0.65rem;
+    margin-bottom: 0.75rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .hero-overlay a {
+    font-size: 0.6rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
 /* Modal card — thin custom scrollbar */
 .modal-card::-webkit-scrollbar {
   width: 4px;

@@ -28,17 +28,26 @@ type HeroOverlay = {
 type HeroSlide = {
   src: string;
   overlay?: HeroOverlay;
+  // TODO: Replace with CMS dropdown — "both" | "mobile" | "desktop"
+  showOn: "both" | "mobile" | "desktop";
 };
 
 const heroSlides: HeroSlide[] = [
   {
     src: "/images/Kielletyt liikkeet kuva Antti Kurola (9).jpg",
+    showOn: "both",
   },
   {
     src: "/images/Uroslive, kuva Atti Kurola.jpg",
+    showOn: "desktop",
+  },
+  {
+    src: "/images/Uroslive, kuva Atti Kurola (13).jpg",
+    showOn: "mobile",
   },
   {
     src: "/images/Siorskuadam-HiddenSteps_still_1-scaled.jpg",
+    showOn: "both",
     overlay: {
       title: "MOVING NORTH -tanssielokuvakiertue",
       subtitle: "REMMI KLUBILLA 20.3.2026",
@@ -48,6 +57,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     src: "/images/Kielletyt liikkeet kuva Antti Kurola (7).jpg",
+    showOn: "both",
   },
 ];
 
@@ -265,14 +275,32 @@ export default function Home() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalInfo, setModalInfo] = useState<ShowInfo | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Advance hero image every 6 seconds
+  // Detect mobile viewport
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  // Filter slides by device type
+  const visibleSlides = heroSlides.filter((slide) =>
+    slide.showOn === "both" ||
+    (slide.showOn === "mobile" && isMobile) ||
+    (slide.showOn === "desktop" && !isMobile)
+  );
+
+  // Advance hero image every 6 seconds — reset when device type changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroSlides.length);
+      setCurrentImageIndex((prev) => (prev + 1) % visibleSlides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -287,16 +315,16 @@ export default function Home() {
 
       {/* Full-bleed hero */}
       <section
+        className="hero-section"
         style={{
           position: "relative",
           width: "100%",
-          height: "100vh",
           minHeight: "600px",
           overflow: "hidden",
         }}
       >
         {/* Hero images — stacked, crossfade via opacity */}
-        {heroSlides.map((slide, i) => (
+        {visibleSlides.map((slide, i) => (
           <Image
             key={slide.src}
             src={slide.src}
@@ -313,19 +341,15 @@ export default function Home() {
         ))}
 
         {/* Slide overlays — each fades with its image */}
-        {heroSlides.map((slide, i) =>
+        {visibleSlides.map((slide, i) =>
           slide.overlay ? (
             <div
               key={`overlay-${i}`}
+              className="hero-overlay"
               style={{
                 position: "absolute",
-                right: "2rem",
-                top: "50%",
-                transform: "translateY(-50%)",
                 backgroundColor: "rgba(17,17,17,0.88)",
                 borderLeft: `3px solid ${colors.brandFuchsia}`,
-                padding: "1.75rem 2rem",
-                maxWidth: "320px",
                 opacity: i === currentImageIndex ? 1 : 0,
                 transition: "opacity 2s ease-in-out",
                 pointerEvents: i === currentImageIndex ? "auto" : "none",
@@ -335,10 +359,8 @@ export default function Home() {
               <p
                 style={{
                   color: colors.brandFuchsia,
-                  fontSize: "0.7rem",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  marginBottom: "0.5rem",
                 }}
               >
                 {slide.overlay.subtitle}
@@ -346,12 +368,10 @@ export default function Home() {
               <h2
                 style={{
                   color: colors.white,
-                  fontSize: "1.1rem",
                   fontWeight: 700,
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
                   lineHeight: 1.3,
-                  marginBottom: "1.25rem",
                 }}
               >
                 {slide.overlay.title}
@@ -364,9 +384,7 @@ export default function Home() {
                   display: "inline-block",
                   backgroundColor: colors.brandFuchsia,
                   color: colors.white,
-                  padding: "0.6rem 1.25rem",
                   borderRadius: "2px",
-                  fontSize: "0.8rem",
                   fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
@@ -391,9 +409,9 @@ export default function Home() {
 
         {/* Title block bottom-left */}
         <div
+          className="hero-title"
           style={{
             position: "absolute",
-            bottom: "8%",
             left: "2rem",
             right: "2rem",
             zIndex: 2,

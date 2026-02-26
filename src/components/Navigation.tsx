@@ -116,6 +116,17 @@ export default function Navigation() {
     padding: "0.6rem 1.25rem",
   };
 
+  // Mobile menu links — always dark (white panel background)
+  const mobileLinkStyle: React.CSSProperties = {
+    ...linkStyle,
+    color: colors.nearBlack,
+  };
+
+  const mobileLocaleBtnStyle = (active: boolean): React.CSSProperties => ({
+    ...localeBtnStyle(active),
+    color: colors.nearBlack,
+  });
+
   const ticketsBtnStyle: React.CSSProperties = {
     backgroundColor: colors.brandFuchsia,
     color: colors.white,
@@ -285,11 +296,11 @@ export default function Navigation() {
             overflowY: "auto",
           }}
         >
-          <Link href="/" style={{ ...linkStyle, fontSize: "1.1rem" }}>
+          <Link href="/" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
             {t.home}
           </Link>
 
-          <Link href="/ohjelma" style={{ ...linkStyle, fontSize: "1.1rem" }}>
+          <Link href="/ohjelma" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
             {t.programme}
           </Link>
 
@@ -302,22 +313,22 @@ export default function Navigation() {
 
           <hr style={{ borderColor: colors.borderLight, borderTop: "none" }} />
 
-          <Link href="/tanssiteatteri" style={{ ...linkStyle, fontSize: "1rem" }}>
+          <Link href="/tanssiteatteri" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.about}
           </Link>
-          <Link href="/ihmiset" style={{ ...linkStyle, fontSize: "1rem" }}>
+          <Link href="/ihmiset" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.people}
           </Link>
-          <Link href="/wiljami" style={{ ...linkStyle, fontSize: "1rem" }}>
+          <Link href="/wiljami" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.venue}
           </Link>
 
           <hr style={{ borderColor: colors.borderLight, borderTop: "none" }} />
 
-          <Link href="/yhteystiedot" style={{ ...linkStyle, fontSize: "1rem" }}>
+          <Link href="/yhteystiedot" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.contact}
           </Link>
-          <Link href="/media" style={{ ...linkStyle, fontSize: "1rem" }}>
+          <Link href="/media" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.media}
           </Link>
 
@@ -325,14 +336,14 @@ export default function Navigation() {
           <div style={{ display: "flex", gap: "0.75rem", marginTop: "auto" }}>
             <button
               onClick={() => switchLocale("fi")}
-              style={{ ...localeBtnStyle(locale === "fi"), fontSize: "0.875rem" }}
+              style={{ ...mobileLocaleBtnStyle(locale === "fi"), fontSize: "0.875rem" }}
             >
               {t.langFull}
             </button>
             <span style={{ color: colors.muted }}>|</span>
             <button
               onClick={() => switchLocale("en")}
-              style={{ ...localeBtnStyle(locale === "en"), fontSize: "0.875rem" }}
+              style={{ ...mobileLocaleBtnStyle(locale === "en"), fontSize: "0.875rem" }}
             >
               {t.langFullEn}
             </button>
