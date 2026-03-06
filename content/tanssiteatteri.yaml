@@ -1,0 +1,83 @@
+# Tanssiteatteri page content
+#
+# Section types — determined by which fields are filled:
+#
+#  1. TEXT ONLY       — title_fi/en empty, image empty  → full-width text
+#  2. IMAGE ONLY      — title_fi/en empty, text empty   → full-width image
+#  3. TITLE + TEXT    — image empty                     → heading + full-width text
+#  4. TITLE+TEXT+IMG  — all filled                      → heading, then image/text side by side
+#
+# image_orientation: "landscape" (16/9, cuts top/bottom) | "portrait" (2/3, cuts sides) | "square" (1/1)
+# image_position:   "left" | "right"  — which side the image sits in type 4
+
+page_title_fi: "Tanssiteatteri Rimpparemmi"
+page_title_en: "Dance Theatre"
+show_page_title: true
+
+sections:
+
+
+  # ── Type 1: Image only ───────────────────────────────────────────────────────
+  - title_fi: ""
+    title_en: ""
+    text_fi: ""
+    text_en: ""
+    image: "/images/Tapahtuma%20Piaf%20Kuva%20Antti%20Kurola%20(5).jpg"
+    image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
+    image_alt_en: "Dance Theatre Rimpparemmi performance"
+    image_orientation: "landscape"
+    image_position: "left"
+
+
+  # ── Type 2: Text only — intro ────────────────────────────────────────────────
+  - title_fi: ""
+    title_en: ""
+    text_fi: |
+      Tanssiteatteri Rimpparemmi on alueellisesti merkittävä ammattitanssiteatteri, joka kiertää ympäri Suomea pohjoisinta Lappia myöten. Tanssin saavutettavuuden ja tunnettuuden lisääminen on merkittävä osa Rimpparemmin toimintaa.
+
+      Ryhmä tuottaa vuosittain 2–4 ensi-iltaa eri ikäisille kohderyhmille. Rimpparemmin kotinäyttämönä toimii Kulttuuritalo Wiljami (Urheilukatu 1). Tanssiteatteriesityksiä on viety perinteisten näyttämötilojen lisäksi rohkeasti myös erilaisiin esiintymistiloihin kuten yökerhoon.
+
+      Lastenkulttuuri ja taidekasvatus ovat olennainen osa Rimpparemmin toimintaa. Tanssiteatteri tuottaa vuosittain vähintään yhden lapsille suunnatun esityksen, jota esitetään laajasti ympäri Lappia ja muuta Suomea. Esitysten yhteydessä Rimpparemmi järjestää myös työpajoja, joissa lapset ja nuoret pääsevät tutustumaan tanssin ja teatterin maailmaan.
+    text_en: |
+      Dance Theatre Rimpparemmi is a regionally significant professional dance theatre that tours throughout Finland, reaching northern Lapland. Increasing the accessibility and visibility of dance is a central part of Rimpparemmi's work.
+
+      The company produces 2–4 premieres annually for different age groups. Rimpparemmi's home venue is Kulttuuritalo Wiljami (Urheilukatu 1). Performances have been brought not only to traditional theatre spaces but boldly to unconventional venues such as nightclubs.
+
+      Children's culture and arts education are an essential part of Rimpparemmi's activities. The theatre produces at least one performance for children each year, touring widely across Lapland and the rest of Finland. Alongside performances, Rimpparemmi also organises workshops where children and young people can explore the world of dance and theatre.
+    image: ""
+    image_alt_fi: ""
+    image_alt_en: ""
+    image_orientation: "landscape"
+    image_position: "left"
+
+
+
+  # ── Type 4: Title + text + image — Missio ────────────────────────────────────
+  - title_fi: "Rimpparemmin Missio"
+    title_en: "Our Mission"
+    text_fi: |
+      Ensisijaisesti Rimpparemmi tekee ja tuottaa korkeatasoista ja puhuttelevaa taidetta, jonka välineenä on tanssi. Tämän päävälineen ohella tärkeitä ilmaisumuotoja ovat myös musiikki, teatteri ja visuaalisuus. Rimpparemmin tanssiteoksissa nämä kaikki osa-alueet todentuvat ja tähtäävät samaan päämäärään: katsoja saa kokemuksen, joka liikuttaa hänen mieltään, vavahduttaa ajattelemaan ja tuntemaan.
+    text_en: |
+      Above all, Rimpparemmi creates and produces high-quality, compelling art with dance as its primary medium. Alongside dance, music, theatre, and visual elements are equally important forms of expression. In Rimpparemmi's works, all these elements combine and strive toward a single goal: to give the audience an experience that moves their mind, stirs thought, and awakens feeling.
+    image: "/images/Tapahtuma%20Piaf%20Kuva%20Antti%20Kurola%20(1).jpg"
+    image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
+    image_alt_en: "Dance Theatre Rimpparemmi performance"
+    image_orientation: "square"
+    image_position: "right"
+
+  # ── Type 4: Title + text + image — Visio ─────────────────────────────────────
+  - title_fi: "Rimpparemmin Visio"
+    title_en: "Our Vision"
+    text_fi: |
+      Rimpparemmi on vahva tanssikulttuurin puolestapuhuja, joka vie korkeatasoisia tanssiteatteriesityksiä ympäri Lappia, Suomea ja ulkomaille. Esitystoiminnan ohessa koulutetaan uusia tanssitaiteen tekijöitä ja laaja-alaisia kulttuurinymmärtäjiä.
+
+      Tanssitaide on tulevaisuudessa yhä tärkeämmässä roolissa esittävän taiteen kentässä. Rimpparemmi on rohkeasti ja energisesti mukana tuossa kehityksessä. Tanssi on kansainvälinen, kielestä riippumaton taidemuoto, jolle Rovaniemi ja Lappi ovat otollista maaperää matkailuelinkeinon tuoman kansainvälisen yleisön kautta.
+    text_en: |
+      Rimpparemmi is a strong advocate for dance culture, bringing high-quality dance theatre performances throughout Lapland, Finland, and internationally. Alongside its performance activities, the company trains new dance artists and broad-minded cultural thinkers.
+
+      Dance art will play an increasingly important role in the performing arts in the future. Rimpparemmi is boldly and energetically part of that development. Dance is an international art form independent of language, and Rovaniemi and Lapland offer fertile ground for it through the international audiences brought by tourism.
+    image: "/images/Kielletyt%20liikkeet%20kuva%20Antti%20Kurola%20(9).jpg"
+    image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
+    image_alt_en: "Dance Theatre Rimpparemmi performance"
+    image_orientation: "portrait"
+    image_position: "left"

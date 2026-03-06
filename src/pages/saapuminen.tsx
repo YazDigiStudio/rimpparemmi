@@ -1,4 +1,4 @@
-// Wiljami page — /wiljami
+// Saapuminen page — /saapuminen
 // CMS-driven via content/wiljami.yaml
 
 import Head from "next/head";
@@ -11,18 +11,18 @@ import { getWiljamiData, type SectionPageData } from "@/lib/content";
 
 const copy = {
   fi: {
-    meta: "Kulttuuritalo Wiljami – Tanssiteatteri Rimpparemmi",
-    title: "Kulttuuritalo Wiljami",
+    meta: "Saapuminen – Tanssiteatteri Rimpparemmi",
+    title: "Saapuminen",
   },
   en: {
-    meta: "Kulttuuritalo Wiljami – Dance Theatre Rimpparemmi",
-    title: "Kulttuuritalo Wiljami",
+    meta: "Getting here – Dance Theatre Rimpparemmi",
+    title: "Getting here",
   },
 } as const;
 
 type Props = { data: SectionPageData };
 
-export default function Wiljami({ data }: Props) {
+export default function Saapuminen({ data }: Props) {
   const { locale: routerLocale } = useRouter();
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];

@@ -1,0 +1,114 @@
+show_calendar: true
+show_events_list: true
+
+hero_text_fi: "Tanssiteatteri Rimpparemmi"
+hero_text_en: "Dance Theatre Rimpparemmi"
+
+tagline_fi: ""
+tagline_en: ""
+
+intro_title_fi: ""
+intro_title_en: ""
+
+intro_text_fi: |
+  Tanssiteatteri Rimpparemmi kertoo tarinoita: kauniita ja rumia. Tarinoita, jotka ovat joskus röyhkeitä ja toisinaan vakavia, useimmiten kuitenkin todella hauskoja. Välittyköön Rimpparemmin tekemisestä riemu ja rakkaus taiteeseen sekä esiintymiseen. Rimpparemmi toivoo, että juuri sinä, voit vahvistaa pohjoista identiteettiä osallistumalla tanssitaiteen kokemiseen ja jakaa pohjoisen tunteen palon kanssamme, sen joka meitä kaikkia lopulta yhdistää.
+
+  Tanssiteatteri Rimpparemmi on Suomen pohjoisin ammattitanssiteatteri. Rimpparemmin juuret ulottuvat 1970-luvulle, jolloin toiminta alkoi Tervolassa kansantanssiyhtyeenä. Kansantanssin karhea ilmaisuvoima yhdistyy tänä päivänä nykytanssin virtaavuuteen Rimpparemmin esityksissä. Musiikki on vahvasti läsnä kaikessa toiminnassa.
+
+  Tanssiteatteri Rimpparemmi tuottaa Rovaniemellä tanssi- ja teatteriesityksiä Tanssin näyttämöllä Kulttuuritalo Wiljamissa. Tanssin näyttämön ohjelmisto koostuu Rimpparemmin omista tuotannoista, yhteistuotannoista sekä vierailevista esityksistä. Rimpparemmi kiertää aktiivisesti ympäri Suomea esittämässä maailman parasta lappilaista tanssiteatteria.
+
+intro_text_en: |
+  Dance Theatre Rimpparemmi tells stories: both beautiful and ugly. Stories that are sometimes bold and occasionally serious, but most often truly funny. Let the joy and love for art and performance be conveyed through Rimpparemmi's creations. Rimpparemmi hopes that you, specifically, can strengthen the northern identity by participating in the experience of dance art and by sharing the passion for the northern sentiment with us – that which ultimately unites all of us.
+
+  Rimpparemmi Dance Theatre is the northernmost professional dance theatre in Finland. The roots of Rimpparemmi stretch back to the 1970s when its operations began in Tervola as a folk dance ensemble. The raw expressive power of folk dance blends with the fluidity of contemporary dance in Rimpparemmi's performances. Music is strongly present in all activities.
+
+  Dance Theatre Rimpparemmi produces dance and theatre performances in Rovaniemi at their home stage in Kulttuuritalo Wiljami. The program consists of Rimpparemmi's own productions, collaborations, and guest performances. Rimpparemmi actively tours around Finland, presenting the world's best Lappish dance theatre.
+
+hero_slides:
+  - image: "/images/Kielletyt liikkeet kuva Antti Kurola (9).jpg"
+    show_on: "both"
+    overlay_active: false
+
+  - image: "/images/Uroslive, kuva Atti Kurola.jpg"
+    show_on: "desktop"
+    overlay_active: false
+
+  - image: "/images/Uroslive, kuva Atti Kurola (13).jpg"
+    show_on: "mobile"
+    overlay_active: false
+
+  - image: "/images/Siorskuadam-HiddenSteps_still_1-scaled.jpg"
+    show_on: "both"
+    overlay_active: true
+    overlay_title: "MOVING NORTH -tanssielokuvakiertue"
+    overlay_subtitle: "REMMI KLUBILLA 20.3.2026"
+    overlay_button_label: "Osta liput"
+    overlay_button_url: "https://www.netticket.fi/remmi-liveklubi-moving-north"
+
+  - image: "/images/Kielletyt liikkeet kuva Antti Kurola (7).jpg"
+    show_on: "both"
+    overlay_active: false
+
+news_items:
+  - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
+    title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
+    subtitle: "Ajankohtaista"
+    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image_height: 480
+    body: |
+      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton: yli 800 katsojaa pääsi kokemaan taidetta Rimpparemmin esityksissä kummituen ansiosta. Nyt tämä sydämellinen haaste palaa – ja kutsuu uusia yrityksiä ja yhteisöjä mukaan luomaan unohtumattomia hetkiä rovaniemeläisille lapsille.
+
+      Vuoden 2025 kulttuurikummiesityksenä nähdään osallistava ja vauhdikas lastentanssiteatteriesitys Hyppynarutus. Se kutsuu yleisön mukaansa pomppimaan, leikkimään ja kuvittelemaan – ja kulttuurikummit mahdollistavat sen, että esityksiin pääsee mukaan myös sellaisia lapsia, joille kulttuurielämykset eivät muuten olisi itsestäänselvyys.
+
+      Miksi lähteä mukaan?
+
+      Kulttuurikummius on tapa osoittaa yhteisöllisyyttä ja sosiaalista vastuuta – ja samalla saada hyvää näkyvyyttä. Yrityksen tai yhteisön nimi voidaan halutessanne nostaa esiin esityksen käsiohjelmissa, markkinointimateriaaleissa ja somessa. Mutta ennen kaikkea: mukanaolonne tuo iloa.
+
+      Tukipaketit alkavat 100 eurosta
+
+      Kynnys on matala. Tukipaketteja on tarjolla eri tasoisina, ja jokainen kummi saa näkyvyyttä – sekä hyvän mielen.
+    extra: |
+      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi
+      Yhdessä rakennamme tulevaisuuden, jossa taide kuuluu kaikille.
+      Kiitos kun olet mukana. 💛
+
+  # TEST CARDS — remove before launch
+  - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
+    title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
+    subtitle: "Ajankohtaista"
+    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image_height: 480
+    body: |
+      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
+    extra: |
+      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi
+
+  - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
+    title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
+    subtitle: "Ajankohtaista"
+    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image_height: 480
+    body: |
+      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
+    extra: |
+      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi
+
+  - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
+    title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
+    subtitle: "Ajankohtaista"
+    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image_height: 480
+    body: |
+      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
+    extra: |
+      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi
+
+  - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
+    title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
+    subtitle: "Ajankohtaista"
+    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image_height: 480
+    body: |
+      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
+    extra: |
+      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi

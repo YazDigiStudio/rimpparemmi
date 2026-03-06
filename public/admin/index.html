@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Rimpparemmi CMS</title>
+  </head>
+  <body>
+    <!-- Netlify Identity Widget — ONLY here, never on public pages -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Prevent Decap CMS from auto-initialising so we can register the media adapter first -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Firebase Storage media adapter — registers before CMS.init() -->
+    <script src="/admin/cms-media-adapter.js"></script>
+    <!-- Start CMS after adapter is registered -->
+    <script>CMS.init();</script>
+  </body>
+</html>

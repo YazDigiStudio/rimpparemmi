@@ -1,5 +1,5 @@
-// Wiljami page — /wiljami
-// CMS-driven via content/wiljami.yaml
+// Liput / Tickets page — /liput
+// CMS-driven via content/liput.yaml
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -7,22 +7,22 @@ import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import SectionBlock, { type Locale } from "@/components/SectionBlock";
 import { colors } from "@/styles/colors";
-import { getWiljamiData, type SectionPageData } from "@/lib/content";
+import { getLiputData, type SectionPageData } from "@/lib/content";
 
 const copy = {
   fi: {
-    meta: "Kulttuuritalo Wiljami – Tanssiteatteri Rimpparemmi",
-    title: "Kulttuuritalo Wiljami",
+    meta: "Liput – Tanssiteatteri Rimpparemmi",
+    title: "Liput",
   },
   en: {
-    meta: "Kulttuuritalo Wiljami – Dance Theatre Rimpparemmi",
-    title: "Kulttuuritalo Wiljami",
+    meta: "Tickets – Dance Theatre Rimpparemmi",
+    title: "Tickets",
   },
 } as const;
 
 type Props = { data: SectionPageData };
 
-export default function Wiljami({ data }: Props) {
+export default function Liput({ data }: Props) {
   const { locale: routerLocale } = useRouter();
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
@@ -66,6 +66,6 @@ export default function Wiljami({ data }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const data = getWiljamiData();
+  const data = getLiputData();
   return { props: { data } };
 };

@@ -64,20 +64,28 @@ export default function ShowModal({ info, onClose }: Props) {
         padding: "1rem",
       }}
     >
-      {/* Card */}
+      {/* Card — outer clips scrollbar to rounded corners */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="modal-card modal-enter"
+        className="modal-enter"
         style={{
-          backgroundColor: colors.white,
           maxWidth: "640px",
           width: "100%",
+          borderRadius: BORDER_RADIUS,
+          overflow: "clip",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.15)",
+        }}
+      >
+      {/* Inner scrollable area */}
+      <div
+        className="modal-card"
+        style={{
+          backgroundColor: colors.white,
           maxHeight: "88vh",
           overflowY: "auto",
-          borderRadius: BORDER_RADIUS,
+          overflowX: "hidden",
           padding: "2.5rem",
           position: "relative",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.15)",
         }}
       >
         {/* Close button — circular, sticky so it stays visible while scrolling */}
@@ -93,8 +101,8 @@ export default function ShowModal({ info, onClose }: Props) {
             borderRadius: "50%",
             border: "none",
             cursor: "pointer",
-            backgroundColor: "rgba(17,17,17,0.07)",
-            color: colors.nearBlack,
+            backgroundColor: colors.brandFuchsia,
+            color: colors.white,
             fontSize: "0.85rem",
             lineHeight: 1,
             display: "flex",
@@ -103,7 +111,8 @@ export default function ShowModal({ info, onClose }: Props) {
             flexShrink: 0,
             zIndex: 10,
             marginBottom: "-2rem",
-            marginRight: "-0.5rem",
+            marginRight: "-1.25rem",
+            marginTop: "-0.75rem",
           }}
         >
           ✕
@@ -115,7 +124,7 @@ export default function ShowModal({ info, onClose }: Props) {
             style={{
               margin: "-2.5rem -2.5rem 1.75rem -2.5rem",
               overflow: "hidden",
-              borderRadius: `${BORDER_RADIUS} ${BORDER_RADIUS} 0 0`,
+              borderRadius: 0,
             }}
           >
             <Image
@@ -214,13 +223,12 @@ export default function ShowModal({ info, onClose }: Props) {
                   <span
                     style={{
                       color: colors.muted,
-                      minWidth: "160px",
-                      flexShrink: 0,
+                      flex: "1 1 0",
                     }}
                   >
                     {role}
                   </span>
-                  <span style={{ color: colors.nearBlack }}>{name}</span>
+                  <span style={{ color: colors.nearBlack, flex: "1 1 0" }}>{name}</span>
                 </div>
               );
             })}
@@ -316,6 +324,7 @@ export default function ShowModal({ info, onClose }: Props) {
             </div>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ export type CalendarEvent = {
   title: string;
   venue: string;
   ticketUrl: string;
+  productionId?: string;
 };
 
 type Props = {
@@ -20,6 +21,8 @@ type Props = {
   calendarTitle: string;
   buyTickets: string;
   onShowInfo?: (title: string) => void;
+  onDayClick?: (events: CalendarEvent[]) => void;
+  selectedProductionId?: string;
   hideTitle?: boolean;
 };
 
@@ -55,6 +58,8 @@ export default function CalendarWidget({
   calendarTitle,
   buyTickets,
   onShowInfo,
+  onDayClick,
+  selectedProductionId,
   hideTitle = false,
 }: Props) {
   const today = new Date();
@@ -91,7 +96,11 @@ export default function CalendarWidget({
 
   const handleDayClick = (day: number) => {
     if (!eventsByDay.has(day)) return;
-    setSelectedDay(selectedDay === day ? null : day);
+    setSelectedDay(day);
+    const dayEvents = eventsByDay.get(day);
+    if (onDayClick && dayEvents) {
+      onDayClick(dayEvents);
+    }
   };
 
   const isToday = (day: number): boolean =>
@@ -178,8 +187,9 @@ export default function CalendarWidget({
             key={name}
             style={{
               textAlign: "center",
-              color: colors.muted,
+              color: colors.nearBlack,
               fontSize: "0.65rem",
+              fontWeight: 600,
               letterSpacing: "0.06em",
               padding: "0.25rem 0",
             }}
@@ -203,7 +213,12 @@ export default function CalendarWidget({
           }
 
           const hasEvent = eventsByDay.has(day);
-          const isSelected = selectedDay === day;
+          // Highlight if explicitly clicked, or if it matches the auto-selected production (before any click)
+          const isSelected =
+            selectedDay === day ||
+            (selectedDay === null &&
+              selectedProductionId != null &&
+              (eventsByDay.get(day)?.some((e) => e.productionId === selectedProductionId) ?? false));
           const todayMark = isToday(day);
 
           return (
@@ -215,12 +230,12 @@ export default function CalendarWidget({
                 background: isSelected
                   ? colors.brandFuchsia
                   : hasEvent
-                  ? "rgba(232,23,93,0.12)"
+                  ? "rgba(232,23,93,0.18)"
                   : "transparent",
                 border: todayMark
-                  ? `1px solid ${colors.muted}`
+                  ? `1px solid ${colors.nearBlack}`
                   : hasEvent && !isSelected
-                  ? "1px solid rgba(232,23,93,0.35)"
+                  ? `1px solid rgba(232,23,93,0.6)`
                   : "1px solid transparent",
                 borderRadius: "2px",
                 cursor: hasEvent ? "pointer" : "default",
@@ -230,11 +245,11 @@ export default function CalendarWidget({
                   ? colors.brandFuchsia
                   : colors.nearBlack,
                 fontSize: "0.8rem",
-                fontWeight: hasEvent ? 700 : 400,
+                fontWeight: hasEvent ? 700 : 500,
                 padding: "0.45rem 0",
                 textAlign: "center",
                 transition: "background 0.15s",
-                opacity: !hasEvent ? 0.5 : 1,
+                opacity: !hasEvent ? 0.65 : 1,
               }}
             >
               {day}
@@ -243,8 +258,8 @@ export default function CalendarWidget({
         })}
       </div>
 
-      {/* Event details for selected day */}
-      {selectedDay !== null && selectedEvents.length > 0 && (
+      {/* Event details for selected day — hidden when parent handles display via onDayClick */}
+      {!onDayClick && selectedDay !== null && selectedEvents.length > 0 && (
         <div
           style={{
             marginTop: "1rem",

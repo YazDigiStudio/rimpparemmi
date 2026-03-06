@@ -14,13 +14,15 @@ const labels = {
   fi: {
     home: "Etusivu",
     programme: "Ohjelmisto",
-    tickets: "Kalenteri \u0026 liput",
+    tickets: "Kalenteri & liput",
     rimpparemmi: "Rimpparemmi",
     about: "Tanssiteatteri",
     people: "Ihmiset",
     venue: "Kulttuuritalo Wiljami",
     contact: "Yhteystiedot",
     media: "Media",
+    tourProgramme: "Kiertueohjelmisto",
+    arrival: "Saapuminen",
     openMenu: "Avaa valikko",
     closeMenu: "Sulje valikko",
     langFull: "Suomi",
@@ -29,13 +31,15 @@ const labels = {
   en: {
     home: "Home",
     programme: "Programme",
-    tickets: "Calendar \u0026 Tickets",
+    tickets: "Calendar & tickets",
     rimpparemmi: "Rimpparemmi",
     about: "Dance Theatre",
     people: "People",
     venue: "Culture House Wiljami",
     contact: "Contact",
     media: "Media",
+    tourProgramme: "Tour Programme",
+    arrival: "Getting here",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     langFull: "Suomi",
@@ -52,7 +56,9 @@ export default function Navigation() {
   const [navOpacity, setNavOpacity] = useState(isHomePage ? 0 : 1);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [programmeDropdownOpen, setProgrammeDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const programmeDropdownRef = useRef<HTMLDivElement>(null);
 
   // Fade nav background from transparent (at 200px) to solid (at 500px) — homepage only
   useEffect(() => {
@@ -71,14 +77,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDropdownOpen(false);
+      }
+      if (programmeDropdownRef.current && !programmeDropdownRef.current.contains(e.target as Node)) {
+        setProgrammeDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -89,6 +95,7 @@ export default function Navigation() {
   useEffect(() => {
     setMenuOpen(false);
     setDropdownOpen(false);
+    setProgrammeDropdownOpen(false);
   }, [router.asPath]);
 
   const switchLocale = (newLocale: Locale) => {
@@ -193,8 +200,48 @@ export default function Navigation() {
           {t.home}
         </Link>
 
-        <Link href="/ohjelma" style={linkStyle}>
-          {t.programme}
+        {/* Programme dropdown */}
+        <div ref={programmeDropdownRef} style={{ position: "relative" }}>
+          <button
+            onClick={() => setProgrammeDropdownOpen(!programmeDropdownOpen)}
+            aria-expanded={programmeDropdownOpen}
+            style={{
+              ...linkStyle,
+              ...iconBtnStyle,
+              display: "flex",
+              alignItems: "center",
+              gap: "0.3rem",
+            }}
+          >
+            {t.programme}
+            <span style={{ fontSize: "0.55rem", opacity: 0.7 }}>&#9660;</span>
+          </button>
+
+          {programmeDropdownOpen && (
+            <div
+              style={{
+                position: "absolute",
+                top: "calc(100% + 0.75rem)",
+                left: 0,
+                backgroundColor: colors.offWhite,
+                border: `1px solid ${colors.borderLight}`,
+                borderRadius: "2px",
+                minWidth: "220px",
+                padding: "0.5rem 0",
+              }}
+            >
+              <Link href="/ohjelma" style={dropdownLinkStyle}>
+                {t.programme}
+              </Link>
+              <Link href="/kiertueohjelmisto" style={dropdownLinkStyle}>
+                {t.tourProgramme}
+              </Link>
+            </div>
+          )}
+        </div>
+
+        <Link href="/saapuminen" style={linkStyle}>
+          {t.arrival}
         </Link>
 
         <Link href="/kalenteri" style={ticketsBtnStyle}>
@@ -236,9 +283,6 @@ export default function Navigation() {
               </Link>
               <Link href="/ihmiset" style={dropdownLinkStyle}>
                 {t.people}
-              </Link>
-              <Link href="/wiljami" style={dropdownLinkStyle}>
-                {t.venue}
               </Link>
             </div>
           )}
@@ -303,6 +347,13 @@ export default function Navigation() {
           <Link href="/ohjelma" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
             {t.programme}
           </Link>
+          <Link href="/kiertueohjelmisto" style={{ ...mobileLinkStyle, fontSize: "1rem", paddingLeft: "0.75rem", opacity: 0.75 }}>
+            {t.tourProgramme}
+          </Link>
+
+          <Link href="/saapuminen" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
+            {t.arrival}
+          </Link>
 
           <Link
             href="/kalenteri"
@@ -318,9 +369,6 @@ export default function Navigation() {
           </Link>
           <Link href="/ihmiset" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
             {t.people}
-          </Link>
-          <Link href="/wiljami" style={{ ...mobileLinkStyle, fontSize: "1rem" }}>
-            {t.venue}
           </Link>
 
           <hr style={{ borderColor: colors.borderLight, borderTop: "none" }} />

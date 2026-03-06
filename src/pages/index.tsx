@@ -1,23 +1,30 @@
 // Home page — Tanssiteatteri Rimpparemmi
 // Hero image + two-column section: intro text (left) and ticket calendar (right).
-// showCalendar is controlled via Decap CMS toggle (home.yaml) — hardcoded true for now.
+// showCalendar and showEventsList are controlled via content/home.yaml.
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import CalendarWidget, { type CalendarEvent } from "@/components/CalendarWidget";
-import ShowModal, { type ShowInfo } from "@/components/ShowModal";
+import ShowModal, { type ShowInfo, type ShowPerformance } from "@/components/ShowModal";
+import MailingListForm from "@/components/MailingListForm";
 import { colors } from "@/styles/colors";
+import {
+  getProductions,
+  getPerformances,
+  getHomeData,
+  type Production,
+  type Performance,
+  type HomeData,
+} from "@/lib/content";
 
 type Locale = "fi" | "en";
 
-// TODO: Replace with getStaticProps reading content/home.yaml
-const showCalendar = true;
-
-// Hero slides — each slide has an image and an optional overlay box
+// Internal types for the hero carousel
 type HeroOverlay = {
   title: string;
   subtitle: string;
@@ -28,206 +35,14 @@ type HeroOverlay = {
 type HeroSlide = {
   src: string;
   overlay?: HeroOverlay;
-  // TODO: Replace with CMS dropdown — "both" | "mobile" | "desktop"
   showOn: "both" | "mobile" | "desktop";
 };
 
-const heroSlides: HeroSlide[] = [
-  {
-    src: "/images/Kielletyt liikkeet kuva Antti Kurola (9).jpg",
-    showOn: "both",
-  },
-  {
-    src: "/images/Uroslive, kuva Atti Kurola.jpg",
-    showOn: "desktop",
-  },
-  {
-    src: "/images/Uroslive, kuva Atti Kurola (13).jpg",
-    showOn: "mobile",
-  },
-  {
-    src: "/images/Siorskuadam-HiddenSteps_still_1-scaled.jpg",
-    showOn: "both",
-    overlay: {
-      title: "MOVING NORTH -tanssielokuvakiertue",
-      subtitle: "REMMI KLUBILLA 20.3.2026",
-      buttonLabel: "Osta liput",
-      buttonUrl: "https://www.netticket.fi/remmi-liveklubi-moving-north",
-    },
-  },
-  {
-    src: "/images/Kielletyt liikkeet kuva Antti Kurola (7).jpg",
-    showOn: "both",
-  },
-];
-
-// TODO: Replace with CMS data from content/events/
-const placeholderEvents: CalendarEvent[] = [
-  {
-    date: "20.3.2026",
-    time: "19:00",
-    title: "Remmi Liveklubi: Moving North – Tanssielokuvia Pohjolasta",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/remmi-liveklubi-moving-north",
-  },
-  {
-    date: "14.4.2026",
-    time: "09:30",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546684",
-  },
-  {
-    date: "14.4.2026",
-    time: "18:00",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546685",
-  },
-  {
-    date: "15.4.2026",
-    time: "09:30",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546686",
-  },
-  {
-    date: "16.4.2026",
-    time: "09:30",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546687",
-  },
-  {
-    date: "17.4.2026",
-    time: "09:30",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546688",
-  },
-  {
-    date: "18.4.2026",
-    time: "13:00",
-    title: "Hamelnin Pillipiipari",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546689",
-  },
-  {
-    date: "9.5.2026",
-    time: "18:30",
-    title: "Remmi Liveklubi: We Will Funk For Food: A Fistful of Funk",
-    venue: "Kulttuuritalo Wiljami",
-    ticketUrl: "https://www.netticket.fi/we-will-funk-for-food-a-fistful-of-funk-rovaniemi",
-  },
-];
-
-// Detailed show info for modals — keyed by event title
-const showInfos: Record<string, ShowInfo> = {
-  "Hamelnin Pillipiipari": {
-    title: "Hamelnin Pillipiipari",
-    image: "/images/www-2_PilliPiip_1920x1080.jpg",
-    performances: [
-      { date: "14.4.2026", time: "09:30", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546684" },
-      { date: "14.4.2026", time: "18:00", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546685" },
-      { date: "15.4.2026", time: "09:30", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546686" },
-      { date: "16.4.2026", time: "09:30", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546687" },
-      { date: "17.4.2026", time: "09:30", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546688" },
-      { date: "18.4.2026", time: "13:00", ticketUrl: "https://www.netticket.fi/product_info.php?products_id=546689" },
-    ],
-    description: [
-      "Uusi, hulvaton tulkinta laittaa klassikkosadun ranttaliksi!",
-      "Hamelnin kaupunkia vaivaa rottaongelma, varsinainen rottastrofi. Paikalle saapuu salaperäinen pilliä soittava muukalainen, joka lupaa karkottaa kiusanhenget kaupungista. Mutta jos tämä pillipiipari pystyy lumoamaan rotat soitollaan, mitä muuta hän voi saada aikaan?",
-      "Syksyn 2024 koko perheen ensi-iltateos on kollaasi huvittavista tyypeistä ja vauhdikkaista tilanteista. Hamelnin Pillipiipari on klassikkosadun uusi tulkinta, jossa ei arkailla panna ranttaliksi. Tanssia, teatteria ja sirkusta yhdistävä esitys live-musiikin tahdittamana yllättää ja hauskuttaa. Tätä ette takuulla odottaneet!",
-    ],
-    credits: [
-      "Ohjaus ja koreografia: Sanna Silvennoinen ja Jaakko Toivonen",
-      "Äänisuunnittelu ja sävellys: Iiro Ollila",
-      "Lavastus ja pukusuunnittelu: Mirkka Nyrhinen",
-      "Valosuunnittelu: Vilma Vantola",
-      "Tekstit: Hannes Mikkelsson",
-      "Esiintyjät: Laura Kallas, Joni Kuokkanen, Liina Leppänen, Jukka Nurmela",
-    ],
-    extra: [
-      "Teos on yhteistuotanto Tanssiteatteri Raatikon kanssa.",
-      "Ensi-ilta Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024",
-      "Kesto: n. 45 min",
-      "Suositusikä: 3–12 vuotta",
-    ],
-  },
-  "Remmi Liveklubi: We Will Funk For Food: A Fistful of Funk": {
-    title: "We Will Funk For Food: A Fistful of Funk",
-    subtitle: "Remmi Liveklubi",
-    image: "/images/Print-Size_Fistful-of-funk-35-scaled.jpg",
-    performances: [
-      { date: "9.5.2026", time: "18:30", ticketUrl: "https://www.netticket.fi/we-will-funk-for-food-a-fistful-of-funk-rovaniemi" },
-    ],
-    description: [
-      "A Fistful of Funk on katutanssia, absurdia teatteri ja livemusiikkia yhdistelevä esitys, joka käsittelee ystävyyttä, sukupuoliroolien ja maskuliinisuuden teemoja leikin, huumorin ja virtuoosimaisen katutanssin avulla.",
-      "Teoksessa kolme yksinäistä cowboyta lähtee yhdessä eeppiselle matkalle halki aavikon. Matkalla 1970-luvun funk-tanssi yhdistyy näytelmäkirjailija Juho Keräsen tekstiin, jonka inspiraationa on Sergio Leonen lännenelokuvien toksinen machismo ja hypermaskuliinisuus.",
-      "Locking on 1970-luvulla Yhdysvaltain länsirannikolla afrikkalaisamerikkalaisten keskuudessa syntynyt tanssityyli, jolle ovat ominaisia terävät pysähdykset, groovaavat askeleet ja akrobaattiset temput. Esityksessä syvennytään yhteen Lockingin keskeisistä elementeistä: characteriin eli tanssijan ominaislaatuun. Hahmojen ja leikin kautta esitys tutkii vaihtoehtoisia maskuliinisia ilmaisuja ja esittelee samalla kunkin esiintyjän ainutlaatuista tyyliä ja persoonaa.",
-      "Will Funk For Food on vuonna 2008 perustettu, yksi Suomen kansainvälisesti menestyneimmistä katutanssiryhmistä, joka on erikoistunut Locking-tanssityyliin. WFFF tekee tanssilajiaan tunnetuksi Suomessa, ja pyrkii toiminnallaan vakiinnuttamaan katutanssia osaksi suomalaista kulttuuritarjontaa sekä tuomaan iloa ja riemua kaikenikäisille. Tanssiryhmän suurimpia meriittejä ovat kolminkertainen peräkkäinen SM-kulta, sekä esityksiä niin Japanissa, Ranskassa kuin Itämeren takana Ruotsissa.",
-    ],
-    credits: [
-      "Koreografia: Will Funk For Food",
-      "Esiintyjät: Akim Bakhtaoui, Wilhelm Blomberg, Jeffrey Kam",
-      "Äänisuunnittelu, muusikko: Sebastian Kurtén",
-      "Rumpali: Elias Ojutkangas",
-      "Dramaturgi, tekstit, voice over ja puhekohtausten ohjaus: Juho Keränen",
-      "Pukusuunnittelu: Antrea Kantakoski",
-      "Valosuunnittelu: Jaakko Sirainen",
-      "Lavastussuunnittelu: Oscar Dempsey",
-      "Tuotanto: Zodiak – Uuden tanssin keskus, Wilhelm Blomberg, Akim Bakhtaoui, Nordic Soul ry",
-    ],
-  },
-  "Remmi Liveklubi: Moving North \u2013 Tanssielokuvia Pohjolasta": {
-    title: "Moving North \u2013 Tanssielokuvia Pohjolasta",
-    subtitle: "Remmi Liveklubi",
-    image: "/images/Siorskuadam-HiddenSteps_still_1-scaled.jpg",
-    performances: [
-      { date: "20.3.2026", time: "19:00", ticketUrl: "https://www.netticket.fi/remmi-liveklubi-moving-north" },
-    ],
-    description: [
-      "Remmi klubilla pöhistään maaliskuussa tanssielokuvasta kun Kati Kallio tuo Moving North -tanssielokuvakiertueen Rovaniemelle. Moving North -kiertue esittää palkittuja kotimaisia ja pohjoismaisia tanssielokuvia yhdessä lappilaistaiteilijoiden teosten kanssa, nostaen moninaisen liikkeen keskeiseen osaan elokuvan kerronnassa. Näytöksen jälkeen on yleisö tuttuun tapaan tervetullut osallistumaan keskusteluun panelistien kanssa.",
-      "Tanssielokuva on kahden vahvan taidelajin täydellinen ja monimuotoinen liitto. Se on taidemuoto, joka ylittää kielimuurit ja genrerajat – se on demokraattinen, saavutettava ja aina yhtä kiehtova.",
-    ],
-    credits: [],
-    extra: [
-      "Kuva: Elokuvasta Siõrškuäđam – Vaietut askeleet (2025) / Kati Kallio ja Laura Fedoroff, Sons of Lumière. Valokuvaaja: Arttu Salo.",
-    ],
-  },
-};
-
-// News items — card title (short) separate from full modal title
+// Internal type for news cards
 type NewsCardItem = {
   cardTitle: string;
   info: ShowInfo;
 };
-
-const newsItems: NewsCardItem[] = [
-  {
-    cardTitle: "Kulttuurikummit palaavat. Lähde mukaan!",
-    info: {
-      title: "Kulttuurikummit palaavat \u2013 Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria",
-      subtitle: "Ajankohtaista",
-      image: "/images/kulttuurikummiksi-nettisivuille-720x900.png",
-      imageHeight: 480,
-      description: [
-        "Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton: yli 800 katsojaa pääsi kokemaan taidetta Rimpparemmin esityksissä kummituen ansiosta. Nyt tämä sydämellinen haaste palaa – ja kutsuu uusia yrityksiä ja yhteisöjä mukaan luomaan unohtumattomia hetkiä rovaniemeläisille lapsille.",
-        "Vuoden 2025 kulttuurikummiesityksenä nähdään osallistava ja vauhdikas lastentanssiteatteriesitys Hyppynarutus. Se kutsuu yleisön mukaansa pomppimaan, leikkimään ja kuvittelemaan – ja kulttuurikummit mahdollistavat sen, että esityksiin pääsee mukaan myös sellaisia lapsia, joille kulttuurielämykset eivät muuten olisi itsestäänselvyys.",
-        "Miksi lähteä mukaan?",
-        "Kulttuurikummius on tapa osoittaa yhteisöllisyyttä ja sosiaalista vastuuta – ja samalla saada hyvää näkyvyyttä. Yrityksen tai yhteisön nimi voidaan halutessanne nostaa esiin esityksen käsiohjelmissa, markkinointimateriaaleissa ja somessa. Mutta ennen kaikkea: mukanaolonne tuo iloa.",
-        "Tukipaketit alkavat 100 eurosta",
-        "Kynnys on matala. Tukipaketteja on tarjolla eri tasoisina, ja jokainen kummi saa näkyvyyttä – sekä hyvän mielen.",
-      ],
-      credits: [],
-      extra: [
-        "Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi",
-        "Yhdessä rakennamme tulevaisuuden, jossa taide kuuluu kaikille.",
-        "Kiitos kun olet mukana. \uD83D\uDC9B",
-      ],
-    },
-  },
-];
 
 const copy = {
   fi: {
@@ -238,15 +53,13 @@ const copy = {
     tagline: "Rovaniemen ammattitanssiteatteri",
     heroAlt: "Tanssiteatteri Rimpparemmi esitys",
     introTitle: "Tanssiteatteri Rimpparemmi",
-    introParagraphs: [
-      "Tanssiteatteri Rimpparemmi kertoo tarinoita: kauniita ja rumia. Tarinoita, jotka ovat joskus röyhkeitä ja toisinaan vakavia, useimmiten kuitenkin todella hauskoja. Välittyköön Rimpparemmin tekemisestä riemu ja rakkaus taiteeseen sekä esiintymiseen. Rimpparemmi toivoo, että juuri sinä, voit vahvistaa pohjoista identiteettiä osallistumalla tanssitaiteen kokemiseen ja jakaa pohjoisen tunteen palon kanssamme, sen joka meitä kaikkia lopulta yhdistää.",
-      "Tanssiteatteri Rimpparemmi on Suomen pohjoisin ammattitanssiteatteri. Rimpparemmin juuret ulottuvat 1970-luvulle, jolloin toiminta alkoi Tervolassa kansantanssiyhtyeenä. Kansantanssin karhea ilmaisuvoima yhdistyy tänä päivänä nykytanssin virtaavuuteen Rimpparemmin esityksissä. Musiikki on vahvasti läsnä kaikessa toiminnassa.",
-      "Tanssiteatteri Rimpparemmi tuottaa Rovaniemellä tanssi- ja teatteriesityksiä Tanssin näyttämöllä Kulttuuritalo Wiljamissa. Tanssin näyttämön ohjelmisto koostuu Rimpparemmin omista tuotannoista, yhteistuotannoista sekä vierailevista esityksistä. Rimpparemmi kiertää aktiivisesti ympäri Suomea esittämässä maailman parasta lappilaista tanssiteatteria.",
-    ],
+    introText: "Tanssiteatteri Rimpparemmi kertoo tarinoita: kauniita ja rumia. Tarinoita, jotka ovat joskus röyhkeitä ja toisinaan vakavia, useimmiten kuitenkin todella hauskoja. Välittyköön Rimpparemmin tekemisestä riemu ja rakkaus taiteeseen sekä esiintymiseen. Rimpparemmi toivoo, että juuri sinä, voit vahvistaa pohjoista identiteettiä osallistumalla tanssitaiteen kokemiseen ja jakaa pohjoisen tunteen palon kanssamme, sen joka meitä kaikkia lopulta yhdistää.\n\nTanssiteatteri Rimpparemmi on Suomen pohjoisin ammattitanssiteatteri. Rimpparemmin juuret ulottuvat 1970-luvulle, jolloin toiminta alkoi Tervolassa kansantanssiyhtyeenä. Kansantanssin karhea ilmaisuvoima yhdistyy tänä päivänä nykytanssin virtaavuuteen Rimpparemmin esityksissä. Musiikki on vahvasti läsnä kaikessa toiminnassa.\n\nTanssiteatteri Rimpparemmi tuottaa Rovaniemellä tanssi- ja teatteriesityksiä Tanssin näyttämöllä Kulttuuritalo Wiljamissa. Tanssin näyttämön ohjelmisto koostuu Rimpparemmin omista tuotannoista, yhteistuotannoista sekä vierailevista esityksistä. Rimpparemmi kiertää aktiivisesti ympäri Suomea esittämässä maailman parasta lappilaista tanssiteatteria.",
     calendarTitle: "Tulevat esitykset",
+    calendarWidgetTitle: "Esityskalenteri",
     buyTickets: "Osta liput",
     newsTitle: "Ajankohtaista",
     readMore: "Lue lisää",
+    mailingListHeading: "Liity postituslistalle",
   },
   en: {
     meta: "Dance Theatre Rimpparemmi – Professional dance theatre in Rovaniemi",
@@ -256,26 +69,211 @@ const copy = {
     tagline: "Professional dance theatre in Rovaniemi",
     heroAlt: "Dance Theatre Rimpparemmi performance",
     introTitle: "Dance Theatre Rimpparemmi",
-    introParagraphs: [
-      "Dance Theater Rimpparemmi tells stories: both beautiful and ugly. Stories that are sometimes bold and occasionally serious, but most often truly funny. Let the joy and love for art and performance be conveyed through Rimpparemmi\u2019s creations. Rimpparemmi hopes that you, specifically, can strengthen the northern identity by participating in the experience of dance art and by sharing the passion for the northern sentiment with us \u2013 that which ultimately unites all of us.",
-      "Rimpparemmi Dance Theatre is the northernmost professional dance theatre in Finland. The roots of Rimpparemmi stretch back to the 1970s when its operations began in Tervola as a folk dance ensemble. The raw expressive power of folk dance blends with the fluidity of contemporary dance in Rimpparemmi\u2019s performances. Music is strongly present in all activities.",
-      "Dance Theater Rimpparemmi produces dance and theatre performances in Rovaniemi at their home stage in Kulttuuritalo Wiljami. The program consists of Rimpparemmi\u2019s own productions, collaborations, and guest performances. Rimpparemmi actively tours around Finland, presenting the world\u2019s best Lappish dance theatre.",
-    ],
+    introText: "Dance Theatre Rimpparemmi tells stories: both beautiful and ugly. Stories that are sometimes bold and occasionally serious, but most often truly funny. Let the joy and love for art and performance be conveyed through Rimpparemmi\u2019s creations. Rimpparemmi hopes that you, specifically, can strengthen the northern identity by participating in the experience of dance art and by sharing the passion for the northern sentiment with us \u2013 that which ultimately unites all of us.\n\nRimpparemmi Dance Theatre is the northernmost professional dance theatre in Finland. The roots of Rimpparemmi stretch back to the 1970s when its operations began in Tervola as a folk dance ensemble. The raw expressive power of folk dance blends with the fluidity of contemporary dance in Rimpparemmi\u2019s performances. Music is strongly present in all activities.\n\nDance Theatre Rimpparemmi produces dance and theatre performances in Rovaniemi at their home stage in Kulttuuritalo Wiljami. The program consists of Rimpparemmi\u2019s own productions, collaborations, and guest performances. Rimpparemmi actively tours around Finland, presenting the world\u2019s best Lappish dance theatre.",
     calendarTitle: "Upcoming performances",
+    calendarWidgetTitle: "Performance calendar",
     buyTickets: "Buy tickets",
     newsTitle: "News",
     readMore: "Read more",
+    mailingListHeading: "Join our mailing list",
   },
 } as const;
 
-export default function Home() {
+type HomeProps = {
+  productions: Production[];
+  performances: Performance[];
+  homeData: HomeData;
+};
+
+// Shared news card used in both desktop and mobile carousel
+function NewsCard({
+  item,
+  readMore,
+  onOpen,
+}: {
+  item: NewsCardItem;
+  readMore: string;
+  onOpen: (info: ShowInfo) => void;
+}) {
+  return (
+    <div
+      onClick={() => onOpen(item.info)}
+      style={{
+        flex: "0 0 260px",
+        backgroundColor: colors.offWhite,
+        borderRadius: "8px",
+        overflow: "hidden",
+        cursor: "pointer",
+        display: "flex",
+        flexDirection: "column",
+        boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
+        scrollSnapAlign: "start",
+      }}
+    >
+      {item.info.image && (
+        <Image
+          src={item.info.image}
+          alt={item.cardTitle}
+          width={520}
+          height={640}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      )}
+      <div
+        style={{
+          padding: "1.25rem 1.5rem 1.5rem",
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+        }}
+      >
+        {item.info.subtitle && (
+          <p
+            style={{
+              color: colors.brandFuchsia,
+              fontSize: "0.65rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              marginBottom: "0.5rem",
+            }}
+          >
+            {item.info.subtitle}
+          </p>
+        )}
+        <h3
+          style={{
+            color: colors.nearBlack,
+            fontSize: "1rem",
+            fontWeight: 700,
+            lineHeight: 1.35,
+            letterSpacing: "0.02em",
+            marginBottom: "1rem",
+            flex: 1,
+          }}
+        >
+          {item.cardTitle}
+        </h3>
+        <span
+          style={{
+            color: colors.brandFuchsia,
+            fontSize: "0.75rem",
+            fontWeight: 600,
+            letterSpacing: "0.04em",
+          }}
+        >
+          {readMore} →
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export default function Home({ productions, performances, homeData }: HomeProps) {
   const router = useRouter();
   const locale = (router.locale ?? "fi") as Locale;
   const t = copy[locale];
 
+  const tagline = (locale === "fi" ? homeData.tagline_fi : homeData.tagline_en) ?? t.tagline;
+  const introTitle = (locale === "fi" ? homeData.intro_title_fi : homeData.intro_title_en) ?? t.introTitle;
+  const introText = (locale === "fi" ? homeData.intro_text_fi : homeData.intro_text_en) ?? t.introText;
+  const introParagraphs = introText.trim().split(/\n\n+/);
+
+  // Map CMS hero slides to internal format — overlays hidden when events list is on
+  const heroSlides: HeroSlide[] = homeData.hero_slides.map((s) => ({
+    src: s.image,
+    showOn: s.show_on,
+    overlay: s.overlay_active && !homeData.show_events_list ? {
+      title: s.overlay_title ?? "",
+      subtitle: s.overlay_subtitle ?? "",
+      buttonLabel: s.overlay_button_label ?? "",
+      buttonUrl: s.overlay_button_url ?? "",
+    } : undefined,
+  }));
+
+  // Map CMS news items to internal format
+  const newsItems: NewsCardItem[] = homeData.news_items.map((item) => ({
+    cardTitle: item.card_title,
+    info: {
+      title: item.title,
+      subtitle: item.subtitle,
+      image: item.image,
+      imageHeight: item.image_height,
+      description: item.body ? item.body.trim().split(/\n\n+/) : [],
+      credits: [],
+      extra: item.extra ? item.extra.trim().split("\n").filter(Boolean) : undefined,
+    },
+  }));
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalInfo, setModalInfo] = useState<ShowInfo | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Build locale-specific CalendarEvents from performances + productions
+  const homeEvents = useMemo<CalendarEvent[]>(() => {
+    return performances.map((p) => {
+      const prod = productions.find((pr) => pr.id === p.production_id);
+      const title = prod
+        ? (locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi))
+        : p.production_id;
+      const [yyyy, mm, dd] = p.date.split("-");
+      return {
+        date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
+        time: p.time,
+        title,
+        venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
+        ticketUrl: p.ticket_url ?? "",
+      };
+    });
+  }, [productions, performances, locale]);
+
+  // Build ShowInfo map keyed by locale-specific production title
+  const showInfoMap = useMemo<Record<string, ShowInfo>>(() => {
+    const map: Record<string, ShowInfo> = {};
+    productions.forEach((prod) => {
+      const title = locale === "fi"
+        ? prod.title_fi
+        : (prod.title_en ?? prod.title_fi);
+      const subtitle = locale === "fi"
+        ? prod.subtitle_fi
+        : (prod.subtitle_en ?? prod.subtitle_fi);
+      const longText = locale === "fi"
+        ? prod.long_text_fi
+        : (prod.long_text_en ?? prod.long_text_fi);
+      const description = longText
+        ? longText.trim().split(/\n\n+/)
+        : [prod.short_text_fi];
+      const infoText = locale === "fi"
+        ? prod.info_fi
+        : (prod.info_en ?? prod.info_fi);
+      const credits = infoText
+        ? infoText.trim().split("\n").filter(Boolean)
+        : [];
+      const addInfo = locale === "fi"
+        ? prod.additional_info_fi
+        : (prod.additional_info_en ?? prod.additional_info_fi);
+      const extra = addInfo ? [addInfo] : undefined;
+      const prodPerfs: ShowPerformance[] = performances
+        .filter((p) => p.production_id === prod.id)
+        .map((p) => {
+          const [yyyy, mm, dd] = p.date.split("-");
+          return {
+            date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
+            time: p.time,
+            ticketUrl: p.ticket_url ?? "",
+          };
+        });
+      map[title] = {
+        title,
+        subtitle,
+        image: prod.primary_image,
+        description,
+        credits,
+        extra,
+        performances: prodPerfs,
+      };
+    });
+    return map;
+  }, [productions, performances, locale]);
 
   // Detect mobile viewport
   useEffect(() => {
@@ -396,6 +394,102 @@ export default function Home() {
           ) : null
         )}
 
+        {/* Events list panel — shown on hero when show_events_list is true */}
+        {homeData.show_events_list && (
+          <div className="hero-events-panel">
+            <p
+              style={{
+                color: colors.white,
+                fontSize: "clamp(0.75rem, 1.35vw, 0.9rem)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                marginBottom: "0.75rem",
+              }}
+            >
+              {t.calendarTitle}
+            </p>
+            <div className="hero-events-panel-list">
+            {homeEvents.map((event, i) => (
+              <div
+                key={i}
+                className="hero-events-row"
+                style={{
+                  backgroundColor: "rgba(45,20,32,0.82)",
+                  borderLeft: `3px solid ${colors.brandFuchsia}`,
+                  padding: "0.6rem 1rem",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  gap: "0.75rem",
+                  flexShrink: 0,
+                }}
+              >
+                <div style={{ flex: 1, minWidth: 0, textAlign: "left" }}>
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.55)",
+                      fontSize: "clamp(0.8rem, 1.4vw, 1rem)",
+                      letterSpacing: "0.08em",
+                      marginBottom: "0.2rem",
+                    }}
+                  >
+                    {event.date}{event.time ? ` · ${event.time}` : ""}
+                  </p>
+                  <p
+                    style={{
+                      color: colors.white,
+                      fontSize: "clamp(0.9rem, 1.6vw, 1.1rem)",
+                      fontWeight: 600,
+                      marginBottom: "0.15rem",
+                    }}
+                  >
+                    {event.title}
+                  </p>
+                  <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(0.8rem, 1.4vw, 1rem)" }}>
+                    {event.venue}
+                  </p>
+                  {showInfoMap[event.title] && (
+                    <button
+                      onClick={() =>
+                        setModalInfo(showInfoMap[event.title] ?? null)
+                      }
+                      style={{
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        color: colors.brandFuchsia,
+                        fontSize: "clamp(0.75rem, 1.35vw, 0.85rem)",
+                        letterSpacing: "0.05em",
+                        padding: 0,
+                        marginTop: "0.25rem",
+                      }}
+                    >
+                      {t.readMore} →
+                    </button>
+                  )}
+                </div>
+                <Link
+                  href={event.ticketUrl}
+                  style={{
+                    backgroundColor: colors.brandFuchsia,
+                    color: colors.white,
+                    padding: "0.35rem 0.65rem",
+                    borderRadius: "2px",
+                    fontSize: "clamp(0.8rem, 1.4vw, 1rem)",
+                    fontWeight: 600,
+                    letterSpacing: "0.05em",
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
+                  }}
+                >
+                  {t.buyTickets}
+                </Link>
+              </div>
+            ))}
+            </div>
+          </div>
+        )}
+
         {/* Dark gradient overlay */}
         <div
           style={{
@@ -427,9 +521,24 @@ export default function Home() {
               lineHeight: 1.1,
             }}
           >
-            {t.title}
+            {locale === "fi"
+              ? (homeData.hero_text_fi ?? t.title)
+              : (homeData.hero_text_en ?? homeData.hero_text_fi ?? t.title)}
           </h1>
-          {/* tagline hidden — field kept in copy object if needed later */}
+          {tagline && (
+            <p
+              style={{
+                color: colors.white,
+                fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                marginTop: "0.5rem",
+                opacity: 0.75,
+              }}
+            >
+              {tagline}
+            </p>
+          )}
         </div>
 
         {/* Scroll indicator */}
@@ -443,7 +552,7 @@ export default function Home() {
             cursor: "pointer",
           }}
           onClick={() =>
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+            window.scrollTo({ top: window.innerHeight - 96, behavior: "smooth" })
           }
           aria-label="Scroll down"
         >
@@ -486,8 +595,21 @@ export default function Home() {
         >
           {/* Left column: intro text */}
           <div style={{ flex: "1 1 400px" }}>
-            {/* introTitle hidden — field kept in copy object if needed later */}
-            {t.introParagraphs.map((paragraph, i) => (
+            {introTitle && (
+              <h2
+                style={{
+                  color: colors.nearBlack,
+                  fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                {introTitle}
+              </h2>
+            )}
+            {introParagraphs.map((paragraph, i) => (
               <p
                 key={i}
                 style={{
@@ -496,7 +618,7 @@ export default function Home() {
                   lineHeight: 1.85,
                   opacity: 0.85,
                   marginBottom:
-                    i < t.introParagraphs.length - 1 ? "1.5rem" : 0,
+                    i < introParagraphs.length - 1 ? "1.5rem" : 0,
                 }}
               >
                 {paragraph}
@@ -504,8 +626,8 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Right column: ticket calendar — hidden when showCalendar is false */}
-          {showCalendar && (
+          {/* Right column: ticket calendar — hidden when show_calendar is false */}
+          {homeData.show_calendar && (
             <div style={{ flex: "0 1 340px", minWidth: "280px" }}>
 
               {/* Section title */}
@@ -519,249 +641,134 @@ export default function Home() {
                   marginBottom: "0.75rem",
                 }}
               >
-                {t.calendarTitle}
+                {t.calendarWidgetTitle}
               </h2>
-
-              {/* Vaihtoehto 1 label */}
-              <p
-                style={{
-                  color: colors.muted,
-                  fontSize: "0.65rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginBottom: "1rem",
-                }}
-              >
-                Vaihtoehto 1
-              </p>
 
               {/* Monthly calendar widget — title rendered above */}
               <CalendarWidget
-                events={placeholderEvents}
+                events={homeEvents}
                 locale={locale}
-                calendarTitle={t.calendarTitle}
+                calendarTitle={t.calendarWidgetTitle}
                 buyTickets={t.buyTickets}
-                onShowInfo={(title) => setModalInfo(showInfos[title] ?? null)}
+                onShowInfo={(title) => setModalInfo(showInfoMap[title] ?? null)}
                 hideTitle
               />
 
-              {/* Divider + Vaihtoehto 2 label */}
-              <hr
-                style={{
-                  border: "none",
-                  borderTop: `1px solid ${colors.borderLight}`,
-                  margin: "2rem 0 1rem",
-                }}
-              />
-              <p
-                style={{
-                  color: colors.muted,
-                  fontSize: "0.65rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                Vaihtoehto 2
-              </p>
-
-              {/* Event list — all upcoming shows, scrollable after 3 */}
-              <div
-                style={{
-                  marginTop: 0,
-                  maxHeight: "198px",
-                  overflowY: "auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem",
-                }}
-              >
-                {placeholderEvents.map((event, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      backgroundColor: colors.white,
-                      borderLeft: `3px solid ${colors.brandFuchsia}`,
-                      padding: "0.6rem 1rem",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: "0.75rem",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <div>
-                      <p
-                        style={{
-                          color: colors.muted,
-                          fontSize: "0.7rem",
-                          letterSpacing: "0.08em",
-                          marginBottom: "0.2rem",
-                        }}
-                      >
-                        {event.date}{event.time ? ` · ${event.time}` : ""}
-                      </p>
-                      <p
-                        style={{
-                          color: colors.nearBlack,
-                          fontSize: "0.8rem",
-                          fontWeight: 600,
-                          marginBottom: "0.15rem",
-                        }}
-                      >
-                        {event.title}
-                      </p>
-                      <p style={{ color: colors.muted, fontSize: "0.7rem" }}>
-                        {event.venue}
-                      </p>
-                      {showInfos[event.title] && (
-                        <button
-                          onClick={() =>
-                            setModalInfo(showInfos[event.title] ?? null)
-                          }
-                          style={{
-                            background: "none",
-                            border: "none",
-                            cursor: "pointer",
-                            color: colors.brandFuchsia,
-                            fontSize: "0.65rem",
-                            letterSpacing: "0.05em",
-                            padding: 0,
-                            marginTop: "0.25rem",
-                          }}
-                        >
-                          Lue lisää →
-                        </button>
-                      )}
-                    </div>
-                    <Link
-                      href={event.ticketUrl}
-                      style={{
-                        backgroundColor: colors.brandFuchsia,
-                        color: colors.white,
-                        padding: "0.35rem 0.65rem",
-                        borderRadius: "2px",
-                        fontSize: "0.7rem",
-                        fontWeight: 600,
-                        letterSpacing: "0.05em",
-                        whiteSpace: "nowrap",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {t.buyTickets}
-                    </Link>
-                  </div>
-                ))}
-              </div>
 
             </div>
           )}
         </div>
       </section>
 
-      {/* Ajankohtaista / News */}
-      <section
-        style={{
-          backgroundColor: colors.white,
-          padding: "5rem 2rem",
-        }}
-      >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h2
+      {/* Ajankohtaista / News — desktop: form left + scrollable cards right; mobile: cards carousel then form */}
+      {isMobile ? (
+        <>
+          {/* Mobile: news carousel */}
+          <section style={{ backgroundColor: colors.white, padding: "3rem 0 3rem 2rem" }}>
+            <h2
+              style={{
+                color: colors.nearBlack,
+                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                marginBottom: "1.5rem",
+                paddingRight: "2rem",
+              }}
+            >
+              {t.newsTitle}
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                overflowX: "auto",
+                paddingRight: "2rem",
+                paddingBottom: "0.5rem",
+                scrollSnapType: "x mandatory",
+              }}
+            >
+              {newsItems.map((item, i) => (
+                <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
+              ))}
+            </div>
+          </section>
+
+          {/* Mobile: mailing list form as separate section */}
+          <section
             style={{
-              color: colors.nearBlack,
-              fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
-              fontWeight: 700,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              marginBottom: "2.5rem",
+              padding: "4rem 2rem",
+              minHeight: "580px",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('/images/Tapahtuma Piaf Kuva Antti Kurola (5).jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            {t.newsTitle}
-          </h2>
-
+            <MailingListForm locale={locale} />
+          </section>
+        </>
+      ) : (
+        /* Desktop: form left (image bg) + news right (colored bg) */
+        <section style={{ display: "flex", alignItems: "stretch" }}>
+          {/* Left: image background + form */}
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 360px))",
-              gap: "1.5rem",
+              flex: "0 0 400px",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/images/Tapahtuma Piaf Kuva Antti Kurola (5).jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              padding: "5rem 2.5rem",
             }}
           >
-            {newsItems.map((item, i) => (
-              <div
-                key={i}
-                onClick={() => setModalInfo(item.info)}
-                style={{
-                  backgroundColor: colors.offWhite,
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  display: "flex",
-                  flexDirection: "column",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
-                }}
-              >
-                {item.info.image && (
-                  <Image
-                    src={item.info.image}
-                    alt={item.cardTitle}
-                    width={720}
-                    height={900}
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                )}
-                <div
-                  style={{
-                    padding: "1.25rem 1.5rem 1.5rem",
-                    display: "flex",
-                    flexDirection: "column",
-                    flex: 1,
-                  }}
-                >
-                  {item.info.subtitle && (
-                    <p
-                      style={{
-                        color: colors.brandFuchsia,
-                        fontSize: "0.65rem",
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        marginBottom: "0.5rem",
-                      }}
-                    >
-                      {item.info.subtitle}
-                    </p>
-                  )}
-                  <h3
-                    style={{
-                      color: colors.nearBlack,
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                      lineHeight: 1.35,
-                      letterSpacing: "0.02em",
-                      marginBottom: "1rem",
-                      flex: 1,
-                    }}
-                  >
-                    {item.cardTitle}
-                  </h3>
-                  <span
-                    style={{
-                      color: colors.brandFuchsia,
-                      fontSize: "0.75rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.04em",
-                    }}
-                  >
-                    {t.readMore} →
-                  </span>
-                </div>
-              </div>
-            ))}
+            <MailingListForm locale={locale} />
           </div>
-        </div>
-      </section>
+
+          {/* Right: colored background + news */}
+          <div
+            style={{
+              flex: 1,
+              backgroundColor: colors.white,
+              padding: "5rem 2rem",
+              minWidth: 0,
+            }}
+          >
+            <h2
+              style={{
+                color: colors.nearBlack,
+                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                marginBottom: "1.5rem",
+              }}
+            >
+              {t.newsTitle}
+            </h2>
+            <div
+              style={{
+                display: "flex",
+                gap: "1.25rem",
+                overflowX: "auto",
+                paddingBottom: "0.5rem",
+                scrollSnapType: "x mandatory",
+              }}
+            >
+              {newsItems.map((item, i) => (
+                <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <ShowModal info={modalInfo} onClose={() => setModalInfo(null)} />
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const productions = getProductions();
+  const performances = getPerformances();
+  const homeData = getHomeData();
+  return { props: { productions, performances, homeData } };
 }

@@ -83,6 +83,60 @@ a {
   }
 }
 
+/* Hero events panel — outer container with frosted light background */
+.hero-events-panel {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: fit-content;
+  max-width: clamp(300px, 32vw, 440px);
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  padding: 0.75rem;
+  z-index: 2;
+}
+
+/* Inner scrollable list */
+.hero-events-panel-list {
+  max-height: 45vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-events-panel {
+    right: 1rem;
+    top: auto;
+    bottom: calc(14% + 5rem);
+    transform: none;
+    max-width: 55vw;
+    padding: 0.6rem;
+    overflow-x: hidden;
+  }
+
+  .hero-events-panel-list {
+    max-height: 24vh;
+    overflow-x: hidden;
+  }
+
+  .hero-events-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-events-panel a {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+    align-self: flex-start;
+  }
+}
+
 /* Hero overlay — responsive positioning and sizing */
 .hero-overlay {
   right: 2rem;
@@ -151,4 +205,14 @@ a {
 
 .modal-card::-webkit-scrollbar-thumb:hover {
   background-color: #E8175D;
+}
+
+/* Production card — hover lift effect */
+.production-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.production-card:hover .production-card-img {
+  transform: scale(1.04);
 }

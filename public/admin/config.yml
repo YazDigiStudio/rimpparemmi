@@ -1,0 +1,648 @@
+# Decap CMS Configuration — Tanssiteatteri Rimpparemmi
+# Backend: Netlify Identity (git-gateway)
+# Content files: YAML in content/
+# Media: public/images/
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# All image/file uploads go to Firebase Storage via /api/upload
+media_library:
+  name: firebase-storage
+
+# Slug settings — use Finnish-friendly filenames
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+
+  # ─────────────────────────────────────────────────────────────
+  # HOME PAGE — single file settings
+  # ─────────────────────────────────────────────────────────────
+  - name: "pages"
+    label: "Sivut / Pages"
+    files:
+
+      - name: "home"
+        label: "Etusivu / Home"
+        file: "content/home.yaml"
+        fields:
+
+          - label: "Näytä esityskalenteri / Show calendar"
+            name: "show_calendar"
+            widget: "boolean"
+            default: true
+            hint: "Näyttää tai piilottaa kuukausikalenteri-widgetin"
+
+          - label: "Näytä tapahtumalista / Show events list"
+            name: "show_events_list"
+            widget: "boolean"
+            default: false
+            hint: "Näyttää tai piilottaa tapahtumalista. Kun päällä, diaesitysten promolaatikot piilotetaan automaattisesti."
+
+          - label: "Hero-teksti (FI)"
+            name: "hero_text_fi"
+            widget: "string"
+            hint: "Näytetään hero-kuvan päällä vasemmalla alhaalla"
+
+          - label: "Hero text (EN)"
+            name: "hero_text_en"
+            widget: "string"
+            required: false
+
+          - label: "Hero-diat / Hero slides"
+            name: "hero_slides"
+            widget: "list"
+            hint: "Kuvakaruselli etusivun yläosassa — voit lisätä, poistaa ja järjestää uudelleen"
+            fields:
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "image"
+              - label: "Näytä laitteella / Show on"
+                name: "show_on"
+                widget: "select"
+                options:
+                  - { label: "Kaikki laitteet / All devices", value: "both" }
+                  - { label: "Vain työpöytä / Desktop only", value: "desktop" }
+                  - { label: "Vain mobiili / Mobile only", value: "mobile" }
+                default: "both"
+              - label: "Promolaatikko aktiivinen / Overlay active"
+                name: "overlay_active"
+                widget: "boolean"
+                default: false
+                hint: "Ei vaikutusta jos tapahtumalista on päällä"
+              - label: "Promolaatikon otsikko / Overlay title"
+                name: "overlay_title"
+                widget: "string"
+                required: false
+              - label: "Promolaatikon alaotsikko / Overlay subtitle"
+                name: "overlay_subtitle"
+                widget: "string"
+                required: false
+              - label: "Painikkeen teksti / Button label"
+                name: "overlay_button_label"
+                widget: "string"
+                required: false
+              - label: "Painikkeen linkki / Button URL"
+                name: "overlay_button_url"
+                widget: "string"
+                required: false
+
+          - label: "Uutiset / News items"
+            name: "news_items"
+            widget: "list"
+            hint: "Ajankohtaista-osion kortit"
+            fields:
+              - label: "Kortin otsikko (lyhyt)"
+                name: "card_title"
+                widget: "string"
+                hint: "Lyhyt teksti joka näytetään kortissa"
+              - label: "Modaalin otsikko (täysi)"
+                name: "title"
+                widget: "string"
+              - label: "Alaotsikko / Subtitle"
+                name: "subtitle"
+                widget: "string"
+                required: false
+                hint: 'Esim: "Ajankohtaista"'
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Kuvan korkeus modaalissa / Image height in modal"
+                name: "image_height"
+                widget: "number"
+                required: false
+                default: 320
+                hint: "Pikseleinä — käytä suurempaa arvopormuotokuville (esim. 480)"
+              - label: "Leipäteksti / Body"
+                name: "body"
+                widget: "markdown"
+                required: false
+                hint: "Tyhjät rivit erottavat kappaleet"
+              - label: "Lisätiedot / Extra"
+                name: "extra"
+                widget: "text"
+                required: false
+                hint: "Yksi rivi per tieto — esim. linkit, kiitokset"
+
+      - name: "tanssiteatteri"
+        label: "Tanssiteatteri"
+        file: "content/tanssiteatteri.yaml"
+        fields:
+          - label: "Sivun otsikko (FI) / Page title (FI)"
+            name: "page_title_fi"
+            widget: "string"
+            required: false
+          - label: "Sivun otsikko (EN) / Page title (EN)"
+            name: "page_title_en"
+            widget: "string"
+            required: false
+          - label: "Näytä sivun otsikko / Show page title"
+            name: "show_page_title"
+            widget: "boolean"
+            default: true
+          - label: "Osiot / Sections"
+            name: "sections"
+            widget: "list"
+            hint: |
+              Osiotyyppi määräytyy täytetyistä kentistä:
+              1. Vain teksti — otsikko ja kuva tyhjinä
+              2. Vain kuva — otsikko ja teksti tyhjinä
+              3. Otsikko + teksti — kuva tyhjänä
+              4. Otsikko + teksti + kuva — kuva/teksti rinnakkain
+            fields:
+              - label: "Otsikko (FI)"
+                name: "title_fi"
+                widget: "string"
+                required: false
+              - label: "Title (EN)"
+                name: "title_en"
+                widget: "string"
+                required: false
+              - label: "Teksti (FI)"
+                name: "text_fi"
+                widget: "markdown"
+                required: false
+                hint: "Tyhjä rivi erottaa kappaleet. **Teksti** = lihavoitu"
+              - label: "Text (EN)"
+                name: "text_en"
+                widget: "markdown"
+                required: false
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Kuvan alt-teksti (FI)"
+                name: "image_alt_fi"
+                widget: "string"
+                required: false
+              - label: "Image alt text (EN)"
+                name: "image_alt_en"
+                widget: "string"
+                required: false
+              - label: "Kuvan suunta / Image orientation"
+                name: "image_orientation"
+                widget: "select"
+                options:
+                  - { label: "Vaakakuva / Landscape (16:9 — leikkaa ylä/ala)", value: "landscape" }
+                  - { label: "Pystykuva / Portrait (2:3 — leikkaa sivut)", value: "portrait" }
+                  - { label: "Neliö / Square (1:1)", value: "square" }
+                default: "landscape"
+                required: false
+              - label: "Kuvan sijainti / Image position"
+                name: "image_position"
+                widget: "select"
+                options:
+                  - { label: "Vasemmalla / Left", value: "left" }
+                  - { label: "Oikealla / Right", value: "right" }
+                default: "left"
+                required: false
+                hint: "Vain kun osiossa on sekä teksti että kuva"
+
+      - name: "wiljami"
+        label: "Kulttuuritalo Wiljami"
+        file: "content/wiljami.yaml"
+        fields:
+          - label: "Sivun otsikko (FI) / Page title (FI)"
+            name: "page_title_fi"
+            widget: "string"
+            required: false
+          - label: "Sivun otsikko (EN) / Page title (EN)"
+            name: "page_title_en"
+            widget: "string"
+            required: false
+          - label: "Näytä sivun otsikko / Show page title"
+            name: "show_page_title"
+            widget: "boolean"
+            default: true
+          - label: "Osiot / Sections"
+            name: "sections"
+            widget: "list"
+            hint: |
+              Osiotyyppi määräytyy täytetyistä kentistä:
+              1. Vain teksti — otsikko ja kuva tyhjinä
+              2. Vain kuva — otsikko ja teksti tyhjinä
+              3. Otsikko + teksti — kuva tyhjänä
+              4. Otsikko + teksti + kuva — 50/50 rinnakkain
+            fields:
+              - label: "Otsikko (FI)"
+                name: "title_fi"
+                widget: "string"
+                required: false
+                hint: "Jätä tyhjäksi jos osio ei tarvitse otsikkoa"
+              - label: "Title (EN)"
+                name: "title_en"
+                widget: "string"
+                required: false
+              - label: "Teksti (FI)"
+                name: "text_fi"
+                widget: "markdown"
+                required: false
+                hint: "Tyhjä rivi erottaa kappaleet. **Teksti** = lihavoitu"
+              - label: "Text (EN)"
+                name: "text_en"
+                widget: "markdown"
+                required: false
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Kuvan alt-teksti (FI)"
+                name: "image_alt_fi"
+                widget: "string"
+                required: false
+              - label: "Image alt text (EN)"
+                name: "image_alt_en"
+                widget: "string"
+                required: false
+              - label: "Kuvan suunta / Image orientation"
+                name: "image_orientation"
+                widget: "select"
+                options:
+                  - { label: "Vaakakuva / Landscape (16:9 — leikkaa ylä/ala)", value: "landscape" }
+                  - { label: "Pystykuva / Portrait (2:3 — leikkaa sivut)", value: "portrait" }
+                  - { label: "Neliö / Square (1:1)", value: "square" }
+                default: "landscape"
+                required: false
+              - label: "Kuvan sijainti / Image position"
+                name: "image_position"
+                widget: "select"
+                options:
+                  - { label: "Vasemmalla / Left", value: "left" }
+                  - { label: "Oikealla / Right", value: "right" }
+                default: "left"
+                required: false
+                hint: "Vain kun osiossa on sekä teksti että kuva"
+
+      - name: "liput"
+        label: "Liput / Tickets"
+        file: "content/liput.yaml"
+        fields:
+          - label: "Sivun otsikko (FI) / Page title (FI)"
+            name: "page_title_fi"
+            widget: "string"
+            required: false
+          - label: "Sivun otsikko (EN) / Page title (EN)"
+            name: "page_title_en"
+            widget: "string"
+            required: false
+          - label: "Näytä sivun otsikko / Show page title"
+            name: "show_page_title"
+            widget: "boolean"
+            default: true
+          - label: "Osiot / Sections"
+            name: "sections"
+            widget: "list"
+            hint: "Lisää, poista ja järjestä osioita — jokaisessa voi olla teksti ja/tai kuva"
+            hint: |
+              Osiotyyppi määräytyy täytetyistä kentistä:
+              1. Vain teksti — otsikko ja kuva tyhjinä
+              2. Vain kuva — otsikko ja teksti tyhjinä
+              3. Otsikko + teksti — kuva tyhjänä
+              4. Otsikko + teksti + kuva — 50/50 rinnakkain
+            fields:
+              - label: "Otsikko (FI)"
+                name: "title_fi"
+                widget: "string"
+                required: false
+                hint: "Jätä tyhjäksi jos osio ei tarvitse otsikkoa"
+              - label: "Title (EN)"
+                name: "title_en"
+                widget: "string"
+                required: false
+              - label: "Teksti (FI)"
+                name: "text_fi"
+                widget: "markdown"
+                required: false
+                hint: "Tyhjä rivi erottaa kappaleet. **Teksti** = lihavoitu"
+              - label: "Text (EN)"
+                name: "text_en"
+                widget: "markdown"
+                required: false
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Kuvan alt-teksti (FI)"
+                name: "image_alt_fi"
+                widget: "string"
+                required: false
+              - label: "Image alt text (EN)"
+                name: "image_alt_en"
+                widget: "string"
+                required: false
+              - label: "Kuvan suunta / Image orientation"
+                name: "image_orientation"
+                widget: "select"
+                options:
+                  - { label: "Vaakakuva / Landscape (16:9 — leikkaa ylä/ala)", value: "landscape" }
+                  - { label: "Pystykuva / Portrait (2:3 — leikkaa sivut)", value: "portrait" }
+                  - { label: "Neliö / Square (1:1)", value: "square" }
+                default: "landscape"
+                required: false
+              - label: "Kuvan sijainti / Image position"
+                name: "image_position"
+                widget: "select"
+                options:
+                  - { label: "Vasemmalla / Left", value: "left" }
+                  - { label: "Oikealla / Right", value: "right" }
+                default: "left"
+                required: false
+                hint: "Vain kun osiossa on sekä teksti että kuva"
+
+  # ─────────────────────────────────────────────────────────────
+  # PRODUCTIONS — master data for all shows
+  # ─────────────────────────────────────────────────────────────
+  - name: "productions"
+    label: "Tuotannot / Productions"
+    label_singular: "Tuotanto / Production"
+    folder: "content/productions"
+    create: true
+    slug: "{{fields.id}}"
+    identifier_field: "id"
+    summary: "{{title_fi}} ({{status}})"
+    fields:
+
+      # Identification
+      - label: "ID (slug)"
+        name: "id"
+        widget: "string"
+        hint: "Uniikki tunniste, käytetään viittauksissa. Käytä vain pieniä kirjaimia ja väliviivoja. Esim: hamelnin-pillipiipari"
+
+      - label: "Otsikko (FI)"
+        name: "title_fi"
+        widget: "string"
+
+      - label: "Title (EN)"
+        name: "title_en"
+        widget: "string"
+        required: false
+
+      - label: "Alaotsikko (FI)"
+        name: "subtitle_fi"
+        widget: "string"
+        required: false
+
+      - label: "Subtitle (EN)"
+        name: "subtitle_en"
+        widget: "string"
+        required: false
+
+      # Status
+      - label: "Tila / Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Aktiivinen / Active", value: "active" }
+          - { label: "Arkisto / Archive", value: "archive" }
+        default: "active"
+
+      - label: "Kategoria / Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Yleinen / General", value: "general" }
+          - { label: "Lapsille / Children", value: "children" }
+        default: "general"
+
+      - label: "Ensi-ilta / Premiere date"
+        name: "premiere_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        required: false
+
+      # Images
+      - label: "Pääkuva / Primary image"
+        name: "primary_image"
+        widget: "image"
+        hint: "Näytetään korteissa, tuotantosivun yläosassa ja tapahtumalistauksissa"
+
+      - label: "Esityskuvat / Production images"
+        name: "production_images"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Kuva / Image", name: "src", widget: "image" }
+          - { label: "Kuvateksti (FI)", name: "caption_fi", widget: "string", required: false }
+          - { label: "Caption (EN)", name: "caption_en", widget: "string", required: false }
+          - label: "Pressikuva / Press photo"
+            name: "is_press"
+            widget: "boolean"
+            default: false
+            hint: "Jos päällä, kuva näytetään myös Media-sivulla ladattavana"
+          - label: "Originaali / Original URL"
+            name: "original_url"
+            widget: "string"
+            required: false
+            hint: "Firebase Storage URL korkearesoluutioiselle originaalille (ladattava versio)"
+
+      # Texts
+      - label: "Lyhyt esittely (FI)"
+        name: "short_text_fi"
+        widget: "text"
+        hint: "Näytetään korteissa ja hakutuloksissa — max 2 lausetta"
+
+      - label: "Short description (EN)"
+        name: "short_text_en"
+        widget: "text"
+        required: false
+
+      - label: "Pitkä kuvaus (FI)"
+        name: "long_text_fi"
+        widget: "markdown"
+        required: false
+
+      - label: "Full description (EN)"
+        name: "long_text_en"
+        widget: "markdown"
+        required: false
+
+      - label: "Info / Henkilöt (FI)"
+        name: "info_fi"
+        widget: "markdown"
+        required: false
+        hint: "Koreografia, ohjaus, esiintyjät, kesto, suositusikä jne."
+
+      - label: "Info / Credits (EN)"
+        name: "info_en"
+        widget: "markdown"
+        required: false
+
+      - label: "Lisätiedot (FI)"
+        name: "additional_info_fi"
+        widget: "text"
+        required: false
+        hint: "Esim. yhteistuotantotiedot, erityismaininnat"
+
+      - label: "Additional info (EN)"
+        name: "additional_info_en"
+        widget: "text"
+        required: false
+
+      # Display order
+      - label: "Järjestysnumero / Sort order"
+        name: "sort_order"
+        widget: "number"
+        default: 10
+        required: false
+        hint: "Pienempi numero näkyy ensin — esim. 1 on ensimmäinen, 2 toinen"
+
+      # Trailer
+      - label: "Traileri / Trailer URL"
+        name: "trailer_url"
+        widget: "string"
+        required: false
+        hint: "YouTube tai Vimeo embed-URL (käytä youtube-nocookie.com)"
+
+      # Tickets
+      - label: "Lipputänk varaliinki / Ticket URL fallback"
+        name: "ticket_url_fallback"
+        widget: "string"
+        required: false
+        hint: "Netticket.fi-linkki — käytetään jos esityksellä ei ole omaa lippulinkkiä"
+
+      # Card badge
+      - label: "Korttilappu (FI)"
+        name: "badge_fi"
+        widget: "string"
+        required: false
+        hint: "Lyhyt teksti kortin kulmaan — esim. Lapsille, Koko perheelle"
+
+      - label: "Card badge (EN)"
+        name: "badge_en"
+        widget: "string"
+        required: false
+
+      # Touring
+      - label: "Kiertueohjelmistossa / Available for touring"
+        name: "is_touring"
+        widget: "boolean"
+        default: false
+        hint: "Näkyy Kiertueohjelmisto-sivulla"
+
+      - label: "Kesto (FI)"
+        name: "duration_fi"
+        widget: "string"
+        required: false
+        hint: "Esim: n. 45 min"
+
+      - label: "Duration (EN)"
+        name: "duration_en"
+        widget: "string"
+        required: false
+
+      - label: "Suositusikä (FI)"
+        name: "age_recommendation_fi"
+        widget: "string"
+        required: false
+        hint: "Esim: 3–12 vuotta"
+
+      - label: "Recommended age (EN)"
+        name: "age_recommendation_en"
+        widget: "string"
+        required: false
+
+      - label: "Tilavaatimukset (FI)"
+        name: "technical_requirements_fi"
+        widget: "text"
+        required: false
+        hint: "Lava- ja tilatarpeet — yksi vaatimus per rivi"
+
+      - label: "Technical requirements (EN)"
+        name: "technical_requirements_en"
+        widget: "text"
+        required: false
+
+      - label: "Hinta & matkakulut (FI)"
+        name: "price_info_fi"
+        widget: "text"
+        required: false
+        hint: "Esityspalkkio, matkakulut jne. — yksi rivi per tieto"
+
+      - label: "Fee & travel costs (EN)"
+        name: "price_info_en"
+        widget: "text"
+        required: false
+
+      - label: "Linkki taltioon / Documentation URL"
+        name: "documentation_url"
+        widget: "string"
+        required: false
+        hint: "Linkki videotallenteeseen"
+
+      - label: "Linkki rideriin / Rider URL"
+        name: "rider_url"
+        widget: "string"
+        required: false
+        hint: "Firebase Storage tai Google Drive linkki ladattavaan rideriin (PDF)"
+
+  # ─────────────────────────────────────────────────────────────
+  # PERFORMANCES — individual showings
+  # ─────────────────────────────────────────────────────────────
+  - name: "performances"
+    label: "Esitykset / Performances"
+    label_singular: "Esitys / Performance"
+    folder: "content/performances"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.production_id}}-{{hour}}{{minute}}"
+    summary: "{{date}} {{time}} — {{production_id}}"
+    fields:
+
+      - label: "Tuotanto / Production"
+        name: "production_id"
+        widget: "relation"
+        collection: "productions"
+        search_fields: ["title_fi", "title_en"]
+        value_field: "id"
+        display_fields: ["title_fi"]
+        hint: "Valitse tuotanto listasta"
+
+      - label: "Päivämäärä / Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+
+      - label: "Kellonaika / Time"
+        name: "time"
+        widget: "string"
+        hint: "Muoto: 19:00"
+
+      - label: "Paikka (FI)"
+        name: "venue_fi"
+        widget: "string"
+
+      - label: "Venue (EN)"
+        name: "venue_en"
+        widget: "string"
+        required: false
+
+      - label: "Kaupunki / City"
+        name: "city"
+        widget: "string"
+
+      - label: "Lippulinkki / Ticket URL"
+        name: "ticket_url"
+        widget: "string"
+        required: false
+        hint: "Netticket.fi-linkki. Jos tyhjä, käytetään tuotannon varalippulinkkiä."
+
+      - label: "Lisätiedot (FI)"
+        name: "additional_info_fi"
+        widget: "string"
+        required: false
+        hint: "Esim: Koululaisesitys, Ensi-ilta, Kiertuenäytös"
+
+      - label: "Additional info (EN)"
+        name: "additional_info_en"
+        widget: "string"
+        required: false

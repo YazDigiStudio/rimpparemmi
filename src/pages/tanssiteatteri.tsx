@@ -1,37 +1,71 @@
-// Tanssiteatteri page — placeholder
-import Head from "next/head";
-import Navigation from "@/components/Navigation";
-import { colors } from "@/styles/colors";
+// Tanssiteatteri page — /tanssiteatteri
+// CMS-driven via content/tanssiteatteri.yaml
 
-export default function Tanssiteatteri() {
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { type GetStaticProps } from "next";
+import Navigation from "@/components/Navigation";
+import SectionBlock, { type Locale } from "@/components/SectionBlock";
+import { colors } from "@/styles/colors";
+import { getTanssiteatteriData, type SectionPageData } from "@/lib/content";
+
+const copy = {
+  fi: {
+    meta: "Tanssiteatteri – Tanssiteatteri Rimpparemmi",
+    title: "Tanssiteatteri",
+  },
+  en: {
+    meta: "Dance Theatre – Dance Theatre Rimpparemmi",
+    title: "Dance Theatre",
+  },
+} as const;
+
+type Props = { data: SectionPageData };
+
+export default function Tanssiteatteri({ data }: Props) {
+  const { locale: routerLocale } = useRouter();
+  const locale: Locale = routerLocale === "en" ? "en" : "fi";
+  const t = copy[locale];
+  const showTitle = data.show_page_title !== false;
+  const pageTitle = locale === "fi"
+    ? (data.page_title_fi || t.title)
+    : (data.page_title_en || data.page_title_fi || t.title);
+
   return (
     <>
       <Head>
-        <title>Tanssiteatteri – Tanssiteatteri Rimpparemmi</title>
+        <title>{t.meta}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navigation />
-      <main
-        style={{
-          backgroundColor: colors.offWhite,
-          minHeight: "100vh",
-          padding: "calc(96px + 4rem) 2rem 5rem",
-        }}
-      >
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h1
-            style={{
-              color: colors.nearBlack,
-              fontSize: "clamp(1.75rem, 4vw, 3rem)",
-              fontWeight: 700,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-            }}
-          >
-            Tanssiteatteri
-          </h1>
-        </div>
+      <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>
+        {showTitle && (
+          <div style={{ backgroundColor: colors.offWhite }}>
+            <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2rem 2rem 2rem" }}>
+              <h1
+                style={{
+                  color: colors.nearBlack,
+                  fontSize: "clamp(1.75rem, 4vw, 3rem)",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {pageTitle}
+              </h1>
+            </div>
+          </div>
+        )}
+
+        {data.sections.map((section, i) => (
+          <SectionBlock key={i} section={section} locale={locale} index={i} />
+        ))}
       </main>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const data = getTanssiteatteriData();
+  return { props: { data } };
+};
