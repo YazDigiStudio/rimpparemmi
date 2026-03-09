@@ -14,6 +14,15 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        {/* Redirect Netlify Identity tokens (invite/recovery) to /admin/ where the widget lives */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var hash = window.location.hash;
+            if (hash.indexOf('invite_token') !== -1 || hash.indexOf('recovery_token') !== -1 || hash.indexOf('confirmation_token') !== -1) {
+              window.location.replace('/admin/' + hash);
+            }
+          })();
+        `}} />
       </body>
     </Html>
   );
