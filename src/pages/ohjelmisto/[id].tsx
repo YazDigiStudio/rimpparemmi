@@ -1,5 +1,5 @@
-// Production detail page — /ohjelma/[id]
-// Full-page view: hero image, long text, credits, gallery, upcoming performances.
+// Production detail page — /ohjelmisto/[id]
+// Full-page view: hero image, long text, credits, upcoming performances, press photos.
 
 import Head from "next/head";
 import Image from "next/image";
@@ -87,8 +87,7 @@ export default function ProductionPage({ production, performances }: Props) {
     ? infoText.trim().split("\n").filter(Boolean)
     : [];
 
-  const pressImages = production.production_images?.filter((img) => img.is_press) ?? [];
-  const galleryImages = production.production_images?.filter((img) => !img.is_press) ?? [];
+  const pressImages = production.production_images ?? [];
 
   return (
     <>
@@ -187,7 +186,7 @@ export default function ProductionPage({ production, performances }: Props) {
 
           {/* Back link */}
           <Link
-            href="/ohjelma"
+            href="/ohjelmisto"
             style={{
               display: "inline-block",
               color: colors.muted,
@@ -269,34 +268,6 @@ export default function ProductionPage({ production, performances }: Props) {
               </div>
             )}
           </div>
-
-          {/* Gallery */}
-          {galleryImages.length > 0 && (
-            <div style={{ marginBottom: "3.5rem" }}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-                  gap: "1rem",
-                }}
-              >
-                {galleryImages.map((img, i) => (
-                  <div
-                    key={i}
-                    style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", borderRadius: "4px" }}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={locale === "fi" ? (img.caption_fi ?? "") : (img.caption_en ?? img.caption_fi ?? "")}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Upcoming performances */}
           <div>
@@ -385,7 +356,7 @@ export default function ProductionPage({ production, performances }: Props) {
             )}
           </div>
 
-          {/* Press images (if any) */}
+          {/* Press photos */}
           {pressImages.length > 0 && (
             <div style={{ marginTop: "3.5rem" }}>
               <h2
@@ -410,8 +381,7 @@ export default function ProductionPage({ production, performances }: Props) {
                 {pressImages.map((img, i) => (
                   <a
                     key={i}
-                    href={img.original_url ?? img.src}
-                    download={!img.original_url}
+                    href={img.src}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: "block" }}

@@ -230,7 +230,7 @@ export default function Navigation() {
                 padding: "0.5rem 0",
               }}
             >
-              <Link href="/ohjelma" style={dropdownLinkStyle}>
+              <Link href="/ohjelmisto" style={dropdownLinkStyle}>
                 {t.programme}
               </Link>
               <Link href="/kiertueohjelmisto" style={dropdownLinkStyle}>
@@ -344,7 +344,7 @@ export default function Navigation() {
             {t.home}
           </Link>
 
-          <Link href="/ohjelma" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
+          <Link href="/ohjelmisto" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>
             {t.programme}
           </Link>
           <Link href="/kiertueohjelmisto" style={{ ...mobileLinkStyle, fontSize: "1rem", paddingLeft: "0.75rem", opacity: 0.75 }}>

@@ -1,4 +1,4 @@
-// Ohjelma / Programme page
+// Ohjelmisto / Programme page
 // Card grid of productions. Client-side filter between active and archived.
 
 import { useState } from "react";
@@ -31,7 +31,7 @@ const copy = {
 
 type Props = { productions: Production[] };
 
-export default function Ohjelma({ productions }: Props) {
+export default function Ohjelmisto({ productions }: Props) {
   const { locale: routerLocale } = useRouter();
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];

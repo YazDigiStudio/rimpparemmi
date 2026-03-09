@@ -5,31 +5,19 @@ subtitle_fi: Koko perheen tanssiteos
 subtitle_en: A dance show for the whole family
 status: active
 category: children
-premiere_date: 2024-09-25
-primary_image: /images/www-2_PilliPiip_1920x1080.jpg
+premiere_date: "2024-09-25"
+primary_image: ""
 production_images:
-  - is_press: true
-    src:
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052714155-Hamelin_Pillipiipari_Kuva_Antti_Kurola__18_.webp?alt=media
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052703099-Hamelin_Pillipiipari_Kuva_Antti_Kurola__19_.webp?alt=media
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052710238-Hamelin_Pillipiipari_Kuva_Antti_Kurola__20_.webp?alt=media
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052709504-Hamelin_Pillipiipari_Kuva_Antti_Kurola__21_.webp?alt=media
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052714506-Hamelin_Pillipiipari_Kuva_Antti_Kurola__22_.webp?alt=media
-      - https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052710331-Hamelin_Pillipiipari_Kuva_Antti_Kurola.webp?alt=media
-    caption_fi: testi
-    caption_en: test
-short_text_fi: Uusi, hulvaton tulkinta laittaa klassikkosadun ranttaliksi!
-  Tanssia, teatteria ja sirkusta yhdistävä esitys live-musiikin tahdittamana
-  yllättää ja hauskuttaa.
-short_text_en: A new, hilarious take turns the classic fairy tale upside down! A
-  show combining dance, theatre, and circus with live music — it surprises and
-  entertains.
-long_text_fi: >
-  Hamelnin kaupunkia vaivaa rottaongelma, varsinainen rottastrofi. Paikalle
-  saapuu salaperäinen pilliä soittava muukalainen, joka lupaa karkottaa
-  kiusanhenget kaupungista. Mutta jos tämä pillipiipari pystyy lumoamaan rotat
-  soitollaan, mitä muuta hän voi saada aikaan?
-
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052714155-Hamelin_Pillipiipari_Kuva_Antti_Kurola__18_.webp?alt=media"
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052703099-Hamelin_Pillipiipari_Kuva_Antti_Kurola__19_.webp?alt=media"
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052710238-Hamelin_Pillipiipari_Kuva_Antti_Kurola__20_.webp?alt=media"
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052709504-Hamelin_Pillipiipari_Kuva_Antti_Kurola__21_.webp?alt=media"
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052714506-Hamelin_Pillipiipari_Kuva_Antti_Kurola__22_.webp?alt=media"
+  - src: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773052710331-Hamelin_Pillipiipari_Kuva_Antti_Kurola.webp?alt=media"
+short_text_fi: "Uusi, hulvaton tulkinta laittaa klassikkosadun ranttaliksi! Tanssia, teatteria ja sirkusta yhdistävä esitys live-musiikin tahdittamana yllättää ja hauskuttaa."
+short_text_en: "A new, hilarious take turns the classic fairy tale upside down! A show combining dance, theatre, and circus with live music — it surprises and entertains."
+long_text_fi: |
+  Hamelnin kaupunkia vaivaa rottaongelma, varsinainen rottastrofi. Paikalle saapuu salaperäinen pilliä soittava muukalainen, joka lupaa karkottaa kiusanhenget kaupungista. Mutta jos tämä pillipiipari pystyy lumoamaan rotat soitollaan, mitä muuta hän voi saada aikaan?
 
   Syksyn 2024 koko perheen ensi-iltateos on kollaasi huvittavista tyypeistä ja vauhdikkaista tilanteista. Hamelnin Pillipiipari on klassikkosadun uusi tulkinta, jossa ei arkailla panna ranttaliksi. Tanssia, teatteria ja sirkusta yhdistävä esitys live-musiikin tahdittamana yllättää ja hauskuttaa. Tätä ette takuulla odottaneet!
 long_text_en: >

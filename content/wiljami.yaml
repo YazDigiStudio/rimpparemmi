@@ -27,7 +27,7 @@ sections:
       Kulttuuritalo Wiljami, also known as Kansantalo, is a cultural centre in Rovaniemi offering diverse programming across the arts. The building was completed in 1947 and serves as the home venue for several Rovaniemi cultural organisations — including Dance Theatre Rimpparemmi, Lapin Ylioppilasteatteri and Elokuvakerho Cinema.
 
       The auditorium seats 120, including 2 wheelchair-accessible spaces.
-    image: "/images/wiljami.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384522-wiljami.webp?alt=media"
     image_alt_fi: "Kulttuuritalo Wiljami"
     image_alt_en: "Kulttuuritalo Wiljami"
     image_orientation: "square"

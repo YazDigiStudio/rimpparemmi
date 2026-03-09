@@ -22,7 +22,7 @@ sections:
     title_en: ""
     text_fi: ""
     text_en: ""
-    image: "/images/Tapahtuma%20Piaf%20Kuva%20Antti%20Kurola%20(5).jpg"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075379826-Tapahtuma_Piaf_Kuva_Antti_Kurola__5_.webp?alt=media"
     image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
     image_alt_en: "Dance Theatre Rimpparemmi performance"
     image_orientation: "landscape"
@@ -59,7 +59,7 @@ sections:
       Ensisijaisesti Rimpparemmi tekee ja tuottaa korkeatasoista ja puhuttelevaa taidetta, jonka välineenä on tanssi. Tämän päävälineen ohella tärkeitä ilmaisumuotoja ovat myös musiikki, teatteri ja visuaalisuus. Rimpparemmin tanssiteoksissa nämä kaikki osa-alueet todentuvat ja tähtäävät samaan päämäärään: katsoja saa kokemuksen, joka liikuttaa hänen mieltään, vavahduttaa ajattelemaan ja tuntemaan.
     text_en: |
       Above all, Rimpparemmi creates and produces high-quality, compelling art with dance as its primary medium. Alongside dance, music, theatre, and visual elements are equally important forms of expression. In Rimpparemmi's works, all these elements combine and strive toward a single goal: to give the audience an experience that moves their mind, stirs thought, and awakens feeling.
-    image: "/images/Tapahtuma%20Piaf%20Kuva%20Antti%20Kurola%20(1).jpg"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075378596-Tapahtuma_Piaf_Kuva_Antti_Kurola__1_.webp?alt=media"
     image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
     image_alt_en: "Dance Theatre Rimpparemmi performance"
     image_orientation: "square"
@@ -76,7 +76,7 @@ sections:
       Rimpparemmi is a strong advocate for dance culture, bringing high-quality dance theatre performances throughout Lapland, Finland, and internationally. Alongside its performance activities, the company trains new dance artists and broad-minded cultural thinkers.
 
       Dance art will play an increasingly important role in the performing arts in the future. Rimpparemmi is boldly and energetically part of that development. Dance is an international art form independent of language, and Rovaniemi and Lapland offer fertile ground for it through the international audiences brought by tourism.
-    image: "/images/Kielletyt%20liikkeet%20kuva%20Antti%20Kurola%20(9).jpg"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075375667-Kielletyt_liikkeet_kuva_Antti_Kurola__9_.webp?alt=media"
     image_alt_fi: "Tanssiteatteri Rimpparemmi esitys"
     image_alt_en: "Dance Theatre Rimpparemmi performance"
     image_orientation: "portrait"

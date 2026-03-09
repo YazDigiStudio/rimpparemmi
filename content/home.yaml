@@ -25,19 +25,19 @@ intro_text_en: |
   Dance Theatre Rimpparemmi produces dance and theatre performances in Rovaniemi at their home stage in Kulttuuritalo Wiljami. The program consists of Rimpparemmi's own productions, collaborations, and guest performances. Rimpparemmi actively tours around Finland, presenting the world's best Lappish dance theatre.
 
 hero_slides:
-  - image: "/images/Kielletyt liikkeet kuva Antti Kurola (9).jpg"
+  - image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075375667-Kielletyt_liikkeet_kuva_Antti_Kurola__9_.webp?alt=media"
     show_on: "both"
     overlay_active: false
 
-  - image: "/images/Uroslive, kuva Atti Kurola.jpg"
+  - image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075383446-Uroslive__kuva_Atti_Kurola.webp?alt=media"
     show_on: "desktop"
     overlay_active: false
 
-  - image: "/images/Uroslive, kuva Atti Kurola (13).jpg"
+  - image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075382296-Uroslive__kuva_Atti_Kurola__13_.webp?alt=media"
     show_on: "mobile"
     overlay_active: false
 
-  - image: "/images/Siorskuadam-HiddenSteps_still_1-scaled.jpg"
+  - image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075377725-Siorskuadam-HiddenSteps_still_1-scaled.webp?alt=media"
     show_on: "both"
     overlay_active: true
     overlay_title: "MOVING NORTH -tanssielokuvakiertue"
@@ -45,7 +45,7 @@ hero_slides:
     overlay_button_label: "Osta liput"
     overlay_button_url: "https://www.netticket.fi/remmi-liveklubi-moving-north"
 
-  - image: "/images/Kielletyt liikkeet kuva Antti Kurola (7).jpg"
+  - image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075375097-Kielletyt_liikkeet_kuva_Antti_Kurola__7_.webp?alt=media"
     show_on: "both"
     overlay_active: false
 
@@ -53,7 +53,7 @@ news_items:
   - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
     title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
     subtitle: "Ajankohtaista"
-    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384031-kulttuurikummiksi-nettisivuille-720x900.webp?alt=media"
     image_height: 480
     body: |
       Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton: yli 800 katsojaa pääsi kokemaan taidetta Rimpparemmin esityksissä kummituen ansiosta. Nyt tämä sydämellinen haaste palaa – ja kutsuu uusia yrityksiä ja yhteisöjä mukaan luomaan unohtumattomia hetkiä rovaniemeläisille lapsille.
@@ -76,7 +76,7 @@ news_items:
   - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
     title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
     subtitle: "Ajankohtaista"
-    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384031-kulttuurikummiksi-nettisivuille-720x900.webp?alt=media"
     image_height: 480
     body: |
       Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
@@ -86,7 +86,7 @@ news_items:
   - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
     title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
     subtitle: "Ajankohtaista"
-    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384031-kulttuurikummiksi-nettisivuille-720x900.webp?alt=media"
     image_height: 480
     body: |
       Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
@@ -96,7 +96,7 @@ news_items:
   - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
     title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
     subtitle: "Ajankohtaista"
-    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384031-kulttuurikummiksi-nettisivuille-720x900.webp?alt=media"
     image_height: 480
     body: |
       Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.
@@ -106,7 +106,7 @@ news_items:
   - card_title: "Kulttuurikummit palaavat. Lähde mukaan!"
     title: "Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten kulttuuria"
     subtitle: "Ajankohtaista"
-    image: "/images/kulttuurikummiksi-nettisivuille-720x900.png"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384031-kulttuurikummiksi-nettisivuille-720x900.webp?alt=media"
     image_height: 480
     body: |
       Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai hienon vastaanoton.

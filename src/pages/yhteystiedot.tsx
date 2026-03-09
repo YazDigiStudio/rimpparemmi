@@ -24,7 +24,7 @@ const contacts: ContactPerson[] = [
     role_en: "Artistic Director",
     phone: "+358 (0)44 550 4835",
     email: "matti.paloniemi@rimpparemmi.fi",
-    image: "/images/Matti-Paloniemi-768x768.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376585-Matti-Paloniemi-768x768.webp?alt=media",
   },
   {
     name: "Liisa Penttilä",
@@ -32,7 +32,7 @@ const contacts: ContactPerson[] = [
     role_en: "Sales",
     phone: "+358 (0)50 511 5055",
     email: "liisa.penttila@rimpparemmi.fi",
-    image: "/images/Liisa-Penttila-768x768.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376333-Liisa-Penttila-768x768.webp?alt=media",
   },
   {
     name: "Atte Herd",
@@ -40,7 +40,7 @@ const contacts: ContactPerson[] = [
     role_en: "Technical Manager",
     phone: "+358 (0)40 684 4097",
     email: "atte.herd@rimpparemmi.fi",
-    image: "/images/Atte_Herd.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075371921-Atte_Herd.webp?alt=media",
   },
   {
     name: "Helmi Järvensivu",
@@ -48,7 +48,7 @@ const contacts: ContactPerson[] = [
     role_en: "Marketing & Communications",
     phone: "+358 (0)50 4344557",
     email: "helmi.jarvensivu@rimpparemmi.fi",
-    image: "/images/Helmi-Jarvensivu-720x720.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075373512-Helmi-Jarvensivu-720x720.webp?alt=media",
   },
   {
     name: "Viivi Vesala",
@@ -56,7 +56,7 @@ const contacts: ContactPerson[] = [
     role_en: "Producer",
     phone: "+358 (0)50 4989701",
     email: "viivi.vesala@rimpparemmi.fi",
-    image: "/images/viivi_vesala.jpg",
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384295-viivi_vesala.webp?alt=media",
   },
 ];
 

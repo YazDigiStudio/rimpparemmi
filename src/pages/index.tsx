@@ -699,7 +699,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
             style={{
               padding: "4rem 2rem",
               minHeight: "580px",
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('/images/Tapahtuma Piaf Kuva Antti Kurola (5).jpg')",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075379826-Tapahtuma_Piaf_Kuva_Antti_Kurola__5_.webp?alt=media')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -714,7 +714,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
           <div
             style={{
               flex: "0 0 400px",
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/images/Tapahtuma Piaf Kuva Antti Kurola (5).jpg')",
+              backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075379826-Tapahtuma_Piaf_Kuva_Antti_Kurola__5_.webp?alt=media')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               padding: "5rem 2.5rem",

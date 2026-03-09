@@ -10,8 +10,6 @@ export type ProductionImage = {
   src: string;
   caption_fi?: string;
   caption_en?: string;
-  is_press?: boolean;
-  original_url?: string;
 };
 
 export type Production = {

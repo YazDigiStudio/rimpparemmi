@@ -38,7 +38,7 @@ sections:
     title_en: ""
     text_fi: ""
     text_en: ""
-    image: "/images/Print-Size_Fistful-of-funk-35-scaled.jpg"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376858-Print-Size_Fistful-of-funk-35-scaled.webp?alt=media"
     image_alt_fi: "We Will Funk For Food: A Fistful of Funk"
     image_alt_en: "We Will Funk For Food: A Fistful of Funk"
     image_orientation: "landscape"
@@ -120,7 +120,7 @@ sections:
 
       **Box office**
       Located at Kulttuuritalo Wiljami. Opens one hour before performances.
-    image: "/images/Tapahtuma%20Piaf%20Kuva%20Antti%20Kurola%20(9).jpg"
+    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075380414-Tapahtuma_Piaf_Kuva_Antti_Kurola__9_.webp?alt=media"
     image_alt_fi: "Kulttuuritalo Wiljami"
     image_alt_en: "Kulttuuritalo Wiljami"
     image_orientation: "landscape"
