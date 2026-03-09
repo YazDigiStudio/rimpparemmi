@@ -2,9 +2,10 @@
 <html lang="fi">
 <body>
   <!-- Static form for Netlify bot detection. The real form is in MailingListForm.tsx. -->
-  <form name="newsletter" netlify>
+  <form name="newsletter" netlify netlify-honeypot="bot-field">
     <input type="text" name="name" />
     <input type="email" name="email" />
+    <input type="text" name="bot-field" />
     <button type="submit">Liity</button>
   </form>
 </body>

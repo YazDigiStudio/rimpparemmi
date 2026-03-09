@@ -2,11 +2,13 @@
 // IMPORTANT: Notification email is set in Netlify dashboard → Forms → Notifications.
 // The static form at /public/forms/newsletter.html is required for Netlify bot detection with Next.js.
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { colors } from "@/styles/colors";
 
 type Locale = "fi" | "en";
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "loading" | "success" | "error" | "invalid-email";
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const copy = {
   fi: {
@@ -17,6 +19,7 @@ const copy = {
     submit: "Liity",
     success: "Kiitos! Olet nyt postituslistalla.",
     error: "Jotain meni pieleen. Yritä uudelleen.",
+    invalidEmail: "Tarkista sähköpostiosoite.",
   },
   en: {
     heading: "Join our mailing list",
@@ -26,6 +29,7 @@ const copy = {
     submit: "Subscribe",
     success: "Thank you! You are now on our mailing list.",
     error: "Something went wrong. Please try again.",
+    invalidEmail: "Please check your email address.",
   },
 } as const;
 
@@ -39,8 +43,19 @@ export default function MailingListForm({ locale }: Props) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("loading");
     const form = e.currentTarget;
+    // Honeypot: if bot-field is filled, silently discard
+    if ((form.elements.namedItem("bot-field") as HTMLInputElement)?.value) {
+      setStatus("success");
+      return;
+    }
+    // Email format check
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value ?? "";
+    if (!emailRegex.test(email)) {
+      setStatus("invalid-email");
+      return;
+    }
+    setStatus("loading");
     const body = Array.from(new FormData(form))
       .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v.toString())}`)
       .join("&");
@@ -103,10 +118,14 @@ export default function MailingListForm({ locale }: Props) {
           name="newsletter"
           method="POST"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          noValidate
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
         >
           <input type="hidden" name="form-name" value="newsletter" />
+          {/* Honeypot — hidden from humans, bots fill it and get silently rejected */}
+          <input type="text" name="bot-field" style={{ display: "none" }} aria-hidden="true" />
           <input
             type="text"
             name="name"
@@ -157,6 +176,9 @@ export default function MailingListForm({ locale }: Props) {
           </button>
           {status === "error" && (
             <p style={{ color: "#c0392b", fontSize: "0.8rem" }}>{t.error}</p>
+          )}
+          {status === "invalid-email" && (
+            <p style={{ color: "#c0392b", fontSize: "0.8rem" }}>{t.invalidEmail}</p>
           )}
         </form>
       )}

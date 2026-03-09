@@ -98,12 +98,13 @@ export default function ProductionPage({ production, performances }: Props) {
       </Head>
       <Navigation />
 
-      {/* Hero image — full bleed */}
+      {/* Hero image — full bleed, offset by nav height */}
       <div
         style={{
           position: "relative",
           width: "100%",
           height: "clamp(320px, 55vh, 640px)",
+          marginTop: "96px",
           overflow: "hidden",
         }}
       >

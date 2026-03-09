@@ -299,9 +299,8 @@ collections:
           - label: "Osiot / Sections"
             name: "sections"
             widget: "list"
-            hint: "Lisää, poista ja järjestä osioita — jokaisessa voi olla teksti ja/tai kuva"
             hint: |
-              Osiotyyppi määräytyy täytetyistä kentistä:
+              Lisää, poista ja järjestä osioita. Osiotyyppi määräytyy täytetyistä kentistä:
               1. Vain teksti — otsikko ja kuva tyhjinä
               2. Vain kuva — otsikko ja teksti tyhjinä
               3. Otsikko + teksti — kuva tyhjänä

@@ -17,7 +17,7 @@ body {
 body {
   background-color: #f5f5f5;
   color: #111111;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,6 +25,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* All headings use Kumbh Sans Bold (caps font per brand spec) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kumbh Sans', Arial, Helvetica, sans-serif;
 }
 
 /* Navigation layout helpers — toggled via media query */

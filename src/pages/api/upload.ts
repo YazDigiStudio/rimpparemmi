@@ -1,20 +1,14 @@
 // src/pages/api/upload.ts
-// Server-side file upload to Firebase Storage via Admin SDK.
-// Called by the Decap CMS media adapter — credentials never reach the browser.
+// Thin HTTP handler for CMS image uploads.
+// Verifies the Firebase ID token from the Authorization header,
+// then delegates all processing to the image-upload service.
+// See src/lib/image-upload/README.md for full documentation.
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import * as admin from "firebase-admin";
+import { uploadFile } from "@/lib/image-upload";
 
-const ALLOWED_TYPES = new Set([
-  "image/jpeg",
-  "image/png",
-  "image/webp",
-  "image/gif",
-  "image/svg+xml",
-  "application/pdf",
-]);
-
-const MAX_SIZE_BYTES = 20 * 1024 * 1024; // 20 MB
+type UploadResponse = { url: string } | { error: string };
 
 function getAdminApp(): admin.app.App {
   if (admin.apps.length > 0) return admin.apps[0]!;
@@ -27,7 +21,17 @@ function getAdminApp(): admin.app.App {
   });
 }
 
-type UploadResponse = { url: string } | { error: string };
+async function verifyToken(authHeader: string | undefined): Promise<boolean> {
+  if (!authHeader?.startsWith("Bearer ")) return false;
+  const token = authHeader.slice(7);
+  try {
+    const app = getAdminApp();
+    await admin.auth(app).verifyIdToken(token);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -37,41 +41,30 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { filename, contentType, data } = req.body as {
+  const authorized = await verifyToken(req.headers.authorization);
+  if (!authorized) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+
+  const { filename, contentType, data, productionId } = req.body as {
     filename?: string;
     contentType?: string;
     data?: string;
+    productionId?: string;
   };
 
   if (!filename || !contentType || !data) {
     return res.status(400).json({ error: "Missing filename, contentType, or data" });
   }
 
-  if (!ALLOWED_TYPES.has(contentType)) {
-    return res.status(400).json({ error: "File type not allowed" });
-  }
-
   const buffer = Buffer.from(data, "base64");
-  if (buffer.byteLength > MAX_SIZE_BYTES) {
-    return res.status(400).json({ error: "File too large (max 20 MB)" });
-  }
 
   try {
-    const app = getAdminApp();
-    const bucket = admin.storage(app).bucket();
-    const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const filePath = `cms/${Date.now()}-${safeName}`;
-    const file = bucket.file(filePath);
-
-    await file.save(buffer, { contentType });
-
-    // Construct permanent public URL — readable because Firebase rules allow read: true
-    const encodedPath = encodeURIComponent(filePath);
-    const url = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodedPath}?alt=media`;
-
-    return res.status(200).json({ url });
+    const result = await uploadFile({ buffer, filename, contentType, productionId });
+    return res.status(200).json({ url: result.url });
   } catch (err) {
-    console.error("Firebase upload error:", err);
-    return res.status(500).json({ error: "Upload failed" });
+    const message = err instanceof Error ? err.message : "Upload failed";
+    console.error("Upload error:", err);
+    return res.status(500).json({ error: message });
   }
 }
