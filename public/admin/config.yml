@@ -362,6 +362,8 @@ collections:
     label: "Tuotannot / Productions"
     label_singular: "Tuotanto / Production"
     folder: "content/productions"
+    extension: yaml
+    format: yaml
     create: true
     slug: "{{fields.id}}"
     identifier_field: "id"
@@ -590,6 +592,8 @@ collections:
     label: "Esitykset / Performances"
     label_singular: "Esitys / Performance"
     folder: "content/performances"
+    extension: yaml
+    format: yaml
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{fields.production_id}}-{{hour}}{{minute}}"
     summary: "{{date}} {{time}} — {{production_id}}"
