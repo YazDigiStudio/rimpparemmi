@@ -12,7 +12,7 @@ type Props = {
   basePath?: string;
 };
 
-export default function ProductionCard({ production, locale, basePath = "/ohjelma" }: Props) {
+export default function ProductionCard({ production, locale, basePath = "/ohjelmisto" }: Props) {
   const title = locale === "fi"
     ? production.title_fi
     : (production.title_en ?? production.title_fi);

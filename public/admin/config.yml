@@ -434,16 +434,6 @@ collections:
           - { label: "Kuva / Image", name: "src", widget: "image" }
           - { label: "Kuvateksti (FI)", name: "caption_fi", widget: "string", required: false }
           - { label: "Caption (EN)", name: "caption_en", widget: "string", required: false }
-          - label: "Pressikuva / Press photo"
-            name: "is_press"
-            widget: "boolean"
-            default: false
-            hint: "Jos päällä, kuva näytetään myös Media-sivulla ladattavana"
-          - label: "Originaali / Original URL"
-            name: "original_url"
-            widget: "string"
-            required: false
-            hint: "Firebase Storage URL korkearesoluutioiselle originaalille (ladattava versio)"
 
       # Texts
       - label: "Lyhyt esittely (FI)"

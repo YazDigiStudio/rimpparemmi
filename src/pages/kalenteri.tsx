@@ -519,7 +519,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                   )}
 
                   <Link
-                    href={`/ohjelma/${selectedProduction.id}`}
+                    href={`/ohjelmisto/${selectedProduction.id}`}
                     style={{
                       color: colors.brandFuchsia,
                       fontSize: "0.8rem",
@@ -566,9 +566,32 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                           <p style={{ color: colors.muted, fontSize: "0.7rem", letterSpacing: "0.06em", marginBottom: "0.15rem" }}>
                             {event.date}{event.time ? ` · ${event.time}` : ""} · {event.venue}
                           </p>
-                          <p style={{ color: isSelected ? colors.brandFuchsia : colors.nearBlack, fontSize: "0.85rem", fontWeight: 600 }}>
-                            {event.title}
-                          </p>
+                          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
+                            <p style={{ color: isSelected ? colors.brandFuchsia : colors.nearBlack, fontSize: "0.85rem", fontWeight: 600 }}>
+                              {event.title}
+                            </p>
+                            {event.ticketUrl && (
+                              <Link
+                                href={event.ticketUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                style={{
+                                  backgroundColor: colors.brandFuchsia,
+                                  color: colors.white,
+                                  padding: "0.25rem 0.6rem",
+                                  borderRadius: "2px",
+                                  fontSize: "0.65rem",
+                                  fontWeight: 600,
+                                  letterSpacing: "0.05em",
+                                  whiteSpace: "nowrap",
+                                  flexShrink: 0,
+                                }}
+                              >
+                                {t.buyTickets}
+                              </Link>
+                            )}
+                          </div>
                         </div>
                       );
                     })

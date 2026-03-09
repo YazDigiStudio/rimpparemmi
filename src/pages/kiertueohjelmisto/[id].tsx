@@ -89,7 +89,7 @@ export default function TourProductionPage({ production }: Props) {
     ? priceInfo.trim().split("\n").filter(Boolean)
     : [];
 
-  const galleryImages = production.production_images?.filter((img) => !img.is_press) ?? [];
+  const galleryImages = production.production_images ?? [];
 
   const sectionHeadingStyle: React.CSSProperties = {
     color: colors.nearBlack,
