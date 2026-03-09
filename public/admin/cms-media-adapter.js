@@ -1,11 +1,11 @@
 // cms-media-adapter.js
 // Decap CMS custom media library — uploads files to Firebase Storage
-// via the /api/upload server-side route. No Firebase credentials in this file.
+// via a 3-step direct upload flow. No Firebase credentials in this file.
 //
-// Auth flow:
-//   1. Calls /api/cms-token to get a short-lived Firebase ID token (cached 50 min)
-//   2. Sends the token as Authorization: Bearer header with every upload
-//   3. Server verifies the token before processing
+// Upload flow:
+//   1. POST /api/upload-token → { uploadUrl, storagePath }
+//   2. PUT file directly to Firebase via signed URL (no server, no size limit)
+//   3. POST /api/process { storagePath, filename, contentType } → { url }
 
 (function () {
   // Token cache — reuse within the 1-hour Firebase token window
@@ -30,7 +30,9 @@
         show: function ({ allowMultiple, imagesOnly }) {
           var input = document.createElement("input");
           input.type = "file";
-          input.accept = imagesOnly ? "image/*" : "image/*,application/pdf,.svg";
+          input.accept = imagesOnly
+            ? "image/*"
+            : "image/*,application/pdf,.svg,video/mp4,video/quicktime,video/webm";
           input.multiple = !!allowMultiple;
           input.style.display = "none";
           document.body.appendChild(input);
@@ -42,9 +44,11 @@
 
             getToken()
               .then(function (token) {
-                return Promise.all(files.map(function (file) {
-                  return uploadFile(file, token);
-                }));
+                return Promise.all(
+                  files.map(function (file) {
+                    return uploadFile(file, token);
+                  })
+                );
               })
               .then(function (urls) {
                 handleInsert(urls.length === 1 ? urls[0] : urls);
@@ -65,17 +69,8 @@
   });
 
   async function uploadFile(file, token) {
-    var base64 = await new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onerror = reject;
-      reader.onload = function (e) {
-        // Strip the "data:...;base64," prefix
-        resolve(e.target.result.split(",")[1]);
-      };
-      reader.readAsDataURL(file);
-    });
-
-    var res = await fetch("/api/upload", {
+    // Step 1: Get a signed upload URL from the server
+    var tokenRes = await fetch("/api/upload-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,16 +79,49 @@
       body: JSON.stringify({
         filename: file.name,
         contentType: file.type,
-        data: base64,
       }),
     });
 
-    if (!res.ok) {
-      var body = await res.json();
-      throw new Error(body.error || res.status);
+    if (!tokenRes.ok) {
+      var tokenErr = await tokenRes.json();
+      throw new Error(tokenErr.error || "Failed to get upload URL");
     }
 
-    var result = await res.json();
+    var uploadTokenData = await tokenRes.json();
+    var uploadUrl = uploadTokenData.uploadUrl;
+    var storagePath = uploadTokenData.storagePath;
+
+    // Step 2: Upload the file directly to Firebase via the signed URL
+    var putRes = await fetch(uploadUrl, {
+      method: "PUT",
+      headers: { "Content-Type": file.type },
+      body: file,
+    });
+
+    if (!putRes.ok) {
+      throw new Error("Direct upload to Firebase failed (" + putRes.status + ")");
+    }
+
+    // Step 3: Ask the server to process the file and return the final URL
+    var processRes = await fetch("/api/process", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token,
+      },
+      body: JSON.stringify({
+        storagePath: storagePath,
+        filename: file.name,
+        contentType: file.type,
+      }),
+    });
+
+    if (!processRes.ok) {
+      var processErr = await processRes.json();
+      throw new Error(processErr.error || "Processing failed");
+    }
+
+    var result = await processRes.json();
     return result.url;
   }
 })();

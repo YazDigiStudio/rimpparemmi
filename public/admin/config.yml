@@ -504,7 +504,7 @@ collections:
         hint: "YouTube tai Vimeo embed-URL (käytä youtube-nocookie.com)"
 
       # Tickets
-      - label: "Lipputänk varaliinki / Ticket URL fallback"
+      - label: "Varalinkki / Ticket URL fallback"
         name: "ticket_url_fallback"
         widget: "string"
         required: false
@@ -579,7 +579,7 @@ collections:
         required: false
         hint: "Linkki videotallenteeseen"
 
-      - label: "Linkki rideriin / Rider URL"
+      - label: "Linkki raideriin / Rider URL"
         name: "rider_url"
         widget: "string"
         required: false

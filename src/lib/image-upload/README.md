@@ -6,19 +6,50 @@ logic works with plain buffers and can be adapted to any Node.js server.
 
 ---
 
-## What It Does
+## Architecture: Direct Firebase Upload (Signed URLs)
 
-When a file arrives from the CMS (or any upload source), this service:
+Files are uploaded directly from the browser to Firebase Storage using a
+short-lived signed URL. The server never receives the file bytes — it only
+issues the signed URL and later processes the already-stored file.
 
-1. **Images** (JPG, PNG, WebP, HEIC)
-   - Converts to JPG at full resolution and maximum quality → saved as `original`
-   - Converts to WebP at max 1920px width and quality 85 → saved as `web`
-   - Returns the `web` URL to the caller (what the CMS stores in content files)
-   - Original is always preserved at the predictable `originals/` path
+This removes the 6 MB Netlify Function body limit that blocked large images
+and makes future video support straightforward.
 
-2. **Pass-through files** (PDF, SVG)
-   - Stored as-is, no processing
-   - Returns the storage URL to the caller
+### Upload flow (3 steps)
+
+```
+Browser (CMS adapter)       Server                        Firebase Storage
+        |                      |                              |
+        |                      |     STEP 1: get signed URL   |
+        |-- POST /api/upload-token -->|                        |
+        |   { filename, contentType } |                        |
+        |                      |-- Admin SDK: sign URL ------>|
+        |                      |<-- signed upload URL --------|
+        |<-- { uploadUrl, storagePath } --|                    |
+        |                      |                              |
+        |                     STEP 2: upload directly          |
+        |-- PUT {file bytes} directly to Firebase via URL ---->|
+        |<-- 200 OK ------------------------------------------|
+        |                      |                              |
+        |                     STEP 3: process                  |
+        |-- POST /api/process -->|                             |
+        |   { storagePath, filename, contentType }             |
+        |                      |-- download from Firebase ---->|
+        |                      |<-- buffer ------------------|
+        |                      |-- sharp: JPG + WebP          |
+        |                      |-- upload processed files ---->|
+        |<-- { url } ----------|                              |
+```
+
+**Step 1** — `/api/upload-token`: Verifies the CMS token, generates a signed
+PUT URL valid for 10 minutes pointing to `staging/{uuid}-{filename}`.
+
+**Step 2** — Browser PUTs the raw file directly to Firebase. No server
+involved. No size limit. Works for photos, PDFs, and videos alike.
+
+**Step 3** — `/api/process`: Downloads the file from `staging/`, runs sharp
+(images only), stores originals and web versions, deletes the staging file,
+returns the public web URL.
 
 ---
 
@@ -26,29 +57,36 @@ When a file arrives from the CMS (or any upload source), this service:
 
 ```
 src/lib/image-upload/
-  README.md          ← this file
-  types.ts           ← shared TypeScript types
-  processImage.ts    ← sharp logic: buffer in → { originalJpg, webWebp } out
-  firebaseStorage.ts ← Firebase Admin SDK upload: buffer + path → public URL
-  index.ts           ← public API, re-exports what the API route needs
+  README.md            ← this file
+  types.ts             ← shared TypeScript types
+  processImage.ts      ← sharp logic: buffer in → { originalJpg, webWebp } out
+  firebaseStorage.ts   ← Firebase Admin SDK: upload, download, getSignedUploadUrl
+  index.ts             ← public API: uploadFile(), processUploadedFile()
 ```
 
-API routes that use this service:
+API routes:
 
 ```
-src/pages/api/cms-token.ts ← issues a short-lived Firebase ID token to the CMS adapter
-src/pages/api/upload.ts    ← verifies token, parses request, calls uploadFile()
+src/pages/api/cms-token.ts     ← issues short-lived Firebase ID token to CMS adapter
+src/pages/api/upload-token.ts  ← verifies token, returns signed PUT URL + storagePath
+src/pages/api/process.ts       ← verifies token, downloads staging file, runs sharp, returns URL
 ```
 
 Browser side:
 
 ```
-public/admin/cms-media-adapter.js ← Decap CMS media library: fetches token, sends files
+public/admin/cms-media-adapter.js ← Decap CMS media library: 3-step upload flow
 ```
 
 ---
 
 ## Firebase Storage Layout
+
+### Staging area (temporary, auto-cleaned after processing)
+
+```
+staging/{uuid}-{filename}          ← raw upload, deleted after Step 3
+```
 
 ### CMS uploads (general content)
 
@@ -71,18 +109,23 @@ productions/{productionId}/{filename}.pdf   ← riders, pass-through
 
 ## Supported Formats
 
-| Format | Type       | Processing                                      |
-|--------|------------|-------------------------------------------------|
-| JPG    | image      | Original: JPG quality 100. Web: WebP quality 85 |
-| PNG    | image      | Original: JPG quality 100. Web: WebP quality 85 |
-| WebP   | image      | Original: JPG quality 100. Web: WebP quality 85 |
-| HEIC   | image      | Original: JPG quality 100. Web: WebP quality 85 |
-| PDF    | pass-through | Stored as-is, no processing                   |
-| SVG    | pass-through | Stored as-is, no processing                   |
+| Format | Type         | Processing                                      |
+|--------|--------------|-------------------------------------------------|
+| JPG    | image        | Original: JPG quality 100. Web: WebP quality 85 |
+| PNG    | image        | Original: JPG quality 100. Web: WebP quality 85 |
+| WebP   | image        | Original: JPG quality 100. Web: WebP quality 85 |
+| HEIC   | image        | Original: JPG quality 100. Web: WebP quality 85 |
+| PDF    | pass-through | Stored as-is, no processing                     |
+| SVG    | pass-through | Stored as-is, no processing                     |
+| MP4    | pass-through | Stored as-is, no processing                     |
+| MOV    | pass-through | Stored as-is, no processing                     |
 
 All image formats are converted to JPG for the original (consistent format
 for press downloads and printing) and WebP for the web version (smaller file
 size, supported by all modern browsers).
+
+Pass-through files skip Step 3 processing — Step 2 uploads them directly to
+their final path and Step 3 just returns the URL.
 
 ---
 
@@ -104,23 +147,29 @@ size, supported by all modern browsers).
 
 ## Authentication Flow
 
-The upload endpoint is protected — only authenticated CMS users can upload files.
+The upload endpoints are protected — only authenticated CMS users can upload.
 
 ```
 Browser (CMS adapter)       Server                        Firebase
         |                      |                              |
-        |-- POST /api/cms-token ->|                            |
+        |-- POST /api/cms-token ->|                           |
         |                      |-- sign in with               |
         |                      |   CMS_UPLOAD_EMAIL           |
         |                      |   CMS_UPLOAD_PASSWORD ------>|
         |                      |<-- short-lived ID token -----|
         |<-- { token } --------|                              |
         |                      |                              |
-        |-- POST /api/upload -->|                              |
-        |   Authorization:      |                              |
-        |   Bearer {token}      |-- verifyIdToken() --------->|
+        |-- POST /api/upload-token ->|                        |
+        |   Authorization: Bearer {token}                     |
+        |                      |-- verifyIdToken() --------->|
         |                      |<-- valid -------------------|
-        |                      |-- uploadFile() ------------->|
+        |                      |-- Admin SDK: sign URL ------>|
+        |<-- { uploadUrl, storagePath } --|                   |
+        |                      |                              |
+        |-- POST /api/process -->|                            |
+        |   Authorization: Bearer {token}                     |
+        |                      |-- verifyIdToken() --------->|
+        |                      |<-- valid -------------------|
         |<-- { url } ----------|                              |
 ```
 
@@ -144,6 +193,9 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.firebasestorage.app
 
 # Firebase project API key (already NEXT_PUBLIC, safe to expose)
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+
+# Firebase project ID (already NEXT_PUBLIC, safe to expose)
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
 
 # CMS service account credentials — server-side only, NO NEXT_PUBLIC_ prefix
 CMS_UPLOAD_EMAIL=cms@yourdomain.fi
@@ -169,6 +221,12 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
 
+    // Staging area: signed URL uploads only (Admin SDK signs, rules not checked)
+    // No public read — staging files are temporary and deleted after processing
+    match /staging/{allPaths=**} {
+      allow read, write: if false;
+    }
+
     // Web-optimised images: public read (served directly by website)
     match /cms/web/{allPaths=**} {
       allow read: if true;
@@ -179,7 +237,7 @@ service firebase.storage {
       allow write: if false;
     }
 
-    // Originals: no public read (download via signed URL or admin only)
+    // Originals: no public read (Admin SDK only)
     match /cms/originals/{allPaths=**} {
       allow read, write: if false;
     }
@@ -187,11 +245,16 @@ service firebase.storage {
       allow read, write: if false;
     }
 
-    // All writes go through the server-side API (Firebase Admin SDK bypasses rules)
-    // No direct client uploads allowed
+    // All other paths: no access
+    // (All writes go through the server-side API using Firebase Admin SDK,
+    //  which bypasses Security Rules entirely)
   }
 }
 ```
+
+Note: Signed URLs (used for staging uploads) bypass Firebase Security Rules.
+The `staging/` rules above are therefore informational — they document intent
+but are not enforced for signed URL requests.
 
 ---
 
@@ -210,19 +273,28 @@ Sharp handles all image format conversions including HEIC. No separate
 
 ## How to Use in the API Route
 
-```ts
-import { uploadFile } from "@/lib/image-upload";
+**Issue a signed upload URL:**
 
-// In your API handler:
-const result = await uploadFile({
-  buffer,           // Buffer — raw file bytes
-  filename,         // string — original filename
-  contentType,      // string — MIME type
-  productionId,     // string | undefined — optional, for production-specific storage
+```ts
+import { getSignedUploadUrl } from "@/lib/image-upload/firebaseStorage";
+
+const { uploadUrl, storagePath } = await getSignedUploadUrl(filename, contentType);
+// Return { uploadUrl, storagePath } to the browser
+```
+
+**Process a file after direct upload:**
+
+```ts
+import { processUploadedFile } from "@/lib/image-upload";
+
+const result = await processUploadedFile({
+  storagePath,    // string — path in staging/ returned by upload-token
+  filename,       // string — original filename
+  contentType,    // string — MIME type
+  productionId,   // string | undefined — optional, for production-specific storage
 });
 
-// result.url  — the web-optimised public URL (store this in content files)
-// result.originalUrl — the original file URL (informational, not stored in CMS)
+// result.url — the web-optimised public URL (store this in content files)
 ```
 
 ---
@@ -230,13 +302,14 @@ const result = await uploadFile({
 ## How to Copy to Another Project
 
 1. Copy the entire `src/lib/image-upload/` folder into the new project
-2. Copy `src/pages/api/upload.ts` into the new project
-3. Copy `src/pages/api/cms-token.ts` into the new project
-4. Copy `public/admin/cms-media-adapter.js` into the new project
-5. Install sharp: `npm install sharp`
-6. Create a Firebase Auth user for the CMS (e.g. `cms@yourclient.fi`)
-7. Add all environment variables (see above)
-8. Set up Firebase Security Rules (see above)
+2. Copy `src/pages/api/cms-token.ts` into the new project
+3. Copy `src/pages/api/upload-token.ts` into the new project
+4. Copy `src/pages/api/process.ts` into the new project
+5. Copy `public/admin/cms-media-adapter.js` into the new project
+6. Install sharp: `npm install sharp`
+7. Create a Firebase Auth user for the CMS (e.g. `cms@yourclient.fi`)
+8. Add all environment variables (see above)
+9. Set up Firebase Security Rules (see above)
 
 No other changes needed. The service is self-contained.
 
@@ -244,7 +317,6 @@ No other changes needed. The service is self-contained.
 
 ## What Is Not Handled Here
 
-- **Video files** — too large for this flow, requires separate handling
-- **Audio files** — separate service
+- **Audio files** — separate service needed
 - **Image galleries / ordering** — handled by the CMS content files
-- **Signed URLs for originals** — not yet implemented, add to `firebaseStorage.ts` if needed
+- **ZIP / folder batch upload** — not yet implemented
