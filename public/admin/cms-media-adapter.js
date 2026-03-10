@@ -68,6 +68,13 @@
     },
   });
 
+  function getProductionId() {
+    var match = window.location.hash.match(
+      /^#\/collections\/productions\/entries\/([^/]+)/
+    );
+    return match ? match[1] : null;
+  }
+
   async function uploadFile(file, token) {
     // Step 1: Get a signed upload URL from the server
     var tokenRes = await fetch("/api/upload-token", {
@@ -113,6 +120,7 @@
         storagePath: storagePath,
         filename: file.name,
         contentType: file.type,
+        productionId: getProductionId(),
       }),
     });
 
