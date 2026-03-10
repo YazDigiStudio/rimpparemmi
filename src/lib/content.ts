@@ -70,7 +70,8 @@ export function getProductions(): Production[] {
   return files
     .map((file) => {
       const raw = yaml.load(
-        fs.readFileSync(path.join(dir, file), "utf8")
+        fs.readFileSync(path.join(dir, file), "utf8"),
+        { schema: yaml.JSON_SCHEMA }
       ) as Omit<Production, "id">;
       return { ...raw, id: path.basename(file, ".yaml") };
     })
@@ -86,7 +87,8 @@ export function getPerformances(): Performance[] {
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".yaml") && !f.startsWith("_"));
   return files
     .map((file) => yaml.load(
-      fs.readFileSync(path.join(dir, file), "utf8")
+      fs.readFileSync(path.join(dir, file), "utf8"),
+      { schema: yaml.JSON_SCHEMA }
     ) as Performance)
     .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
 }
