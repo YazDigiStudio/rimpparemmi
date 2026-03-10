@@ -108,86 +108,96 @@ export default function Yhteystiedot() {
             {t.title}
           </h1>
 
-          {/* Contact cards grid */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-              gap: "2rem",
-              marginBottom: "4rem",
-            }}
-          >
-            {contacts.map((person) => (
+          {/* Contact cards grid — split into two rows, max 4 per row */}
+          {(() => {
+            const total = contacts.length;
+            const row1Count = total > 4 ? Math.min(Math.ceil(total / 2), 4) : total;
+            const rows = [contacts.slice(0, row1Count), contacts.slice(row1Count)].filter(
+              (r) => r.length > 0
+            );
+            return rows.map((row, rowIdx) => (
               <div
-                key={person.email}
+                key={rowIdx}
                 style={{
-                  backgroundColor: colors.white,
-                  borderRadius: "4px",
-                  overflow: "hidden",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+                  display: "grid",
+                  gridTemplateColumns: `repeat(${row.length}, minmax(0, 280px))`,
+                  gap: "2rem",
+                  marginBottom: rowIdx < rows.length - 1 ? "2rem" : "4rem",
                 }}
               >
-                {person.image && (
-                  <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      fill
-                      style={{ objectFit: "cover", objectPosition: "center top" }}
-                    />
-                  </div>
-                )}
+                {row.map((person) => (
+                  <div
+                    key={person.email}
+                    style={{
+                      backgroundColor: colors.white,
+                      borderRadius: "4px",
+                      overflow: "hidden",
+                      boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+                    }}
+                  >
+                    {person.image && (
+                      <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
+                        <Image
+                          src={person.image}
+                          alt={person.name}
+                          fill
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
+                        />
+                      </div>
+                    )}
 
-                <div style={{ padding: "1.25rem 1.5rem 1.5rem" }}>
-                  <p
-                    style={{
-                      color: colors.brandFuchsia,
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    {locale === "fi" ? person.role_fi : person.role_en}
-                  </p>
-                  <h2
-                    style={{
-                      color: colors.nearBlack,
-                      fontSize: "1rem",
-                      fontWeight: 700,
-                      letterSpacing: "0.03em",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    {person.name}
-                  </h2>
-                  <a
-                    href={`tel:${person.phone.replace(/\s/g, "")}`}
-                    style={{
-                      display: "block",
-                      color: colors.nearBlack,
-                      fontSize: "0.875rem",
-                      opacity: 0.8,
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    {person.phone}
-                  </a>
-                  <a
-                    href={`mailto:${person.email}`}
-                    style={{
-                      display: "block",
-                      color: colors.brandFuchsia,
-                      fontSize: "0.8rem",
-                      wordBreak: "break-all",
-                    }}
-                  >
-                    {person.email}
-                  </a>
-                </div>
+                    <div style={{ padding: "1.25rem 1.5rem 1.5rem" }}>
+                      <p
+                        style={{
+                          color: colors.brandFuchsia,
+                          fontSize: "0.7rem",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          marginBottom: "0.35rem",
+                        }}
+                      >
+                        {locale === "fi" ? person.role_fi : person.role_en}
+                      </p>
+                      <h2
+                        style={{
+                          color: colors.nearBlack,
+                          fontSize: "1rem",
+                          fontWeight: 700,
+                          letterSpacing: "0.03em",
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        {person.name}
+                      </h2>
+                      <a
+                        href={`tel:${person.phone.replace(/\s/g, "")}`}
+                        style={{
+                          display: "block",
+                          color: colors.nearBlack,
+                          fontSize: "0.875rem",
+                          opacity: 0.8,
+                          marginBottom: "0.35rem",
+                        }}
+                      >
+                        {person.phone}
+                      </a>
+                      <a
+                        href={`mailto:${person.email}`}
+                        style={{
+                          display: "block",
+                          color: colors.brandFuchsia,
+                          fontSize: "0.8rem",
+                          wordBreak: "break-all",
+                        }}
+                      >
+                        {person.email}
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            ));
+          })()}
 
           {/* Office address */}
           <div
