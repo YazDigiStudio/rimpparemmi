@@ -10,5 +10,5 @@ production_images:
     src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773119317883-Hamelin_Pillipiipari_Kuva_Antti_Kurola__19_.webp?alt=media
     caption_en: test
 short_text_fi: testiiiiii
-sort_order: 10
+sort_order: 17
 is_touring: false
