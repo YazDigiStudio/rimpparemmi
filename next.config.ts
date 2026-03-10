@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: false,
+  // Fix Turbopack workspace root detection when multiple lockfiles exist
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   // Serve /admin/index.html before i18n routing intercepts it
   async rewrites() {
     return {
