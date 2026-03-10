@@ -1,0 +1,14 @@
+id: testiprokkis-timotestaa
+title_fi: timon Testiprokkis
+title_en: timos testproduction
+status: active
+category: general
+primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773119292405-Hamelin_Pillipiipari_Kuva_Antti_Kurola__10_.webp?alt=media
+production_images:
+  - is_press: true
+    caption_fi: tesii
+    src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773119317883-Hamelin_Pillipiipari_Kuva_Antti_Kurola__19_.webp?alt=media
+    caption_en: test
+short_text_fi: testiiiiii
+sort_order: 10
+is_touring: false
