@@ -28,6 +28,7 @@ const PASS_THROUGH_TYPES = new Set([
   "video/mp4",
   "video/quicktime",
   "video/webm",
+  "application/zip",
 ]);
 
 function buildPublicUrl(bucketName: string, filePath: string): string {

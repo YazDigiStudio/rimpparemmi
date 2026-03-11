@@ -4,7 +4,7 @@
 //
 // Upload flow:
 //   1. POST /api/upload-token → { uploadUrl, storagePath }
-//   2. PUT file directly to Firebase via signed URL (no server, no size limit)
+//   2. PUT file directly to Firebase via signed URL (XHR for byte-level progress)
 //   3. POST PROCESS_URL { storagePath, filename, contentType } → { url }
 //      Processing runs on Firebase Functions (same datacenter as storage = fast)
 
@@ -36,7 +36,7 @@ var PROCESS_URL =
           input.type = "file";
           input.accept = imagesOnly
             ? "image/*"
-            : "image/*,application/pdf,.svg,video/mp4,video/quicktime,video/webm";
+            : "image/*,application/pdf,.svg,video/mp4,video/quicktime,video/webm,application/zip,.zip";
           input.multiple = false;
           input.style.display = "none";
           document.body.appendChild(input);
@@ -46,20 +46,19 @@ var PROCESS_URL =
             document.body.removeChild(input);
             if (!files.length) return;
 
-            var total = files.length;
-            var done = 0;
-            var overlay = createProgressOverlay(done, total);
+            var overlay = createProgressOverlay();
 
             getToken()
               .then(function (token) {
-                return uploadWithConcurrency(files, token, 1, function () {
-                  done++;
-                  updateProgressOverlay(overlay, done, total);
+                return uploadFile(files[0], token, function (loaded, total) {
+                  updateProgressBytes(overlay, loaded, total);
+                }, function () {
+                  setOverlayPhase(overlay, "processing");
                 });
               })
-              .then(function (urls) {
+              .then(function (url) {
                 removeProgressOverlay(overlay);
-                handleInsert(urls.length === 1 ? urls[0] : urls);
+                handleInsert(url);
               })
               .catch(function (err) {
                 removeProgressOverlay(overlay);
@@ -84,7 +83,7 @@ var PROCESS_URL =
     return match ? match[1] : null;
   }
 
-  function createProgressOverlay(done, total) {
+  function createProgressOverlay() {
     var overlay = document.createElement("div");
     overlay.style.cssText = [
       "position:fixed", "inset:0", "z-index:99999",
@@ -95,74 +94,48 @@ var PROCESS_URL =
 
     var msg = document.createElement("div");
     msg.style.cssText = "font-size:1.2rem;margin-bottom:1rem;";
-    msg.textContent = "Käsitellään kuvia\u2026";
+    msg.textContent = "Ladataan\u2026";
     overlay.appendChild(msg);
 
     var counter = document.createElement("div");
     counter.style.cssText = "font-size:2rem;font-weight:bold;margin-bottom:1.5rem;";
-    counter.textContent = done + " / " + total;
+    counter.textContent = "0%";
     overlay.appendChild(counter);
 
     var barWrap = document.createElement("div");
     barWrap.style.cssText = "width:260px;height:8px;background:rgba(255,255,255,0.25);border-radius:4px;overflow:hidden;";
     var bar = document.createElement("div");
-    bar.style.cssText = "height:100%;background:#fff;border-radius:4px;transition:width 0.3s;";
-    bar.style.width = (total > 0 ? (done / total) * 100 : 0) + "%";
+    bar.style.cssText = "height:100%;background:#fff;border-radius:4px;transition:width 0.2s;width:0%;";
     barWrap.appendChild(bar);
     overlay.appendChild(barWrap);
 
+    overlay._msg = msg;
     overlay._counter = counter;
     overlay._bar = bar;
     document.body.appendChild(overlay);
     return overlay;
   }
 
-  function updateProgressOverlay(overlay, done, total) {
-    overlay._counter.textContent = done + " / " + total;
-    overlay._bar.style.width = (done / total) * 100 + "%";
+  function updateProgressBytes(overlay, loaded, total) {
+    var pct = total > 0 ? Math.round((loaded / total) * 100) : 0;
+    overlay._counter.textContent = pct + "%";
+    overlay._bar.style.width = pct + "%";
+  }
+
+  function setOverlayPhase(overlay, phase) {
+    if (phase === "processing") {
+      overlay._msg.textContent = "Tallennetaan\u2026";
+      overlay._counter.textContent = "";
+      overlay._bar.style.width = "100%";
+      overlay._bar.style.opacity = "0.5";
+    }
   }
 
   function removeProgressOverlay(overlay) {
     if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
   }
 
-  // Runs uploads with at most `concurrency` in-flight at once.
-  // Calls onProgress() each time one completes. Returns array of URLs.
-  function uploadWithConcurrency(files, token, concurrency, onProgress) {
-    return new Promise(function (resolve, reject) {
-      var results = new Array(files.length);
-      var nextIndex = 0;
-      var completed = 0;
-      var rejected = false;
-
-      function startNext() {
-        if (rejected || nextIndex >= files.length) return;
-        var i = nextIndex++;
-        uploadFile(files[i], token)
-          .then(function (url) {
-            results[i] = url;
-            completed++;
-            onProgress(completed);
-            if (completed === files.length) {
-              resolve(results);
-            } else {
-              startNext();
-            }
-          })
-          .catch(function (err) {
-            if (!rejected) {
-              rejected = true;
-              reject(err);
-            }
-          });
-      }
-
-      var workers = Math.min(concurrency, files.length);
-      for (var w = 0; w < workers; w++) startNext();
-    });
-  }
-
-  async function uploadFile(file, token) {
+  async function uploadFile(file, token, onByteProgress, onProcessing) {
     // Step 1: Get a signed upload URL from the server
     var tokenRes = await fetch("/api/upload-token", {
       method: "POST",
@@ -185,18 +158,26 @@ var PROCESS_URL =
     var uploadUrl = uploadTokenData.uploadUrl;
     var storagePath = uploadTokenData.storagePath;
 
-    // Step 2: Upload the file directly to Firebase via the signed URL
-    var putRes = await fetch(uploadUrl, {
-      method: "PUT",
-      headers: { "Content-Type": file.type },
-      body: file,
+    // Step 2: Upload the file directly to Firebase via XHR (for byte-level progress)
+    await new Promise(function (resolve, reject) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("PUT", uploadUrl);
+      xhr.setRequestHeader("Content-Type", file.type);
+      xhr.upload.onprogress = function (e) {
+        if (e.lengthComputable) onByteProgress(e.loaded, e.total);
+      };
+      xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) resolve();
+        else reject(new Error("Direct upload to Firebase failed (" + xhr.status + ")"));
+      };
+      xhr.onerror = function () {
+        reject(new Error("Network error during upload"));
+      };
+      xhr.send(file);
     });
 
-    if (!putRes.ok) {
-      throw new Error("Direct upload to Firebase failed (" + putRes.status + ")");
-    }
-
     // Step 3: Ask Firebase Function to process the file and return the final URL
+    onProcessing();
     var processRes = await fetch(PROCESS_URL, {
       method: "POST",
       headers: {
