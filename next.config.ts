@@ -25,13 +25,7 @@ const nextConfig: NextConfig = {
     localeDetection: false,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-        pathname: "/v0/b/rimpparemmi-b3154.firebasestorage.app/**",
-      },
-    ],
+    unoptimized: true,
   },
 };
 
