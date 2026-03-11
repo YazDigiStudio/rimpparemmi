@@ -3,10 +3,10 @@ page_title_en: Tickets
 show_page_title: true
 sections:
   - image_alt_en: ""
-    title_fi: ""
-    image_orientation: square
+    title_fi: Tietoa lipuista
+    image_orientation: landscape
     image_position: right
-    title_en: ""
+    title_en: Tickets
     text_fi: >
       Tanssiteatteri Rimpparemmi myy liput NetTicket.fi-palvelun kautta.
       Rovaniemellä lippuja myy myös Osviitta.
@@ -21,15 +21,6 @@ sections:
       Prices include service fees.
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773211070580-Hamelin_Pillipiipari_Kuva_Antti_Kurola__1_.webp?alt=media
     image_alt_fi: ""
-  - image_alt_en: "We Will Funk For Food: A Fistful of Funk"
-    title_fi: ""
-    image_orientation: landscape
-    image_position: left
-    title_en: ""
-    text_fi: ""
-    text_en: ""
-    image: ""
-    image_alt_fi: "We Will Funk For Food: A Fistful of Funk"
   - image_alt_en: ""
     title_fi: Hinnat
     image_orientation: landscape

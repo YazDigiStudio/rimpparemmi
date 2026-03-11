@@ -333,7 +333,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
 
           {/* Tab toggle buttons */}
-          <div style={{ display: "flex", gap: "0.75rem", marginBottom: "3rem" }}>
+          <div style={{ display: "flex", gap: "0.75rem", marginBottom: "3rem", justifyContent: "center" }}>
             <button style={tabBtn(view === "calendar")} onClick={() => setView("calendar")}>
               {t.tabCalendar}
             </button>
@@ -704,7 +704,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
 
           {/* ── Tickets view ── */}
           {view === "tickets" && (
-            <div style={{ maxWidth: "900px" }}>
+            <div style={{ maxWidth: "900px", margin: "0 auto" }}>
               {liputData.sections.map((section, i) => (
                 <LiputSectionBlock key={i} section={section} locale={locale} />
               ))}
