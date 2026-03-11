@@ -1,0 +1,8 @@
+items:
+  - type: video
+    url: https://www.youtube.com/watch?v=3iMDWaxKuUo
+    title_fi: Testivideo
+    title_en: Test video
+  - type: image
+    src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773225609372-Hamelin_Pillipiipari_Kuva_Antti_Kurola__20_.webp?alt=media
+    photographer: Antti Kurola

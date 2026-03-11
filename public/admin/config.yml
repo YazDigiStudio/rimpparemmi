@@ -374,6 +374,78 @@ collections:
                 required: false
                 hint: "Vain kun osiossa on sekä teksti että kuva"
 
+      - name: "media"
+        label: "Media-sivu / Media page"
+        file: "content/media.yaml"
+        fields:
+
+          - label: "Mediaosiot / Media items"
+            name: "items"
+            widget: "list"
+            required: false
+            hint: "Lisää videoita, kuvia ja linkkejä haluamassasi järjestyksessä"
+            types:
+
+              - label: "Video (YouTube / Vimeo)"
+                name: "video"
+                widget: "object"
+                fields:
+                  - label: "Embed URL"
+                    name: "url"
+                    widget: "string"
+                    hint: "YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID — Vimeo: https://player.vimeo.com/video/VIDEO_ID"
+                  - label: "Otsikko (FI)"
+                    name: "title_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Title (EN)"
+                    name: "title_en"
+                    widget: "string"
+                    required: false
+
+              - label: "Kuva / Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - label: "Kuva / Image"
+                    name: "src"
+                    widget: "image"
+                  - label: "Valokuvaaja / Photographer"
+                    name: "photographer"
+                    widget: "string"
+                    required: false
+                  - label: "Alt-teksti (FI)"
+                    name: "alt_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Alt text (EN)"
+                    name: "alt_en"
+                    widget: "string"
+                    required: false
+
+              - label: "Linkki / Link"
+                name: "link"
+                widget: "object"
+                fields:
+                  - label: "URL"
+                    name: "url"
+                    widget: "string"
+                  - label: "Linkin teksti (FI)"
+                    name: "label_fi"
+                    widget: "string"
+                  - label: "Link text (EN)"
+                    name: "label_en"
+                    widget: "string"
+                    required: false
+                  - label: "Kuvaus (FI)"
+                    name: "description_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Description (EN)"
+                    name: "description_en"
+                    widget: "string"
+                    required: false
+
   # ─────────────────────────────────────────────────────────────
   # PRODUCTIONS — master data for all shows
   # ─────────────────────────────────────────────────────────────
@@ -457,6 +529,12 @@ collections:
         fields:
           - { label: "Kuva / Image", name: "src", widget: "image" }
           - { label: "Valokuvaaja / Photographer", name: "photographer", widget: "string", required: false }
+
+      - label: "Pressikuvat ZIP-paketti / Press photos ZIP"
+        name: "press_zip_url"
+        widget: "file"
+        required: false
+        hint: "Lataa ZIP-tiedosto jossa kaikki pressikuvat — tallennetaan Firebase Storageen"
 
       # Texts
       - label: "Lyhyt esittely (FI)"

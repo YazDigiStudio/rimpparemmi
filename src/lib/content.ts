@@ -48,6 +48,7 @@ export type Production = {
   price_info_en?: string;
   documentation_url?: string;
   rider_url?: string;
+  press_zip_url?: string;
 };
 
 export type Performance = {
@@ -174,5 +175,42 @@ export function getTanssiteatteriData(): SectionPageData {
   const raw = yaml.load(
     fs.readFileSync(path.join(contentDir, "tanssiteatteri.yaml"), "utf8")
   ) as SectionPageData;
+  return raw;
+}
+
+export type MediaVideoItem = {
+  type: "video";
+  url: string;
+  title_fi?: string;
+  title_en?: string;
+};
+
+export type MediaImageItem = {
+  type: "image";
+  src: string;
+  photographer?: string;
+  alt_fi?: string;
+  alt_en?: string;
+};
+
+export type MediaLinkItem = {
+  type: "link";
+  url: string;
+  label_fi: string;
+  label_en?: string;
+  description_fi?: string;
+  description_en?: string;
+};
+
+export type MediaItem = MediaVideoItem | MediaImageItem | MediaLinkItem;
+
+export type MediaData = {
+  items: MediaItem[];
+};
+
+export function getMediaData(): MediaData {
+  const raw = yaml.load(
+    fs.readFileSync(path.join(contentDir, "media.yaml"), "utf8")
+  ) as MediaData;
   return raw;
 }
