@@ -169,8 +169,7 @@ export default function Yhteystiedot() {
                       >
                         {person.name}
                       </h2>
-                      <a
-                        href={`tel:${person.phone.replace(/\s/g, "")}`}
+                      <span
                         style={{
                           display: "block",
                           color: colors.nearBlack,
@@ -180,7 +179,7 @@ export default function Yhteystiedot() {
                         }}
                       >
                         {person.phone}
-                      </a>
+                      </span>
                       <a
                         href={`mailto:${person.email}`}
                         style={{
