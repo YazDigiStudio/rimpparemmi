@@ -114,6 +114,16 @@ export default function ProductionPage({ production, performances }: Props) {
           priority
           style={{ objectFit: "cover", objectPosition: "center 30%" }}
         />
+        {production.primary_image_photographer && (
+          <span style={{
+            position: "absolute", bottom: "0.4rem", right: "0.5rem", zIndex: 2,
+            backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+            fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+            pointerEvents: "none",
+          }}>
+            {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
+          </span>
+        )}
         {/* Dark gradient */}
         <div
           style={{
@@ -396,17 +406,22 @@ export default function ProductionPage({ production, performances }: Props) {
                     >
                       <Image
                         src={img.src}
-                        alt={locale === "fi" ? (img.caption_fi ?? "") : (img.caption_en ?? img.caption_fi ?? "")}
+                        alt=""
                         fill
                         style={{ objectFit: "cover" }}
                         sizes="(max-width: 768px) 100vw, 25vw"
                       />
+                      {img.photographer && (
+                        <span style={{
+                          position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                          backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                          fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                          pointerEvents: "none",
+                        }}>
+                          {locale === "fi" ? "Kuva" : "Photo"}: {img.photographer}
+                        </span>
+                      )}
                     </div>
-                    {(img.caption_fi || img.caption_en) && (
-                      <p style={{ color: colors.muted, fontSize: "0.75rem", marginTop: "0.4rem" }}>
-                        {locale === "fi" ? img.caption_fi : (img.caption_en ?? img.caption_fi)}
-                      </p>
-                    )}
                   </a>
                 ))}
               </div>

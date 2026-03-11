@@ -130,6 +130,16 @@ export default function TourProductionPage({ production }: Props) {
           priority
           style={{ objectFit: "cover", objectPosition: "center 30%" }}
         />
+        {production.primary_image_photographer && (
+          <span style={{
+            position: "absolute", bottom: "0.4rem", right: "0.5rem", zIndex: 2,
+            backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+            fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+            pointerEvents: "none",
+          }}>
+            {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
+          </span>
+        )}
         <div
           style={{
             position: "absolute",
@@ -292,17 +302,26 @@ export default function TourProductionPage({ production }: Props) {
                 }}
               >
                 {galleryImages.map((img, i) => (
-                  <div
-                    key={i}
+                  <div key={i}
                     style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", borderRadius: "4px" }}
                   >
                     <Image
                       src={img.src}
-                      alt={locale === "fi" ? (img.caption_fi ?? "") : (img.caption_en ?? img.caption_fi ?? "")}
+                      alt=""
                       fill
                       style={{ objectFit: "cover" }}
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
+                    {img.photographer && (
+                      <span style={{
+                        position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                        backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                        fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                        pointerEvents: "none",
+                      }}>
+                        {locale === "fi" ? "Kuva" : "Photo"}: {img.photographer}
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>

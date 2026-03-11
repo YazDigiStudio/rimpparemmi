@@ -5,7 +5,11 @@
 // Upload flow:
 //   1. POST /api/upload-token → { uploadUrl, storagePath }
 //   2. PUT file directly to Firebase via signed URL (no server, no size limit)
-//   3. POST /api/process { storagePath, filename, contentType } → { url }
+//   3. POST PROCESS_URL { storagePath, filename, contentType } → { url }
+//      Processing runs on Firebase Functions (same datacenter as storage = fast)
+
+var PROCESS_URL =
+  "https://europe-north1-rimpparemmi-b3154.cloudfunctions.net/processImage";
 
 (function () {
   // Token cache — reuse within the 1-hour Firebase token window
@@ -27,13 +31,13 @@
     name: "firebase-storage",
     init: function ({ handleInsert }) {
       return {
-        show: function ({ allowMultiple, imagesOnly }) {
+        show: function ({ imagesOnly }) {
           var input = document.createElement("input");
           input.type = "file";
           input.accept = imagesOnly
             ? "image/*"
             : "image/*,application/pdf,.svg,video/mp4,video/quicktime,video/webm";
-          input.multiple = !!allowMultiple;
+          input.multiple = false;
           input.style.display = "none";
           document.body.appendChild(input);
 
@@ -42,18 +46,23 @@
             document.body.removeChild(input);
             if (!files.length) return;
 
+            var total = files.length;
+            var done = 0;
+            var overlay = createProgressOverlay(done, total);
+
             getToken()
               .then(function (token) {
-                return Promise.all(
-                  files.map(function (file) {
-                    return uploadFile(file, token);
-                  })
-                );
+                return uploadWithConcurrency(files, token, 1, function () {
+                  done++;
+                  updateProgressOverlay(overlay, done, total);
+                });
               })
               .then(function (urls) {
+                removeProgressOverlay(overlay);
                 handleInsert(urls.length === 1 ? urls[0] : urls);
               })
               .catch(function (err) {
+                removeProgressOverlay(overlay);
                 console.error("CMS upload error:", err);
                 alert("Upload failed: " + err.message);
               });
@@ -73,6 +82,84 @@
       /^#\/collections\/productions\/entries\/([^/]+)/
     );
     return match ? match[1] : null;
+  }
+
+  function createProgressOverlay(done, total) {
+    var overlay = document.createElement("div");
+    overlay.style.cssText = [
+      "position:fixed", "inset:0", "z-index:99999",
+      "background:rgba(0,0,0,0.55)", "display:flex",
+      "flex-direction:column", "align-items:center", "justify-content:center",
+      "font-family:sans-serif", "color:#fff",
+    ].join(";");
+
+    var msg = document.createElement("div");
+    msg.style.cssText = "font-size:1.2rem;margin-bottom:1rem;";
+    msg.textContent = "Käsitellään kuvia\u2026";
+    overlay.appendChild(msg);
+
+    var counter = document.createElement("div");
+    counter.style.cssText = "font-size:2rem;font-weight:bold;margin-bottom:1.5rem;";
+    counter.textContent = done + " / " + total;
+    overlay.appendChild(counter);
+
+    var barWrap = document.createElement("div");
+    barWrap.style.cssText = "width:260px;height:8px;background:rgba(255,255,255,0.25);border-radius:4px;overflow:hidden;";
+    var bar = document.createElement("div");
+    bar.style.cssText = "height:100%;background:#fff;border-radius:4px;transition:width 0.3s;";
+    bar.style.width = (total > 0 ? (done / total) * 100 : 0) + "%";
+    barWrap.appendChild(bar);
+    overlay.appendChild(barWrap);
+
+    overlay._counter = counter;
+    overlay._bar = bar;
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function updateProgressOverlay(overlay, done, total) {
+    overlay._counter.textContent = done + " / " + total;
+    overlay._bar.style.width = (done / total) * 100 + "%";
+  }
+
+  function removeProgressOverlay(overlay) {
+    if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+  }
+
+  // Runs uploads with at most `concurrency` in-flight at once.
+  // Calls onProgress() each time one completes. Returns array of URLs.
+  function uploadWithConcurrency(files, token, concurrency, onProgress) {
+    return new Promise(function (resolve, reject) {
+      var results = new Array(files.length);
+      var nextIndex = 0;
+      var completed = 0;
+      var rejected = false;
+
+      function startNext() {
+        if (rejected || nextIndex >= files.length) return;
+        var i = nextIndex++;
+        uploadFile(files[i], token)
+          .then(function (url) {
+            results[i] = url;
+            completed++;
+            onProgress(completed);
+            if (completed === files.length) {
+              resolve(results);
+            } else {
+              startNext();
+            }
+          })
+          .catch(function (err) {
+            if (!rejected) {
+              rejected = true;
+              reject(err);
+            }
+          });
+      }
+
+      var workers = Math.min(concurrency, files.length);
+      for (var w = 0; w < workers; w++) startNext();
+    });
   }
 
   async function uploadFile(file, token) {
@@ -109,8 +196,8 @@
       throw new Error("Direct upload to Firebase failed (" + putRes.status + ")");
     }
 
-    // Step 3: Ask the server to process the file and return the final URL
-    var processRes = await fetch("/api/process", {
+    // Step 3: Ask Firebase Function to process the file and return the final URL
+    var processRes = await fetch(PROCESS_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

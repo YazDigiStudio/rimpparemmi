@@ -8,8 +8,7 @@ import yaml from "js-yaml";
 
 export type ProductionImage = {
   src: string;
-  caption_fi?: string;
-  caption_en?: string;
+  photographer?: string;
 };
 
 export type Production = {
@@ -22,6 +21,7 @@ export type Production = {
   category: "general" | "children";
   premiere_date?: string;
   primary_image: string;
+  primary_image_photographer?: string;
   production_images?: ProductionImage[];
   short_text_fi: string;
   short_text_en?: string;
@@ -108,6 +108,7 @@ export type HomeNewsItem = {
   title: string;
   subtitle?: string;
   image?: string;
+  image_photographer?: string;
   image_height?: number;
   body?: string;   // markdown — split by \n\n for paragraphs
   extra?: string;  // multiline text — split by \n for items
@@ -134,6 +135,7 @@ export type SectionPageSection = {
   text_fi?: string;
   text_en?: string;
   image?: string;
+  image_photographer?: string;
   image_alt_fi?: string;
   image_alt_en?: string;
   image_orientation?: "landscape" | "portrait" | "square"; // landscape=16/9, portrait=2/3, square=1/1

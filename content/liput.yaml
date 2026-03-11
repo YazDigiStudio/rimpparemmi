@@ -1,107 +1,123 @@
-# Liput / Tickets page content
-#
-# Section types — determined by which fields are filled:
-#
-#  1. TEXT ONLY       — title_fi/en empty, image empty  → full-width text
-#  2. IMAGE ONLY      — title_fi/en empty, text empty   → full-width image
-#  3. TITLE + TEXT    — image empty                     → heading + full-width text
-#  4. TITLE+TEXT+IMG  — all filled                      → heading, then image/text 50/50
-#
-# image_orientation: "landscape" (16/9, cuts top/bottom) | "portrait" (2/3, cuts sides) | "square" (1/1)
-# image_position:   "left" | "right"  — which side the image sits in type 4
-
-page_title_fi: "Liput"
-page_title_en: "Tickets"
+page_title_fi: Liput
+page_title_en: Tickets
 show_page_title: true
-
 sections:
-
-  # ── Type 1: Text only ────────────────────────────────────────────────────────
-  - title_fi: ""
+  - image_alt_en: ""
+    title_fi: ""
+    image_orientation: square
+    image_position: right
     title_en: ""
-    text_fi: |
-      Tanssiteatteri Rimpparemmi myy liput NetTicket.fi-palvelun kautta. Rovaniemellä lippuja myy myös Osviitta.
+    text_fi: >
+      Tanssiteatteri Rimpparemmi myy liput NetTicket.fi-palvelun kautta.
+      Rovaniemellä lippuja myy myös Osviitta.
+
 
       Hinnat sisältävät palvelumaksun.
-    text_en: |
-      Dance Theatre Rimpparemmi sells tickets through NetTicket.fi. In Rovaniemi, tickets are also available at Osviitta.
+    text_en: >
+      Dance Theatre Rimpparemmi sells tickets through NetTicket.fi. In
+      Rovaniemi, tickets are also available at Osviitta.
+
 
       Prices include service fees.
-    image: ""
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773211070580-Hamelin_Pillipiipari_Kuva_Antti_Kurola__1_.webp?alt=media
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
-
-  # ── Type 2: Image only ───────────────────────────────────────────────────────
-  - title_fi: ""
+  - image_alt_en: "We Will Funk For Food: A Fistful of Funk"
+    title_fi: ""
+    image_orientation: landscape
+    image_position: left
     title_en: ""
     text_fi: ""
     text_en: ""
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376858-Print-Size_Fistful-of-funk-35-scaled.webp?alt=media"
+    image: ""
     image_alt_fi: "We Will Funk For Food: A Fistful of Funk"
-    image_alt_en: "We Will Funk For Food: A Fistful of Funk"
-    image_orientation: "landscape"
-    image_position: "left"
-
-  # ── Type 3: Title + text (no image) ─────────────────────────────────────────
-  - title_fi: "Hinnat"
-    title_en: "Prices"
-    text_fi: |
+  - image_alt_en: ""
+    title_fi: Hinnat
+    image_orientation: landscape
+    image_position: left
+    title_en: Prices
+    text_fi: >
       **Hamelnin Pillipiipari**
+
       12 € (kaikki kategoriat)
 
+
       **Remmi Liveklubi: Moving North**
+
       34 € (normaali) · 37 € (ovelta)
+
       21 € (opiskelija/työtön) · 30 € (seniori/pyörätuoli)
 
+
       **We Will Funk For Food: A Fistful of Funk**
+
       34 € (normaali) · 37 € (ovelta)
+
       21 € (opiskelija/työtön) · 30 € (seniori/pyörätuoli)
+
 
       **Maksutavat verkossa**
+
       Verkkopankki, Visa, Mastercard, ePassi, Edenred, Smartum, MobilePay, lahjakortit
 
+
       **Ovikassa**
+
       Käteinen ja kortti
 
+
       **Oma hinta -liput**
+
       Rajattu määrä lippuja per esitys. Saatavilla vain ennakkoon.
 
+
       **Kaikukortti**
+
       Maksuton tai tuettu pääsy pienituloisille. Enintään 5 % paikoista per esitys. 1,60 € palvelumaksu.
-    text_en: |
+    text_en: >
       **Hamelnin Pillipiipari**
+
       €12 (all categories)
 
+
       **Remmi Live Club: Moving North**
+
       €34 regular · €37 at door
+
       €21 student/unemployed · €30 senior/wheelchair
+
 
       **We Will Funk For Food: A Fistful of Funk**
+
       €34 regular · €37 at door
+
       €21 student/unemployed · €30 senior/wheelchair
 
+
       **Online payment methods**
+
       Bank transfer, Visa, Mastercard, ePassi, Edenred, Smartum, MobilePay, gift cards
 
+
       **At the door**
+
       Cash and card only
 
+
       **Pay-What-You-Can tickets**
+
       Limited availability per performance. Advance purchase only.
 
+
       **Kaikukortti programme**
+
       Free or subsidised access for low-income individuals. Maximum 5% of seating per show. €1.60 service fee.
     image: ""
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
-
-  # ── Type 4: Title + text + image ────────────────────────────────────────────
-  - title_fi: "Ryhmät & yritykset"
-    title_en: "Groups & corporate"
+  - image_alt_en: Kulttuuritalo Wiljami
+    title_fi: Ryhmät & yritykset
+    image_orientation: landscape
+    image_position: right
+    title_en: Groups & corporate
     text_fi: |
       **Ryhmävaraukset**
       Sähköpostilla tai soittamalla 050 511 5055
@@ -120,8 +136,5 @@ sections:
 
       **Box office**
       Located at Kulttuuritalo Wiljami. Opens one hour before performances.
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075380414-Tapahtuma_Piaf_Kuva_Antti_Kurola__9_.webp?alt=media"
-    image_alt_fi: "Kulttuuritalo Wiljami"
-    image_alt_en: "Kulttuuritalo Wiljami"
-    image_orientation: "landscape"
-    image_position: "right"
+    image: ""
+    image_alt_fi: Kulttuuritalo Wiljami

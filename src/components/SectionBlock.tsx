@@ -86,6 +86,16 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
             }}
           >
             <Image src={section.image!} alt={alt ?? ""} fill style={{ objectFit: "cover" }} sizes="100vw" />
+            {section.image_photographer && (
+              <span style={{
+                position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                pointerEvents: "none",
+              }}>
+                {locale === "fi" ? "Kuva" : "Photo"}: {section.image_photographer}
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -105,6 +115,16 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
         style={{ objectFit: "cover" }}
         sizes="(max-width: 768px) 100vw, 60vw"
       />
+      {section.image_photographer && (
+        <span style={{
+          position: "absolute", bottom: "0.4rem", right: "0.5rem",
+          backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+          fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+          pointerEvents: "none",
+        }}>
+          {locale === "fi" ? "Kuva" : "Photo"}: {section.image_photographer}
+        </span>
+      )}
     </div>
   ) : null;
 

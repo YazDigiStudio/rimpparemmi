@@ -3,6 +3,9 @@
 # Content files: YAML in content/
 # Media: public/images/
 
+# Local development: uses filesystem instead of git (run `npx decap-server` alongside dev)
+local_backend: true
+
 backend:
   name: git-gateway
   branch: main
@@ -114,6 +117,10 @@ collections:
                 name: "image"
                 widget: "image"
                 required: false
+              - label: "Valokuvaaja / Photographer"
+                name: "image_photographer"
+                widget: "string"
+                required: false
               - label: "Kuvan korkeus modaalissa / Image height in modal"
                 name: "image_height"
                 widget: "number"
@@ -177,6 +184,10 @@ collections:
               - label: "Kuva / Image"
                 name: "image"
                 widget: "image"
+                required: false
+              - label: "Valokuvaaja / Photographer"
+                name: "image_photographer"
+                widget: "string"
                 required: false
               - label: "Kuvan alt-teksti (FI)"
                 name: "image_alt_fi"
@@ -253,6 +264,10 @@ collections:
                 name: "image"
                 widget: "image"
                 required: false
+              - label: "Valokuvaaja / Photographer"
+                name: "image_photographer"
+                widget: "string"
+                required: false
               - label: "Kuvan alt-teksti (FI)"
                 name: "image_alt_fi"
                 widget: "string"
@@ -327,6 +342,10 @@ collections:
               - label: "Kuva / Image"
                 name: "image"
                 widget: "image"
+                required: false
+              - label: "Valokuvaaja / Photographer"
+                name: "image_photographer"
+                widget: "string"
                 required: false
               - label: "Kuvan alt-teksti (FI)"
                 name: "image_alt_fi"
@@ -426,14 +445,18 @@ collections:
         widget: "image"
         hint: "Näytetään korteissa, tuotantosivun yläosassa ja tapahtumalistauksissa"
 
+      - label: "Pääkuvan valokuvaaja / Primary image photographer"
+        name: "primary_image_photographer"
+        widget: "string"
+        required: false
+
       - label: "Esityskuvat / Production images"
         name: "production_images"
         widget: "list"
         required: false
         fields:
           - { label: "Kuva / Image", name: "src", widget: "image" }
-          - { label: "Kuvateksti (FI)", name: "caption_fi", widget: "string", required: false }
-          - { label: "Caption (EN)", name: "caption_en", widget: "string", required: false }
+          - { label: "Valokuvaaja / Photographer", name: "photographer", widget: "string", required: false }
 
       # Texts
       - label: "Lyhyt esittely (FI)"

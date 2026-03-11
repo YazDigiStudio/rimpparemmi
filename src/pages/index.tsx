@@ -41,6 +41,7 @@ type HeroSlide = {
 // Internal type for news cards
 type NewsCardItem = {
   cardTitle: string;
+  imagePhotographer?: string;
   info: ShowInfo;
 };
 
@@ -111,13 +112,25 @@ function NewsCard({
       }}
     >
       {item.info.image && (
-        <Image
-          src={item.info.image}
-          alt={item.cardTitle}
-          width={520}
-          height={640}
-          style={{ width: "100%", height: "auto", display: "block" }}
-        />
+        <div style={{ position: "relative" }}>
+          <Image
+            src={item.info.image}
+            alt={item.cardTitle}
+            width={520}
+            height={640}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+          {item.imagePhotographer && (
+            <span style={{
+              position: "absolute", bottom: "0.4rem", right: "0.5rem",
+              backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+              fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+              pointerEvents: "none",
+            }}>
+              Kuva: {item.imagePhotographer}
+            </span>
+          )}
+        </div>
       )}
       <div
         style={{
@@ -193,6 +206,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
   // Map CMS news items to internal format
   const newsItems: NewsCardItem[] = homeData.news_items.map((item) => ({
     cardTitle: item.card_title,
+    imagePhotographer: item.image_photographer,
     info: {
       title: item.title,
       subtitle: item.subtitle,
