@@ -17,12 +17,12 @@ import {
   getProductions,
   getPerformances,
   getLiputData,
-  toEmbedUrl,
   type Production,
   type Performance,
   type SectionPageData,
   type SectionPageSection,
 } from "@/lib/content";
+import { toEmbedUrl } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 type View = "calendar" | "tickets";

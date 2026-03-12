@@ -5,7 +5,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { colors } from "@/styles/colors";
-import { toEmbedUrl } from "@/lib/content";
+import { toEmbedUrl } from "@/lib/netticketUtils";
 
 export type CalendarEvent = {
   date: string; // "D.M.YYYY" format, e.g. "15.3.2026"

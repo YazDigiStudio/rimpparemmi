@@ -5,7 +5,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { colors } from "@/styles/colors";
-import { toEmbedUrl } from "@/lib/content";
+import { toEmbedUrl } from "@/lib/netticketUtils";
 
 export type ShowPerformance = {
   date: string;  // "D.M.YYYY" format

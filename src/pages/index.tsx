@@ -17,11 +17,11 @@ import {
   getProductions,
   getPerformances,
   getHomeData,
-  toEmbedUrl,
   type Production,
   type Performance,
   type HomeData,
 } from "@/lib/content";
+import { toEmbedUrl } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 

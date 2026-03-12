@@ -11,10 +11,10 @@ import { colors } from "@/styles/colors";
 import {
   getProductions,
   getPerformances,
-  toEmbedUrl,
   type Production,
   type Performance,
 } from "@/lib/content";
+import { toEmbedUrl } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 
