@@ -274,7 +274,7 @@ function toNoCookiesEmbed(url: string): string {
       videoId = u.searchParams.get("v") ?? u.pathname.replace("/embed/", "");
     }
     if (videoId) return `https://www.youtube-nocookie.com/embed/${videoId}`;
-  } catch (_) {}
+  } catch {}
   return url;
 }
 

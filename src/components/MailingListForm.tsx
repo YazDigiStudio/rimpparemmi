@@ -2,7 +2,7 @@
 // IMPORTANT: Notification email is set in Netlify dashboard → Forms → Notifications.
 // The static form at /public/forms/newsletter.html is required for Netlify bot detection with Next.js.
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { colors } from "@/styles/colors";
 
 type Locale = "fi" | "en";

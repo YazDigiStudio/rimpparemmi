@@ -11,7 +11,8 @@ export default function Document() {
           rel="stylesheet"
         />
         {/* Netticket floating sidebar embed */}
-        <script id="nt-embed-script" src="https://www.netticket.fi/production/embedjs/" />
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script id="nt-embed-script" src="https://www.netticket.fi/production/embedjs/" async />
       </Head>
       <body>
         <Main />
