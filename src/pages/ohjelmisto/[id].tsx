@@ -286,7 +286,7 @@ export default function ProductionPage({ production, performances }: Props) {
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                 {upcomingPerfs.map((perf, i) => {
-                  const ticketUrl = resolveTicketUrl(perf.ticket_url, production.ticket_url_fallback);
+                  const ticketUrl = resolveTicketUrl(perf.ticket_url, production.ticket_url_fallback, perf.date, perf.time, locale);
                   const addInfo = locale === "fi" ? perf.additional_info_fi : perf.additional_info_en;
                   return (
                     <div
