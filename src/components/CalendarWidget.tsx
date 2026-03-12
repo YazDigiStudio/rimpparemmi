@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { colors } from "@/styles/colors";
+import { toEmbedUrl } from "@/lib/content";
 
 export type CalendarEvent = {
   date: string; // "D.M.YYYY" format, e.g. "15.3.2026"
@@ -314,7 +315,7 @@ export default function CalendarWidget({
                 )}
               </div>
               <Link
-                href={event.ticketUrl}
+                href={toEmbedUrl(event.ticketUrl)}
                 style={{
                   backgroundColor: colors.brandFuchsia,
                   color: colors.white,

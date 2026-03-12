@@ -11,6 +11,7 @@ import { colors } from "@/styles/colors";
 import {
   getProductions,
   getPerformances,
+  toEmbedUrl,
   type Production,
   type Performance,
 } from "@/lib/content";
@@ -285,7 +286,7 @@ export default function ProductionPage({ production, performances }: Props) {
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                 {upcomingPerfs.map((perf, i) => {
-                  const ticketUrl = perf.ticket_url ?? production.ticket_url_fallback ?? "";
+                  const ticketUrl = toEmbedUrl(perf.ticket_url ?? production.ticket_url_fallback ?? "");
                   const addInfo = locale === "fi" ? perf.additional_info_fi : perf.additional_info_en;
                   return (
                     <div

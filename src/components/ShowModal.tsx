@@ -5,6 +5,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { colors } from "@/styles/colors";
+import { toEmbedUrl } from "@/lib/content";
 
 export type ShowPerformance = {
   date: string;  // "D.M.YYYY" format
@@ -302,7 +303,7 @@ export default function ShowModal({ info, onClose }: Props) {
                     {perf.date}{perf.time ? ` · ${perf.time}` : ""}
                   </span>
                   <a
-                    href={perf.ticketUrl}
+                    href={toEmbedUrl(perf.ticketUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

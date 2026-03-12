@@ -17,6 +17,7 @@ import {
   getProductions,
   getPerformances,
   getHomeData,
+  toEmbedUrl,
   type Production,
   type Performance,
   type HomeData,
@@ -235,7 +236,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
         time: p.time,
         title,
         venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
-        ticketUrl: p.ticket_url ?? "",
+        ticketUrl: toEmbedUrl(p.ticket_url ?? ""),
       };
     });
   }, [productions, performances, locale]);
@@ -273,7 +274,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
           return {
             date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
             time: p.time,
-            ticketUrl: p.ticket_url ?? "",
+            ticketUrl: toEmbedUrl(p.ticket_url ?? ""),
           };
         });
       map[title] = {

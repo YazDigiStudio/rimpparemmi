@@ -17,6 +17,7 @@ import {
   getProductions,
   getPerformances,
   getLiputData,
+  toEmbedUrl,
   type Production,
   type Performance,
   type SectionPageData,
@@ -207,7 +208,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
         time: p.time,
         title,
         venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
-        ticketUrl: p.ticket_url ?? prod?.ticket_url_fallback ?? "",
+        ticketUrl: toEmbedUrl(p.ticket_url ?? prod?.ticket_url_fallback ?? ""),
         productionId: p.production_id,
       };
     });
@@ -232,7 +233,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
           return {
             date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
             time: p.time,
-            ticketUrl: p.ticket_url ?? prod.ticket_url_fallback ?? "",
+            ticketUrl: toEmbedUrl(p.ticket_url ?? prod.ticket_url_fallback ?? ""),
           };
         });
       map[prod.id] = { title, subtitle, image: prod.primary_image, description, credits, performances: prodPerfs };
@@ -466,7 +467,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                   ) : (
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.5rem" }}>
                       {selectedPerformances.map((perf, i) => {
-                        const ticketUrl = perf.ticket_url ?? selectedProduction.ticket_url_fallback ?? "";
+                        const ticketUrl = toEmbedUrl(perf.ticket_url ?? selectedProduction.ticket_url_fallback ?? "");
                         const addInfo = locale === "fi" ? perf.additional_info_fi : perf.additional_info_en;
                         return (
                           <div
