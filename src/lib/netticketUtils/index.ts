@@ -14,3 +14,13 @@ export function toEmbedUrl(url: string): string {
     "https://embed.netticket.fi/"
   );
 }
+
+// Resolves the final ticket URL for a performance, applying the production-level
+// fallback when the performance has no individual ticket URL, then converting to
+// the embed format. Use this at every ticket button/link in the app.
+export function resolveTicketUrl(
+  ticketUrl: string | undefined,
+  fallbackUrl?: string
+): string {
+  return toEmbedUrl(ticketUrl ?? fallbackUrl ?? "");
+}
