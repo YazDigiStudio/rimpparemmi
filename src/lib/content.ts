@@ -214,12 +214,3 @@ export function getMediaData(): MediaData {
   ) as MediaData;
   return raw;
 }
-
-// Converts a netticket.fi ticket URL to embed.netticket.fi for the floating sidebar.
-// Returns the original URL unchanged if it's not a netticket.fi link.
-export function toEmbedUrl(url: string): string {
-  return url.replace(
-    /^https?:\/\/(www\.)?netticket\.fi\//,
-    "https://embed.netticket.fi/"
-  );
-}
