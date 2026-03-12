@@ -22,5 +22,5 @@ export function resolveTicketUrl(
   ticketUrl: string | undefined,
   fallbackUrl?: string
 ): string {
-  return toEmbedUrl(ticketUrl ?? fallbackUrl ?? "");
+  return toEmbedUrl(ticketUrl || fallbackUrl || "");
 }
