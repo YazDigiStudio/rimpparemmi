@@ -1,5 +1,5 @@
 show_calendar: true
-show_events_list: false
+show_events_list: true
 intro_text_fi: >
   Tanssiteatteri Rimpparemmi kertoo tarinoita: kauniita ja rumia. Tarinoita,
   jotka ovat joskus röyhkeitä ja toisinaan vakavia, useimmiten kuitenkin todella
