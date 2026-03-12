@@ -1,5 +1,6 @@
 // Yhteystiedot / Contact page
 
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -79,6 +80,11 @@ export default function Yhteystiedot() {
   const { locale: routerLocale } = useRouter();
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setIsMobile(navigator.maxTouchPoints > 0);
+  }, []);
 
   return (
     <>
@@ -169,17 +175,33 @@ export default function Yhteystiedot() {
                       >
                         {person.name}
                       </h2>
-                      <span
-                        style={{
-                          display: "block",
-                          color: colors.nearBlack,
-                          fontSize: "0.875rem",
-                          opacity: 0.8,
-                          marginBottom: "0.35rem",
-                        }}
-                      >
-                        {person.phone}
-                      </span>
+                      {isMobile ? (
+                        <a
+                          href={`tel:${person.phone.replace(/\s/g, "")}`}
+                          style={{
+                            display: "block",
+                            color: colors.nearBlack,
+                            fontSize: "0.875rem",
+                            opacity: 0.8,
+                            marginBottom: "0.35rem",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {person.phone}
+                        </a>
+                      ) : (
+                        <span
+                          style={{
+                            display: "block",
+                            color: colors.nearBlack,
+                            fontSize: "0.875rem",
+                            opacity: 0.8,
+                            marginBottom: "0.35rem",
+                          }}
+                        >
+                          {person.phone}
+                        </span>
+                      )}
                       <a
                         href={`mailto:${person.email}`}
                         style={{
