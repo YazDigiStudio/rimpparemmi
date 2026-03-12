@@ -124,65 +124,6 @@ export default function ProductionPage({ production, performances }: Props) {
             {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
           </span>
         )}
-        {/* Dark gradient */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-        {/* Title overlay */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "2.5rem",
-            left: "2rem",
-            right: "2rem",
-          }}
-        >
-          {badge && (
-            <span
-              style={{
-                display: "inline-block",
-                backgroundColor: colors.brandFuchsia,
-                color: colors.white,
-                fontSize: "0.65rem",
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                padding: "0.25rem 0.6rem",
-                borderRadius: "2px",
-                marginBottom: "0.75rem",
-              }}
-            >
-              {badge}
-            </span>
-          )}
-          <h1
-            style={{
-              color: colors.white,
-              fontSize: "clamp(1.75rem, 5vw, 3.5rem)",
-              fontWeight: 700,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              lineHeight: 1.1,
-            }}
-          >
-            {title}
-          </h1>
-          {subtitle && (
-            <p
-              style={{
-                color: "rgba(255,255,255,0.8)",
-                fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
-                marginTop: "0.5rem",
-              }}
-            >
-              {subtitle}
-            </p>
-          )}
-        </div>
       </div>
 
       {/* Main content */}
@@ -193,6 +134,51 @@ export default function ProductionPage({ production, performances }: Props) {
         }}
       >
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+
+          {/* Title block */}
+          <div style={{ marginBottom: "2.5rem" }}>
+            {badge && (
+              <span
+                style={{
+                  display: "inline-block",
+                  backgroundColor: colors.brandFuchsia,
+                  color: colors.white,
+                  fontSize: "0.65rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  padding: "0.25rem 0.6rem",
+                  borderRadius: "2px",
+                  marginBottom: "0.75rem",
+                }}
+              >
+                {badge}
+              </span>
+            )}
+            <h1
+              style={{
+                color: colors.nearBlack,
+                fontSize: "clamp(1.75rem, 5vw, 3.5rem)",
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: 1.1,
+              }}
+            >
+              {title}
+            </h1>
+            {subtitle && (
+              <p
+                style={{
+                  color: colors.muted,
+                  fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                {subtitle}
+              </p>
+            )}
+          </div>
 
           {/* Back link */}
           <Link
