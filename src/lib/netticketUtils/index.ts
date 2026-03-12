@@ -48,7 +48,12 @@ export function resolveTicketUrl(
   time?: string,
   locale: "fi" | "en" = "fi"
 ): string {
-  if (ticketUrl) return toEmbedUrl(ticketUrl);
+  if (ticketUrl) {
+    if (date && time && isNetticketShortLink(ticketUrl)) {
+      return toEmbedUrl(buildPerformanceUrl(ticketUrl, date, time, locale));
+    }
+    return toEmbedUrl(ticketUrl);
+  }
   if (!fallbackUrl) return "";
   if (date && time && isNetticketShortLink(fallbackUrl)) {
     return toEmbedUrl(buildPerformanceUrl(fallbackUrl, date, time, locale));
