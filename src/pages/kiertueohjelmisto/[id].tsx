@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
+import ImageCarousel from "@/components/ImageCarousel";
 import { colors } from "@/styles/colors";
 import { getProductions, type Production } from "@/lib/content";
 
@@ -65,6 +66,7 @@ export default function TourProductionPage({ production }: Props) {
 
   const longTextParagraphs = longText ? longText.trim().split(/\n\n+/) : [];
   const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
+  const galleryImages = production.production_images ?? [];
 
   const infoBlockStyle: React.CSSProperties = {
     borderLeft: `3px solid ${colors.brandFuchsia}`,
@@ -256,6 +258,13 @@ export default function TourProductionPage({ production }: Props) {
               </div>
             )}
           </div>
+
+          {/* Gallery */}
+          {galleryImages.length > 0 && (
+            <div style={{ marginBottom: "3.5rem" }}>
+              <ImageCarousel images={galleryImages} />
+            </div>
+          )}
 
           {/* Contact CTA */}
           <div

@@ -5,6 +5,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ImageCarousel from "@/components/ImageCarousel";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
@@ -14,7 +15,7 @@ import {
   type Production,
   type SalesEntry,
 } from "@/lib/content";
-import { toNoCookiesEmbed } from "@/lib/youtubeUtils";
+import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 
 type Props = { production: Production; sales: SalesEntry };
 
@@ -240,37 +241,7 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
           {/* Gallery */}
           {galleryImages.length > 0 && (
             <div style={{ marginBottom: "3.5rem" }}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-                  gap: "1rem",
-                }}
-              >
-                {galleryImages.map((img, i) => (
-                  <div key={i}
-                    style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", borderRadius: "4px" }}
-                  >
-                    <Image
-                      src={img.src}
-                      alt=""
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    {img.photographer && (
-                      <span style={{
-                        position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                        backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                        fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                        pointerEvents: "none",
-                      }}>
-                        Kuva: {img.photographer}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
+              <ImageCarousel images={galleryImages} />
             </div>
           )}
 
@@ -364,7 +335,7 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
                     textTransform: "uppercase",
                   }}
                 >
-                  Lataa rider
+                  Lataa raideri
                 </a>
               )}
             </div>

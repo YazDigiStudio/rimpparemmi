@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
-import { toNoCookiesEmbed } from "@/lib/youtubeUtils";
+import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 import {
   getProductions,
   getMediaData,

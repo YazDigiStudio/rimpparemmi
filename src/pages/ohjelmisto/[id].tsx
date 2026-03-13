@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
+import ImageCarousel from "@/components/ImageCarousel";
 import { colors } from "@/styles/colors";
 import {
   getProductions,
@@ -368,50 +369,7 @@ export default function ProductionPage({ production, performances }: Props) {
               >
                 {locale === "fi" ? "Pressikuvat" : "Press photos"}
               </h2>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                  gap: "1rem",
-                }}
-              >
-                {pressImages.map((img, i) => (
-                  <a
-                    key={i}
-                    href={img.src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: "block" }}
-                  >
-                    <div
-                      style={{
-                        position: "relative",
-                        aspectRatio: "3/2",
-                        overflow: "hidden",
-                        borderRadius: "4px",
-                      }}
-                    >
-                      <Image
-                        src={img.src}
-                        alt=""
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                      />
-                      {img.photographer && (
-                        <span style={{
-                          position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                          backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                          fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                          pointerEvents: "none",
-                        }}>
-                          {locale === "fi" ? "Kuva" : "Photo"}: {img.photographer}
-                        </span>
-                      )}
-                    </div>
-                  </a>
-                ))}
-              </div>
+              <ImageCarousel images={pressImages} />
             </div>
           )}
 
