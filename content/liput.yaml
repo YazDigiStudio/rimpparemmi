@@ -26,7 +26,7 @@ sections:
     image_orientation: landscape
     image_position: left
     title_en: Prices
-    text_fi: >
+    text_fi: >-
       **Hamelnin Pillipiipari**
 
       12 € (kaikki kategoriat)
@@ -56,15 +56,10 @@ sections:
       Käteinen ja kortti
 
 
-      **Oma hinta -liput**
-
-      Rajattu määrä lippuja per esitys. Saatavilla vain ennakkoon.
-
-
       **Kaikukortti**
 
       Maksuton tai tuettu pääsy pienituloisille. Enintään 5 % paikoista per esitys. 1,60 € palvelumaksu.
-    text_en: >
+    text_en: >-
       **Hamelnin Pillipiipari**
 
       €12 (all categories)
@@ -92,11 +87,6 @@ sections:
       **At the door**
 
       Cash and card only
-
-
-      **Pay-What-You-Can tickets**
-
-      Limited availability per performance. Advance purchase only.
 
 
       **Kaikukortti programme**
