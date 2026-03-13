@@ -229,3 +229,29 @@ export function getMediaData(): MediaData {
   ) as MediaData;
   return raw;
 }
+
+export type Person = {
+  name: string;
+  title_fi?: string;
+  title_en?: string;
+  image?: string;
+  bio_fi?: string;
+  bio_en?: string;
+};
+
+export type IhmisetSection = {
+  title_fi: string;
+  title_en?: string;
+  people: Person[];
+};
+
+export type IhmisetData = {
+  sections: IhmisetSection[];
+};
+
+export function getIhmisetData(): IhmisetData {
+  const raw = yaml.load(
+    fs.readFileSync(path.join(contentDir, "ihmiset.yaml"), "utf8")
+  ) as IhmisetData;
+  return raw ?? { sections: [] };
+}

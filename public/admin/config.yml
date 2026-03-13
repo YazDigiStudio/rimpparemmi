@@ -374,6 +374,37 @@ collections:
                 required: false
                 hint: "Vain kun osiossa on sekä teksti että kuva"
 
+      - name: "ihmiset"
+        label: "Ihmiset / People"
+        file: "content/ihmiset.yaml"
+        fields:
+          - label: "Osiot / Sections"
+            name: "sections"
+            widget: "list"
+            required: false
+            hint: "Lisää, poista tai nimeä osioita. Osio ei näy sivulla jos siinä ei ole henkilöitä."
+            fields:
+              - { label: "Otsikko (FI)", name: "title_fi", widget: "string" }
+              - { label: "Title (EN)", name: "title_en", widget: "string", required: false }
+              - label: "Henkilöt / People"
+                name: "people"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Nimi / Name", name: "name", widget: "string" }
+                  - { label: "Toimenkuva (FI)", name: "title_fi", widget: "string", required: false }
+                  - { label: "Role (EN)", name: "title_en", widget: "string", required: false }
+                  - { label: "Kuva / Photo", name: "image", widget: "image", required: false }
+                  - label: "Bio (FI)"
+                    name: "bio_fi"
+                    widget: "text"
+                    required: false
+                    hint: "Lyhyt esittely — näytetään modaalissa korttia klikattaessa. Tyhjä rivi erottaa kappaleet."
+                  - label: "Bio (EN)"
+                    name: "bio_en"
+                    widget: "text"
+                    required: false
+
       - name: "media"
         label: "Media-sivu / Media page"
         file: "content/media.yaml"

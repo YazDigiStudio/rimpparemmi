@@ -1,0 +1,43 @@
+sections:
+  - title_fi: Vakituinen henkilökunta
+    title_en: Permanent staff
+    people:
+      - name: Viivi Vesala
+        title_fi: Tuottaja
+        title_en: Producer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392910114-viivi.webp?alt=media
+      - name: Lauri Uusitalo
+        title_fi: Äänisuunnittelija
+        title_en: Sound designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392971658-lauri.webp?alt=media
+      - name: Atte Herd
+        title_fi: Dancer, Choreographer, Technical Coordinator.
+        title_en: Dancer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393023828-atte.webp?alt=media
+      - name: Helmi Järvensivu
+        title_fi: Tanssija, markkinointi- ja viestintävastaava
+        title_en: Dancer, audience engagement, marketing and communication
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393475243-Helmi.webp?alt=media
+      - name: Laura Kallas
+        title_en: Dancer and Trustee
+        title_fi: Tanssija, Luottamushenkilö
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394244866-Laura.webp?alt=media
+      - name: Joni Kuokkanen
+        title_en: Performer
+        title_fi: Esiintyjä
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394303897-joni.webp?alt=media
+      - title_fi: Muusikko
+        name: Jukka Nurmela
+        title_en: Mucisian
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394367181-Jukka.webp?alt=media
+      - name: Liisa Penttilä
+        title_fi: Myyjä
+        title_en: Sales
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394412924-Liisa-Penttila-360x360.webp?alt=media
+      - name: Matti Paloniemi
+        title_fi: Taiteellinen johtaja
+        title_en: Artistic director
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
+  - title_fi: Vierailijat
+    title_en: Guest artists
+    people: []
