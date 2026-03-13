@@ -80,7 +80,6 @@ info_en: >
 additional_info_fi: ""
 additional_info_en: ""
 sort_order: 10
-trailer_url: ""
 ticket_url_fallback: https://www.netticket.fi/we-will-funk-for-food-a-fistful-of-funk-rovaniemi
 badge_fi: ""
 badge_en: ""
@@ -89,9 +88,3 @@ duration_fi: ""
 duration_en: ""
 age_recommendation_fi: ""
 age_recommendation_en: ""
-technical_requirements_fi: ""
-technical_requirements_en: ""
-price_info_fi: ""
-price_info_en: ""
-documentation_url: ""
-rider_url: ""

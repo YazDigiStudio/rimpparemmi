@@ -587,13 +587,6 @@ collections:
         required: false
         hint: "Pienempi numero näkyy ensin — esim. 1 on ensimmäinen, 2 toinen"
 
-      # Trailer
-      - label: "Traileri / Trailer URL"
-        name: "trailer_url"
-        widget: "string"
-        required: false
-        hint: "YouTube tai Vimeo embed-URL (käytä youtube-nocookie.com)"
-
       # Tickets
       - label: "Varalinkki / Ticket URL fallback"
         name: "ticket_url_fallback"
@@ -642,39 +635,6 @@ collections:
         widget: "string"
         required: false
 
-      - label: "Tilavaatimukset (FI)"
-        name: "technical_requirements_fi"
-        widget: "text"
-        required: false
-        hint: "Lava- ja tilatarpeet — yksi vaatimus per rivi"
-
-      - label: "Technical requirements (EN)"
-        name: "technical_requirements_en"
-        widget: "text"
-        required: false
-
-      - label: "Hinta & matkakulut (FI)"
-        name: "price_info_fi"
-        widget: "text"
-        required: false
-        hint: "Esityspalkkio, matkakulut jne. — yksi rivi per tieto"
-
-      - label: "Fee & travel costs (EN)"
-        name: "price_info_en"
-        widget: "text"
-        required: false
-
-      - label: "Linkki taltioon / Documentation URL"
-        name: "documentation_url"
-        widget: "string"
-        required: false
-        hint: "Linkki videotallenteeseen"
-
-      - label: "Linkki raideriin / Rider URL"
-        name: "rider_url"
-        widget: "string"
-        required: false
-        hint: "Firebase Storage tai Google Drive linkki ladattavaan rideriin (PDF)"
 
   # ─────────────────────────────────────────────────────────────
   # PERFORMANCES — individual showings
@@ -740,3 +700,64 @@ collections:
         name: "additional_info_en"
         widget: "string"
         required: false
+
+  # ─────────────────────────────────────────────────────────────
+  # SALES — booking/sales info for venue organizers (/myynti)
+  # ─────────────────────────────────────────────────────────────
+  - name: "sales"
+    label: "Myynti / Sales"
+    label_singular: "Myyntikortti / Sales entry"
+    folder: "content/sales"
+    extension: yaml
+    format: yaml
+    create: true
+    slug: "{{fields.production_id}}"
+    identifier_field: "production_id"
+    summary: "{{production_id}}"
+    fields:
+
+      - label: "Tuotanto / Production"
+        name: "production_id"
+        widget: "relation"
+        collection: "productions"
+        search_fields: ["title_fi"]
+        value_field: "id"
+        display_fields: ["title_fi"]
+        hint: "Valitse tuotanto listasta"
+
+      - label: "Järjestysnumero / Sort order"
+        name: "sort_order"
+        widget: "number"
+        default: 10
+        required: false
+        hint: "Pienempi numero näkyy ensin"
+
+      - label: "Traileri / Trailer URL"
+        name: "trailer_url"
+        widget: "string"
+        required: false
+        hint: "YouTube tai Vimeo embed-URL (käytä youtube-nocookie.com)"
+
+      - label: "Tilavaatimukset"
+        name: "technical_requirements"
+        widget: "text"
+        required: false
+        hint: "Lava- ja tilatarpeet — yksi vaatimus per rivi"
+
+      - label: "Hinta & matkakulut"
+        name: "price_info"
+        widget: "text"
+        required: false
+        hint: "Esityspalkkio, matkakulut jne. — yksi rivi per tieto"
+
+      - label: "Linkki taltioon"
+        name: "documentation_url"
+        widget: "string"
+        required: false
+        hint: "Linkki videotallenteeseen (YouTube)"
+
+      - label: "Raideri (PDF)"
+        name: "rider_url"
+        widget: "file"
+        required: false
+        hint: "Lataa PDF-raideri — tallennetaan Firebase Storageen"

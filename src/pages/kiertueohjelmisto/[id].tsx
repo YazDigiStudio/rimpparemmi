@@ -1,5 +1,6 @@
-// Touring production selling/booking page — /kiertueohjelmisto/[id]
-// Shows full production info + touring-specific fields for bookers.
+// Touring production page — /kiertueohjelmisto/[id]
+// Shows production description, credits, duration and age recommendation.
+// Sales-specific fields (price, tech requirements, rider, trailer) are on /myynti/[id].
 
 import Head from "next/head";
 import Image from "next/image";
@@ -18,11 +19,6 @@ const copy = {
     back: "← Kiertueohjelmisto",
     duration: "Kesto",
     ageRecommendation: "Suositusikä",
-    technicalRequirements: "Tilavaatimukset",
-    priceInfo: "Hinta & matkakulut",
-    trailer: "Traileri",
-    documentation: "Tallenne",
-    rider: "Lataa rider",
     contact: "Kysy lisää ja varaa esitys",
     contactLink: "Ota yhteyttä",
   },
@@ -31,11 +27,6 @@ const copy = {
     back: "← Tour Programme",
     duration: "Duration",
     ageRecommendation: "Recommended age",
-    technicalRequirements: "Technical requirements",
-    priceInfo: "Fee & travel costs",
-    trailer: "Trailer",
-    documentation: "Recording",
-    rider: "Download rider",
     contact: "Enquire and book",
     contactLink: "Contact us",
   },
@@ -72,33 +63,8 @@ export default function TourProductionPage({ production }: Props) {
     ? production.age_recommendation_fi
     : (production.age_recommendation_en ?? production.age_recommendation_fi);
 
-  const technicalRequirements = locale === "fi"
-    ? production.technical_requirements_fi
-    : (production.technical_requirements_en ?? production.technical_requirements_fi);
-
-  const priceInfo = locale === "fi"
-    ? production.price_info_fi
-    : (production.price_info_en ?? production.price_info_fi);
-
   const longTextParagraphs = longText ? longText.trim().split(/\n\n+/) : [];
   const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
-  const techLines = technicalRequirements
-    ? technicalRequirements.trim().split("\n").filter(Boolean)
-    : [];
-  const priceLines = priceInfo
-    ? priceInfo.trim().split("\n").filter(Boolean)
-    : [];
-
-  const galleryImages = production.production_images ?? [];
-
-  const sectionHeadingStyle: React.CSSProperties = {
-    color: colors.nearBlack,
-    fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-    fontWeight: 700,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    marginBottom: "0.75rem",
-  };
 
   const infoBlockStyle: React.CSSProperties = {
     borderLeft: `3px solid ${colors.brandFuchsia}`,
@@ -290,139 +256,6 @@ export default function TourProductionPage({ production }: Props) {
               </div>
             )}
           </div>
-
-          {/* Gallery */}
-          {galleryImages.length > 0 && (
-            <div style={{ marginBottom: "3.5rem" }}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-                  gap: "1rem",
-                }}
-              >
-                {galleryImages.map((img, i) => (
-                  <div key={i}
-                    style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", borderRadius: "4px" }}
-                  >
-                    <Image
-                      src={img.src}
-                      alt=""
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    {img.photographer && (
-                      <span style={{
-                        position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                        backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                        fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                        pointerEvents: "none",
-                      }}>
-                        {locale === "fi" ? "Kuva" : "Photo"}: {img.photographer}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Trailer */}
-          {production.trailer_url && (
-            <div style={{ marginBottom: "3.5rem" }}>
-              <h2 style={sectionHeadingStyle}>{t.trailer}</h2>
-              <div style={{ position: "relative", aspectRatio: "16/9", maxWidth: "640px" }}>
-                <iframe
-                  src={production.trailer_url}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
-                />
-              </div>
-            </div>
-          )}
-
-          {/* Touring-specific info */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "2rem",
-              marginBottom: "3.5rem",
-            }}
-          >
-            {techLines.length > 0 && (
-              <div>
-                <h2 style={sectionHeadingStyle}>{t.technicalRequirements}</h2>
-                <div style={infoBlockStyle}>
-                  {techLines.map((line, i) => (
-                    <p key={i} style={{ color: colors.nearBlack, fontSize: "0.875rem", lineHeight: 1.7, opacity: 0.85 }}>
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {priceLines.length > 0 && (
-              <div>
-                <h2 style={sectionHeadingStyle}>{t.priceInfo}</h2>
-                <div style={infoBlockStyle}>
-                  {priceLines.map((line, i) => (
-                    <p key={i} style={{ color: colors.nearBlack, fontSize: "0.875rem", lineHeight: 1.7, opacity: 0.85 }}>
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Links: documentation + rider */}
-          {(production.documentation_url || production.rider_url) && (
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "3.5rem" }}>
-              {production.documentation_url && (
-                <a
-                  href={production.documentation_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    border: `1px solid ${colors.nearBlack}`,
-                    color: colors.nearBlack,
-                    padding: "0.5rem 1.25rem",
-                    borderRadius: "2px",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {t.documentation}
-                </a>
-              )}
-              {production.rider_url && (
-                <a
-                  href={production.rider_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    backgroundColor: colors.nearBlack,
-                    color: colors.white,
-                    padding: "0.5rem 1.25rem",
-                    borderRadius: "2px",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {t.rider}
-                </a>
-              )}
-            </div>
-          )}
 
           {/* Contact CTA */}
           <div
