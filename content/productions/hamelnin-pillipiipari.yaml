@@ -6,7 +6,7 @@ subtitle_en: A dance show for the whole family
 status: active
 category: children
 premiere_date: 2024-09-25
-primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Fhamelnin-pillipiipari%2Fweb%2F1773207678072-www-2_PilliPiip_1920x1080.webp?alt=media
+primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Fhamelnin-pillipiipari%2Fweb%2F1773406356320-Pillipiipari_1920x1080_ilman_logoja.webp?alt=media
 production_images:
   - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Fhamelnin-pillipiipari%2Fweb%2F1773213691890-Hamelin_Pillipiipari_Kuva_Antti_Kurola__1_.webp?alt=media
     photographer: Antti Kurola
@@ -70,16 +70,16 @@ info_en: |
 
   Duration: approx. 45 min
   Recommended age: 3–12 years
-additional_info_fi: "Teos on yhteistuotanto Tanssiteatteri Raatikon kanssa.
-  Ensi-ilta Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024"
 additional_info_en: "Co-production with Dance Theatre Raatikko. Premiere in
   Rovaniemi at Kulttuuritalo Wiljami: 25 September 2024"
 sort_order: 10
-ticket_url_fallback: "https://www.netticket.fi/hamelnin-pillipiipari-rovaniemi"
+ticket_url_fallback: https://www.netticket.fi/hamelnin-pillipiipari-rovaniemi
 badge_en: For the whole family
-is_touring: true
 photographer: Antti Kurola
+additional_info_fi: "Teos on yhteistuotanto Tanssiteatteri Raatikon kanssa.
+  Ensi-ilta Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024"
 badge_fi: Koko perheelle
+is_touring: true
 duration_fi: n. 45 min
 duration_en: approx. 45 min
 age_recommendation_fi: 3–12 vuotta
