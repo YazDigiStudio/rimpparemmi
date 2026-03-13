@@ -22,7 +22,7 @@ type Props = { production: Production; sales: SalesEntry };
 export default function MyyntiDetailPage({ production, sales }: Props) {
   const title = production.title_fi;
   const subtitle = production.subtitle_fi;
-  const longText = production.long_text_fi;
+  const longText = sales.description || production.long_text_fi;
   const infoText = production.info_fi;
   const duration = production.duration_fi;
   const ageRecommendation = production.age_recommendation_fi;

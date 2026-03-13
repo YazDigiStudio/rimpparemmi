@@ -47,6 +47,7 @@ export type Production = {
 export type SalesEntry = {
   production_id: string;
   sort_order?: number;
+  description?: string;  // overrides production long_text_fi if filled
   technical_requirements?: string;
   price_info?: string;
   trailer_url?: string;

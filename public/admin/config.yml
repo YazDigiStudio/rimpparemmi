@@ -393,7 +393,7 @@ collections:
                   - label: "Embed URL"
                     name: "url"
                     widget: "string"
-                    hint: "YouTube: https://www.youtube-nocookie.com/embed/VIDEO_ID — Vimeo: https://player.vimeo.com/video/VIDEO_ID"
+                    hint: "YouTube: https://www.youtube.com/watch?v=VIDEO_ID — Vimeo: https://player.vimeo.com/video/VIDEO_ID"
                   - label: "Otsikko (FI)"
                     name: "title_fi"
                     widget: "string"
@@ -732,11 +732,17 @@ collections:
         required: false
         hint: "Pienempi numero näkyy ensin"
 
+      - label: "Kuvaus (valinnainen)"
+        name: "description"
+        widget: "markdown"
+        required: false
+        hint: "Jos täytetty, korvaa tuotannon pitkän kuvauksen tällä sivulla. Jos tyhjä, käytetään tuotannon omaa kuvausta."
+
       - label: "Traileri / Trailer URL"
         name: "trailer_url"
         widget: "string"
         required: false
-        hint: "YouTube tai Vimeo embed-URL (käytä youtube-nocookie.com)"
+        hint: "YouTube tai Vimeo URL — linkki muunnetaan automaattisesti oikeaan muotoon"
 
       - label: "Tilavaatimukset"
         name: "technical_requirements"
