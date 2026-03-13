@@ -1,72 +1,50 @@
-// Touring production page — /kiertueohjelmisto/[id]
-// Shows production description, credits, duration and age recommendation.
-// Sales-specific fields (price, tech requirements, rider, trailer) are on /myynti/[id].
+// Sales production detail page — /myynti/[id]
+// Hidden from navigation. Finnish only.
+// Shows full production info + sales-specific fields for bookers.
 
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import ImageCarousel from "@/components/ImageCarousel";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
-import ImageCarousel from "@/components/ImageCarousel";
 import { colors } from "@/styles/colors";
-import { getProductions, type Production } from "@/lib/content";
+import {
+  getProductions,
+  getSalesEntries,
+  type Production,
+  type SalesEntry,
+} from "@/lib/content";
+import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 
-type Locale = "fi" | "en";
+type Props = { production: Production; sales: SalesEntry };
 
-const copy = {
-  fi: {
-    meta: (title: string) => `${title} – Kiertueohjelmisto – Tanssiteatteri Rimpparemmi`,
-    back: "← Kiertueohjelmisto",
-    duration: "Kesto",
-    ageRecommendation: "Suositusikä",
-    contact: "Kysy lisää ja varaa esitys",
-    contactLink: "Ota yhteyttä",
-  },
-  en: {
-    meta: (title: string) => `${title} – Tour Programme – Dance Theatre Rimpparemmi`,
-    back: "← Tour Programme",
-    duration: "Duration",
-    ageRecommendation: "Recommended age",
-    contact: "Enquire and book",
-    contactLink: "Contact us",
-  },
-} as const;
-
-type Props = { production: Production };
-
-export default function TourProductionPage({ production }: Props) {
-  const { locale: routerLocale } = useRouter();
-  const locale: Locale = routerLocale === "en" ? "en" : "fi";
-  const t = copy[locale];
-
-  const title = locale === "fi"
-    ? production.title_fi
-    : (production.title_en ?? production.title_fi);
-
-  const subtitle = locale === "fi"
-    ? production.subtitle_fi
-    : (production.subtitle_en ?? production.subtitle_fi);
-
-  const longText = locale === "fi"
-    ? production.long_text_fi
-    : (production.long_text_en ?? production.long_text_fi);
-
-  const infoText = locale === "fi"
-    ? production.info_fi
-    : (production.info_en ?? production.info_fi);
-
-  const duration = locale === "fi"
-    ? production.duration_fi
-    : (production.duration_en ?? production.duration_fi);
-
-  const ageRecommendation = locale === "fi"
-    ? production.age_recommendation_fi
-    : (production.age_recommendation_en ?? production.age_recommendation_fi);
+export default function MyyntiDetailPage({ production, sales }: Props) {
+  const title = production.title_fi;
+  const subtitle = production.subtitle_fi;
+  const longText = production.long_text_fi;
+  const infoText = production.info_fi;
+  const duration = production.duration_fi;
+  const ageRecommendation = production.age_recommendation_fi;
 
   const longTextParagraphs = longText ? longText.trim().split(/\n\n+/) : [];
   const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
+  const techLines = sales.technical_requirements
+    ? sales.technical_requirements.trim().split("\n").filter(Boolean)
+    : [];
+  const priceLines = sales.price_info
+    ? sales.price_info.trim().split("\n").filter(Boolean)
+    : [];
   const galleryImages = production.production_images ?? [];
+
+  const sectionHeadingStyle: React.CSSProperties = {
+    color: colors.nearBlack,
+    fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    marginBottom: "0.75rem",
+  };
 
   const infoBlockStyle: React.CSSProperties = {
     borderLeft: `3px solid ${colors.brandFuchsia}`,
@@ -77,8 +55,9 @@ export default function TourProductionPage({ production }: Props) {
   return (
     <>
       <Head>
-        <title>{t.meta(title)}</title>
+        <title>{title} – Myynti – Tanssiteatteri Rimpparemmi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <Navigation />
 
@@ -105,7 +84,7 @@ export default function TourProductionPage({ production }: Props) {
             fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
             pointerEvents: "none",
           }}>
-            {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
+            Kuva: {production.primary_image_photographer}
           </span>
         )}
         <div
@@ -160,7 +139,7 @@ export default function TourProductionPage({ production }: Props) {
 
           {/* Back link */}
           <Link
-            href="/kiertueohjelmisto"
+            href="/myynti"
             style={{
               display: "inline-block",
               color: colors.muted,
@@ -170,7 +149,7 @@ export default function TourProductionPage({ production }: Props) {
               marginBottom: "2.5rem",
             }}
           >
-            {t.back}
+            ← Myynti
           </Link>
 
           {/* Quick specs row */}
@@ -189,7 +168,7 @@ export default function TourProductionPage({ production }: Props) {
               {duration && (
                 <div>
                   <p style={{ color: colors.muted, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
-                    {t.duration}
+                    Kesto
                   </p>
                   <p style={{ color: colors.nearBlack, fontSize: "0.95rem", fontWeight: 600 }}>
                     {duration}
@@ -199,7 +178,7 @@ export default function TourProductionPage({ production }: Props) {
               {ageRecommendation && (
                 <div>
                   <p style={{ color: colors.muted, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
-                    {t.ageRecommendation}
+                    Suositusikä
                   </p>
                   <p style={{ color: colors.nearBlack, fontSize: "0.95rem", fontWeight: 600 }}>
                     {ageRecommendation}
@@ -266,6 +245,102 @@ export default function TourProductionPage({ production }: Props) {
             </div>
           )}
 
+          {/* Trailer */}
+          {sales.trailer_url && (
+            <div style={{ marginBottom: "3.5rem" }}>
+              <h2 style={sectionHeadingStyle}>Traileri</h2>
+              <div style={{ position: "relative", aspectRatio: "16/9", maxWidth: "640px" }}>
+                <iframe
+                  src={toNoCookiesEmbed(sales.trailer_url)}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Touring-specific info */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: "2rem",
+              marginBottom: "3.5rem",
+            }}
+          >
+            {techLines.length > 0 && (
+              <div>
+                <h2 style={sectionHeadingStyle}>Tilavaatimukset</h2>
+                <div style={infoBlockStyle}>
+                  {techLines.map((line, i) => (
+                    <p key={i} style={{ color: colors.nearBlack, fontSize: "0.875rem", lineHeight: 1.7, opacity: 0.85 }}>
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {priceLines.length > 0 && (
+              <div>
+                <h2 style={sectionHeadingStyle}>Hinta & matkakulut</h2>
+                <div style={infoBlockStyle}>
+                  {priceLines.map((line, i) => (
+                    <p key={i} style={{ color: colors.nearBlack, fontSize: "0.875rem", lineHeight: 1.7, opacity: 0.85 }}>
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Links: documentation + rider */}
+          {(sales.documentation_url || sales.rider_url) && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "3.5rem" }}>
+              {sales.documentation_url && (
+                <a
+                  href={sales.documentation_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    border: `1px solid ${colors.nearBlack}`,
+                    color: colors.nearBlack,
+                    padding: "0.5rem 1.25rem",
+                    borderRadius: "2px",
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Tallenne
+                </a>
+              )}
+              {sales.rider_url && (
+                <a
+                  href={sales.rider_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: colors.nearBlack,
+                    color: colors.white,
+                    padding: "0.5rem 1.25rem",
+                    borderRadius: "2px",
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Lataa raideri
+                </a>
+              )}
+            </div>
+          )}
+
           {/* Contact CTA */}
           <div
             style={{
@@ -275,7 +350,7 @@ export default function TourProductionPage({ production }: Props) {
             }}
           >
             <p style={{ color: colors.nearBlack, fontSize: "1rem", marginBottom: "1rem" }}>
-              {t.contact}
+              Kysy lisää ja varaa esitys
             </p>
             <Link
               href="/yhteystiedot"
@@ -290,7 +365,7 @@ export default function TourProductionPage({ production }: Props) {
                 textTransform: "uppercase",
               }}
             >
-              {t.contactLink}
+              Ota yhteyttä
             </Link>
           </div>
 
@@ -301,18 +376,19 @@ export default function TourProductionPage({ production }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const productions = getProductions();
-  const touring = productions.filter((p) => p.is_touring === true);
-  const paths = touring.flatMap((prod) => [
-    { params: { id: prod.id }, locale: "fi" },
-    { params: { id: prod.id }, locale: "en" },
-  ]);
+  const salesEntries = getSalesEntries();
+  const paths = salesEntries.map((s) => ({ params: { id: s.production_id } }));
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const salesEntries = getSalesEntries();
+  const sales = salesEntries.find((s) => s.production_id === params?.id);
+  if (!sales) return { notFound: true };
+
   const productions = getProductions();
-  const production = productions.find((p) => p.id === params?.id);
-  if (!production || !production.is_touring) return { notFound: true };
-  return { props: { production } };
+  const production = productions.find((p) => p.id === sales.production_id);
+  if (!production) return { notFound: true };
+
+  return { props: { production, sales } };
 };

@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
+import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 import {
   getProductions,
   getMediaData,
@@ -260,23 +261,6 @@ function PhotoGrid({ production, locale, onImageClick }: {
   );
 }
 
-function toNoCookiesEmbed(url: string): string {
-  try {
-    const u = new URL(url);
-    let videoId: string | null = null;
-    if (u.hostname === "youtu.be") {
-      videoId = u.pathname.slice(1);
-    } else if (
-      u.hostname === "www.youtube.com" ||
-      u.hostname === "youtube.com" ||
-      u.hostname === "www.youtube-nocookie.com"
-    ) {
-      videoId = u.searchParams.get("v") ?? u.pathname.replace("/embed/", "");
-    }
-    if (videoId) return `https://www.youtube-nocookie.com/embed/${videoId}`;
-  } catch {}
-  return url;
-}
 
 function GeneralMedia({ items, locale, onImageClick }: {
   items: MediaItem[];

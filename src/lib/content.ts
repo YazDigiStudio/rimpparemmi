@@ -37,18 +37,21 @@ export type Production = {
   badge_fi?: string;
   badge_en?: string;
   is_touring?: boolean;
-  // Touring selling page only
   duration_fi?: string;
   duration_en?: string;
   age_recommendation_fi?: string;
   age_recommendation_en?: string;
-  technical_requirements_fi?: string;
-  technical_requirements_en?: string;
-  price_info_fi?: string;
-  price_info_en?: string;
+  press_zip_url?: string;
+};
+
+export type SalesEntry = {
+  production_id: string;
+  sort_order?: number;
+  technical_requirements?: string;
+  price_info?: string;
+  trailer_url?: string;
   documentation_url?: string;
   rider_url?: string;
-  press_zip_url?: string;
 };
 
 export type Performance = {
@@ -92,6 +95,17 @@ export function getPerformances(): Performance[] {
       { schema: yaml.JSON_SCHEMA }
     ) as Performance)
     .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+}
+
+export function getSalesEntries(): SalesEntry[] {
+  const dir = path.join(contentDir, "sales");
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".yaml") && !f.startsWith("_"));
+  return files
+    .map((file) => yaml.load(
+      fs.readFileSync(path.join(dir, file), "utf8"),
+      { schema: yaml.JSON_SCHEMA }
+    ) as SalesEntry)
+    .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
 }
 
 export type HeroSlide = {
