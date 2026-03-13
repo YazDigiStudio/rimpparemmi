@@ -41,4 +41,36 @@ sections:
         bio_fi: ""
   - title_fi: Vierailijat
     title_en: Guest artists
-    people: []
+    people:
+      - name: Jukka Laukkanen
+        title_fi: Valo- ja Lavastussunnittelija
+        title_en: Lighting and Set designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403647946-_DSF1495.webp?alt=media
+      - name: Elina Vasko
+        title_fi: Pukusuunnittelija
+        title_en: Costume Designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403716508-_DSF1549.webp?alt=media
+      - name: Janne Teivainen
+        title_fi: Valo- ja Lavastussunnittelija
+        title_en: Lighting and Set designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403145526-Teivainen.webp?alt=media
+      - name: Mirkka Nyrhinen
+        title_fi: Pukusuunnittelija
+        title_en: Costume Designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403237155-Mirkka.webp?alt=media
+      - name: Kaisa Ristiluoma
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403513323-Kaisa_B_W.webp?alt=media
+      - name: Sari Palmgren
+        title_fi: Koreografi
+        title_en: Choreographer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403577247-Sari_B_W.webp?alt=media
+      - name: Harri Kuusijärvi
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403866681-_DSF1488.webp?alt=media
+      - name: Jaana Isokangas
+        title_fi: Pukusuunnittelija
+        title_en: Costume Designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773404012809-Jaana.webp?alt=media
