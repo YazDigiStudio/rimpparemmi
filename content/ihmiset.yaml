@@ -7,51 +7,38 @@ sections:
         title_en: Producer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392910114-viivi.webp?alt=media
       - name: Lauri Uusitalo
-        title_fi: Äänisuunnittelija
-        title_en: Sound designer
+        title_fi: Äänisuunnittelija, Muusikko
+        title_en: Sound designer, Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392971658-lauri.webp?alt=media
       - name: Atte Herd
-        title_fi: Dancer, Choreographer, Technical Coordinator.
-        title_en: Dancer
+        title_fi: Tanssija, Tekninen päällikkö
+        title_en: Dancer, Technical Manager
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393023828-atte.webp?alt=media
       - name: Helmi Järvensivu
-        title_fi: Tanssija, markkinointi- ja viestintävastaava
-        title_en: Dancer, audience engagement, marketing and communication
+        title_fi: Tanssija, Viestintäpäällikkö
+        title_en: Dancer, Communications Manager
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393475243-Helmi.webp?alt=media
       - name: Laura Kallas
-        title_en: Dancer and Trustee
-        title_fi: Tanssija, Luottamushenkilö
+        title_en: Dancer, Bar Manager, Trustee
+        title_fi: Tanssija, Ravintolapäällikkö, Luottamushenkilö
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394244866-Laura.webp?alt=media
       - name: Joni Kuokkanen
-        title_en: Performer
-        title_fi: Esiintyjä
+        title_en: Actor, Director
+        title_fi: Näyttelijä, Ohjaaja
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394303897-joni.webp?alt=media
       - title_fi: Muusikko
         name: Jukka Nurmela
         title_en: Mucisian
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394367181-Jukka.webp?alt=media
       - name: Liisa Penttilä
-        title_fi: Myyjä
-        title_en: Sales
+        title_fi: Myytineuvottelija
+        title_en: Sales Representative
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394412924-Liisa-Penttila-360x360.webp?alt=media
       - name: Matti Paloniemi
-        title_fi: Taiteellinen johtaja
-        title_en: Artistic director
+        title_fi: Teatterinjohtaja
+        title_en: Theater Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
-        bio_fi: >-
-          Tanssiteatteri Rimpparemmin johtaja on taiteellinen johtaja,
-          koreografi Matti Paloniemi. Paloniemellä on 25 vuoden ammatillinen
-          kokemus tanssitaiteen alalta tanssijana, koreografina, tuottajana ja
-          ohjaajana sekä työryhmien johtajana. Paloniemi on tehnyt kymmeniä koko
-          illan teoksia ympäri Suomen tanssiteattereille ja puheteattereille.
-          Paloniemi on toiminut Rimpparemmin taiteellisena johtaja vuodesta 2010
-          lähtien.
-
-
-          Matti Paloniemi oli Tanssiteatteri Tsuumin taiteellinen johtaja vuosina 1998-2007. Paloniemi on uransa aikana ollut useissa luottamustoimissa mm.: Tanssin tiedotuskeskuksen hallitus 2010-2015 ja Suomen Teatterit ry hallitus 2014-2020. Paloniemi on opiskellut tanssia Oulun konservatoriossa ja koreografiaa Teatterikorkeakoulussa. Paloniemi on valmistunut Esittävien taiteiden johtajan ammattitutkinnon koulutuksesta vuonna 2021.
-
-
-          Paloniemi pitää tanssissa liikkeestä ja sen äärettömistä mahdollisuuksista tulkita elämää. Hän ei pidä tanssissa sen rahoituksesta.
+        bio_fi: ""
   - title_fi: Vierailijat
     title_en: Guest artists
     people: []
