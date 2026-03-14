@@ -56,27 +56,52 @@ sections:
     image_orientation: "landscape"
     image_position: "left"
 
-  # ── Type 3: Title + text ──────────────────────────────────────────────────────
-  - title_fi: "Käytännön tiedot"
-    title_en: "Practical information"
+  # ── Saapuminen Wiljamiin ──────────────────────────────────────────────────────
+  - title_fi: "Saapuminen Wiljamiin"
+    title_en: ""
     text_fi: |
-      **Osoite**
-      Urheilukatu 1, 96100 Rovaniemi
+      Esityksemme nähdään Kulttuuritalo Wiljamissa, Rovaniemen keskustan tuntumassa.
+      Osoite: Urheilukatu 1, 96100 Rovaniemi.
+      Wiljamiin on helppo tulla olitpa liikkeellä kävellen, pyörällä, bussilla tai autolla.
+    text_en: ""
+    image: ""
+    image_alt_fi: ""
+    image_alt_en: ""
+    image_orientation: "landscape"
+    image_position: "left"
 
-      **Saavutettavuus**
-      Kulttuuritalo Wiljami ei ole täysin esteetön. Rakennuksessa on pyörätuoliluiska ja esteetön wc.
+  - title_fi: "Saapuminen & pysäköinti"
+    title_en: ""
+    text_fi: |
+      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä. Pysäköinti on päivisin maksullista.
+      Iltaesityksiin saapuessa löydät yleensä paikan vaivatta – mutta suosittelemme tulemaan ajoissa, niin ilta alkaa ilman parkkistressiä.
+      Rovaniemen paikallisliikenteen bussit kulkevat keskustan kautta, ja Wiljamiin on lyhyt kävelymatka useilta pysäkeiltä. Aikataulut ja reitit löydät Rovaniemen paikallisliikenteen sivuilta.
+    text_en: ""
+    image: ""
+    image_alt_fi: ""
+    image_alt_en: ""
+    image_orientation: "landscape"
+    image_position: "left"
 
-      **Pysäköinti**
-      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä. Päivisin pysäköinti on maksullista.
-    text_en: |
-      **Address**
-      Urheilukatu 1, 96100 Rovaniemi
+  - title_fi: "Esteettömyys & saavutettavuus"
+    title_en: ""
+    text_fi: |
+      Kulttuuritalo Wiljami ei ole täysin esteetön. Lähes esteetön kulku tapahtuu takaoven kautta ja sisätiloista löytyy invahissi, jonka painorajoite on 200 kg.
+      Katsomossa on pyörätuolipaikkoja kaksi, ja henkilökuntamme auttaa mielellään, jos tarvitset apua saapuessasi.
+      Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
+    text_en: ""
+    image: ""
+    image_alt_fi: ""
+    image_alt_en: ""
+    image_orientation: "landscape"
+    image_position: "left"
 
-      **Accessibility**
-      Kulttuuritalo Wiljami is not fully accessible. The building has a wheelchair ramp and an accessible toilet.
-
-      **Parking**
-      Parking is available on Urheilukatu and in front of the building. Daytime parking requires payment.
+  - title_fi: "Ovet & liput"
+    title_en: ""
+    text_fi: |
+      Ovet aukeavat yleensä 1 tunti ennen esitystä.
+      Ovilipunmyynti palvelee Pystybaari Wiljamissa, mikäli esitys ei ole loppuunmyyty.
+    text_en: ""
     image: ""
     image_alt_fi: ""
     image_alt_en: ""

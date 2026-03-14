@@ -126,6 +126,7 @@ export type HomeNewsItem = {
   image?: string;
   image_photographer?: string;
   body?: string;   // markdown — split by \n\n for paragraphs
+  extra?: string;  // multiline text — split by \n for items
 };
 
 export type HomeData = {

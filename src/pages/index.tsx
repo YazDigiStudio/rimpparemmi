@@ -214,6 +214,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
       image: item.image,
       description: item.body ? item.body.trim().split(/\n\n+/) : [],
       credits: [],
+      extra: item.extra ? [item.extra.trim()] : undefined,
     },
   }));
 

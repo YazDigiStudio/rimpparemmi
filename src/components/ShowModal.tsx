@@ -4,6 +4,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import { colors } from "@/styles/colors";
 import { toEmbedUrl } from "@/lib/netticketUtils";
 
@@ -180,19 +181,30 @@ export default function ShowModal({ info, onClose }: Props) {
 
         {/* Description */}
         <div style={{ marginBottom: "1.75rem" }}>
-          {info.description.map((paragraph, i) => (
-            <p
-              key={i}
-              style={{
-                color: colors.nearBlack,
-                fontSize: "0.9rem",
-                lineHeight: 1.75,
-                marginBottom: i < info.description.length - 1 ? "1rem" : 0,
-              }}
-            >
-              {paragraph}
-            </p>
-          ))}
+          <ReactMarkdown
+            components={{
+              p: ({ children }) => (
+                <p style={{ color: colors.nearBlack, fontSize: "0.9rem", lineHeight: 1.75, marginBottom: "1rem" }}>
+                  {children}
+                </p>
+              ),
+              a: ({ href, children }) => {
+                const isInternal = href?.startsWith("/") || href?.startsWith("#");
+                return (
+                  <a
+                    href={href}
+                    target={isInternal ? undefined : "_blank"}
+                    rel={isInternal ? undefined : "noopener noreferrer"}
+                    style={{ color: colors.brandFuchsia }}
+                  >
+                    {children}
+                  </a>
+                );
+              },
+            }}
+          >
+            {info.description.join("\n\n")}
+          </ReactMarkdown>
         </div>
 
         {/* Credits */}
@@ -244,18 +256,22 @@ export default function ShowModal({ info, onClose }: Props) {
               marginBottom: info.performances && info.performances.length > 0 ? "1.25rem" : 0,
             }}
           >
-            {info.extra.map((item, i) => (
-              <p
-                key={i}
-                style={{
-                  color: colors.muted,
-                  fontSize: "0.8rem",
-                  marginBottom: "0.35rem",
-                }}
-              >
-                {item}
-              </p>
-            ))}
+            <ReactMarkdown
+              components={{
+                p: ({ children }) => (
+                  <p style={{ color: colors.muted, fontSize: "0.8rem", marginBottom: "0.35rem" }}>
+                    {children}
+                  </p>
+                ),
+                a: ({ href, children }) => (
+                  <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: colors.brandFuchsia }}>
+                    {children}
+                  </a>
+                ),
+              }}
+            >
+              {info.extra.join("\n\n")}
+            </ReactMarkdown>
           </div>
         )}
 
