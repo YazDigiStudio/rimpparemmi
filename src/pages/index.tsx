@@ -212,10 +212,8 @@ export default function Home({ productions, performances, homeData }: HomeProps)
       title: item.title,
       subtitle: item.subtitle,
       image: item.image,
-      imageHeight: item.image_height,
       description: item.body ? item.body.trim().split(/\n\n+/) : [],
       credits: [],
-      extra: item.extra ? item.extra.trim().split("\n").filter(Boolean) : undefined,
     },
   }));
 

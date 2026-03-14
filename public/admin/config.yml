@@ -152,22 +152,11 @@ collections:
                 name: "image_photographer"
                 widget: "string"
                 required: false
-              - label: "Kuvan korkeus modaalissa / Image height in modal"
-                name: "image_height"
-                widget: "number"
-                required: false
-                default: 320
-                hint: "Pikseleinä — käytä suurempaa arvopormuotokuville (esim. 480)"
               - label: "Leipäteksti / Body"
                 name: "body"
                 widget: "markdown"
                 required: false
                 hint: "Tyhjät rivit erottavat kappaleet"
-              - label: "Lisätiedot / Extra"
-                name: "extra"
-                widget: "text"
-                required: false
-                hint: "Yksi rivi per tieto — esim. linkit, kiitokset"
 
       - name: "tanssiteatteri"
         label: "Tanssiteatteri"

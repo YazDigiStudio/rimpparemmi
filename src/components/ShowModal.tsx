@@ -17,7 +17,6 @@ export type ShowInfo = {
   title: string;
   subtitle?: string;
   image?: string;       // path relative to /public, e.g. "/images/foo.jpg"
-  imageHeight?: number; // rendered crop height in modal (default 320; use more for portrait images)
   description: string[];
   credits: string[]; // "Role: Name(s)" format
   extra?: string[];  // premiere, duration, age recommendation, etc.
@@ -132,7 +131,7 @@ export default function ShowModal({ info, onClose }: Props) {
               src={info.image}
               alt={info.title}
               width={640}
-              height={info.imageHeight ?? 320}
+              height={480}
               style={{
                 width: "100%",
                 height: "auto",
