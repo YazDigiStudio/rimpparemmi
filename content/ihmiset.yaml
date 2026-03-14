@@ -7,36 +7,36 @@ sections:
         title_en: Producer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392910114-viivi.webp?alt=media
       - name: Lauri Uusitalo
-        title_fi: Äänisuunnittelija
-        title_en: Sound designer
+        title_fi: Äänisuunnittelija, Muusikko
+        title_en: Sound Designer, Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392971658-lauri.webp?alt=media
       - name: Atte Herd
-        title_fi: Dancer, Choreographer, Technical Coordinator.
-        title_en: Dancer
+        title_fi: Tanssija, Tekninen Päällikkö
+        title_en: Dancer, Technical Manager
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393023828-atte.webp?alt=media
       - name: Helmi Järvensivu
-        title_fi: Tanssija, markkinointi- ja viestintävastaava
-        title_en: Dancer, audience engagement, marketing and communication
+        title_fi: Tanssija, Viestintäpäällikkö
+        title_en: Dancer, Communications Manager
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393475243-Helmi.webp?alt=media
       - name: Laura Kallas
-        title_en: Dancer and Trustee
-        title_fi: Tanssija, Luottamushenkilö
+        title_en: Dancer, Restaurant Manager, Trustee
+        title_fi: Tanssija, Ravintolapäällikkö, Luottamushenkilö
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394244866-Laura.webp?alt=media
       - name: Joni Kuokkanen
-        title_en: Performer
-        title_fi: Esiintyjä
+        title_en: Actor, Director
+        title_fi: Näyttelijä, Ohjaaja
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394303897-joni.webp?alt=media
       - title_fi: Muusikko
         name: Jukka Nurmela
-        title_en: Mucisian
+        title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394367181-Jukka.webp?alt=media
       - name: Liisa Penttilä
-        title_fi: Myyjä
-        title_en: Sales
+        title_fi: Myyntineuvottelija
+        title_en: Sales Coordinator
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394412924-Liisa-Penttila-360x360.webp?alt=media
       - name: Matti Paloniemi
-        title_fi: Taiteellinen johtaja
-        title_en: Artistic director
+        title_fi: Teatterijohtaja
+        title_en: Theatre Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
   - title_fi: Vierailijat
     title_en: Guest artists
