@@ -1,77 +1,90 @@
 show_calendar: true
 show_events_list: true
-intro_text_fi: >
-  Tanssiteatteri Rimpparemmi kertoo tarinoita: kauniita ja rumia. Tarinoita,
-  jotka ovat joskus röyhkeitä ja toisinaan vakavia, useimmiten kuitenkin todella
-  hauskoja. Välittyköön Rimpparemmin tekemisestä riemu ja rakkaus taiteeseen
-  sekä esiintymiseen. Rimpparemmi toivoo, että juuri sinä, voit vahvistaa
-  pohjoista identiteettiä osallistumalla tanssitaiteen kokemiseen ja jakaa
-  pohjoisen tunteen palon kanssamme, sen joka meitä kaikkia lopulta yhdistää.
-
-
-  Tanssiteatteri Rimpparemmi on Suomen pohjoisin ammattitanssiteatteri. Rimpparemmin juuret ulottuvat 1970-luvulle, jolloin toiminta alkoi Tervolassa kansantanssiyhtyeenä. Kansantanssin karhea ilmaisuvoima yhdistyy tänä päivänä nykytanssin virtaavuuteen Rimpparemmin esityksissä. Musiikki on vahvasti läsnä kaikessa toiminnassa.
-
-
-  Tanssiteatteri Rimpparemmi tuottaa Rovaniemellä tanssi- ja teatteriesityksiä Tanssin näyttämöllä Kulttuuritalo Wiljamissa. Tanssin näyttämön ohjelmisto koostuu Rimpparemmin omista tuotannoista, yhteistuotannoista sekä vierailevista esityksistä. Rimpparemmi kiertää aktiivisesti ympäri Suomea esittämässä maailman parasta lappilaista tanssiteatteria.
-intro_title_en: ""
-hero_text_en: Dance Theatre Rimpparemmi
-hero_slides:
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773207917775-Hamelin_Pillipiipari_Kuva_Antti_Kurola__7_.webp?alt=media
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773207949337-Kielletyt_liikkeet_kuva_Antti_Kurola__10_.webp?alt=media
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773207983604-Tapahtuma_Piaf_Kuva_Antti_Kurola__1_.webp?alt=media
-intro_text_en: >
-  Dance Theatre Rimpparemmi tells stories: both beautiful and ugly. Stories that
-  are sometimes bold and occasionally serious, but most often truly funny. Let
-  the joy and love for art and performance be conveyed through Rimpparemmi's
-  creations. Rimpparemmi hopes that you, specifically, can strengthen the
-  northern identity by participating in the experience of dance art and by
-  sharing the passion for the northern sentiment with us – that which ultimately
-  unites all of us.
-
-
-  Rimpparemmi Dance Theatre is the northernmost professional dance theatre in Finland. The roots of Rimpparemmi stretch back to the 1970s when its operations began in Tervola as a folk dance ensemble. The raw expressive power of folk dance blends with the fluidity of contemporary dance in Rimpparemmi's performances. Music is strongly present in all activities.
-
-
-  Dance Theatre Rimpparemmi produces dance and theatre performances in Rovaniemi at their home stage in Kulttuuritalo Wiljami. The program consists of Rimpparemmi's own productions, collaborations, and guest performances. Rimpparemmi actively tours around Finland, presenting the world's best Lappish dance theatre.
 hero_text_fi: Tanssiteatteri Rimpparemmi
+hero_text_en: Dance Theatre Rimpparemmi
 tagline_fi: ""
-news_items:
-  - card_title: Kulttuurikummit palaavat. Lähde mukaan!
-    title: Kulttuurikummit palaavat – Hyppynarutus haastaa mukaan tukemaan lasten
-      kulttuuria
-    subtitle: Ajankohtaista
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773210497474-kulttuurikummiksi-nettisivuille-edited-1.webp?alt=media
-    image_height: 480
-    body: >
-      Viime vuonna ensimmäistä kertaa lanseerattu kulttuurikummikampanja sai
-      hienon vastaanoton: yli 800 katsojaa pääsi kokemaan taidetta Rimpparemmin
-      esityksissä kummituen ansiosta. Nyt tämä sydämellinen haaste palaa – ja
-      kutsuu uusia yrityksiä ja yhteisöjä mukaan luomaan unohtumattomia hetkiä
-      rovaniemeläisille lapsille.
-
-
-      Vuoden 2025 kulttuurikummiesityksenä nähdään osallistava ja vauhdikas lastentanssiteatteriesitys Hyppynarutus. Se kutsuu yleisön mukaansa pomppimaan, leikkimään ja kuvittelemaan – ja kulttuurikummit mahdollistavat sen, että esityksiin pääsee mukaan myös sellaisia lapsia, joille kulttuurielämykset eivät muuten olisi itsestäänselvyys.
-
-
-      Miksi lähteä mukaan?
-
-
-      Kulttuurikummius on tapa osoittaa yhteisöllisyyttä ja sosiaalista vastuuta – ja samalla saada hyvää näkyvyyttä. Yrityksen tai yhteisön nimi voidaan halutessanne nostaa esiin esityksen käsiohjelmissa, markkinointimateriaaleissa ja somessa. Mutta ennen kaikkea: mukanaolonne tuo iloa.
-
-
-      Tukipaketit alkavat 100 eurosta
-
-
-      Kynnys on matala. Tukipaketteja on tarjolla eri tasoisina, ja jokainen kummi saa näkyvyyttä – sekä hyvän mielen.
-    extra: |
-      Katso kaikki tukipaketit ja lähde mukaan: rimpparemmi.fi/kulttuurikummiksi
-      Yhdessä rakennamme tulevaisuuden, jossa taide kuuluu kaikille.
-      Kiitos kun olet mukana. 💛
 tagline_en: ""
-intro_title_fi: ""
+intro_title_fi: Maailman parasta Lappilaista tanssiteatteria
+intro_title_en: The Best Dance Theatre from Lapland
+intro_text_fi: >-
+  **Tanssiteatteri Rimpparemmi** on Suomen pohjoisin ammattitanssiteatteri.
+  Teemme fyysistä, musiikillista ja vahvasti näyttämöllistä nykytanssia ja
+  tanssiteatteria.
+
+
+  Esityksemme yhdistävät tarkkaa taiteellista työskentelyä, pohjoista identiteettiä ja sopivasti vinoa huumoria. Tarinamme voivat olla herkkiä tai ronskeja, mutta useimmiten todella hauskoja.
+
+
+  Kotimme on Rovaniemellä Kulttuuritalo Wiljamissa, ja kierrämme aktiivisesti ympäri Suomea.
+
+
+  Tule kokemaan pohjoisen tanssin näyttämö.
+intro_text_en: >-
+  **Dance Theatre Rimpparemmi** is the northernmost professional dance theatre
+  in Finland. We create physical, musical, and strongly theatrical contemporary
+  dance and dance theatre.
+
+
+  Our performances combine precise artistic work, northern identity, and a touch of quirky humor. Our stories can be tender or rough around the edges, but most often they are truly funny.
+
+
+  Our home is in Rovaniemi at Cultural House Wiljami, and we actively tour across Finland.
+
+
+  Come experience the dancestage of the North.
+hero_slides:
+  - show_on: desktop
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466025253-_DSC0228.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466047663-_DSC5400.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466064780-_DSC6029.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466084522-_DSC6632.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466115130-_DSC8175.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466132856-Print_Size_Fistful_of_funk-35.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466146805-Siorskuadam-HiddenSteps_still_1.webp?alt=media
+news_items:
+  - card_title: TestiAjankohtainen
+    title: modaltesta otsake
+    subtitle: modaltesta alaotsake
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773467290528-Print_Size_Fistful_of_funk-35.webp?alt=media
+    body: >-
+      **Tanssiteatteri Rimpparemmi** on Suomen pohjoisin ammattitanssiteatteri.
+      Teemme fyysistä, musiikillista ja vahvasti näyttämöllistä nykytanssia ja
+      tanssiteatteria.
+
+
+      Esityksemme yhdistävät tarkkaa taiteellista työskentelyä, pohjoista identiteettiä ja sopivasti vinoa huumoria. Tarinamme voivat olla herkkiä tai ronskeja, mutta useimmiten todella hauskoja.
+
+
+      Kotimme on Rovaniemellä Kulttuuritalo Wiljamissa, ja kierrämme aktiivisesti ympäri Suomea.
+
+
+      Tule kokemaan pohjoisen tanssin näyttämö.
+
+
+      **Dance Theatre Rimpparemmi** is the northernmost professional dance theatre in Finland. We create physical, musical, and strongly theatrical contemporary dance and dance theatre.
+
+
+      Our performances combine precise artistic work, northern identity, and a touch of quirky humor. Our stories can be tender or rough around the edges, but most often they are truly funny.
+
+
+      Our home is in Rovaniemi at Cultural House Wiljami, and we actively tour across Finland.
+
+
+      Come experience the dancestage of the North.
+    extra: |-
+      tässä lisätietoja\
+      \
+      [Klikkaa ohjelmistoon!](/ohjelmisto)

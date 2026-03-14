@@ -212,12 +212,13 @@ export default function Home({ productions, performances, homeData }: HomeProps)
       title: item.title,
       subtitle: item.subtitle,
       image: item.image,
-      imageHeight: item.image_height,
       description: item.body ? item.body.trim().split(/\n\n+/) : [],
       credits: [],
-      extra: item.extra ? item.extra.trim().split("\n").filter(Boolean) : undefined,
+      extra: item.extra ? [item.extra.trim()] : undefined,
     },
   }));
+
+  const hasNews = newsItems.length > 0;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalInfo, setModalInfo] = useState<ShowInfo | null>(null);
@@ -678,36 +679,38 @@ export default function Home({ productions, performances, homeData }: HomeProps)
       {/* Ajankohtaista / News — desktop: form left + scrollable cards right; mobile: cards carousel then form */}
       {isMobile ? (
         <>
-          {/* Mobile: news carousel */}
-          <section style={{ backgroundColor: colors.white, padding: "3rem 0 3rem 2rem" }}>
-            <h2
-              style={{
-                color: colors.nearBlack,
-                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
-                fontWeight: 700,
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                marginBottom: "1.5rem",
-                paddingRight: "2rem",
-              }}
-            >
-              {t.newsTitle}
-            </h2>
-            <div
-              style={{
-                display: "flex",
-                gap: "1rem",
-                overflowX: "auto",
-                paddingRight: "2rem",
-                paddingBottom: "0.5rem",
-                scrollSnapType: "x mandatory",
-              }}
-            >
-              {newsItems.map((item, i) => (
-                <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
-              ))}
-            </div>
-          </section>
+          {/* Mobile: news carousel — hidden when no news */}
+          {hasNews && (
+            <section style={{ backgroundColor: colors.white, padding: "3rem 0 3rem 2rem" }}>
+              <h2
+                style={{
+                  color: colors.nearBlack,
+                  fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginBottom: "1.5rem",
+                  paddingRight: "2rem",
+                }}
+              >
+                {t.newsTitle}
+              </h2>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  overflowX: "auto",
+                  paddingRight: "2rem",
+                  paddingBottom: "0.5rem",
+                  scrollSnapType: "x mandatory",
+                }}
+              >
+                {newsItems.map((item, i) => (
+                  <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Mobile: mailing list form as separate section */}
           <section
@@ -723,56 +726,62 @@ export default function Home({ productions, performances, homeData }: HomeProps)
           </section>
         </>
       ) : (
-        /* Desktop: form left (image bg) + news right (colored bg) */
+        /* Desktop: form (image bg) + news (colored bg) — news hidden when empty */
         <section style={{ display: "flex", alignItems: "stretch" }}>
-          {/* Left: image background + form */}
+          {/* Left: image background + form — expands full width when no news */}
           <div
             style={{
-              flex: "0 0 400px",
+              flex: hasNews ? "0 0 400px" : 1,
               backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075379826-Tapahtuma_Piaf_Kuva_Antti_Kurola__5_.webp?alt=media')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               padding: "5rem 2.5rem",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            <MailingListForm locale={locale} />
-          </div>
-
-          {/* Right: colored background + news */}
-          <div
-            style={{
-              flex: 1,
-              backgroundColor: colors.white,
-              padding: "5rem 2rem",
-              minWidth: 0,
-            }}
-          >
-            <h2
-              style={{
-                color: colors.nearBlack,
-                fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
-                fontWeight: 700,
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                marginBottom: "1.5rem",
-              }}
-            >
-              {t.newsTitle}
-            </h2>
-            <div
-              style={{
-                display: "flex",
-                gap: "1.25rem",
-                overflowX: "auto",
-                paddingBottom: "0.5rem",
-                scrollSnapType: "x mandatory",
-              }}
-            >
-              {newsItems.map((item, i) => (
-                <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
-              ))}
+            <div style={{ width: "100%", maxWidth: "400px" }}>
+              <MailingListForm locale={locale} />
             </div>
           </div>
+
+          {/* Right: colored background + news — hidden when no news */}
+          {hasNews && (
+            <div
+              style={{
+                flex: 1,
+                backgroundColor: colors.white,
+                padding: "5rem 2rem",
+                minWidth: 0,
+              }}
+            >
+              <h2
+                style={{
+                  color: colors.nearBlack,
+                  fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                {t.newsTitle}
+              </h2>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "1.25rem",
+                  overflowX: "auto",
+                  paddingBottom: "0.5rem",
+                  scrollSnapType: "x mandatory",
+                }}
+              >
+                {newsItems.map((item, i) => (
+                  <NewsCard key={i} item={item} readMore={t.readMore} onOpen={setModalInfo} />
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       )}
 

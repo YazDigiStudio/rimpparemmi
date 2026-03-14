@@ -8,10 +8,10 @@ sections:
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392910114-viivi.webp?alt=media
       - name: Lauri Uusitalo
         title_fi: Äänisuunnittelija, Muusikko
-        title_en: Sound designer, Musician
+        title_en: Sound Designer, Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773392971658-lauri.webp?alt=media
       - name: Atte Herd
-        title_fi: Tanssija, Tekninenpäällikkö
+        title_fi: Tanssija, Tekninen Päällikkö
         title_en: Dancer, Technical Manager
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773393023828-atte.webp?alt=media
       - name: Helmi Järvensivu
@@ -28,15 +28,15 @@ sections:
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394303897-joni.webp?alt=media
       - title_fi: Muusikko
         name: Jukka Nurmela
-        title_en: Mucisian
+        title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394367181-Jukka.webp?alt=media
       - name: Liisa Penttilä
-        title_fi: Myytineuvottelija
+        title_fi: Myyntineuvottelija
         title_en: Sales Representative
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394412924-Liisa-Penttila-360x360.webp?alt=media
       - name: Matti Paloniemi
-        title_fi: Teatterinjohtaja
-        title_en: Theater Director
+        title_fi: Teatterijohtaja
+        title_en: Theatre Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
         bio_fi: ""
   - title_fi: Vierailijat

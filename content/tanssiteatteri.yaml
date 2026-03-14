@@ -17,16 +17,17 @@ sections:
     image_position: left
     title_en: ""
     text_fi: >-
-      **Tanssiteatteri Rimpparemmi** on alueellisesti merkittävä
-      ammattitanssiteatteri, joka kiertää ympäri Suomea pohjoisinta Lappia
-      myöten. Tanssin saavutettavuuden ja tunnettuuden lisääminen on merkittävä
-      osa Rimpparemmin toimintaa.
+      **Tanssiteatteri Rimpparemmi** on rovaniemeläinen tanssiteatteri, joka on
+      tunnettu voimakkaasta näyttämöenergiastaan ja omaleimaisesta tavastaan
+      kertoa tarinoita liikkeen, musiikin, tekstin ja visuaalisuuden kautta.
+      Rimpparemmi tuottaa vuosittain 3–5 ensi-iltaa eri ikäisille kohderyhmille.
+      Kotinäyttämönä Rovaniemellä toimii Kulttuuritalo Wiljami (Urheilukatu 1).
+      Rimpparemmin ohjelmisto koostuu omista tuotannoista, yhteistuotannoista
+      sekä vierailevista esityksistä. Tärkeä osa toimintaa on myös esittävän
+      taiteen illat, Remmi Liveklubit.
 
 
-      Ryhmä tuottaa vuosittain 2–4 ensi-iltaa eri ikäisille kohderyhmille. Rimpparemmin kotinäyttämönä toimii Kulttuuritalo Wiljami (Urheilukatu 1). Tanssiteatteriesityksiä on viety perinteisten näyttämötilojen lisäksi rohkeasti myös erilaisiin esiintymistiloihin kuten yökerhoon.
-
-
-      Lastenkulttuuri ja taidekasvatus ovat olennainen osa Rimpparemmin toimintaa. Tanssiteatteri tuottaa vuosittain vähintään yhden lapsille suunnatun esityksen, jota esitetään laajasti ympäri Lappia ja muuta Suomea. Esitysten yhteydessä Rimpparemmi järjestää myös työpajoja, joissa lapset ja nuoret pääsevät tutustumaan tanssin ja teatterin maailmaan.
+      Rimpparemmi perustettiin vuonna 1971. Toiminta alkoi kansantanssiryhmänä Tervolassa. Rimpparemmi toimi useita vuosia puoliammattimaisena ryhmänä, kunnes vuonna 2000 se hyväksyttiin valtion ammattiteattereille suunnatun rahoituslain piiriin. Rimpparemmi on Suomen pohjoisin ammattitanssiteatteri. Merkittäviä tukijoita ovat Opetus- ja kulttuuriministeriö sekä Rovaniemen kaupunki.
     text_en: >-
       Dance Theatre Rimpparemmi is a regionally significant professional dance
       theatre that tours throughout Finland, reaching northern Lapland.
@@ -40,3 +41,10 @@ sections:
       Children's culture and arts education are an essential part of Rimpparemmi's activities. The theatre produces at least one performance for children each year, touring widely across Lapland and the rest of Finland. Alongside performances, Rimpparemmi also organises workshops where children and young people can explore the world of dance and theatre.
     image: ""
     image_alt_fi: ""
+  - image_orientation: landscape
+    image_position: right
+    text_fi: Tänä päivänä Rimpparemmi on kansallisesti merkittävä tanssiteatteri ja
+      esittävän taiteen toimija sekä työllistäjä. Rimpparemmi kiertää ympäri
+      Suomea pohjoisinta Lappia myöten. Tanssin saavutettavuuden ja tunnettuuden
+      lisääminen on merkittävä osa Rimpparemmin toimintaa.
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773462636934-_DSC7471.webp?alt=media

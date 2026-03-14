@@ -58,6 +58,36 @@ collections:
             widget: "string"
             required: false
 
+          - label: "Tagline (FI)"
+            name: "tagline_fi"
+            widget: "string"
+            required: false
+
+          - label: "Tagline (EN)"
+            name: "tagline_en"
+            widget: "string"
+            required: false
+
+          - label: "Intro-otsikko (FI)"
+            name: "intro_title_fi"
+            widget: "string"
+            required: false
+
+          - label: "Intro title (EN)"
+            name: "intro_title_en"
+            widget: "string"
+            required: false
+
+          - label: "Intro-teksti (FI)"
+            name: "intro_text_fi"
+            widget: "markdown"
+            required: false
+
+          - label: "Intro text (EN)"
+            name: "intro_text_en"
+            widget: "markdown"
+            required: false
+
           - label: "Hero-diat / Hero slides"
             name: "hero_slides"
             widget: "list"
@@ -112,7 +142,6 @@ collections:
                 name: "subtitle"
                 widget: "string"
                 required: false
-                hint: 'Esim: "Ajankohtaista"'
               - label: "Kuva / Image"
                 name: "image"
                 widget: "image"
@@ -121,22 +150,14 @@ collections:
                 name: "image_photographer"
                 widget: "string"
                 required: false
-              - label: "Kuvan korkeus modaalissa / Image height in modal"
-                name: "image_height"
-                widget: "number"
-                required: false
-                default: 320
-                hint: "Pikseleinä — käytä suurempaa arvopormuotokuville (esim. 480)"
               - label: "Leipäteksti / Body"
                 name: "body"
                 widget: "markdown"
                 required: false
-                hint: "Tyhjät rivit erottavat kappaleet"
               - label: "Lisätiedot / Extra"
                 name: "extra"
-                widget: "text"
+                widget: "markdown"
                 required: false
-                hint: "Yksi rivi per tieto — esim. linkit, kiitokset"
 
       - name: "tanssiteatteri"
         label: "Tanssiteatteri"
@@ -157,12 +178,7 @@ collections:
           - label: "Osiot / Sections"
             name: "sections"
             widget: "list"
-            hint: |
-              Osiotyyppi määräytyy täytetyistä kentistä:
-              1. Vain teksti — otsikko ja kuva tyhjinä
-              2. Vain kuva — otsikko ja teksti tyhjinä
-              3. Otsikko + teksti — kuva tyhjänä
-              4. Otsikko + teksti + kuva — kuva/teksti rinnakkain
+            hint: "Osiotyyppi määräytyy täytetyistä kentistä: Vain teksti - vain kuva - kuva ja teksti."
             fields:
               - label: "Otsikko (FI)"
                 name: "title_fi"
@@ -235,12 +251,7 @@ collections:
           - label: "Osiot / Sections"
             name: "sections"
             widget: "list"
-            hint: |
-              Osiotyyppi määräytyy täytetyistä kentistä:
-              1. Vain teksti — otsikko ja kuva tyhjinä
-              2. Vain kuva — otsikko ja teksti tyhjinä
-              3. Otsikko + teksti — kuva tyhjänä
-              4. Otsikko + teksti + kuva — 50/50 rinnakkain
+            hint: "Osiotyyppi määräytyy täytetyistä kentistä: Vain teksti - vain kuva - kuva ja teksti."
             fields:
               - label: "Otsikko (FI)"
                 name: "title_fi"
@@ -314,12 +325,7 @@ collections:
           - label: "Osiot / Sections"
             name: "sections"
             widget: "list"
-            hint: |
-              Lisää, poista ja järjestä osioita. Osiotyyppi määräytyy täytetyistä kentistä:
-              1. Vain teksti — otsikko ja kuva tyhjinä
-              2. Vain kuva — otsikko ja teksti tyhjinä
-              3. Otsikko + teksti — kuva tyhjänä
-              4. Otsikko + teksti + kuva — 50/50 rinnakkain
+            hint: "Osiotyyppi määräytyy täytetyistä kentistä: Vain teksti - vain kuva - kuva ja teksti."
             fields:
               - label: "Otsikko (FI)"
                 name: "title_fi"
