@@ -58,6 +58,37 @@ collections:
             widget: "string"
             required: false
 
+          - label: "Tagline (FI)"
+            name: "tagline_fi"
+            widget: "string"
+            required: false
+
+          - label: "Tagline (EN)"
+            name: "tagline_en"
+            widget: "string"
+            required: false
+
+          - label: "Intro-otsikko (FI)"
+            name: "intro_title_fi"
+            widget: "string"
+            required: false
+
+          - label: "Intro title (EN)"
+            name: "intro_title_en"
+            widget: "string"
+            required: false
+
+          - label: "Intro-teksti (FI)"
+            name: "intro_text_fi"
+            widget: "markdown"
+            required: false
+            hint: "Tyhjät rivit erottavat kappaleet"
+
+          - label: "Intro text (EN)"
+            name: "intro_text_en"
+            widget: "markdown"
+            required: false
+
           - label: "Hero-diat / Hero slides"
             name: "hero_slides"
             widget: "list"
