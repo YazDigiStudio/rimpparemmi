@@ -128,14 +128,30 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
     </div>
   ) : null;
 
-  const textEl = hasText ? (
-    <div style={{ flex: "1 1 200px" }}>{renderText(text!)}</div>
-  ) : null;
+  const textEl = (
+    <div style={{ flex: "1 1 200px" }}>
+      {hasTitle && hasImage && (
+        <h2
+          style={{
+            color: colors.nearBlack,
+            fontSize: "clamp(1rem, 2.5vw, 1.4rem)",
+            fontWeight: 700,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+            marginBottom: "1.25rem",
+          }}
+        >
+          {title}
+        </h2>
+      )}
+      {hasText && renderText(text!)}
+    </div>
+  );
 
   return (
     <div style={{ backgroundColor: bg, width: "100%" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2rem 2rem" }}>
-        {hasTitle && (
+        {hasTitle && !hasImage && (
           <h2
             style={{
               color: colors.nearBlack,
@@ -155,7 +171,7 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
             {imagePosition === "right" ? imageEl : textEl}
           </div>
         ) : (
-          textEl
+          hasText ? renderText(text!) : null
         )}
       </div>
     </div>

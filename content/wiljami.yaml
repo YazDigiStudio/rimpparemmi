@@ -1,109 +1,121 @@
-# Kulttuuritalo Wiljami page content
-#
-# Section types — determined by which fields are filled:
-#
-#  1. TEXT ONLY       — title_fi/en empty, image empty  → full-width text
-#  2. IMAGE ONLY      — title_fi/en empty, text empty   → full-width image
-#  3. TITLE + TEXT    — image empty                     → heading + full-width text
-#  4. TITLE+TEXT+IMG  — all filled                      → heading, then image/text 50/50
-#
-# image_orientation: "landscape" (16/9, cuts top/bottom) | "portrait" (2/3, cuts sides) | "square" (1/1)
-# image_position:   "left" | "right"  — which side the image sits in type 4
-
-page_title_fi: "Kulttuuritalo Wiljami"
-page_title_en: "Kulttuuritalo Wiljami"
+page_title_fi: Kulttuuritalo Wiljami
+page_title_en: Kulttuuritalo Wiljami
 show_page_title: true
-
 sections:
-
-  # ── Type 4: Title + text + image ─────────────────────────────────────────────
-  - title_fi: ""
+  - image_alt_en: Kulttuuritalo Wiljami
+    title_fi: ""
+    image_orientation: square
+    image_position: right
     title_en: ""
-    text_fi: |
-      Kulttuuritalo Wiljami, tunnettu myös nimellä Kansantalo, on Rovaniemellä sijaitseva kulttuurikeskus, joka tarjoaa monipuolista ohjelmaa eri taiteenaloilta. Rakennus valmistui vuonna 1947 ja toimii kotinäyttämönä useille rovaniemeläisille kulttuuritoimijoille — muun muassa Tanssiteatteri Rimpparemmi, Lapin Ylioppilasteatteri ja Elokuvakerho Cinema esittävät täällä ohjelmistoaan.
+    text_fi: >
+      Kulttuuritalo Wiljami, tunnettu myös nimellä Kansantalo, on Rovaniemellä
+      sijaitseva kulttuurikeskus, joka tarjoaa monipuolista ohjelmaa eri
+      taiteenaloilta. Rakennus valmistui vuonna 1947 ja toimii kotinäyttämönä
+      useille rovaniemeläisille kulttuuritoimijoille — muun muassa
+      Tanssiteatteri Rimpparemmi, Lapin Ylioppilasteatteri ja Elokuvakerho
+      Cinema esittävät täällä ohjelmistoaan.
+
 
       Katsomossa on 120 istumapaikkaa, joista 2 on tarkoitettu pyörätuolinkäyttäjille.
-    text_en: |
-      Kulttuuritalo Wiljami, also known as Kansantalo, is a cultural centre in Rovaniemi offering diverse programming across the arts. The building was completed in 1947 and serves as the home venue for several Rovaniemi cultural organisations — including Dance Theatre Rimpparemmi, Lapin Ylioppilasteatteri and Elokuvakerho Cinema.
+    text_en: >
+      Kulttuuritalo Wiljami, also known as Kansantalo, is a cultural centre in
+      Rovaniemi offering diverse programming across the arts. The building was
+      completed in 1947 and serves as the home venue for several Rovaniemi
+      cultural organisations — including Dance Theatre Rimpparemmi, Lapin
+      Ylioppilasteatteri and Elokuvakerho Cinema.
+
 
       The auditorium seats 120, including 2 wheelchair-accessible spaces.
     image: ""
-    image_alt_fi: "Kulttuuritalo Wiljami"
-    image_alt_en: "Kulttuuritalo Wiljami"
-    image_orientation: "square"
-    image_position: "right"
+    image_alt_fi: Kulttuuritalo Wiljami
+  - image_alt_en: Theatre Wiljami
+    title_fi: Pystybaari Wiljami
+    image_orientation: landscape
+    image_position: right
+    title_en: Pystybaari Wiljami
+    text_fi: >
+      Baari aukeaa Rimpparemmin esitysiltoina klo 18.00. Tarjolla on
+      kuohuviinejä, oluita ja virvoitusjuomia. Maksuvälineenä käy kortti tai
+      käteinen.
 
-  # ── Type 3: Title + text ──────────────────────────────────────────────────────
-  - title_fi: "Pystybaari Wiljami"
-    title_en: "Pystybaari Wiljami"
-    text_fi: |
-      Baari aukeaa Rimpparemmin esitysiltoina klo 18.00. Tarjolla on kuohuviinejä, oluita ja virvoitusjuomia. Maksuvälineenä käy kortti tai käteinen.
 
       *Meillä lasi on aina puoliksi täynnä.*
 
+
       **Lipunmyynti**
+
       Narikka ja lipunmyynti avautuvat tuntia ennen esitystä.
-    text_en: |
-      The bar opens at 6:00 PM on Rimpparemmi performance evenings. Sparkling wines, beers, and soft drinks are served. Both card and cash are accepted.
+    text_en: >
+      The bar opens at 6:00 PM on Rimpparemmi performance evenings. Sparkling
+      wines, beers, and soft drinks are served. Both card and cash are accepted.
+
 
       *Our glass is always half full.*
 
-      **Box office**
-      The cloakroom and box office open one hour before performances.
-    image: ""
-    image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
 
-  # ── Saapuminen Wiljamiin ──────────────────────────────────────────────────────
-  - title_fi: "Saapuminen Wiljamiin"
+      **Box office**
+
+      The cloakroom and box office open one hour before performances.
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773728733780-_DSC1624.webp?alt=media
+    image_alt_fi: Teatteri Wiljami
+  - image_alt_en: ""
+    title_fi: Saapuminen Wiljamiin
+    image_orientation: landscape
+    image_position: left
     title_en: ""
-    text_fi: |
-      Esityksemme nähdään Kulttuuritalo Wiljamissa, Rovaniemen keskustan tuntumassa.
+    text_fi: >
+      Esityksemme nähdään Kulttuuritalo Wiljamissa, Rovaniemen keskustan
+      tuntumassa.
+
       Osoite: Urheilukatu 1, 96100 Rovaniemi.
+
       Wiljamiin on helppo tulla olitpa liikkeellä kävellen, pyörällä, bussilla tai autolla.
     text_en: ""
     image: ""
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
-
-  - title_fi: "Saapuminen & pysäköinti"
+  - image_alt_en: ""
+    title_fi: Saapuminen & pysäköinti
+    image_orientation: landscape
+    image_position: left
     title_en: ""
-    text_fi: |
-      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä. Pysäköinti on päivisin maksullista.
+    text_fi: >
+      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä.
+      Pysäköinti on päivisin maksullista.
+
       Iltaesityksiin saapuessa löydät yleensä paikan vaivatta – mutta suosittelemme tulemaan ajoissa, niin ilta alkaa ilman parkkistressiä.
+
       Rovaniemen paikallisliikenteen bussit kulkevat keskustan kautta, ja Wiljamiin on lyhyt kävelymatka useilta pysäkeiltä. Aikataulut ja reitit löydät Rovaniemen paikallisliikenteen sivuilta.
     text_en: ""
     image: ""
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
-
-  - title_fi: "Esteettömyys & saavutettavuus"
+  - image_orientation: landscape
+    image_position: left
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773728900126-_DSC1651.webp?alt=media
+  - image_alt_en: ""
+    title_fi: Esteettömyys & saavutettavuus
+    image_orientation: landscape
+    image_position: left
     title_en: ""
-    text_fi: |
-      Kulttuuritalo Wiljami ei ole täysin esteetön. Lähes esteetön kulku tapahtuu takaoven kautta ja sisätiloista löytyy invahissi, jonka painorajoite on 200 kg.
+    text_fi: >
+      Kulttuuritalo Wiljami ei ole täysin esteetön. Lähes esteetön kulku
+      tapahtuu takaoven kautta ja sisätiloista löytyy invahissi, jonka
+      painorajoite on 200 kg.
+
       Katsomossa on pyörätuolipaikkoja kaksi, ja henkilökuntamme auttaa mielellään, jos tarvitset apua saapuessasi.
+
       Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
     text_en: ""
     image: ""
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
-
-  - title_fi: "Ovet & liput"
+  - image_alt_en: ""
+    title_fi: Ovet & liput
+    image_orientation: landscape
+    image_position: left
     title_en: ""
-    text_fi: |
+    text_fi: >
       Ovet aukeavat yleensä 1 tunti ennen esitystä.
+
       Ovilipunmyynti palvelee Pystybaari Wiljamissa, mikäli esitys ei ole loppuunmyyty.
     text_en: ""
     image: ""
     image_alt_fi: ""
-    image_alt_en: ""
-    image_orientation: "landscape"
-    image_position: "left"
