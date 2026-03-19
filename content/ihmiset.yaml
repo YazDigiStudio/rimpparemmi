@@ -2,6 +2,11 @@ sections:
   - title_fi: Henkilökunta
     title_en: Staff
     people:
+      - name: Matti Paloniemi
+        title_fi: Teatterijohtaja
+        title_en: Theatre Director
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
+        bio_fi: ""
       - name: Viivi Vesala
         title_fi: Tuottaja
         title_en: Producer
@@ -34,11 +39,6 @@ sections:
         title_fi: Myyntineuvottelija
         title_en: Sales Representative
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394412924-Liisa-Penttila-360x360.webp?alt=media
-      - name: Matti Paloniemi
-        title_fi: Teatterijohtaja
-        title_en: Theatre Director
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773394474942-Matti-Paloniemi-scaled.webp?alt=media
-        bio_fi: ""
   - title_fi: Vierailijat
     title_en: Guest artists
     people:
