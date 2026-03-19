@@ -81,8 +81,8 @@ additional_info_fi: ""
 additional_info_en: ""
 sort_order: 10
 ticket_url_fallback: https://www.netticket.fi/we-will-funk-for-food-a-fistful-of-funk-rovaniemi
-badge_fi: ""
-badge_en: ""
+badge_fi: Vierailu
+badge_en: Guest
 is_touring: false
 duration_fi: ""
 duration_en: ""
