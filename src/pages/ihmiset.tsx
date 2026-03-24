@@ -75,7 +75,7 @@ function PersonCard({
           src={imgSrc}
           alt={person.name}
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: "top" }}
         />
       </div>
       <p style={{ color: colors.nearBlack, fontWeight: 700, fontSize: "0.95rem", marginBottom: "0.2rem" }}>
@@ -181,7 +181,7 @@ function BioModal({
               backgroundColor: colors.borderLight,
             }}
           >
-            <Image src={imgSrc} alt={person.name} fill style={{ objectFit: "cover" }} />
+            <Image src={imgSrc} alt={person.name} fill style={{ objectFit: "cover", objectPosition: "top" }} />
           </div>
           <div>
             <p style={{ color: colors.nearBlack, fontWeight: 700, fontSize: "1.1rem", marginBottom: "0.2rem" }}>
