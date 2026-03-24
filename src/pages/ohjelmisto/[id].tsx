@@ -108,29 +108,6 @@ export default function ProductionPage({ production, performances }: Props) {
       >
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
 
-          {/* Primary image */}
-          <div style={{ position: "relative", marginBottom: "2.5rem" }}>
-            <Image
-              src={production.primary_image}
-              alt={title}
-              width={0}
-              height={0}
-              sizes="(max-width: 900px) 100vw, 900px"
-              priority
-              style={{ width: "100%", height: "auto", borderRadius: "2px" }}
-            />
-            {production.primary_image_photographer && (
-              <span style={{
-                position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                pointerEvents: "none",
-              }}>
-                {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
-              </span>
-            )}
-          </div>
-
           {/* Title block */}
           <div style={{ marginBottom: "2.5rem" }}>
             {badge && (
@@ -173,6 +150,29 @@ export default function ProductionPage({ production, performances }: Props) {
               >
                 {subtitle}
               </p>
+            )}
+          </div>
+
+          {/* Primary image */}
+          <div style={{ position: "relative", marginBottom: "2.5rem" }}>
+            <Image
+              src={production.primary_image}
+              alt={title}
+              width={0}
+              height={0}
+              sizes="(max-width: 900px) 100vw, 900px"
+              priority
+              style={{ width: "100%", height: "auto", borderRadius: "2px" }}
+            />
+            {production.primary_image_photographer && (
+              <span style={{
+                position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                pointerEvents: "none",
+              }}>
+                {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
+              </span>
             )}
           </div>
 

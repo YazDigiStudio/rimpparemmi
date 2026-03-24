@@ -102,12 +102,12 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
     );
   }
 
-  const imageFlex = aspectRatio === "2/3" ? "0 0 40%"
-    : aspectRatio === "1/1" ? "0 0 50%"
-    : "0 0 60%";
+  const imageFlex = aspectRatio === "2/3" ? "1 1 40%"
+    : aspectRatio === "1/1" ? "1 1 50%"
+    : "1 1 55%";
 
   const imageEl = hasImage ? (
-    <div style={{ flex: imageFlex, position: "relative", aspectRatio, borderRadius: "4px", overflow: "hidden" }}>
+    <div style={{ flex: imageFlex, minWidth: "280px", position: "relative", aspectRatio, borderRadius: "4px", overflow: "hidden" }}>
       <Image
         src={section.image!}
         alt={alt ?? ""}
@@ -166,9 +166,15 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
           </h2>
         )}
         {hasImage && hasText ? (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "3rem", alignItems: "flex-start" }}>
-            {imagePosition === "right" ? textEl : imageEl}
-            {imagePosition === "right" ? imageEl : textEl}
+          <div style={{
+            display: "flex",
+            flexDirection: imagePosition === "left" ? "row-reverse" : "row",
+            flexWrap: "wrap",
+            gap: "3rem",
+            alignItems: "flex-start",
+          }}>
+            {textEl}
+            {imageEl}
           </div>
         ) : (
           hasText ? renderText(text!) : null

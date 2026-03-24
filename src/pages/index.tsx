@@ -221,6 +221,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
   const hasNews = newsItems.length > 0;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [firstSlideLoaded, setFirstSlideLoaded] = useState(false);
   const [modalInfo, setModalInfo] = useState<ShowInfo | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -338,21 +339,25 @@ export default function Home({ productions, performances, homeData }: HomeProps)
         }}
       >
         {/* Hero images — stacked, crossfade via opacity */}
-        {visibleSlides.map((slide, i) => (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt={t.heroAlt}
-            fill
-            priority={i === 0}
-            style={{
-              objectFit: "cover",
-              objectPosition: "center 30%",
-              opacity: i === currentImageIndex ? 1 : 0,
-              transition: "opacity 2s ease-in-out",
-            }}
-          />
-        ))}
+        {visibleSlides.map((slide, i) => {
+          if (i > 0 && !firstSlideLoaded) return null;
+          return (
+            <Image
+              key={slide.src}
+              src={slide.src}
+              alt={t.heroAlt}
+              fill
+              priority={i === 0}
+              onLoad={i === 0 ? () => setFirstSlideLoaded(true) : undefined}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center 30%",
+                opacity: i === currentImageIndex ? 1 : 0,
+                transition: "opacity 2s ease-in-out",
+              }}
+            />
+          );
+        })}
 
         {/* Slide overlays — each fades with its image */}
         {visibleSlides.map((slide, i) =>
