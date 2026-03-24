@@ -411,6 +411,30 @@ collections:
                     widget: "text"
                     required: false
 
+      - name: "yhteystiedot"
+        label: "Yhteystiedot / Contact"
+        file: "content/yhteystiedot.yaml"
+        fields:
+          - label: "Toimiston osoite (FI)"
+            name: "address_fi"
+            widget: "text"
+            hint: "Tyhjä rivi erottaa rivit — esim. kadun nimi ja postinumero"
+          - label: "Office address (EN)"
+            name: "address_en"
+            widget: "text"
+            required: false
+          - label: "Yhteyshenkilöt / Contacts"
+            name: "contacts"
+            widget: "list"
+            hint: "Lisää, poista tai järjestä yhteyshenkilöitä"
+            fields:
+              - { label: "Nimi / Name", name: "name", widget: "string" }
+              - { label: "Rooli (FI)", name: "role_fi", widget: "string" }
+              - { label: "Role (EN)", name: "role_en", widget: "string", required: false }
+              - { label: "Puhelinnumero / Phone", name: "phone", widget: "string" }
+              - { label: "Sähköposti / Email", name: "email", widget: "string" }
+              - { label: "Kuva / Photo", name: "image", widget: "image", required: false }
+
       - name: "media"
         label: "Media-sivu / Media page"
         file: "content/media.yaml"

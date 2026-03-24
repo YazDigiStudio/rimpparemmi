@@ -4,82 +4,38 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
+import {
+  getYhteystiedotData,
+  type YhteystiedotData,
+  type ContactPerson,
+} from "@/lib/content";
 
 type Locale = "fi" | "en";
 
-type ContactPerson = {
-  name: string;
-  role_fi: string;
-  role_en: string;
-  phone: string;
-  email: string;
-  image?: string;
-};
-
-const contacts: ContactPerson[] = [
-  {
-    name: "Matti Paloniemi",
-    role_fi: "Taiteellinen johtaja",
-    role_en: "Artistic Director",
-    phone: "+358 (0)44 550 4835",
-    email: "matti.paloniemi@rimpparemmi.fi",
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376585-Matti-Paloniemi-768x768.webp?alt=media",
-  },
-  {
-    name: "Liisa Penttilä",
-    role_fi: "Myynti",
-    role_en: "Sales",
-    phone: "+358 (0)50 511 5055",
-    email: "liisa.penttila@rimpparemmi.fi",
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376333-Liisa-Penttila-768x768.webp?alt=media",
-  },
-  {
-    name: "Atte Herd",
-    role_fi: "Tekniikkavastaava",
-    role_en: "Technical Manager",
-    phone: "+358 (0)40 684 4097",
-    email: "atte.herd@rimpparemmi.fi",
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075371921-Atte_Herd.webp?alt=media",
-  },
-  {
-    name: "Helmi Järvensivu",
-    role_fi: "Markkinointi- ja viestintävastaava",
-    role_en: "Marketing & Communications",
-    phone: "+358 (0)50 4344557",
-    email: "helmi.jarvensivu@rimpparemmi.fi",
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075373512-Helmi-Jarvensivu-720x720.webp?alt=media",
-  },
-  {
-    name: "Viivi Vesala",
-    role_fi: "Tuottaja",
-    role_en: "Producer",
-    phone: "+358 (0)50 4989701",
-    email: "viivi.vesala@rimpparemmi.fi",
-    image: "https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384295-viivi_vesala.webp?alt=media",
-  },
-];
+type Props = { data: YhteystiedotData };
 
 const copy = {
   fi: {
     meta: "Yhteystiedot – Tanssiteatteri Rimpparemmi",
     title: "Yhteystiedot",
     address: "Toimiston käyntiosoite",
-    addressValue: "Hallituskatu 20 A (3. krs.)\n96100 Rovaniemi",
   },
   en: {
     meta: "Contact – Dance Theatre Rimpparemmi",
     title: "Contact",
     address: "Office address",
-    addressValue: "Hallituskatu 20 A (3rd floor)\n96100 Rovaniemi",
   },
 } as const;
 
-export default function Yhteystiedot() {
+export default function Yhteystiedot({ data }: Props) {
   const { locale: routerLocale } = useRouter();
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
+  const contacts: ContactPerson[] = data.contacts ?? [];
+  const addressValue = locale === "fi" ? data.address_fi : (data.address_en || data.address_fi);
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -238,7 +194,7 @@ export default function Yhteystiedot() {
             >
               {t.address}
             </p>
-            {t.addressValue.split("\n").map((line, i) => (
+            {addressValue.split("\n").map((line: string, i: number) => (
               <p key={i} style={{ color: colors.nearBlack, fontSize: "0.95rem", lineHeight: 1.7 }}>
                 {line}
               </p>
@@ -249,3 +205,8 @@ export default function Yhteystiedot() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const data = getYhteystiedotData();
+  return { props: { data } };
+};

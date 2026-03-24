@@ -1,0 +1,33 @@
+address_fi: "Hallituskatu 20 A (3. krs.)\n96100 Rovaniemi"
+address_en: "Hallituskatu 20 A (3rd floor)\n96100 Rovaniemi"
+contacts:
+  - name: Matti Paloniemi
+    role_fi: Taiteellinen johtaja
+    role_en: Artistic Director
+    phone: "+358 (0)44 550 4835"
+    email: matti.paloniemi@rimpparemmi.fi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376585-Matti-Paloniemi-768x768.webp?alt=media
+  - name: Liisa Penttilä
+    role_fi: Myynti
+    role_en: Sales
+    phone: "+358 (0)50 511 5055"
+    email: liisa.penttila@rimpparemmi.fi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376333-Liisa-Penttila-768x768.webp?alt=media
+  - name: Atte Herd
+    role_fi: Tekniikkavastaava
+    role_en: Technical Manager
+    phone: "+358 (0)40 684 4097"
+    email: atte.herd@rimpparemmi.fi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075371921-Atte_Herd.webp?alt=media
+  - name: Helmi Järvensivu
+    role_fi: Markkinointi- ja viestintävastaava
+    role_en: Marketing & Communications
+    phone: "+358 (0)50 4344557"
+    email: helmi.jarvensivu@rimpparemmi.fi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075373512-Helmi-Jarvensivu-720x720.webp?alt=media
+  - name: Viivi Vesala
+    role_fi: Tuottaja
+    role_en: Producer
+    phone: "+358 (0)50 4989701"
+    email: viivi.vesala@rimpparemmi.fi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384295-viivi_vesala.webp?alt=media

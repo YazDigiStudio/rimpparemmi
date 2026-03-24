@@ -254,3 +254,25 @@ export function getIhmisetData(): IhmisetData {
   ) as IhmisetData;
   return raw ?? { sections: [] };
 }
+
+export type ContactPerson = {
+  name: string;
+  role_fi: string;
+  role_en: string;
+  phone: string;
+  email: string;
+  image?: string;
+};
+
+export type YhteystiedotData = {
+  address_fi: string;
+  address_en: string;
+  contacts: ContactPerson[];
+};
+
+export function getYhteystiedotData(): YhteystiedotData {
+  const raw = yaml.load(
+    fs.readFileSync(path.join(contentDir, "yhteystiedot.yaml"), "utf8")
+  ) as YhteystiedotData;
+  return raw ?? { address_fi: "", address_en: "", contacts: [] };
+}
