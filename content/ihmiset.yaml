@@ -39,7 +39,7 @@ sections:
         name: Jukka Nurmela
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773937208437-Nurmela.webp?alt=media
-  - title_fi: Vierailijat
+  - title_fi: Remmissä mukana
     title_en: Guest artists
     people:
       - name: Jukka Laukkanen
