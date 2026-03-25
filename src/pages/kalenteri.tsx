@@ -88,21 +88,28 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
   const [selectedProductionId, setSelectedProductionId] = useState<string | null>(nextProductionId);
 
   const calendarEvents = useMemo<CalendarEvent[]>(() => {
-    return performances.map((p) => {
-      const prod = productions.find((pr) => pr.id === p.production_id);
-      const title = prod
-        ? (locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi))
-        : p.production_id;
-      const [yyyy, mm, dd] = p.date.split("-");
-      return {
-        date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
-        time: p.time,
-        title,
-        venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
-        ticketUrl: resolveTicketUrl(p.ticket_url, prod?.ticket_url_fallback, p.date, p.time, locale),
-        productionId: p.production_id,
-      };
-    });
+    const todayDate = new Date();
+    todayDate.setHours(0, 0, 0, 0);
+    return performances
+      .filter((p) => {
+        const [yyyy, mm, dd] = p.date.split("-").map(Number);
+        return new Date(yyyy, mm - 1, dd) >= todayDate;
+      })
+      .map((p) => {
+        const prod = productions.find((pr) => pr.id === p.production_id);
+        const title = prod
+          ? (locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi))
+          : p.production_id;
+        const [yyyy, mm, dd] = p.date.split("-");
+        return {
+          date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
+          time: p.time,
+          title,
+          venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
+          ticketUrl: resolveTicketUrl(p.ticket_url, prod?.ticket_url_fallback, p.date, p.time, locale),
+          productionId: p.production_id,
+        };
+      });
   }, [productions, performances, locale]);
 
   // showInfoMap for mobile modal — keyed by productionId

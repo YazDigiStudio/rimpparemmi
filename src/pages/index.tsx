@@ -231,20 +231,27 @@ export default function Home({ productions, performances, homeData }: HomeProps)
 
   // Build locale-specific CalendarEvents from performances + productions
   const homeEvents = useMemo<CalendarEvent[]>(() => {
-    return performances.map((p) => {
-      const prod = productions.find((pr) => pr.id === p.production_id);
-      const title = prod
-        ? (locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi))
-        : p.production_id;
-      const [yyyy, mm, dd] = p.date.split("-");
-      return {
-        date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
-        time: p.time,
-        title,
-        venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
-        ticketUrl: resolveTicketUrl(p.ticket_url, prod?.ticket_url_fallback, p.date, p.time, locale),
-      };
-    });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return performances
+      .filter((p) => {
+        const [yyyy, mm, dd] = p.date.split("-").map(Number);
+        return new Date(yyyy, mm - 1, dd) >= today;
+      })
+      .map((p) => {
+        const prod = productions.find((pr) => pr.id === p.production_id);
+        const title = prod
+          ? (locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi))
+          : p.production_id;
+        const [yyyy, mm, dd] = p.date.split("-");
+        return {
+          date: `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`,
+          time: p.time,
+          title,
+          venue: locale === "fi" ? p.venue_fi : (p.venue_en ?? p.venue_fi),
+          ticketUrl: resolveTicketUrl(p.ticket_url, prod?.ticket_url_fallback, p.date, p.time, locale),
+        };
+      });
   }, [productions, performances, locale]);
 
   // Build ShowInfo map keyed by locale-specific production title
