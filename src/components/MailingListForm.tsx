@@ -41,7 +41,7 @@ export default function MailingListForm({ locale }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const t = copy[locale];
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     // Honeypot: if bot-field is filled, silently discard
