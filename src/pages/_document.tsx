@@ -10,9 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Lexend:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* Netticket floating sidebar embed */}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script id="nt-embed-script" src="https://www.netticket.fi/production/embedjs/" async />
+
       </Head>
       <body>
         <Main />
