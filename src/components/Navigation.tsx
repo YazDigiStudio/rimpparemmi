@@ -298,11 +298,11 @@ export default function Navigation() {
 
         {/* Locale switcher */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-          <button onClick={() => switchLocale("fi")} style={localeBtnStyle(locale === "fi")}>
+          <button onClick={() => switchLocale("fi")} aria-label={t.langFull} style={localeBtnStyle(locale === "fi")}>
             FI
           </button>
           <span style={{ color: navTextColor, fontSize: "0.75rem", opacity: 0.4 }}>|</span>
-          <button onClick={() => switchLocale("en")} style={localeBtnStyle(locale === "en")}>
+          <button onClick={() => switchLocale("en")} aria-label={t.langFullEn} style={localeBtnStyle(locale === "en")}>
             EN
           </button>
         </div>
@@ -313,6 +313,7 @@ export default function Navigation() {
         className="hamburger-btn"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label={menuOpen ? t.closeMenu : t.openMenu}
+        aria-expanded={menuOpen}
         style={{
           ...iconBtnStyle,
           color: navTextColor,

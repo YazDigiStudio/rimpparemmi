@@ -126,7 +126,11 @@ export default function MailingListForm({ locale }: Props) {
           <input type="hidden" name="form-name" value="newsletter" />
           {/* Honeypot — hidden from humans, bots fill it and get silently rejected */}
           <input type="text" name="bot-field" style={{ display: "none" }} aria-hidden="true" />
+          <label htmlFor="newsletter-name" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
+            {t.namePlaceholder}
+          </label>
           <input
+            id="newsletter-name"
             type="text"
             name="name"
             placeholder={t.namePlaceholder}
@@ -137,10 +141,13 @@ export default function MailingListForm({ locale }: Props) {
               borderRadius: "2px",
               color: colors.nearBlack,
               fontSize: "0.9rem",
-              outline: "none",
             }}
           />
+          <label htmlFor="newsletter-email" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
+            {t.emailPlaceholder}
+          </label>
           <input
+            id="newsletter-email"
             type="email"
             name="email"
             required
@@ -152,7 +159,6 @@ export default function MailingListForm({ locale }: Props) {
               borderRadius: "2px",
               color: colors.nearBlack,
               fontSize: "0.9rem",
-              outline: "none",
             }}
           />
           <button
