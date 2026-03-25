@@ -56,16 +56,16 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 9000,
         backgroundColor: colors.nearBlack,
-        borderTop: `3px solid ${colors.brandFuchsia}`,
-        padding: "1.25rem 2rem",
+        borderTop: `4px solid ${colors.brandFuchsia}`,
+        padding: "2rem 2.5rem",
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
-        gap: "1rem",
+        gap: "1.5rem",
         justifyContent: "space-between",
       }}
     >
-      <p style={{ color: colors.white, fontSize: "0.85rem", lineHeight: 1.6, flex: "1 1 300px", margin: 0 }}>
+      <p style={{ color: colors.white, fontSize: "1rem", lineHeight: 1.7, flex: "1 1 300px", margin: 0 }}>
         {fi ? (
           <>
             Käytämme lipunmyyntipalveluna <strong>Netticket.fi</strong>-widgetiä, joka asettaa kolmannen osapuolen evästeitä (mm. Google Analytics, Facebook).{" "}
@@ -90,9 +90,9 @@ export default function CookieConsent() {
             background: "none",
             border: `1px solid rgba(255,255,255,0.3)`,
             color: "rgba(255,255,255,0.7)",
-            padding: "0.5rem 1.25rem",
+            padding: "0.75rem 1.75rem",
             borderRadius: "2px",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 600,
             letterSpacing: "0.05em",
             cursor: "pointer",
@@ -106,9 +106,9 @@ export default function CookieConsent() {
             backgroundColor: colors.brandFuchsia,
             border: "none",
             color: colors.white,
-            padding: "0.5rem 1.25rem",
+            padding: "0.75rem 1.75rem",
             borderRadius: "2px",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 600,
             letterSpacing: "0.05em",
             cursor: "pointer",
