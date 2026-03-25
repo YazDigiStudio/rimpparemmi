@@ -10,9 +10,13 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Lexend:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* TEST ONLY: load unconditionally to check if sidebar works on Netlify */}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://www.netticket.fi/production/embedjs/" />
+        {/* Load Netticket embed script synchronously if user has accepted cookies.
+            Must run during HTML parsing — dynamic injection after load does not work. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('cookie-consent') === 'accepted') {
+            document.write('<scr' + 'ipt src="https://www.netticket.fi/production/embedjs/"><\\/scr' + 'ipt>');
+          }
+        `}} />
       </Head>
       <body>
         <Main />

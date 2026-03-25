@@ -10,15 +10,6 @@ import { colors } from "@/styles/colors";
 
 const STORAGE_KEY = "cookie-consent";
 
-function loadNetticket() {
-  if (document.getElementById("nt-embed-script")) return;
-  const script = document.createElement("script");
-  script.id = "nt-embed-script";
-  script.src = "https://www.netticket.fi/production/embedjs/";
-  script.async = true;
-  document.head.appendChild(script);
-}
-
 export default function CookieConsent() {
   const { locale } = useRouter();
   const fi = locale !== "en";
@@ -27,17 +18,14 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "accepted") {
-      loadNetticket();
-    } else if (!stored) {
+    if (!stored) {
       setVisible(true);
     }
   }, []);
 
   const accept = () => {
     localStorage.setItem(STORAGE_KEY, "accepted");
-    loadNetticket();
-    setVisible(false);
+    window.location.reload();
   };
 
   const decline = () => {
