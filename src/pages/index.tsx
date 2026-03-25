@@ -100,6 +100,10 @@ function NewsCard({
   return (
     <div
       onClick={() => onOpen(item.info)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onOpen(item.info); }}
+      aria-label={`${readMore}: ${item.cardTitle}`}
       style={{
         flex: "0 0 260px",
         backgroundColor: colors.offWhite,
@@ -474,6 +478,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
                       onClick={() =>
                         setModalInfo(showInfoMap[event.title] ?? null)
                       }
+                      aria-label={`${t.readMore}: ${event.title}`}
                       style={{
                         background: "none",
                         border: "none",
@@ -491,6 +496,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
                 </div>
                 <Link
                   href={event.ticketUrl}
+                  aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                   style={{
                     backgroundColor: colors.brandFuchsia,
                     color: colors.white,

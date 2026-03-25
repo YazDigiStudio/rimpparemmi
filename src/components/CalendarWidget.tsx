@@ -299,6 +299,7 @@ export default function CalendarWidget({
                 {onShowInfo && (
                   <button
                     onClick={() => onShowInfo(event.title)}
+                    aria-label={`Lue lisää: ${event.title}`}
                     style={{
                       background: "none",
                       border: "none",
@@ -316,6 +317,7 @@ export default function CalendarWidget({
               </div>
               <Link
                 href={toEmbedUrl(event.ticketUrl)}
+                aria-label={`${buyTickets} – ${event.title} ${event.date}`}
                 style={{
                   backgroundColor: colors.brandFuchsia,
                   color: colors.white,

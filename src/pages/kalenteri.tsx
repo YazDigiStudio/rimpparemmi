@@ -389,6 +389,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                                 href={ticketUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label={`${t.buyTickets} – ${selectedTitle} ${formatDate(perf.date)}`}
                                 style={{
                                   backgroundColor: colors.brandFuchsia,
                                   color: colors.white,
@@ -468,6 +469,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
+                                aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                                 style={{
                                   backgroundColor: colors.brandFuchsia,
                                   color: colors.white,
@@ -570,6 +572,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
+                                aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                                 style={{
                                   backgroundColor: colors.brandFuchsia,
                                   color: colors.white,

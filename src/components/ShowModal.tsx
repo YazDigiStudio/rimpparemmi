@@ -321,6 +321,7 @@ export default function ShowModal({ info, onClose }: Props) {
                     href={toEmbedUrl(perf.ticketUrl)}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Osta liput – ${info.title} ${perf.date}${perf.time ? ` ${perf.time}` : ""}`}
                     style={{
                       backgroundColor: colors.brandFuchsia,
                       color: colors.white,
