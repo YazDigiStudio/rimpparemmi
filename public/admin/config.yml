@@ -519,7 +519,18 @@ collections:
     create: true
     slug: "{{fields.id}}"
     identifier_field: "id"
-    summary: "{{title_fi}} ({{status}})"
+    summary: "{{title_fi}} — {{status}} — {{premiere_date}}"
+    sortable_fields: ["title_fi", "status", "premiere_date", "sort_order"]
+    view_filters:
+      - label: "Aktiiviset / Active"
+        field: status
+        pattern: active
+      - label: "Arkisto / Archive"
+        field: status
+        pattern: archive
+    view_groups:
+      - label: "Tila / Status"
+        field: status
     fields:
 
       # Identification
