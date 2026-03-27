@@ -7,6 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState, useCallback } from "react";
+import ReactMarkdown from "react-markdown";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
@@ -104,11 +105,10 @@ function BioModal({
   const title = locale === "fi"
     ? person.title_fi
     : (person.title_en ?? person.title_fi);
-  const bio = locale === "fi"
+  const bioText = locale === "fi"
     ? person.bio_fi
     : (person.bio_en ?? person.bio_fi);
   const imgSrc = person.image || "/images/person-placeholder.svg";
-  const paragraphs = bio ? bio.trim().split(/\n\n+/) : [];
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -197,20 +197,22 @@ function BioModal({
 
         {/* Bio */}
         <div style={{ borderTop: `2px solid ${colors.brandFuchsia}`, paddingTop: "1.25rem" }}>
-          {paragraphs.map((para, i) => (
-            <p
-              key={i}
-              style={{
-                color: colors.nearBlack,
-                fontSize: "0.95rem",
-                lineHeight: 1.8,
-                opacity: 0.85,
-                marginBottom: i < paragraphs.length - 1 ? "1rem" : 0,
-              }}
-            >
-              {para}
-            </p>
-          ))}
+          <ReactMarkdown
+            components={{
+              p: ({ children }) => (
+                <p style={{ color: colors.nearBlack, fontSize: "0.95rem", lineHeight: 1.8, opacity: 0.85, marginBottom: "1rem" }}>
+                  {children}
+                </p>
+              ),
+              a: ({ href, children }) => (
+                <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: colors.brandFuchsia, textDecoration: "underline" }}>
+                  {children}
+                </a>
+              ),
+            }}
+          >
+            {bioText ?? ""}
+          </ReactMarkdown>
         </div>
       </div>
     </div>

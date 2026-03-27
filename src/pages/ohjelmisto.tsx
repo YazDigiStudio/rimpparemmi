@@ -18,6 +18,7 @@ const copy = {
     title: "Ohjelmisto",
     active: "Aktiiviset",
     archive: "Arkisto",
+    guest: "Vierailuesitykset",
     empty: "Ei tuotantoja.",
   },
   en: {
@@ -25,6 +26,7 @@ const copy = {
     title: "Programme",
     active: "Current",
     archive: "Archive",
+    guest: "Guest shows",
     empty: "No productions.",
   },
 } as const;
@@ -36,9 +38,11 @@ export default function Ohjelmisto({ productions }: Props) {
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
 
-  const [filter, setFilter] = useState<"active" | "archive">("active");
+  const [filter, setFilter] = useState<"active" | "archive" | "guest">("active");
 
-  const visible = productions.filter((p) => p.status === filter);
+  const visible = productions.filter((p) =>
+    filter === "guest" ? p.vierailuesitys === true : p.status === filter
+  );
 
   const filterBtnStyle = (active: boolean): React.CSSProperties => ({
     background: active ? colors.nearBlack : "transparent",
@@ -105,6 +109,12 @@ export default function Ohjelmisto({ productions }: Props) {
                 style={filterBtnStyle(filter === "archive")}
               >
                 {t.archive}
+              </button>
+              <button
+                onClick={() => setFilter("guest")}
+                style={filterBtnStyle(filter === "guest")}
+              >
+                {t.guest}
               </button>
             </div>
           </div>

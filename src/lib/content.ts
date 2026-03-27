@@ -37,6 +37,7 @@ export type Production = {
   badge_fi?: string;
   badge_en?: string;
   is_touring?: boolean;
+  vierailuesitys?: boolean;
   duration_fi?: string;
   duration_en?: string;
   age_recommendation_fi?: string;

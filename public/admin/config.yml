@@ -403,12 +403,12 @@ collections:
                   - { label: "Kuva / Photo", name: "image", widget: "image", required: false }
                   - label: "Bio (FI)"
                     name: "bio_fi"
-                    widget: "text"
+                    widget: "markdown"
                     required: false
-                    hint: "Lyhyt esittely — näytetään modaalissa korttia klikattaessa. Tyhjä rivi erottaa kappaleet."
+                    hint: "Lyhyt esittely — tukee linkkejä ja muotoilua. Näytetään modaalissa korttia klikattaessa."
                   - label: "Bio (EN)"
                     name: "bio_en"
-                    widget: "text"
+                    widget: "markdown"
                     required: false
 
       - name: "yhteystiedot"
@@ -528,6 +528,9 @@ collections:
       - label: "Arkisto / Archive"
         field: status
         pattern: archive
+      - label: "Vierailuesitykset / Guest shows"
+        field: vierailuesitys
+        pattern: true
     view_groups:
       - label: "Tila / Status"
         field: status
@@ -684,6 +687,12 @@ collections:
         widget: "boolean"
         default: false
         hint: "Näkyy Kiertueohjelmisto-sivulla"
+
+      - label: "Vierailuesitys / Guest show"
+        name: "vierailuesitys"
+        widget: "boolean"
+        default: false
+        hint: "Merkitse, jos tämä on vieraileva esitys (ei Rimpparemmin oma tuotanto)"
 
       - label: "Kesto (FI)"
         name: "duration_fi"
