@@ -50,7 +50,7 @@ long_text_en: >
 
 
   This autumn 2024 family production is a collage of amusing characters and fast-paced situations. The Pied Piper of Hamelin is a bold new take on a classic fairy tale. A show combining dance, theatre, and circus with live music — it will surprise and delight. You definitely won't see this coming!
-info_fi: |
+info_fi: |-
   Ohjaus ja koreografia: Sanna Silvennoinen ja Jaakko Toivonen
   Äänisuunnittelu ja sävellys: Iiro Ollila
   Lavastus ja pukusuunnittelu: Mirkka Nyrhinen
@@ -59,8 +59,15 @@ info_fi: |
   Esiintyjät: Laura Kallas, Joni Kuokkanen, Liina Leppänen, Jukka Nurmela
 
   Kesto: n. 45 min
-  Suositusikä: 3–12 vuotta
-info_en: |
+  Suositusikä: 4–12 vuotta
+additional_info_en: "Original production: Dance Theatre Raatikko. Premiere in
+  Rovaniemi at Kulttuuritalo Wiljami: 25 September 2024"
+sort_order: 10
+ticket_url_fallback: https://www.netticket.fi/hamelnin-pillipiipari-rovaniemi
+badge_en: For the whole family
+vierailuesitys: false
+photographer: Antti Kurola
+info_en: |-
   Direction and choreography: Sanna Silvennoinen and Jaakko Toivonen
   Sound design and composition: Iiro Ollila
   Set and costume design: Mirkka Nyrhinen
@@ -69,18 +76,12 @@ info_en: |
   Cast: Laura Kallas, Joni Kuokkanen, Liina Leppänen, Jukka Nurmela
 
   Duration: approx. 45 min
-  Recommended age: 3–12 years
-additional_info_en: "Co-production with Dance Theatre Raatikko. Premiere in
-  Rovaniemi at Kulttuuritalo Wiljami: 25 September 2024"
-sort_order: 10
-ticket_url_fallback: https://www.netticket.fi/hamelnin-pillipiipari-rovaniemi
-badge_en: For the whole family
-photographer: Antti Kurola
-additional_info_fi: "Teos on yhteistuotanto Tanssiteatteri Raatikon kanssa.
-  Ensi-ilta Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024"
+  Recommended age: 4–12 years
+additional_info_fi: "Alkuperäisteos: Tanssiteatteri Raatikko. Ensi-ilta
+  Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024"
 badge_fi: Koko perheelle
 is_touring: true
 duration_fi: n. 45 min
 duration_en: approx. 45 min
-age_recommendation_fi: 3–12 vuotta
-age_recommendation_en: 3–12 years
+age_recommendation_fi: 4–12 vuotta
+age_recommendation_en: 4–12 years
