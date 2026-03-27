@@ -151,16 +151,8 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
     return calendarEvents.filter((e) => e.date === nextDate);
   }, [performances, calendarEvents]);
 
-  // Deduplicated events for card display (one card per production)
   const displayCards = useMemo<CalendarEvent[]>(() => {
-    const source = selectedDayEvents.length > 0 ? selectedDayEvents : nextDayEvents;
-    const seen = new Set<string>();
-    return source.filter((e) => {
-      const key = e.productionId ?? e.title;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+    return selectedDayEvents.length > 0 ? selectedDayEvents : nextDayEvents;
   }, [selectedDayEvents, nextDayEvents]);
 
   const handleDayClick = (events: CalendarEvent[]) => {
