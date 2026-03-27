@@ -15,6 +15,11 @@ export function toEmbedUrl(url: string): string {
   );
 }
 
+// Returns true if the URL will be handled by the Netticket embed sidebar.
+export function isEmbedTicket(url: string): boolean {
+  return url.startsWith("https://embed.netticket.fi/");
+}
+
 // Returns true for netticket.fi slug-style short links (no query params).
 // Used to detect when a fallback URL can be enhanced with performance date/time.
 function isNetticketShortLink(url: string): boolean {

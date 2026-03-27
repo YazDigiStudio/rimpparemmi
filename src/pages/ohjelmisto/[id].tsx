@@ -15,7 +15,7 @@ import {
   type Production,
   type Performance,
 } from "@/lib/content";
-import { resolveTicketUrl } from "@/lib/netticketUtils";
+import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 
@@ -324,8 +324,8 @@ export default function ProductionPage({ production, performances }: Props) {
                       {ticketUrl && (
                         <Link
                           href={ticketUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={isEmbedTicket(ticketUrl) ? undefined : "_blank"}
+                          rel={isEmbedTicket(ticketUrl) ? undefined : "noopener noreferrer"}
                           style={{
                             backgroundColor: colors.brandFuchsia,
                             color: colors.white,

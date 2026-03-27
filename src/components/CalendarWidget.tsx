@@ -5,7 +5,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { colors } from "@/styles/colors";
-import { toEmbedUrl } from "@/lib/netticketUtils";
+import { toEmbedUrl, isEmbedTicket } from "@/lib/netticketUtils";
 
 export type CalendarEvent = {
   date: string; // "D.M.YYYY" format, e.g. "15.3.2026"
@@ -317,6 +317,8 @@ export default function CalendarWidget({
               </div>
               <Link
                 href={toEmbedUrl(event.ticketUrl)}
+                target={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "_blank"}
+                rel={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "noopener noreferrer"}
                 aria-label={`${buyTickets} – ${event.title} ${event.date}`}
                 style={{
                   backgroundColor: colors.brandFuchsia,

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { colors } from "@/styles/colors";
-import { toEmbedUrl } from "@/lib/netticketUtils";
+import { toEmbedUrl, isEmbedTicket } from "@/lib/netticketUtils";
 
 export type ShowPerformance = {
   date: string;  // "D.M.YYYY" format
@@ -319,8 +319,8 @@ export default function ShowModal({ info, onClose }: Props) {
                   </span>
                   <a
                     href={toEmbedUrl(perf.ticketUrl)}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "_blank"}
+                    rel={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "noopener noreferrer"}
                     aria-label={`Osta liput – ${info.title} ${perf.date}${perf.time ? ` ${perf.time}` : ""}`}
                     style={{
                       backgroundColor: colors.brandFuchsia,

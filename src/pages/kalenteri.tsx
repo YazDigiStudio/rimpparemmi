@@ -22,7 +22,7 @@ import {
   type Performance,
   type SectionPageData,
 } from "@/lib/content";
-import { resolveTicketUrl } from "@/lib/netticketUtils";
+import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 type View = "calendar" | "tickets";
@@ -388,8 +388,8 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                             {ticketUrl && (
                               <Link
                                 href={ticketUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={isEmbedTicket(ticketUrl) ? undefined : "_blank"}
+                                rel={isEmbedTicket(ticketUrl) ? undefined : "noopener noreferrer"}
                                 aria-label={`${t.buyTickets} – ${selectedTitle} ${formatDate(perf.date)}`}
                                 style={{
                                   backgroundColor: colors.brandFuchsia,
@@ -472,8 +472,8 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                             {event.ticketUrl && (
                               <Link
                                 href={event.ticketUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={isEmbedTicket(event.ticketUrl) ? undefined : "_blank"}
+                                rel={isEmbedTicket(event.ticketUrl) ? undefined : "noopener noreferrer"}
                                 onClick={(e) => e.stopPropagation()}
                                 aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                                 style={{
@@ -580,8 +580,8 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                             {event.ticketUrl && (
                               <Link
                                 href={event.ticketUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={isEmbedTicket(event.ticketUrl) ? undefined : "_blank"}
+                                rel={isEmbedTicket(event.ticketUrl) ? undefined : "noopener noreferrer"}
                                 onClick={(e) => e.stopPropagation()}
                                 aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                                 style={{

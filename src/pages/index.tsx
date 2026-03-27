@@ -21,7 +21,7 @@ import {
   type Performance,
   type HomeData,
 } from "@/lib/content";
-import { resolveTicketUrl } from "@/lib/netticketUtils";
+import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
 
 type Locale = "fi" | "en";
 
@@ -503,6 +503,8 @@ export default function Home({ productions, performances, homeData }: HomeProps)
                 </div>
                 <Link
                   href={event.ticketUrl}
+                  target={isEmbedTicket(event.ticketUrl) ? undefined : "_blank"}
+                  rel={isEmbedTicket(event.ticketUrl) ? undefined : "noopener noreferrer"}
                   aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
                   style={{
                     backgroundColor: colors.brandFuchsia,
