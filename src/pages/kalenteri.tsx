@@ -36,6 +36,7 @@ const copy = {
     buyTickets: "Osta liput",
     noPerformances: "Ei tulevia esityksiä.",
     upcomingTitle: "Tulevat esitykset",
+    nextPerformances: "Seuraavat esitykset",
     readMore: "Lue lisää →",
   },
   en: {
@@ -46,6 +47,7 @@ const copy = {
     buyTickets: "Buy tickets",
     noPerformances: "No upcoming performances.",
     upcomingTitle: "Upcoming performances",
+    nextPerformances: "Next performances",
     readMore: "Read more →",
   },
 } as const;
@@ -437,6 +439,11 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
 
                 {/* Compact cards below calendar — click to change detail panel */}
                 <div style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {selectedDayEvents.length === 0 && displayCards.length > 0 && (
+                    <p style={{ color: colors.muted, fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.25rem" }}>
+                      {t.nextPerformances}
+                    </p>
+                  )}
                   {displayCards.length === 0 ? (
                     <p style={{ color: colors.muted, fontSize: "0.85rem" }}>{t.noPerformances}</p>
                   ) : (
@@ -508,6 +515,11 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
 
               {/* Compact cards — click opens modal */}
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                {selectedDayEvents.length === 0 && displayCards.length > 0 && (
+                  <p style={{ color: colors.muted, fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                    {t.nextPerformances}
+                  </p>
+                )}
                 {displayCards.length === 0 ? (
                   <p style={{ color: colors.muted, fontSize: "0.85rem" }}>{t.noPerformances}</p>
                 ) : (
