@@ -59,7 +59,7 @@ info_fi: >-
   Musiikin sovitus: Henri Haakana, Jukka Nurmela, Jarno Tastula
 
 
-  Esiintyjät: Henri Haakana, Atte Herd, Jukka Nurmela, Laura Kallas-Herd, Joni Kuokkanen, Anni Pilhjärta, Veera Syvävirta, Jarno Tastula, Ulla Väätäinen
+  Esiintyjät: Henri Haakana, Atte Herd, Jukka Nurmela, Laura Kallas, Joni Kuokkanen, Anni Pilhjärta, Veera Syvävirta, Jarno Tastula, Ulla Väätäinen
 info_en: >-
   Screenplay by Janne Rosenvall
 
@@ -88,8 +88,9 @@ info_en: >-
   Music Arrangement by Henri Haakana, Jukka Nurmela, Jarno Tastula
 
 
-  Performers: Henri Haakana, Atte Herd, Jukka Nurmela, Laura Kallas-Herd, Joni Kuokkanen, Anni Pilhjärta, Veera Syvävirta, Jarno Tastula, Ulla Väätäinen
+  Performers: Henri Haakana, Atte Herd, Jukka Nurmela, Laura Kallas, Joni Kuokkanen, Anni Pilhjärta, Veera Syvävirta, Jarno Tastula, Ulla Väätäinen
 additional_info_fi: Ensi-ilta 13.3.2019 Lappia-talo, Rovaniemi
 additional_info_en: "Premiere: March 13, 2019, Lappia Hall, Rovaniemi"
 sort_order: 77
 is_touring: false
+vierailuesitys: false
