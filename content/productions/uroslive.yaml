@@ -5,7 +5,38 @@ status: archive
 category: general
 premiere_date: 2025-02-14
 primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775045315622-Uros-Live-kuvalogolla-720-x-720-px.webp?alt=media
-press_zip_url: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2F1775045811825-Uroslive.zip?alt=media
+production_images:
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775045989361-Uroslive__kuva_Antti_Kurola__4_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046015805-Uroslive__kuva_Antti_Kurola__5_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046028879-Uroslive__kuva_Antti_Kurola__6_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046048299-Uroslive__kuva_Antti_Kurola__7_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046071093-Uroslive__kuva_Antti_Kurola__8_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046097680-Uroslive__kuva_Antti_Kurola__9_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046116697-Uroslive__kuva_Antti_Kurola__10_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046144162-Uroslive__kuva_Antti_Kurola__11_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046167771-Uroslive__kuva_Antti_Kurola__12_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046191398-Uroslive__kuva_Antti_Kurola__13_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046269266-Uroslive__kuva_Antti_Kurola__14_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046302108-Uroslive__kuva_Antti_Kurola__2_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046322296-Uroslive__kuva_Antti_Kurola__3_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046337526-Uroslive__kuva_Antti_Kurola__1_.webp?alt=media
+    photographer: Antti Kurola
+  - src: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2Fweb%2F1775046355386-Uroslive__kuva_Antti_Kurola.webp?alt=media
+    photographer: Antti Kurola
+press_zip_url: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/productions%2Furoslive%2F1775045978679-Uroslive.zip?alt=media
 short_text_fi: Uros Live on tuokiokuvia uroiden maailmasta. Se on kuvia ja
   tunnelmia miehenä olemisesta ja olemattomuudesta.
 short_text_en: Male Live offers snapshots of the world of men. It features
