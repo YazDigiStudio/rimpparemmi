@@ -57,5 +57,7 @@ info_en: |-
 
   Music: Jon Balke, Batagraf, Anouar Brahem, Stephan Micus
 sort_order: 71
-is_touring: false
+badge_fi: Vierailu
+badge_en: Guest
+is_touring: true
 vierailuesitys: false
