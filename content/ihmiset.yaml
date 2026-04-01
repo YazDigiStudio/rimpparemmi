@@ -104,6 +104,8 @@ sections:
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403716508-_DSF1549.webp?alt=media
+        bio_fi: "[Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)"
+        bio_en: "[Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)"
       - name: Janne Teivainen
         title_fi: Valo- ja Lavastussunnittelija
         title_en: Lighting and Set designer
@@ -136,10 +138,22 @@ sections:
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403237155-Mirkka.webp?alt=media
+        bio_fi: >-
+          [Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
+        bio_en: >-
+          [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
       - name: Kaisa Ristiluoma
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403513323-Kaisa_B_W.webp?alt=media
+        bio_fi: "[Saari](ohjelmisto/saari)"
+        bio_en: "[Island](en/ohjelmisto/saari)"
       - name: Sari Palmgren
         title_fi: Koreografi
         title_en: Choreographer
@@ -156,7 +170,12 @@ sections:
         title_fi: Sirkustaiteilija
         title_en: Circus artist
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351959028-Liina_Leppa_nen.webp?alt=media
+        bio_fi: "[Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)"
+        bio_en: "[The pied piper of Hamelin
+          (2024)](en/ohjelmisto/hamelnin-pillipiipari)"
       - name: Ari Numminen
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773405134129-_DSF1534.webp?alt=media
+        bio_fi: "[Sahara (2011)](ohjelmisto/sahara)"
+        bio_en: "[Sahara (2011)](en/ohjelmisto/sahara)"
