@@ -54,37 +54,4 @@ hero_slides:
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466146805-Siorskuadam-HiddenSteps_still_1.webp?alt=media
-news_items:
-  - card_title: TestiAjankohtainen
-    title: modaltesta otsake
-    subtitle: modaltesta alaotsake
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773467290528-Print_Size_Fistful_of_funk-35.webp?alt=media
-    body: >-
-      **Tanssiteatteri Rimpparemmi** on Suomen pohjoisin ammattitanssiteatteri.
-      Teemme fyysistä, musiikillista ja vahvasti näyttämöllistä nykytanssia ja
-      tanssiteatteria.
-
-
-      Esityksemme yhdistävät tarkkaa taiteellista työskentelyä, pohjoista identiteettiä ja sopivasti vinoa huumoria. Tarinamme voivat olla herkkiä tai ronskeja, mutta useimmiten todella hauskoja.
-
-
-      Kotimme on Rovaniemellä Kulttuuritalo Wiljamissa, ja kierrämme aktiivisesti ympäri Suomea.
-
-
-      Tule kokemaan pohjoisen tanssin näyttämö.
-
-
-      **Dance Theatre Rimpparemmi** is the northernmost professional dance theatre in Finland. We create physical, musical, and strongly theatrical contemporary dance and dance theatre.
-
-
-      Our performances combine precise artistic work, northern identity, and a touch of quirky humor. Our stories can be tender or rough around the edges, but most often they are truly funny.
-
-
-      Our home is in Rovaniemi at Cultural House Wiljami, and we actively tour across Finland.
-
-
-      Come experience the dancestage of the North.
-    extra: |-
-      tässä lisätietoja\
-      \
-      [Klikkaa ohjelmistoon!](/ohjelmisto)
+news_items: []
