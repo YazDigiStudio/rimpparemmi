@@ -84,6 +84,7 @@ ticket_url_fallback: https://www.netticket.fi/we-will-funk-for-food-a-fistful-of
 badge_fi: Vierailu
 badge_en: Guest
 is_touring: false
+vierailuesitys: true
 duration_fi: ""
 duration_en: ""
 age_recommendation_fi: ""
