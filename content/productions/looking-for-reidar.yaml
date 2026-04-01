@@ -45,7 +45,7 @@ info_fi: >-
   Koreografia: Työryhmä
 
 
-  Esiintyjät: Henri Haakana, Atte Herd, Laura Kallas-Herd, Anni Pilhjärta, Valtteri Valo, Ulla Väätäinen
+  Esiintyjät: Henri Haakana, Atte Herd, Laura Kallas, Anni Pilhjärta, Valtteri Valo, Ulla Väätäinen
 
 
   Ääni- valo- ja videoprojisointisuunnittelu: Antti Lindholm
@@ -71,7 +71,7 @@ info_en: >-
   Choreography: Working Group
 
 
-  Performers: Henri Haakana, Atte Herd, Laura Kallas-Herd, Anni Pilhjärta, Valtteri Valo, Ulla Väätäinen
+  Performers: Henri Haakana, Atte Herd, Laura Kallas, Anni Pilhjärta, Valtteri Valo, Ulla Väätäinen
 
 
   Sound, lighting, and video projection design by Antti Lindholm
@@ -91,3 +91,4 @@ additional_info_fi: Ensi-ilta 17.4.2018, Kittilä
 additional_info_en: "Premiere: April 17, 2018, Kittilä"
 sort_order: 78
 is_touring: false
+vierailuesitys: false
