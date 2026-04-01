@@ -74,5 +74,7 @@ info_en: |-
 additional_info_fi: "Ensi-ilta: 28.8.2021, Kulttuuritalo Wiljami, Rovaniemi"
 additional_info_en: "Premiere: August 28, 2021, Wiljami Cultural Center, Rovaniemi"
 sort_order: 72
+badge_fi: Vierailu
+badge_en: Guest
 is_touring: false
-vierailuesitys: false
+vierailuesitys: true
