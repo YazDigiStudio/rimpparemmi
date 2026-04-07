@@ -137,11 +137,11 @@ sections:
         bio_fi: |-
           [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
 
-          [Tapahtuma Piaf (2024)](<>)
+          [Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)
         bio_en: |-
           [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
 
-          [Piaf event (2024)](<>)
+          [Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)
       - name: Janne Teivainen
         title_fi: Valo- ja Lavastussunnittelija
         title_en: Lighting and Set designer
@@ -205,22 +205,22 @@ sections:
           [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
-          [Nauru - totisinta totta? (2022)](<>)
+          [Nauru - totisinta totta? (2022)](ohjelmisto/nauru)
 
 
-          [Kolmen näytöksen tragedia (2022)](<>)
+          [Kolmen näytöksen tragedia (2022)](ohjelmisto/kolmen-naytoksen-tragedia)
 
 
           [Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
 
 
-          [Uros Live (2025)](<>)
+          [Uros Live (2025)](ohjelmisto/uroslive)
 
 
-          [Kielletyt liikkeet (2025)](<>)
+          [Kielletyt liikkeet (2025)](ohjelmisto/kielletyt-liikkeet)
 
 
-          [Joulushow - Rytmiä ja roiskeita (2025)](<>)
+          [Joulushow - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
         bio_en: >-
           [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
@@ -228,22 +228,22 @@ sections:
           [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
-          [Laughter - The serious truth? (2022)](<>)
+          [Laughter - The serious truth? (2022)](en/ohjelmisto/nauru)
 
 
-          [A tragedy in three acts (2022)](<>)
+          [A tragedy in three acts (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)
 
 
           [The pied piper of Hamelin (2024)](en/ohjelmisto/hamelnin-pillipiipari)
 
 
-          [Male Live (2025)](<>)
+          [Male Live (2025)](en/ohjelmisto/uroslive)
 
 
-          [Forbidden moves (2025)](<>)
+          [Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)
 
 
-          [Christmas show - Rhythm and splash (2025)](<>)
+          [Christmas show - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
       - name: Kaisa Ristiluoma
         title_fi: Muusikko
         title_en: Musician
@@ -258,7 +258,7 @@ sections:
           [Hävyttömän hyvä joulushow (2023)](ohjelmisto/joulushow-2023)
 
 
-          [Kielletyt liikkeet (2025)](<>)
+          [Kielletyt liikkeet (2025)](ohjelmisto/kielletyt-liikkeet)
         bio_en: >-
           [Island](en/ohjelmisto/saari)
 
@@ -269,19 +269,19 @@ sections:
           [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
 
 
-          [Forbidden moves (2025)](<>)
+          [Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)
       - name: Sari Palmgren
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403577247-Sari_B_W.webp?alt=media
-        bio_en: "[Forbidden moves (2025)](<>)"
-        bio_fi: "[Kielletyt liikkeet (2025)](<>)"
+        bio_en: "[Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)"
+        bio_fi: "[Kielletyt liikkeet (2025)](ohjelmisto/kielletyt-liikkeet)"
       - name: Harri Kuusijärvi
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403866681-_DSF1488.webp?alt=media
-        bio_fi: "[Tapahtuma Piaf (2024)](<>)"
-        bio_en: "[Piaf event (2024)](<>)"
+        bio_fi: "[Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)"
+        bio_en: "[Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)"
       - name: Jaana Isokangas
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
@@ -314,8 +314,8 @@ sections:
         bio_fi: |-
           [Sahara (2011)](ohjelmisto/sahara)
 
-          [Tapahtuma Piaf (2024)](<>)
+          [Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)
         bio_en: |-
           [Sahara (2011)](en/ohjelmisto/sahara)
 
-          [Piaf event (2024)](<>)
+          [Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)
