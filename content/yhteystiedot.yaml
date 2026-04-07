@@ -6,8 +6,8 @@ address_en: |-
   96100 Rovaniemi
 contacts:
   - name: Matti Paloniemi
-    role_fi: Taiteellinen johtaja
-    role_en: Artistic Director
+    role_fi: Teatterijohtaja
+    role_en: Theatre Director
     phone: +358 (0)44 550 4835
     email: matti.paloniemi@rimpparemmi.fi
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376585-Matti-Paloniemi-768x768.webp?alt=media
@@ -18,19 +18,19 @@ contacts:
     email: viivi.vesala@rimpparemmi.fi
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075384295-viivi_vesala.webp?alt=media
   - name: Liisa Penttilä
-    role_fi: Myynti
-    role_en: Sales
+    role_fi: Myyntineuvottelija
+    role_en: Sales Representative
     phone: +358 (0)50 511 5055
     email: liisa.penttila@rimpparemmi.fi
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075376333-Liisa-Penttila-768x768.webp?alt=media
   - name: Helmi Järvensivu
-    role_fi: Markkinointi- ja viestintävastaava
-    role_en: Marketing & Communications
+    role_fi: Viestintäpäällikkö
+    role_en: Communications Manager
     phone: +358 (0)50 4344557
     email: helmi.jarvensivu@rimpparemmi.fi
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773075373512-Helmi-Jarvensivu-720x720.webp?alt=media
   - name: Atte Herd
-    role_fi: Tekniikkavastaava
+    role_fi: Tekninenpäällikkö
     role_en: Technical Manager
     phone: +358 (0)40 684 4097
     email: atte.herd@rimpparemmi.fi
