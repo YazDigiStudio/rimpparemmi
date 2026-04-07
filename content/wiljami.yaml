@@ -98,21 +98,6 @@ sections:
     image: ""
     image_alt_fi: ""
   - image_alt_en: ""
-    title_fi: Saapuminen & pysäköinti
-    image_orientation: landscape
-    image_position: left
-    title_en: ""
-    text_fi: >
-      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä.
-      Pysäköinti on päivisin maksullista.
-
-      Iltaesityksiin saapuessa löydät yleensä paikan vaivatta – mutta suosittelemme tulemaan ajoissa, niin ilta alkaa ilman parkkistressiä.
-
-      Rovaniemen paikallisliikenteen bussit kulkevat keskustan kautta, ja Wiljamiin on lyhyt kävelymatka useilta pysäkeiltä. Aikataulut ja reitit löydät Rovaniemen paikallisliikenteen sivuilta.
-    text_en: ""
-    image: ""
-    image_alt_fi: ""
-  - image_alt_en: ""
     title_fi: Esteettömyys & saavutettavuus
     image_orientation: landscape
     image_position: left
