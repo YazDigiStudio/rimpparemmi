@@ -286,27 +286,29 @@ sections:
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351029292-Jaana_Isokangas.webp?alt=media
-        bio_fi: "[Asetelmia (2022)](<>)"
-        bio_en: "[Stills (2022)](<>)"
+        bio_fi: "[Asetelmia (2022)](ohjelmisto/astelmia)"
+        bio_en: "[Stills (2022)](en/ohjelmisto/astelmia)"
       - name: Liina Leppänen
         title_fi: Sirkustaiteilija
         title_en: Circus artist
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351959028-Liina_Leppa_nen.webp?alt=media
-        bio_fi: |-
+        bio_fi: >-
           [Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
 
-          [Joulushow - Aallon harjalla (2024)](<>)
 
-          [Joulushow - Rytmiä ja roiskeita (2025)](<>)
+          [Joulushow - Aallon harjalla (2024)](ohjelmisto/aallon-harjalla-1)
+
+
+          [Joulushow - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
         bio_en: >-
           [The pied piper of Hamelin
           (2024)](en/ohjelmisto/hamelnin-pillipiipari)
 
 
-          [Christmas show - Riding the wave (2024)](<>)
+          [Christmas show - Riding the wave (2024)](en/ohjelmisto/aallon-harjalla-1)
 
 
-          [Christmas show - Rhythm and splash (2025)](<>)
+          [Christmas show - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
       - name: Ari Numminen
         title_fi: Koreografi
         title_en: Choreographer
