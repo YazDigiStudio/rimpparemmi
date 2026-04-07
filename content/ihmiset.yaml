@@ -248,30 +248,74 @@ sections:
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403513323-Kaisa_B_W.webp?alt=media
-        bio_fi: "[Saari](ohjelmisto/saari)"
-        bio_en: "[Island](en/ohjelmisto/saari)"
+        bio_fi: >-
+          [Saari](ohjelmisto/saari)
+
+
+          [Jacques Brel - Valssiin syntiseen (2019)](ohjelmisto/valssiin-syntiseen)
+
+
+          [Hävyttömän hyvä joulushow (2023)](ohjelmisto/joulushow-2023)
+
+
+          [Kielletyt liikkeet (2025)](<>)
+        bio_en: >-
+          [Island](en/ohjelmisto/saari)
+
+
+          [Jacques Brel - A sinful waltz (2019)](en/ohjelmisto/valssiin-syntiseen)
+
+
+          [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
+
+
+          [Forbidden moves (2025)](<>)
       - name: Sari Palmgren
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403577247-Sari_B_W.webp?alt=media
+        bio_en: "[Forbidden moves (2025)](<>)"
+        bio_fi: "[Kielletyt liikkeet (2025)](<>)"
       - name: Harri Kuusijärvi
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403866681-_DSF1488.webp?alt=media
+        bio_fi: "[Tapahtuma Piaf (2024)](<>)"
+        bio_en: "[Piaf event (2024)](<>)"
       - name: Jaana Isokangas
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351029292-Jaana_Isokangas.webp?alt=media
+        bio_fi: "[Asetelmia (2022)](<>)"
+        bio_en: "[Stills (2022)](<>)"
       - name: Liina Leppänen
         title_fi: Sirkustaiteilija
         title_en: Circus artist
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351959028-Liina_Leppa_nen.webp?alt=media
-        bio_fi: "[Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)"
-        bio_en: "[The pied piper of Hamelin
-          (2024)](en/ohjelmisto/hamelnin-pillipiipari)"
+        bio_fi: |-
+          [Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
+
+          [Joulushow - Aallon harjalla (2024)](<>)
+
+          [Joulushow - Rytmiä ja roiskeita (2025)](<>)
+        bio_en: >-
+          [The pied piper of Hamelin
+          (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+
+
+          [Christmas show - Riding the wave (2024)](<>)
+
+
+          [Christmas show - Rhythm and splash (2025)](<>)
       - name: Ari Numminen
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773405134129-_DSF1534.webp?alt=media
-        bio_fi: "[Sahara (2011)](ohjelmisto/sahara)"
-        bio_en: "[Sahara (2011)](en/ohjelmisto/sahara)"
+        bio_fi: |-
+          [Sahara (2011)](ohjelmisto/sahara)
+
+          [Tapahtuma Piaf (2024)](<>)
+        bio_en: |-
+          [Sahara (2011)](en/ohjelmisto/sahara)
+
+          [Piaf event (2024)](<>)
