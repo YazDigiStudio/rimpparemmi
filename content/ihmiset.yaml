@@ -134,8 +134,14 @@ sections:
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403716508-_DSF1549.webp?alt=media
-        bio_fi: "[Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)"
-        bio_en: "[Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)"
+        bio_fi: |-
+          [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
+
+          [Tapahtuma Piaf (2024)](<>)
+        bio_en: |-
+          [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
+
+          [Piaf event (2024)](<>)
       - name: Janne Teivainen
         title_fi: Valo- ja Lavastussunnittelija
         title_en: Lighting and Set designer
