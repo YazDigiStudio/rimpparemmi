@@ -535,3 +535,7 @@ sections:
         bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
         bio_en: "[Ten songs about a woman
           (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
+      - name: Jarmo Lind
+        title_fi: Tanssija
+        title_en: Dancer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775631361485-Lindi.webp?alt=media
