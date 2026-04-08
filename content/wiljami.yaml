@@ -31,36 +31,6 @@ sections:
       The auditorium seats 120, including 2 wheelchair-accessible spaces.
     image: ""
     image_alt_fi: Kulttuuritalo Wiljami
-  - image_alt_en: Theatre Wiljami
-    title_fi: Pystybaari Wiljami
-    image_orientation: landscape
-    image_position: right
-    title_en: Pystybaari Wiljami
-    text_fi: >-
-      Baari aukeaa Rimpparemmin esitysiltoina klo 18.00. Tarjolla on
-      kuohuviinejä, oluita ja virvoitusjuomia. Maksuvälineenä käy kortti tai
-      käteinen. 
-
-
-      *Meillä lasi on aina puoliksi täynnä.*
-
-
-      **Lipunmyynti**
-
-      Narikka ja lipunmyynti avautuvat tuntia ennen esitystä.
-    text_en: >
-      The bar opens at 6:00 PM on Rimpparemmi performance evenings. Sparkling
-      wines, beers, and soft drinks are served. Both card and cash are accepted.
-
-
-      *Our glass is always half full.*
-
-
-      **Box office**
-
-      The cloakroom and box office open one hour before performances.
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775587265089-_DSC8161.webp?alt=media
-    image_alt_fi: Teatteri Wiljami
   - image_alt_en: ""
     title_fi: Saapuminen Wiljamiin
     image_orientation: landscape
@@ -98,6 +68,48 @@ sections:
     image: ""
     image_alt_fi: ""
   - image_alt_en: ""
+    title_fi: Ovet & liput
+    image_orientation: landscape
+    image_position: left
+    title_en: ""
+    text_fi: >
+      Ovet aukeavat yleensä 1 tunti ennen esitystä.
+
+      Ovilipunmyynti palvelee Pystybaari Wiljamissa, mikäli esitys ei ole loppuunmyyty.
+    text_en: ""
+    image: ""
+    image_alt_fi: ""
+  - image_alt_en: Theatre Wiljami
+    title_fi: Pystybaari Wiljami
+    image_orientation: landscape
+    image_position: right
+    title_en: Pystybaari Wiljami
+    text_fi: >-
+      Baari aukeaa Rimpparemmin esitysiltoina klo 18.00. Tarjolla on
+      kuohuviinejä, oluita ja virvoitusjuomia. Maksuvälineenä käy kortti tai
+      käteinen. 
+
+
+      *Meillä lasi on aina puoliksi täynnä.*
+
+
+      **Lipunmyynti**
+
+      Narikka ja lipunmyynti avautuvat tuntia ennen esitystä.
+    text_en: >
+      The bar opens at 6:00 PM on Rimpparemmi performance evenings. Sparkling
+      wines, beers, and soft drinks are served. Both card and cash are accepted.
+
+
+      *Our glass is always half full.*
+
+
+      **Box office**
+
+      The cloakroom and box office open one hour before performances.
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775587265089-_DSC8161.webp?alt=media
+    image_alt_fi: Teatteri Wiljami
+  - image_alt_en: ""
     title_fi: Esteettömyys & saavutettavuus
     image_orientation: landscape
     image_position: left
@@ -110,18 +122,6 @@ sections:
       Katsomossa on pyörätuolipaikkoja kaksi, ja henkilökuntamme auttaa mielellään, jos tarvitset apua saapuessasi.
 
       Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
-    text_en: ""
-    image: ""
-    image_alt_fi: ""
-  - image_alt_en: ""
-    title_fi: Ovet & liput
-    image_orientation: landscape
-    image_position: left
-    title_en: ""
-    text_fi: >
-      Ovet aukeavat yleensä 1 tunti ennen esitystä.
-
-      Ovilipunmyynti palvelee Pystybaari Wiljamissa, mikäli esitys ei ole loppuunmyyty.
     text_en: ""
     image: ""
     image_alt_fi: ""
