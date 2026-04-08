@@ -64,6 +64,7 @@ sections:
       Meillä käyvät yleisimmät maksukortit sekä käteinen.
 
       Myös kulttuuriedut (esim. ePassi, Smartum, Edenred) käyvät maksuvälineenä.
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673791882-_DSC1634.webp?alt=media
   - image_orientation: landscape
     image_position: left
     title_fi: Narikka
@@ -72,7 +73,7 @@ sections:
 
       Jätäthän isot laukut ja ulkovaatteet narikkaan kiitos, että pidämme katsomon mukavana kaikille.
   - image_orientation: landscape
-    image_position: left
+    image_position: right
     title_fi: Baari & tarjoilu
     text_fi: >-
       Pystybaari Wiljami palvelee ennen esitystä ja väliajalla.
@@ -81,6 +82,7 @@ sections:
 
 
       Juomat saa tuoda katsomoon (ellei toisin mainita), mutta muistetaan yhdessä teatteritunnelma.
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673559217-_DSC8161.webp?alt=media
   - image_orientation: landscape
     image_position: left
     title_fi: Milloin kannattaa tulla?
@@ -109,6 +111,7 @@ sections:
       * 114 paikkaa peruskatsomolla (jossa tuolien välissä on myös pöytiä)
       * 177 paikkaa laajennetulla katsomolla (katsomo ilman pöytiä)
       * 2 pyörätuolipaikkaa
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673660654-wiljami_tyhja_faboon.webp?alt=media
   - image_orientation: landscape
     image_position: left
     title_fi: WC-tilat
@@ -160,3 +163,6 @@ sections:
 
 
       Me hoidamme loput.
+  - image_orientation: landscape
+    image_position: left
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673815303-_DSC1651.webp?alt=media
