@@ -7,16 +7,12 @@ sections:
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775586546045-Wiljami_2.webp?alt=media
   - image_orientation: landscape
     image_position: left
-    text_fi: >-
-      Kulttuuritalo Wiljami, tunnettu myös nimellä Kansantalo, on Rovaniemellä
-      sijaitseva kulttuurikeskus, joka tarjoaa monipuolista ohjelmaa eri
-      taiteenaloilta. Rakennus valmistui vuonna 1947 ja toimii kotinäyttämönä
-      useille rovaniemeläisille kulttuuritoimijoille — muun muassa
-      Tanssiteatteri Rimpparemmi, Lapin Ylioppilasteatteri ja Elokuvakerho
-      Cinema esittävät täällä ohjelmistoaan.
-
-
-      Katsomossa on 120 istumapaikkaa, joista 2 on tarkoitettu pyörätuolinkäyttäjille.
+    text_fi: Kulttuuritalo Wiljami, tunnettu myös nimellä Kansantalo, on
+      Rovaniemellä sijaitseva kulttuurikeskus, joka tarjoaa monipuolista
+      ohjelmaa eri taiteenaloilta. Rakennus valmistui vuonna 1947 ja toimii
+      kotinäyttämönä useille rovaniemeläisille kulttuuritoimijoille — muun
+      muassa Tanssiteatteri Rimpparemmi, Lapin Ylioppilasteatteri ja
+      Elokuvakerho Cinema esittävät täällä ohjelmistoaan.
   - image_alt_en: ""
     title_fi: Saapuminen Wiljamiin
     image_orientation: landscape
