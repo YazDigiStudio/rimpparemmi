@@ -451,10 +451,6 @@ collections:
                 name: "video"
                 widget: "object"
                 fields:
-                  - label: "Embed URL"
-                    name: "url"
-                    widget: "string"
-                    hint: "YouTube: https://www.youtube.com/watch?v=VIDEO_ID — Vimeo: https://player.vimeo.com/video/VIDEO_ID"
                   - label: "Otsikko (FI)"
                     name: "title_fi"
                     widget: "string"
@@ -463,11 +459,39 @@ collections:
                     name: "title_en"
                     widget: "string"
                     required: false
+                  - label: "Alaotsikko (FI)"
+                    name: "subtitle_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Subtitle (EN)"
+                    name: "subtitle_en"
+                    widget: "string"
+                    required: false
+                  - label: "Embed URL"
+                    name: "url"
+                    widget: "string"
+                    hint: "YouTube: https://www.youtube.com/watch?v=VIDEO_ID — Vimeo: https://player.vimeo.com/video/VIDEO_ID"
 
               - label: "Kuva / Image"
                 name: "image"
                 widget: "object"
                 fields:
+                  - label: "Otsikko (FI)"
+                    name: "title_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Title (EN)"
+                    name: "title_en"
+                    widget: "string"
+                    required: false
+                  - label: "Alaotsikko (FI)"
+                    name: "subtitle_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Subtitle (EN)"
+                    name: "subtitle_en"
+                    widget: "string"
+                    required: false
                   - label: "Kuva / Image"
                     name: "src"
                     widget: "image"
@@ -488,6 +512,22 @@ collections:
                 name: "link"
                 widget: "object"
                 fields:
+                  - label: "Otsikko (FI)"
+                    name: "title_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Title (EN)"
+                    name: "title_en"
+                    widget: "string"
+                    required: false
+                  - label: "Alaotsikko (FI)"
+                    name: "subtitle_fi"
+                    widget: "string"
+                    required: false
+                  - label: "Subtitle (EN)"
+                    name: "subtitle_en"
+                    widget: "string"
+                    required: false
                   - label: "URL"
                     name: "url"
                     widget: "string"

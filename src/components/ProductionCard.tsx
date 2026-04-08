@@ -1,6 +1,7 @@
 // ProductionCard — clickable card linking to the production detail page.
 // Shows primary image, title, subtitle, and an optional corner badge.
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { colors } from "@/styles/colors";
@@ -13,6 +14,8 @@ type Props = {
 };
 
 export default function ProductionCard({ production, locale, basePath = "/ohjelmisto" }: Props) {
+  const [isLandscape, setIsLandscape] = useState(true);
+
   const title = locale === "fi"
     ? production.title_fi
     : (production.title_en ?? production.title_fi);
@@ -41,14 +44,26 @@ export default function ProductionCard({ production, locale, basePath = "/ohjelm
       className="production-card"
     >
       {/* Primary image */}
-      <div style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden" }}>
+      <div style={{
+        position: "relative",
+        aspectRatio: "16/9",
+        overflow: "hidden",
+        backgroundColor: colors.nearBlack,
+      }}>
         <Image
           src={production.primary_image}
           alt={title}
           fill
-          style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
+          style={{
+            objectFit: isLandscape ? "cover" : "contain",
+            transition: "transform 0.3s ease",
+          }}
           className="production-card-img"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          onLoad={(e) => {
+            const img = e.currentTarget;
+            setIsLandscape(img.naturalWidth > img.naturalHeight);
+          }}
         />
 
         {/* Corner badge */}

@@ -13,6 +13,7 @@ import Navigation from "@/components/Navigation";
 import CalendarWidget, { type CalendarEvent } from "@/components/CalendarWidget";
 import ShowModal, { type ShowInfo, type ShowPerformance } from "@/components/ShowModal";
 import SectionBlock from "@/components/SectionBlock";
+import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import {
   getProductions,
@@ -193,7 +194,6 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
     ? (locale === "fi" ? selectedProduction.info_fi : (selectedProduction.info_en ?? selectedProduction.info_fi))
     : null;
 
-  const longTextParagraphs = selectedLongText ? selectedLongText.trim().split(/\n\n+/) : [];
   const infoLines = selectedInfoText ? selectedInfoText.trim().split("\n").filter(Boolean) : [];
 
   const tabBtn = (active: boolean): React.CSSProperties => ({
@@ -296,22 +296,9 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
                     </p>
                   )}
 
-                  {longTextParagraphs.length > 0 && (
+                  {selectedLongText && (
                     <div style={{ marginBottom: "1.5rem" }}>
-                      {longTextParagraphs.map((para, i) => (
-                        <p
-                          key={i}
-                          style={{
-                            color: colors.nearBlack,
-                            fontSize: "0.9rem",
-                            lineHeight: 1.8,
-                            opacity: 0.85,
-                            marginBottom: i < longTextParagraphs.length - 1 ? "1rem" : 0,
-                          }}
-                        >
-                          {para}
-                        </p>
-                      ))}
+                      <MarkdownText fontSize="0.9rem" lineHeight={1.8}>{selectedLongText}</MarkdownText>
                     </div>
                   )}
 

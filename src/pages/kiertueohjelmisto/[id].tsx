@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
 import ImageCarousel from "@/components/ImageCarousel";
+import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import { getProductions, type Production } from "@/lib/content";
 
@@ -64,7 +65,6 @@ export default function TourProductionPage({ production }: Props) {
     ? production.age_recommendation_fi
     : (production.age_recommendation_en ?? production.age_recommendation_fi);
 
-  const longTextParagraphs = longText ? longText.trim().split(/\n\n+/) : [];
   const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
   const galleryImages = production.production_images ?? [];
 
@@ -82,81 +82,64 @@ export default function TourProductionPage({ production }: Props) {
       </Head>
       <Navigation />
 
-      {/* Hero */}
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "clamp(280px, 45vh, 520px)",
-          overflow: "hidden",
-        }}
-      >
-        <Image
-          src={production.primary_image}
-          alt={title}
-          fill
-          priority
-          style={{ objectFit: "cover", objectPosition: "center 30%" }}
-        />
-        {production.primary_image_photographer && (
-          <span style={{
-            position: "absolute", bottom: "0.4rem", right: "0.5rem", zIndex: 2,
-            backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-            fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-            pointerEvents: "none",
-          }}>
-            {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
-          </span>
-        )}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "2.5rem",
-            left: "2rem",
-            right: "2rem",
-          }}
-        >
-          <h1
-            style={{
-              color: colors.white,
-              fontSize: "clamp(1.75rem, 5vw, 3.5rem)",
-              fontWeight: 700,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              lineHeight: 1.1,
-            }}
-          >
-            {title}
-          </h1>
-          {subtitle && (
-            <p
-              style={{
-                color: "rgba(255,255,255,0.8)",
-                fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
-                marginTop: "0.5rem",
-              }}
-            >
-              {subtitle}
-            </p>
-          )}
-        </div>
-      </div>
-
       {/* Main content */}
       <main
         style={{
           backgroundColor: colors.offWhite,
-          padding: "3.5rem 2rem 6rem",
+          padding: "calc(96px + 3.5rem) 2rem 6rem",
         }}
       >
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+
+          {/* Title block */}
+          <div style={{ marginBottom: "2.5rem" }}>
+            <h1
+              style={{
+                color: colors.nearBlack,
+                fontSize: "clamp(1.75rem, 5vw, 3.5rem)",
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                textTransform: "uppercase",
+                lineHeight: 1.1,
+              }}
+            >
+              {title}
+            </h1>
+            {subtitle && (
+              <p
+                style={{
+                  color: colors.muted,
+                  fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
+                  marginTop: "0.5rem",
+                }}
+              >
+                {subtitle}
+              </p>
+            )}
+          </div>
+
+          {/* Primary image */}
+          <div style={{ position: "relative", marginBottom: "2.5rem" }}>
+            <Image
+              src={production.primary_image}
+              alt={title}
+              width={0}
+              height={0}
+              sizes="(max-width: 900px) 100vw, 900px"
+              priority
+              style={{ width: "100%", height: "auto", borderRadius: "2px" }}
+            />
+            {production.primary_image_photographer && (
+              <span style={{
+                position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                pointerEvents: "none",
+              }}>
+                {locale === "fi" ? "Kuva" : "Photo"}: {production.primary_image_photographer}
+              </span>
+            )}
+          </div>
 
           {/* Back link */}
           <Link
@@ -218,22 +201,9 @@ export default function TourProductionPage({ production }: Props) {
               marginBottom: "3.5rem",
             }}
           >
-            {longTextParagraphs.length > 0 && (
+            {longText && (
               <div style={{ flex: "1 1 400px" }}>
-                {longTextParagraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      color: colors.nearBlack,
-                      fontSize: "1rem",
-                      lineHeight: 1.85,
-                      opacity: 0.85,
-                      marginBottom: i < longTextParagraphs.length - 1 ? "1.25rem" : 0,
-                    }}
-                  >
-                    {para}
-                  </p>
-                ))}
+                <MarkdownText fontSize="1rem">{longText}</MarkdownText>
               </div>
             )}
 

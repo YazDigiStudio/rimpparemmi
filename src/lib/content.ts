@@ -198,6 +198,8 @@ export type MediaVideoItem = {
   url: string;
   title_fi?: string;
   title_en?: string;
+  subtitle_fi?: string;
+  subtitle_en?: string;
 };
 
 export type MediaImageItem = {
@@ -206,6 +208,10 @@ export type MediaImageItem = {
   photographer?: string;
   alt_fi?: string;
   alt_en?: string;
+  title_fi?: string;
+  title_en?: string;
+  subtitle_fi?: string;
+  subtitle_en?: string;
 };
 
 export type MediaLinkItem = {
@@ -215,6 +221,10 @@ export type MediaLinkItem = {
   label_en?: string;
   description_fi?: string;
   description_en?: string;
+  title_fi?: string;
+  title_en?: string;
+  subtitle_fi?: string;
+  subtitle_en?: string;
 };
 
 export type MediaItem = MediaVideoItem | MediaImageItem | MediaLinkItem;

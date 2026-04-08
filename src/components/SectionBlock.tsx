@@ -11,42 +11,11 @@
 // index prop controls alternating background: even = offWhite, odd = white
 
 import Image from "next/image";
+import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import { type SectionPageSection } from "@/lib/content";
 
 export type Locale = "fi" | "en";
-
-function renderText(text: string): React.ReactNode[] {
-  return text
-    .trim()
-    .split(/\n\n+/)
-    .map((para, i) => {
-      const parts = para.split(/(\*\*[^*]+\*\*)/g).map((part, j) => {
-        if (part.startsWith("**") && part.endsWith("**")) {
-          return <strong key={j}>{part.slice(2, -2)}</strong>;
-        }
-        return part.split("\n").reduce<React.ReactNode[]>((acc, line, k, arr) => {
-          acc.push(line);
-          if (k < arr.length - 1) acc.push(<br key={`br-${k}`} />);
-          return acc;
-        }, []);
-      });
-      return (
-        <p
-          key={i}
-          style={{
-            color: colors.nearBlack,
-            fontSize: "0.95rem",
-            lineHeight: 1.85,
-            opacity: 0.85,
-            marginBottom: "1rem",
-          }}
-        >
-          {parts}
-        </p>
-      );
-    });
-}
 
 type Props = {
   section: SectionPageSection;
@@ -144,7 +113,7 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
           {title}
         </h2>
       )}
-      {hasText && renderText(text!)}
+      {hasText && <MarkdownText>{text!}</MarkdownText>}
     </div>
   );
 
@@ -177,7 +146,7 @@ export default function SectionBlock({ section, locale, index = 0 }: Props) {
             {imageEl}
           </div>
         ) : (
-          hasText ? renderText(text!) : null
+          hasText ? <MarkdownText>{text!}</MarkdownText> : null
         )}
       </div>
     </div>

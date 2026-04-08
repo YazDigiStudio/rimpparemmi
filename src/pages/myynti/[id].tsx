@@ -6,6 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
+import MarkdownText from "@/components/MarkdownText";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
 import { colors } from "@/styles/colors";
@@ -27,7 +28,6 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
   const duration = production.duration_fi;
   const ageRecommendation = production.age_recommendation_fi;
 
-  const longTextParagraphs = longText ? longText.trim().split(/\n\n+/) : [];
   const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
   const techLines = sales.technical_requirements
     ? sales.technical_requirements.trim().split("\n").filter(Boolean)
@@ -197,22 +197,9 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
               marginBottom: "3.5rem",
             }}
           >
-            {longTextParagraphs.length > 0 && (
+            {longText && (
               <div style={{ flex: "1 1 400px" }}>
-                {longTextParagraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      color: colors.nearBlack,
-                      fontSize: "1rem",
-                      lineHeight: 1.85,
-                      opacity: 0.85,
-                      marginBottom: i < longTextParagraphs.length - 1 ? "1.25rem" : 0,
-                    }}
-                  >
-                    {para}
-                  </p>
-                ))}
+                <MarkdownText fontSize="1rem">{longText}</MarkdownText>
               </div>
             )}
 

@@ -13,7 +13,7 @@ type Section = {
 const sections: Section[] = [
   {
     paragraphs: [
-      "Rimpparemmi ry. / Tanssiteatteri Rimpparemmi ylläpitää seuraavia rekisterejä sidosryhmistään: jäsenrekisteri, asiakasrekisteri, myyntirekisteri ja työntekijärekisteri. Rekisterit on suojattu asianmukaisin keinoin eikä asiattomilla henkilöillä ole pääsyä rekistereiden tietoihin. Rekisteröidyllä on oikeus tarkastaa mitä häntä koskevia tietoja rekisterissä on. Tarkastuspyynnöt lähetetään rekisteri-/tietosuojaselosteessa mainitulle rekisteristä vastaavalle henkilölle kirjallisena.",
+      "Rimpparemmi ry. / Tanssiteatteri Rimpparemmi ylläpitää seuraavia rekisterejä sidosryhmistään: jäsenrekisteri, asiakasrekisteri, myyntirekisteri ja työntekijärekisteri. Asiakasrekisteriä pidetään yhdessä Oy NetTicket Finland Ab:n kanssa. Rekisterit on suojattu asianmukaisin keinoin eikä asiattomilla henkilöillä ole pääsyä rekistereiden tietoihin. Rekisteröidyllä on oikeus tarkastaa mitä häntä koskevia tietoja rekisterissä on. Tarkastuspyynnöt lähetetään rekisteri-/tietosuojaselosteessa mainitulle rekisteristä vastaavalle henkilölle kirjallisena.",
     ],
   },
   {

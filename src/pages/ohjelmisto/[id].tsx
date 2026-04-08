@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
 import ImageCarousel from "@/components/ImageCarousel";
+import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import {
   getProductions,
@@ -80,10 +81,6 @@ export default function ProductionPage({ production, performances }: Props) {
     const [yyyy, mm, dd] = dateStr.split("-");
     return `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`;
   };
-
-  const longTextParagraphs = longText
-    ? longText.trim().split(/\n\n+/)
-    : [];
 
   const infoLines = infoText
     ? infoText.trim().split("\n").filter(Boolean)
@@ -201,22 +198,9 @@ export default function ProductionPage({ production, performances }: Props) {
             }}
           >
             {/* Long text */}
-            {longTextParagraphs.length > 0 && (
+            {longText && (
               <div style={{ flex: "1 1 400px" }}>
-                {longTextParagraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      color: colors.nearBlack,
-                      fontSize: "1rem",
-                      lineHeight: 1.85,
-                      opacity: 0.85,
-                      marginBottom: i < longTextParagraphs.length - 1 ? "1.25rem" : 0,
-                    }}
-                  >
-                    {para}
-                  </p>
-                ))}
+                <MarkdownText fontSize="1rem">{longText}</MarkdownText>
               </div>
             )}
 

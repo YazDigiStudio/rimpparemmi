@@ -55,6 +55,12 @@ type ModalImage = {
   alt?: string;
 };
 
+function normalizeUrl(url: string): string {
+  const trimmed = url.trim();
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+  return "https://" + trimmed;
+}
+
 function toOriginalUrl(url: string): string {
   return url
     .replace(/%2Fweb%2F/i, "%2Foriginals%2F")
@@ -262,6 +268,36 @@ function PhotoGrid({ production, locale, onImageClick }: {
 }
 
 
+function SectionHeading({ item, locale }: {
+  item: { title_fi?: string; title_en?: string; subtitle_fi?: string; subtitle_en?: string };
+  locale: Locale;
+}) {
+  const title = locale === "fi" ? item.title_fi : (item.title_en ?? item.title_fi);
+  const subtitle = locale === "fi" ? item.subtitle_fi : (item.subtitle_en ?? item.subtitle_fi);
+  if (!title && !subtitle) return null;
+  return (
+    <div style={{ marginBottom: "0.75rem" }}>
+      {title && (
+        <h2 style={{
+          color: colors.nearBlack,
+          fontSize: "clamp(1rem, 2vw, 1.3rem)",
+          fontWeight: 700,
+          letterSpacing: "0.05em",
+          textTransform: "uppercase",
+          lineHeight: 1.2,
+        }}>
+          {title}
+        </h2>
+      )}
+      {subtitle && (
+        <p style={{ color: colors.muted, fontSize: "0.85rem", marginTop: "0.25rem" }}>
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function GeneralMedia({ items, locale, onImageClick }: {
   items: MediaItem[];
   locale: Locale;
@@ -269,13 +305,13 @@ function GeneralMedia({ items, locale, onImageClick }: {
 }) {
   const t = copy[locale];
 
-  // Group consecutive images together for a grid layout
+  // Group consecutive images without titles together for a grid layout
   type Chunk = { kind: "image"; items: Extract<MediaItem, { type: "image" }>[] }
-    | { kind: "single"; item: Exclude<MediaItem, { type: "image" }> };
+    | { kind: "single"; item: MediaItem };
 
   const chunks: Chunk[] = [];
   for (const item of items) {
-    if (item.type === "image") {
+    if (item.type === "image" && !item.title_fi && !item.title_en) {
       const last = chunks[chunks.length - 1];
       if (last?.kind === "image") {
         last.items.push(item);
@@ -352,39 +388,64 @@ function GeneralMedia({ items, locale, onImageClick }: {
 
         const { item } = chunk;
 
-        if (item.type === "video") {
-          const title = locale === "fi" ? item.title_fi : (item.title_en ?? item.title_fi);
+        if (item.type === "image") {
+          // Single image with title — natural aspect ratio, centered
+          const alt = locale === "fi" ? (item.alt_fi ?? "") : (item.alt_en ?? item.alt_fi ?? "");
           return (
             <div key={ci}>
-              {title && (
-                <p
+              <SectionHeading item={item} locale={locale} />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+              <button
+                onClick={() => onImageClick({ src: item.src, photographer: item.photographer, alt })}
+                style={{ display: "block", background: "none", border: "none", padding: 0, cursor: "pointer", position: "relative", maxWidth: "800px" }}
+              >
+                <Image
+                  src={item.src}
+                  alt={alt}
+                  width={0}
+                  height={0}
+                  sizes="(max-width: 800px) 100vw, 800px"
+                  style={{ width: "100%", height: "auto", borderRadius: "4px", display: "block" }}
+                />
+                {item.photographer && (
+                  <span style={{
+                    position: "absolute", bottom: "0.4rem", right: "0.5rem",
+                    backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
+                    fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
+                    pointerEvents: "none",
+                  }}>
+                    {t.photo}: {item.photographer}
+                  </span>
+                )}
+              </button>
+              </div>
+            </div>
+          );
+        }
+
+        if (item.type === "video") {
+          return (
+            <div key={ci}>
+              <SectionHeading item={item} locale={locale} />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div
                   style={{
-                    color: colors.nearBlack,
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    marginBottom: "0.75rem",
-                    opacity: 0.85,
+                    position: "relative",
+                    aspectRatio: "16/9",
+                    width: "100%",
+                    maxWidth: "800px",
+                    borderRadius: "4px",
+                    overflow: "hidden",
+                    backgroundColor: "#000",
                   }}
                 >
-                  {title}
-                </p>
-              )}
-              <div
-                style={{
-                  position: "relative",
-                  aspectRatio: "16/9",
-                  maxWidth: "800px",
-                  borderRadius: "4px",
-                  overflow: "hidden",
-                  backgroundColor: "#000",
-                }}
-              >
-                <iframe
-                  src={toNoCookiesEmbed(item.url)}
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                />
+                  <iframe
+                    src={toNoCookiesEmbed(item.url)}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </div>
           );
@@ -394,35 +455,47 @@ function GeneralMedia({ items, locale, onImageClick }: {
           const label = locale === "fi" ? item.label_fi : (item.label_en ?? item.label_fi);
           const desc = locale === "fi" ? item.description_fi : (item.description_en ?? item.description_fi);
           return (
-            <a
-              key={ci}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                flexDirection: "column",
-                gap: "0.25rem",
-                borderLeft: `3px solid ${colors.brandFuchsia}`,
-                paddingLeft: "1rem",
-                textDecoration: "none",
-                maxWidth: "600px",
-              }}
-            >
-              <span
+            <div key={ci}>
+              <SectionHeading item={item} locale={locale} />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+              <a
+                href={normalizeUrl(item.url)}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                  color: colors.brandFuchsia,
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.03em",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  backgroundColor: colors.white,
+                  border: `1px solid ${colors.borderLight}`,
+                  borderRadius: "4px",
+                  padding: "1rem 1.5rem",
+                  textDecoration: "none",
+                  maxWidth: "600px",
+                  transition: "box-shadow 0.15s ease",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
                 }}
+                className="media-link-card"
               >
-                {label} →
-              </span>
-              {desc && (
-                <span style={{ color: colors.muted, fontSize: "0.8rem" }}>{desc}</span>
-              )}
-            </a>
+                <div style={{ flex: 1 }}>
+                  <span
+                    style={{
+                      color: colors.brandFuchsia,
+                      fontSize: "0.95rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.03em",
+                    }}
+                  >
+                    {label}
+                  </span>
+                  {desc && (
+                    <span style={{ display: "block", color: colors.muted, fontSize: "0.8rem", marginTop: "0.2rem" }}>{desc}</span>
+                  )}
+                </div>
+                <span style={{ color: colors.brandFuchsia, fontSize: "1.1rem", flexShrink: 0 }}>→</span>
+              </a>
+              </div>
+            </div>
           );
         }
 
@@ -437,10 +510,10 @@ export default function MediaPage({ productions, mediaData }: Props) {
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
 
-  // Only active productions with at least one production image
-  const mediaProductions = productions.filter(
-    (p) => p.status === "active" && (p.production_images ?? []).length > 0
-  );
+  // All productions with at least one production image, sorted by sort_order
+  const mediaProductions = productions
+    .filter((p) => (p.production_images ?? []).length > 0)
+    .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
 
   const hasGeneralMedia = mediaData.items.length > 0;
 

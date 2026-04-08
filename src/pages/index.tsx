@@ -12,6 +12,7 @@ import Navigation from "@/components/Navigation";
 import CalendarWidget, { type CalendarEvent } from "@/components/CalendarWidget";
 import ShowModal, { type ShowInfo, type ShowPerformance } from "@/components/ShowModal";
 import MailingListForm from "@/components/MailingListForm";
+import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import {
   getProductions,
@@ -194,7 +195,6 @@ export default function Home({ productions, performances, homeData }: HomeProps)
   const tagline = (locale === "fi" ? homeData.tagline_fi : homeData.tagline_en) ?? t.tagline;
   const introTitle = (locale === "fi" ? homeData.intro_title_fi : homeData.intro_title_en) ?? t.introTitle;
   const introText = (locale === "fi" ? homeData.intro_text_fi : homeData.intro_text_en) ?? t.introText;
-  const introParagraphs = introText.trim().split(/\n\n+/);
 
   // Map CMS hero slides to internal format — overlays hidden when events list is on
   const heroSlides: HeroSlide[] = homeData.hero_slides.map((s) => ({
@@ -645,21 +645,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
                 {introTitle}
               </h2>
             )}
-            {introParagraphs.map((paragraph, i) => (
-              <p
-                key={i}
-                style={{
-                  color: colors.nearBlack,
-                  fontSize: "1rem",
-                  lineHeight: 1.85,
-                  opacity: 0.85,
-                  marginBottom:
-                    i < introParagraphs.length - 1 ? "1.5rem" : 0,
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
+            <MarkdownText fontSize="1rem">{introText}</MarkdownText>
           </div>
 
           {/* Right column: ticket calendar — hidden when show_calendar is false */}
