@@ -547,3 +547,17 @@ sections:
         title_fi: Suunnittelija
         title_en: Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775631612210-Lindholm.webp?alt=media
+      - name: Janne Rosenval
+        title_fi: Käsikirjoittaja, Ohjaaja
+        title_en: Writer, Director
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775631763871-Rosenval.webp?alt=media
+        bio_fi: >-
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
+
+
+          [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
+        bio_en: >-
+          [Looking for REIDAR (2017)](en/ohjelmisto/looking-for-reidar)
+
+
+          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
