@@ -118,9 +118,28 @@ sections:
   - image_orientation: landscape
     image_position: left
     title_fi: Kuvaaminen
-    text_fi: Esityksiämme ei tekijänoikeussyistä saa kuvata mutta loppukiitoksista
-      voit ottaa muiston itsellesi tai jakaa sen vaikka somessa. Tägääthän
-      Rimpparemmin mukaan postauksiisi niin pääsemme mukaan tunnelmointiisi.
+    text_fi: >-
+      Saavu paikalle viimeistään 20 minuuttia ennen esityksen alkua.
+
+      Näin ehdit:
+
+
+      ✔️ jättää takin
+
+
+
+      ✔️ hakea juoman
+
+
+
+      ✔️ vaihtaa kuulumiset
+
+
+
+      ✔️ laskeutua tunnelmaan
+
+
+      Kun esitys alkaa, ovet sulkeutuvat. Myöhästyneet päästetään sisään sopivassa kohdassa, mikäli se on mahdollista. Emme voi taata pääsyä saliin heti esityksen alettua.
   - image_orientation: landscape
     image_position: left
     title_fi: Kesto
