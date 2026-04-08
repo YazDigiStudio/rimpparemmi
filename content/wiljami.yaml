@@ -16,7 +16,7 @@ sections:
     title_fi: Kulttuuritalo Wiljami
   - image_orientation: landscape
     image_position: left
-    title_fi: Saapuminen Wiljamiin
+    title_fi: Sijainti
     text_fi: >-
       ### **Sijainti**
 
@@ -49,4 +49,130 @@ sections:
       Jätäthän isot laukut ja ulkovaatteet narikkaan kiitos, että pidämme katsomon mukavana kaikille.
   - image_orientation: landscape
     image_position: left
+    title_fi: Saapuminen & pysäköinti
+    text_fi: >-
+      Parkkipaikat sijaitsevat Urheilukadulla ja Kulttuuritalo Wiljamin edessä.
+      Pysäköinti on päivisin maksullista.
+
+
+      Iltaesityksiin saapuessa löydät yleensä paikan vaivatta – mutta suosittelemme tulemaan ajoissa, niin ilta alkaa ilman parkkistressiä.
+
+
+      Rovaniemen paikallisliikenteen bussit kulkevat keskustan kautta, ja Wiljamiin on lyhyt kävelymatka useilta pysäkeiltä. Aikataulut ja reitit löydät Rovaniemen paikallisliikenteen sivuilta.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Esteettömyys & saavutettavuus
+    text_fi: >-
+      Kulttuuritalo Wiljami ei ole täysin esteetön. Lähes esteetön kulku
+      tapahtuu takaoven kautta ja sisätiloista löytyy invahissi, jonka
+      painorajoite on 200 kg.
+
+      Katsomossa on pyörätuolipaikkoja kaksi, ja henkilökuntamme auttaa mielellään, jos tarvitset apua saapuessasi.
+
+
+      Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Ovet & liput
+    text_fi: >-
+      Ovet aukeavat yleensä **1 tunti ennen esitystä**.
+
+      Ovilipunmyynti palvelee Pystybaari Wiljamissa, mikäli esitys ei ole loppuunmyyty. 
+
+
+      Suosittelemme kuitenkin ostamaan liput ennakkoon. Lippuja ennakkoon myy netissä NetTicket sekä Rovaniemellä Osviitta kaupungin keskustassa osoitteessa Koskikatu 19. 
+
+
+      Meillä käyvät yleisimmät maksukortit sekä käteinen.
+
+      Myös kulttuuriedut (esim. ePassi, Smartum, Edenred) käyvät maksuvälineenä.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Narikka
+    text_fi: >-
+      Narikka on **vartioitu mutta omatoiminen**.
+
+      Jätäthän isot laukut ja ulkovaatteet narikkaan kiitos, että pidämme katsomon mukavana kaikille.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Baari & tarjoilu
+    text_fi: >-
+      Pystybaari Wiljami palvelee ennen esitystä ja väliajalla.
+
+      Tarjolla on virvokkeita, viiniä ja pientä purtavaa.
+
+
+      Juomat saa tuoda katsomoon (ellei toisin mainita), mutta muistetaan yhdessä teatteritunnelma.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Milloin kannattaa tulla?
+    text_fi: >-
+      Saavu paikalle viimeistään 20 minuuttia ennen esityksen alkua.
+
+      Näin ehdit:
+
+
+      ✔️ jättää takin
+
+      ✔️ hakea juoman
+
+      ✔️ vaihtaa kuulumiset
+
+      ✔️ laskeutua tunnelmaan
+
+
+      Kun esitys alkaa, ovet sulkeutuvat. Myöhästyneet päästetään sisään sopivassa kohdassa, mikäli se on mahdollista. Emme voi taata pääsyä saliin heti esityksen alettua.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Katsomo & paikat
+    text_fi: |-
+      Wiljamin katsomokapasiteetti on:
+
+      * 114 paikkaa peruskatsomolla (jossa tuolien välissä on myös pöytiä)
+      * 177 paikkaa laajennetulla katsomolla (katsomo ilman pöytiä)
+      * 2 pyörätuolipaikkaa
+  - image_orientation: landscape
+    image_position: left
+    title_fi: WC-tilat
+    text_fi: |-
+      WC-tilat löytyvät alakerrasta.
+      Tilassa on myös esteetön WC.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Kuvaaminen
+    text_fi: Esityksiämme ei tekijänoikeussyistä saa kuvata mutta loppukiitoksista
+      voit ottaa muiston itsellesi tai jakaa sen vaikka somessa. Tägääthän
+      Rimpparemmin mukaan postauksiisi niin pääsemme mukaan tunnelmointiisi.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Kesto
+    text_fi: >-
+      Voit tarkistaa esityksesi keston omasta lipustasi tai Rimpparemmin
+      nettisivuilta kunkin esityksen kohdalta. Tieto tulee sivuille viimeistään
+      ensi-iltaviikolla. 
+
+
+      Lähes kaikissa Rimpparemmin järjestämissä illoissa on väliaika. Tämä ilmoitetaan myös aina esitystietojen yhteydessä.
+  - image_orientation: landscape
+    image_position: left
+    title_fi: Ensimmäistä kertaa tulossa?
+    text_fi: >-
+      Ihanaa. Me rakastamme ensikertalaisia.
+
+      Rimpparemmin esityksissä saa nauraa, liikuttua, yllättyä ja eläytyä. Et tarvitse ennakkotietoja – riittää, että saavut paikalle.
+
+
+      Me hoidamme loput.
+  - image_orientation: landscape
+    image_position: left
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773728900126-_DSC1651.webp?alt=media
+    text_fi: >-
+      ### **Sijainti**
+
+
+      Esityksemme nähdään **Kulttuuritalo Wiljamissa**, Rovaniemen keskustan tuntumassa.
+
+      Osoite: Urheilukatu 1, 96100 Rovaniemi.
+
+
+      Wiljamiin on helppo tulla olitpa liikkeellä kävellen, pyörällä, bussilla tai autolla.
