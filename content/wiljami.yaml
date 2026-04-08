@@ -17,32 +17,6 @@ sections:
 
 
       Katsomossa on 120 istumapaikkaa, joista 2 on tarkoitettu pyörätuolinkäyttäjille.
-  - image_alt_en: Kulttuuritalo Wiljami
-    title_fi: ""
-    image_orientation: square
-    image_position: right
-    title_en: ""
-    text_fi: >-
-      ## **Sijainti**
-
-
-      Esityksemme nähdään **Kulttuuritalo Wiljamissa**, Rovaniemen keskustan tuntumassa.
-
-      Osoite: Urheilukatu 1, 96100 Rovaniemi.
-
-
-      Wiljamiin on helppo tulla olitpa liikkeellä kävellen, pyörällä, bussilla tai autolla.
-    text_en: >
-      Kulttuuritalo Wiljami, also known as Kansantalo, is a cultural centre in
-      Rovaniemi offering diverse programming across the arts. The building was
-      completed in 1947 and serves as the home venue for several Rovaniemi
-      cultural organisations — including Dance Theatre Rimpparemmi, Lapin
-      Ylioppilasteatteri and Elokuvakerho Cinema.
-
-
-      The auditorium seats 120, including 2 wheelchair-accessible spaces.
-    image: ""
-    image_alt_fi: Kulttuuritalo Wiljami
   - image_alt_en: ""
     title_fi: Saapuminen Wiljamiin
     image_orientation: landscape
@@ -97,28 +71,20 @@ sections:
     image_position: right
     title_en: Pystybaari Wiljami
     text_fi: >-
-      Baari aukeaa Rimpparemmin esitysiltoina klo 18.00. Tarjolla on
-      kuohuviinejä, oluita ja virvoitusjuomia. Maksuvälineenä käy kortti tai
-      käteinen. 
+      Pystybaari Wiljami palvelee ennen esitystä ja väliajalla.
+
+      Tarjolla on virvokkeita, viiniä ja pientä purtavaa.
 
 
-      *Meillä lasi on aina puoliksi täynnä.*
+      Juomat saa tuoda katsomoon (ellei toisin mainita), mutta muistetaan yhdessä teatteritunnelma.
+    text_en: >-
+      Bar Wiljami is open before the performance and during intermission.
 
 
-      **Lipunmyynti**
-
-      Narikka ja lipunmyynti avautuvat tuntia ennen esitystä.
-    text_en: >
-      The bar opens at 6:00 PM on Rimpparemmi performance evenings. Sparkling
-      wines, beers, and soft drinks are served. Both card and cash are accepted.
+      The bar offers soft drinks, wine, and light snacks.
 
 
-      *Our glass is always half full.*
-
-
-      **Box office**
-
-      The cloakroom and box office open one hour before performances.
+      You may bring your drinks into the seating area (unless otherwise stated), but let’s all help maintain the theatre atmosphere.
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775587265089-_DSC8161.webp?alt=media
     image_alt_fi: Teatteri Wiljami
   - image_alt_en: ""
