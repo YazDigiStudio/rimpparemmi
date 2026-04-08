@@ -496,10 +496,14 @@ sections:
         title_en: Tanssija
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775588977523-DSC3141-scaled.webp?alt=media
         bio_fi: |-
+          [Dreams / LaBOratorio (2012)](ohjelmisto/dreams)
+
           [Aikalainen (2019)](ohjelmisto/aikalainen)
 
           [Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)
         bio_en: |-
+          [Dreams / LabBOratorio](en/ohjelmisto/dreams)
+
           [Contemporary (2019)](en/ohjelmisto/aikalainen)
 
           [Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)
