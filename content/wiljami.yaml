@@ -49,7 +49,7 @@ sections:
 
 
       Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
-  - image_orientation: landscape
+  - image_orientation: square
     image_position: left
     title_fi: Ovet & liput
     text_fi: >-
