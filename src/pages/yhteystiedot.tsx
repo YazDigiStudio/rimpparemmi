@@ -22,11 +22,13 @@ const copy = {
     meta: "Yhteystiedot – Tanssiteatteri Rimpparemmi",
     title: "Yhteystiedot",
     address: "Toimiston käyntiosoite",
+    billing: "Laskutusosoite",
   },
   en: {
     meta: "Contact – Dance Theatre Rimpparemmi",
     title: "Contact",
     address: "Office address",
+    billing: "Billing address",
   },
 } as const;
 
@@ -36,6 +38,7 @@ export default function Yhteystiedot({ data }: Props) {
   const t = copy[locale];
   const contacts: ContactPerson[] = data.contacts ?? [];
   const addressValue = locale === "fi" ? data.address_fi : (data.address_en || data.address_fi);
+  const billingValue = locale === "fi" ? data.billing_address_fi : (data.billing_address_en || data.billing_address_fi);
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -166,29 +169,57 @@ export default function Yhteystiedot({ data }: Props) {
             ))}
           </div>
 
-          {/* Office address */}
+          {/* Addresses — side by side */}
           <div
             style={{
               borderTop: `1px solid ${colors.borderLight}`,
               paddingTop: "2rem",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "3rem",
             }}
           >
-            <p
-              style={{
-                color: colors.brandFuchsia,
-                fontSize: "0.7rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                marginBottom: "0.5rem",
-              }}
-            >
-              {t.address}
-            </p>
-            {addressValue.split("\n").map((line: string, i: number) => (
-              <p key={i} style={{ color: colors.nearBlack, fontSize: "0.95rem", lineHeight: 1.7 }}>
-                {line}
+            {/* Office address */}
+            <div>
+              <p
+                style={{
+                  color: colors.brandFuchsia,
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  marginBottom: "0.5rem",
+                }}
+              >
+                {t.address}
               </p>
-            ))}
+              {addressValue.split("\n").map((line: string, i: number) => (
+                <p key={i} style={{ color: colors.nearBlack, fontSize: "0.95rem", lineHeight: 1.7 }}>
+                  {line}
+                </p>
+              ))}
+            </div>
+
+            {/* Billing address */}
+            {billingValue && (
+              <div>
+                <p
+                  style={{
+                    color: colors.brandFuchsia,
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {t.billing}
+                </p>
+                {billingValue.split("\n").map((line: string, i: number) => (
+                  <p key={i} style={{ color: colors.nearBlack, fontSize: "0.95rem", lineHeight: 1.7 }}>
+                    {line}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </main>

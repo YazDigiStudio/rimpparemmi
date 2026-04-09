@@ -423,6 +423,15 @@ collections:
             name: "address_en"
             widget: "text"
             required: false
+          - label: "Laskutusosoite (FI)"
+            name: "billing_address_fi"
+            widget: "text"
+            required: false
+            hint: "Tyhjä rivi erottaa rivit — esim. yrityksen nimi ja osoite"
+          - label: "Billing address (EN)"
+            name: "billing_address_en"
+            widget: "text"
+            required: false
           - label: "Yhteyshenkilöt / Contacts"
             name: "contacts"
             widget: "list"

@@ -4,6 +4,19 @@ address_fi: |-
 address_en: |-
   Hallituskatu 20 A (2nd floor)
   96100 Rovaniemi
+billing_address_fi: |-
+  Verkkolaskuosoite: 003708713021
+  Välittäjä: Maventa
+  Välittäjätunnus: 003721291126
+
+  PDF-laskut: invoice-08713021@kollektor.fi
+
+  Paperiset laskut osoitteella:
+  Rimpparemmi Ry
+  08713021
+  PL 100
+  80020 Kollektor Scan
+billing_address_en: ""
 contacts:
   - name: Matti Paloniemi
     role_fi: Teatterijohtaja
