@@ -278,6 +278,8 @@ export type ContactPerson = {
 export type YhteystiedotData = {
   address_fi: string;
   address_en: string;
+  billing_address_fi: string;
+  billing_address_en: string;
   contacts: ContactPerson[];
 };
 
@@ -285,5 +287,5 @@ export function getYhteystiedotData(): YhteystiedotData {
   const raw = yaml.load(
     fs.readFileSync(path.join(contentDir, "yhteystiedot.yaml"), "utf8")
   ) as YhteystiedotData;
-  return raw ?? { address_fi: "", address_en: "", contacts: [] };
+  return raw ?? { address_fi: "", address_en: "", billing_address_fi: "", billing_address_en: "", contacts: [] };
 }
