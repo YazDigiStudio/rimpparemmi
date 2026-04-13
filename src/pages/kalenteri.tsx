@@ -4,12 +4,12 @@
 // Mobile: calendar top, compact cards below, detail opens as modal.
 
 import { useState, useMemo, useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import CalendarWidget, { type CalendarEvent } from "@/components/CalendarWidget";
 import ShowModal, { type ShowInfo, type ShowPerformance } from "@/components/ShowModal";
 import SectionBlock from "@/components/SectionBlock";
@@ -211,10 +211,14 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tanssiteatteri Rimpparemmin esityskalenteri. Katso tulevat esitykset ja osta liput."
+          : "Dance Theatre Rimpparemmi performance calendar. See upcoming shows and buy tickets."}
+        path="/kalenteri"
+        locale={locale}
+      />
       <Navigation />
       <main
         style={{

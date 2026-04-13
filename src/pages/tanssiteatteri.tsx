@@ -1,10 +1,10 @@
 // Tanssiteatteri page — /tanssiteatteri
 // CMS-driven via content/tanssiteatteri.yaml
 
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import SectionBlock, { type Locale } from "@/components/SectionBlock";
 import { colors } from "@/styles/colors";
 import { getTanssiteatteriData, type SectionPageData } from "@/lib/content";
@@ -33,10 +33,14 @@ export default function Tanssiteatteri({ data }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tietoa Tanssiteatteri Rimpparemmista, Suomen pohjoisimmasta ammattitanssiteatterista."
+          : "About Dance Theatre Rimpparemmi, the northernmost professional dance theatre in Finland."}
+        path="/tanssiteatteri"
+        locale={locale}
+      />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>
         {showTitle && (

@@ -2,12 +2,12 @@
 // Shows production description, credits, duration and age recommendation.
 // Sales-specific fields (price, tech requirements, rider, trailer) are on /myynti/[id].
 
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import ImageCarousel from "@/components/ImageCarousel";
 import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
@@ -76,10 +76,13 @@ export default function TourProductionPage({ production }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta(title)}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta(title)}
+        description={production.short_text_fi}
+        path={`/kiertueohjelmisto/${production.id}`}
+        locale={locale}
+        image={production.primary_image}
+      />
       <Navigation />
 
       {/* Main content */}

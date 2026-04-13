@@ -1,10 +1,10 @@
 // Liput / Tickets page — /liput
 // CMS-driven via content/liput.yaml
 
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import SectionBlock, { type Locale } from "@/components/SectionBlock";
 import { colors } from "@/styles/colors";
 import { getLiputData, type SectionPageData } from "@/lib/content";
@@ -33,10 +33,14 @@ export default function Liput({ data }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tietoa Tanssiteatteri Rimpparemmin lipuista ja lipunmyynnistä."
+          : "Ticket information for Dance Theatre Rimpparemmi."}
+        path="/liput"
+        locale={locale}
+      />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>
         {showTitle && (

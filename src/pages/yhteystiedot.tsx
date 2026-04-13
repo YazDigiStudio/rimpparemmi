@@ -1,11 +1,11 @@
 // Yhteystiedot / Contact page
 
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 import {
   getYhteystiedotData,
@@ -47,10 +47,14 @@ export default function Yhteystiedot({ data }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tanssiteatteri Rimpparemmin yhteystiedot. Hallituskatu 20 A, 96100 Rovaniemi."
+          : "Dance Theatre Rimpparemmi contact information. Hallituskatu 20 A, 96100 Rovaniemi."}
+        path="/yhteystiedot"
+        locale={locale}
+      />
       <Navigation />
       <main
         style={{

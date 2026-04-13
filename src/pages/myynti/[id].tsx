@@ -2,13 +2,13 @@
 // Hidden from navigation. Finnish only.
 // Shows full production info + sales-specific fields for bookers.
 
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
 import MarkdownText from "@/components/MarkdownText";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 import {
   getProductions,
@@ -54,11 +54,13 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{title} – Myynti – Tanssiteatteri Rimpparemmi</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="noindex, nofollow" />
-      </Head>
+      <Seo
+        title={`${title} – Myynti – Tanssiteatteri Rimpparemmi`}
+        description={production.short_text_fi}
+        path={`/myynti/${production.id}`}
+        image={production.primary_image}
+        noIndex
+      />
       <Navigation />
 
       {/* Hero */}

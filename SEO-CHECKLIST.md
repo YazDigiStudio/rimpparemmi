@@ -21,15 +21,15 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 ### What is missing
 - [x] `robots.txt`
 - [x] `sitemap.xml` (auto-generated at build time via `scripts/generate-sitemap.js`)
-- [ ] Open Graph tags (og:title, og:image, etc.)
-- [ ] Twitter Card tags
-- [ ] Structured data (Schema.org JSON-LD)
-- [ ] Canonical URLs
-- [ ] hreflang tags (FI/EN alternates)
+- [x] Open Graph tags (og:title, og:image, etc.) — via shared `Seo` component
+- [x] Twitter Card tags — via shared `Seo` component
+- [x] Structured data (Schema.org JSON-LD) — PerformingGroup + DanceEvent
+- [x] Canonical URLs — via shared `Seo` component
+- [x] hreflang tags (FI/EN alternates) — via shared `Seo` component
 - [ ] `_headers` file (Netlify caching & security)
 - [ ] OG image (1200x630px)
-- [ ] Apple touch icon (180x180px)
-- [ ] Meta descriptions on all pages
+- [x] Apple touch icon (180x180px)
+- [x] Meta descriptions on all pages — via shared `Seo` component
 - [ ] Google Search Console setup
 
 ---
@@ -41,16 +41,16 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [x] Create `public/sitemap.xml` (auto-generated at build time)
 - [ ] Create `public/_headers` (caching, security headers)
 
-### 2. Meta Tags (All Pages)
-- [ ] Add `<meta description>` to every page
-- [ ] Add Open Graph tags (og:title, og:description, og:image, og:url, og:type, og:locale)
-- [ ] Add Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image)
-- [ ] Add canonical URL (`<link rel="canonical">`)
-- [ ] Add hreflang alternates for FI and EN
+### 2. Meta Tags (All Pages) — via shared `Seo` component (`src/components/Seo.tsx`)
+- [x] Add `<meta description>` to every page
+- [x] Add Open Graph tags (og:title, og:description, og:image, og:url, og:type, og:locale)
+- [x] Add Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image)
+- [x] Add canonical URL (`<link rel="canonical">`)
+- [x] Add hreflang alternates for FI and EN
 
 ### 3. Structured Data (JSON-LD)
-- [ ] PerformingGroup schema (homepage) — dance theatre company
-- [ ] Event schema (performances/calendar) — individual shows
+- [x] PerformingGroup schema (homepage) — dance theatre company
+- [x] DanceEvent schema (production detail pages) — individual shows
 - [ ] BreadcrumbList schema (all pages)
 
 ### 4. Images
@@ -63,7 +63,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [ ] Verify H1 tag on every page (exactly one per page)
 - [ ] Check heading hierarchy (H1 > H2 > H3, no skipping)
 - [ ] Descriptive link text (no "click here")
-- [ ] Production pages have unique meta descriptions
+- [x] Production pages have unique meta descriptions
 
 ### 6. Performance
 - [ ] Test with Google PageSpeed Insights

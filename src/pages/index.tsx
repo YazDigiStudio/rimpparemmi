@@ -3,12 +3,12 @@
 // showCalendar and showEventsList are controlled via content/home.yaml.
 
 import { useState, useEffect, useMemo } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import CalendarWidget, { type CalendarEvent } from "@/components/CalendarWidget";
 import ShowModal, { type ShowInfo, type ShowPerformance } from "@/components/ShowModal";
 import MailingListForm from "@/components/MailingListForm";
@@ -330,12 +330,39 @@ export default function Home({ productions, performances, homeData }: HomeProps)
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="description" content={t.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={t.description}
+        path="/"
+        locale={locale}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "PerformingGroup",
+          "name": "Tanssiteatteri Rimpparemmi",
+          "alternateName": "Dance Theatre Rimpparemmi",
+          "url": "https://rimpparemmi.fi",
+          "logo": "https://rimpparemmi.fi/images/RRemmi_FUKS_rgb_10Mt.jpeg",
+          "description": t.description,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hallituskatu 20 A",
+            "addressLocality": "Rovaniemi",
+            "postalCode": "96100",
+            "addressCountry": "FI",
+          },
+          "location": {
+            "@type": "PerformingArtsTheater",
+            "name": "Kulttuuritalo Wiljami",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Hallituskatu 20 A",
+              "addressLocality": "Rovaniemi",
+              "postalCode": "96100",
+              "addressCountry": "FI",
+            },
+          },
+        }}
+      />
 
       <Navigation />
 

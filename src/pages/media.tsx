@@ -4,11 +4,11 @@
 // Production tabs show a photo gallery. General media tab shows videos, images, links.
 
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 import {
@@ -528,10 +528,14 @@ export default function MediaPage({ productions, mediaData }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tanssiteatteri Rimpparemmin mediasisältö: videot, kuvat ja lehdistömateriaali."
+          : "Dance Theatre Rimpparemmi media: videos, photos and press material."}
+        path="/media"
+        locale={locale}
+      />
       <Navigation />
       <main
         style={{

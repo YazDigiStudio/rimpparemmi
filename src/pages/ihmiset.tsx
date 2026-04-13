@@ -3,13 +3,13 @@
 // Person cards with optional photo, name, bilingual title.
 // Cards with a bio open a modal on click.
 
-import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState, useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 import {
   getIhmisetData,
@@ -281,10 +281,14 @@ export default function Ihmiset({ data }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tanssiteatteri Rimpparemmin henkilökunta ja taiteilijat."
+          : "Dance Theatre Rimpparemmi staff and artists."}
+        path="/ihmiset"
+        locale={locale}
+      />
       <Navigation />
       <main
         style={{

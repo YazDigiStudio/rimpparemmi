@@ -2,9 +2,9 @@
 // Hidden from navigation. Shows productions that have a sales entry.
 // Finnish only.
 
-import Head from "next/head";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import ProductionCard from "@/components/ProductionCard";
 import { colors } from "@/styles/colors";
 import { getProductions, getSalesEntries, type Production } from "@/lib/content";
@@ -14,11 +14,12 @@ type Props = { productions: Production[] };
 export default function Myynti({ productions }: Props) {
   return (
     <>
-      <Head>
-        <title>Myynti – Tanssiteatteri Rimpparemmi</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="noindex, nofollow" />
-      </Head>
+      <Seo
+        title="Myynti – Tanssiteatteri Rimpparemmi"
+        description="Tanssiteatteri Rimpparemmin myyntisivu esitysten tilaajille."
+        path="/myynti"
+        noIndex
+      />
       <Navigation />
       <main
         style={{

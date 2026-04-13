@@ -1,7 +1,7 @@
 // Tietosuojaseloste — Privacy policy page
 
-import Head from "next/head";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 
 type Section = {
@@ -101,10 +101,11 @@ const sections: Section[] = [
 export default function Tietosuojaseloste() {
   return (
     <>
-      <Head>
-        <title>Tietosuojaseloste – Tanssiteatteri Rimpparemmi</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title="Tietosuojaseloste – Tanssiteatteri Rimpparemmi"
+        description="Tanssiteatteri Rimpparemmin rekisteri- ja tietosuojaselosteet."
+        path="/tietosuojaseloste"
+      />
       <Navigation />
       <main
         style={{

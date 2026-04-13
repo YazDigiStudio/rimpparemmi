@@ -1,15 +1,16 @@
 // Saavutettavuus page — placeholder
-import Head from "next/head";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
 
 export default function Saavutettavuus() {
   return (
     <>
-      <Head>
-        <title>Saavutettavuus – Tanssiteatteri Rimpparemmi</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title="Saavutettavuus – Tanssiteatteri Rimpparemmi"
+        description="Tanssiteatteri Rimpparemmin verkkosivuston saavutettavuusseloste."
+        path="/saavutettavuus"
+      />
       <Navigation />
       <main
         style={{

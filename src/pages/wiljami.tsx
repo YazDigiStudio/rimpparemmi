@@ -1,10 +1,10 @@
 // Wiljami page — /wiljami
 // CMS-driven via content/wiljami.yaml
 
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import SectionBlock, { type Locale } from "@/components/SectionBlock";
 import { colors } from "@/styles/colors";
 import { getWiljamiData, type SectionPageData } from "@/lib/content";
@@ -33,10 +33,14 @@ export default function Wiljami({ data }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Kulttuuritalo Wiljami, Tanssiteatteri Rimpparemmin kotinäyttämö Rovaniemellä."
+          : "Kulttuuritalo Wiljami, Dance Theatre Rimpparemmi's home stage in Rovaniemi."}
+        path="/wiljami"
+        locale={locale}
+      />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>
         {showTitle && (

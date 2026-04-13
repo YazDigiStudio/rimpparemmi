@@ -2,10 +2,10 @@
 // Card grid of productions. Client-side filter between active and archived.
 
 import { useState } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import ProductionCard from "@/components/ProductionCard";
 import { colors } from "@/styles/colors";
 import { getProductions, type Production } from "@/lib/content";
@@ -59,10 +59,14 @@ export default function Ohjelmisto({ productions }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta}
+        description={locale === "fi"
+          ? "Tanssiteatteri Rimpparemmin esitykset ja tuotannot. Katso ohjelmisto ja osta liput."
+          : "Dance Theatre Rimpparemmi productions. See programme and buy tickets."}
+        path="/ohjelmisto"
+        locale={locale}
+      />
       <Navigation />
       <main
         style={{

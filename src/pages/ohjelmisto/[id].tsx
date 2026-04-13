@@ -1,12 +1,12 @@
 // Production detail page — /ohjelmisto/[id]
 // Full-page view: hero image, long text, credits, upcoming performances, press photos.
 
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { type GetStaticProps, type GetStaticPaths } from "next";
 import Navigation from "@/components/Navigation";
+import Seo from "@/components/Seo";
 import ImageCarousel from "@/components/ImageCarousel";
 import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
@@ -90,10 +90,38 @@ export default function ProductionPage({ production, performances }: Props) {
 
   return (
     <>
-      <Head>
-        <title>{t.meta(title)}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      <Seo
+        title={t.meta(title)}
+        description={production.short_text_fi}
+        path={`/ohjelmisto/${production.id}`}
+        locale={locale}
+        image={production.primary_image}
+        jsonLd={upcomingPerfs.length > 0 ? {
+          "@context": "https://schema.org",
+          "@type": "DanceEvent",
+          "name": title,
+          "description": production.short_text_fi,
+          "image": production.primary_image,
+          "startDate": `${upcomingPerfs[0].date}T${upcomingPerfs[0].time}:00+03:00`,
+          "location": {
+            "@type": "PerformingArtsTheater",
+            "name": locale === "fi" ? upcomingPerfs[0].venue_fi : (upcomingPerfs[0].venue_en ?? upcomingPerfs[0].venue_fi),
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": upcomingPerfs[0].city ?? "Rovaniemi",
+              "addressCountry": "FI",
+            },
+          },
+          "performer": {
+            "@type": "PerformingGroup",
+            "name": "Tanssiteatteri Rimpparemmi",
+          },
+          "offers": upcomingPerfs[0].ticket_url ? {
+            "@type": "Offer",
+            "url": upcomingPerfs[0].ticket_url,
+          } : undefined,
+        } : undefined}
+      />
       <Navigation />
 
       {/* Main content */}
