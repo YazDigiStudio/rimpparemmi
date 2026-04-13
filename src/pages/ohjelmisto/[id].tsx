@@ -96,6 +96,11 @@ export default function ProductionPage({ production, performances }: Props) {
         path={`/ohjelmisto/${production.id}`}
         locale={locale}
         image={production.primary_image}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Ohjelmisto", path: "/ohjelmisto" },
+          { name: title, path: `/ohjelmisto/${production.id}` },
+        ]}
         jsonLd={upcomingPerfs.length > 0 ? {
           "@context": "https://schema.org",
           "@type": "DanceEvent",

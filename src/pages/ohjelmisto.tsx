@@ -66,6 +66,10 @@ export default function Ohjelmisto({ productions }: Props) {
           : "Dance Theatre Rimpparemmi productions. See programme and buy tickets."}
         path="/ohjelmisto"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Ohjelmisto", path: "/ohjelmisto" },
+        ]}
       />
       <Navigation />
       <main

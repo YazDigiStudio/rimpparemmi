@@ -40,6 +40,10 @@ export default function Kiertueohjelmisto({ productions }: Props) {
         description={t.description}
         path="/kiertueohjelmisto"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Kiertueohjelmisto", path: "/kiertueohjelmisto" },
+        ]}
       />
       <Navigation />
       <main

@@ -82,6 +82,11 @@ export default function TourProductionPage({ production }: Props) {
         path={`/kiertueohjelmisto/${production.id}`}
         locale={locale}
         image={production.primary_image}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Kiertueohjelmisto", path: "/kiertueohjelmisto" },
+          { name: title, path: `/kiertueohjelmisto/${production.id}` },
+        ]}
       />
       <Navigation />
 

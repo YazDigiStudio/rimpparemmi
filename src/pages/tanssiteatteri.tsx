@@ -40,6 +40,10 @@ export default function Tanssiteatteri({ data }: Props) {
           : "About Dance Theatre Rimpparemmi, the northernmost professional dance theatre in Finland."}
         path="/tanssiteatteri"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Tanssiteatteri", path: "/tanssiteatteri" },
+        ]}
       />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>

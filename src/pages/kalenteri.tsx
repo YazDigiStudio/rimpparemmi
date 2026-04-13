@@ -218,6 +218,10 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
           : "Dance Theatre Rimpparemmi performance calendar. See upcoming shows and buy tickets."}
         path="/kalenteri"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Kalenteri", path: "/kalenteri" },
+        ]}
       />
       <Navigation />
       <main

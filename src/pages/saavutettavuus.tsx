@@ -10,6 +10,10 @@ export default function Saavutettavuus() {
         title="Saavutettavuus – Tanssiteatteri Rimpparemmi"
         description="Tanssiteatteri Rimpparemmin verkkosivuston saavutettavuusseloste."
         path="/saavutettavuus"
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Saavutettavuus", path: "/saavutettavuus" },
+        ]}
       />
       <Navigation />
       <main

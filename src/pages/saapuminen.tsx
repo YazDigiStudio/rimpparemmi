@@ -40,6 +40,10 @@ export default function Saapuminen({ data }: Props) {
           : "Directions to Kulttuuritalo Wiljami, Hallituskatu 20 A, Rovaniemi."}
         path="/saapuminen"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Saapuminen", path: "/saapuminen" },
+        ]}
       />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>

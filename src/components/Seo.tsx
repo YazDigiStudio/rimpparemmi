@@ -8,6 +8,8 @@ const SITE_URL = "https://rimpparemmi.fi";
 const SITE_NAME = "Tanssiteatteri Rimpparemmi";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
+type Breadcrumb = { name: string; path: string };
+
 type SeoProps = {
   title: string;
   description: string;
@@ -17,6 +19,7 @@ type SeoProps = {
   type?: "website" | "article";
   noIndex?: boolean;
   jsonLd?: Record<string, unknown>;
+  breadcrumbs?: Breadcrumb[];
 };
 
 export default function Seo({
@@ -28,6 +31,7 @@ export default function Seo({
   type = "website",
   noIndex = false,
   jsonLd,
+  breadcrumbs,
 }: SeoProps) {
   const canonicalUrl = `${SITE_URL}${path}`;
   const enUrl = `${SITE_URL}/en${path}`;
@@ -66,6 +70,25 @@ export default function Seo({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+
+      {/* BreadcrumbList structured data */}
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: breadcrumbs.map((crumb, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                name: crumb.name,
+                item: `${SITE_URL}${crumb.path}`,
+              })),
+            }),
+          }}
         />
       )}
     </Head>

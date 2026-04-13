@@ -535,6 +535,10 @@ export default function MediaPage({ productions, mediaData }: Props) {
           : "Dance Theatre Rimpparemmi media: videos, photos and press material."}
         path="/media"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Media", path: "/media" },
+        ]}
       />
       <Navigation />
       <main

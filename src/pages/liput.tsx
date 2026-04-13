@@ -40,6 +40,10 @@ export default function Liput({ data }: Props) {
           : "Ticket information for Dance Theatre Rimpparemmi."}
         path="/liput"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Liput", path: "/liput" },
+        ]}
       />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>

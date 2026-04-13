@@ -54,6 +54,10 @@ export default function Yhteystiedot({ data }: Props) {
           : "Dance Theatre Rimpparemmi contact information. Hallituskatu 20 A, 96100 Rovaniemi."}
         path="/yhteystiedot"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Yhteystiedot", path: "/yhteystiedot" },
+        ]}
       />
       <Navigation />
       <main

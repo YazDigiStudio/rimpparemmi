@@ -40,6 +40,10 @@ export default function Wiljami({ data }: Props) {
           : "Kulttuuritalo Wiljami, Dance Theatre Rimpparemmi's home stage in Rovaniemi."}
         path="/wiljami"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Wiljami", path: "/wiljami" },
+        ]}
       />
       <Navigation />
       <main style={{ minHeight: "100vh", paddingTop: "calc(96px + 4rem)" }}>

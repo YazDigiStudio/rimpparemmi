@@ -105,6 +105,10 @@ export default function Tietosuojaseloste() {
         title="Tietosuojaseloste – Tanssiteatteri Rimpparemmi"
         description="Tanssiteatteri Rimpparemmin rekisteri- ja tietosuojaselosteet."
         path="/tietosuojaseloste"
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Tietosuojaseloste", path: "/tietosuojaseloste" },
+        ]}
       />
       <Navigation />
       <main

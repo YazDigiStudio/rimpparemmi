@@ -288,6 +288,10 @@ export default function Ihmiset({ data }: Props) {
           : "Dance Theatre Rimpparemmi staff and artists."}
         path="/ihmiset"
         locale={locale}
+        breadcrumbs={[
+          { name: "Etusivu", path: "/" },
+          { name: "Ihmiset", path: "/ihmiset" },
+        ]}
       />
       <Navigation />
       <main

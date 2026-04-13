@@ -51,7 +51,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 ### 3. Structured Data (JSON-LD)
 - [x] PerformingGroup schema (homepage) — dance theatre company
 - [x] DanceEvent schema (production detail pages) — individual shows
-- [ ] BreadcrumbList schema (all pages)
+- [x] BreadcrumbList schema (all public pages)
 
 ### 4. Images
 - [x] Create OG image (1200x630px) — Rimpparemmi branding
