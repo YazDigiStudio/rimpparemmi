@@ -26,7 +26,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [x] Structured data (Schema.org JSON-LD) — PerformingGroup + DanceEvent
 - [x] Canonical URLs — via shared `Seo` component
 - [x] hreflang tags (FI/EN alternates) — via shared `Seo` component
-- [ ] `_headers` file (Netlify caching & security)
+- [x] `_headers` file (Netlify caching & security)
 - [ ] OG image (1200x630px)
 - [x] Apple touch icon (180x180px)
 - [x] Meta descriptions on all pages — via shared `Seo` component
