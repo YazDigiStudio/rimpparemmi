@@ -10,7 +10,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 
 ### What exists
 - [x] Basic `<title>` and `<meta description>` on some pages
-- [ ] `favicon.ico` (current is default Next.js icon, needs Rimpparemmi branding)
+- [x] `favicon.ico` (Rimpparemmi circle icon, 32x32)
 - [x] FI/EN locale routing (Next.js i18n)
 - [x] `lang="fi"` on `<html>`
 - [x] Mobile responsive design
@@ -19,8 +19,8 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [x] H1 tags on pages
 
 ### What is missing
-- [ ] `robots.txt`
-- [ ] `sitemap.xml`
+- [x] `robots.txt`
+- [x] `sitemap.xml` (auto-generated at build time via `scripts/generate-sitemap.js`)
 - [ ] Open Graph tags (og:title, og:image, etc.)
 - [ ] Twitter Card tags
 - [ ] Structured data (Schema.org JSON-LD)
@@ -37,8 +37,8 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 ## Before Launch
 
 ### 1. Technical SEO Files
-- [ ] Create `public/robots.txt`
-- [ ] Create `public/sitemap.xml` with all pages
+- [x] Create `public/robots.txt`
+- [x] Create `public/sitemap.xml` (auto-generated at build time)
 - [ ] Create `public/_headers` (caching, security headers)
 
 ### 2. Meta Tags (All Pages)
@@ -55,9 +55,9 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 
 ### 4. Images
 - [ ] Create OG image (1200x630px) — Rimpparemmi branding
-- [ ] Create apple-touch-icon.png (180x180px)
+- [x] Create apple-touch-icon.png (180x180px)
 - [ ] Verify all `<Image>` components have descriptive `alt` text
-- [ ] Replace default favicon with Rimpparemmi logo
+- [x] Replace default favicon with Rimpparemmi circle icon
 
 ### 5. Content SEO
 - [ ] Verify H1 tag on every page (exactly one per page)
