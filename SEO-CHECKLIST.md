@@ -27,7 +27,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [x] Canonical URLs — via shared `Seo` component
 - [x] hreflang tags (FI/EN alternates) — via shared `Seo` component
 - [x] `_headers` file (Netlify caching & security)
-- [ ] OG image (1200x630px)
+- [x] OG image (1200x630px) — `public/og-image.png`
 - [x] Apple touch icon (180x180px)
 - [x] Meta descriptions on all pages — via shared `Seo` component
 - [ ] Google Search Console setup
@@ -54,7 +54,7 @@ Stack: Next.js 15 (Pages Router), Netlify, Decap CMS, Firebase Storage
 - [ ] BreadcrumbList schema (all pages)
 
 ### 4. Images
-- [ ] Create OG image (1200x630px) — Rimpparemmi branding
+- [x] Create OG image (1200x630px) — Rimpparemmi branding
 - [x] Create apple-touch-icon.png (180x180px)
 - [ ] Verify all `<Image>` components have descriptive `alt` text
 - [x] Replace default favicon with Rimpparemmi circle icon

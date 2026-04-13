@@ -6,7 +6,7 @@ import Head from "next/head";
 
 const SITE_URL = "https://rimpparemmi.fi";
 const SITE_NAME = "Tanssiteatteri Rimpparemmi";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/RRemmi_FUKS_rgb_10Mt.jpeg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 type SeoProps = {
   title: string;
