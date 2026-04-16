@@ -1,6 +1,4 @@
-// MailingListForm — Netlify Forms newsletter signup.
-// IMPORTANT: Notification email is set in Netlify dashboard → Forms → Notifications.
-// The static form at /public/forms/newsletter.html is required for Netlify bot detection with Next.js.
+// MailingListForm — Mailchimp newsletter signup via /api/subscribe.
 
 import { useState } from "react";
 import { colors } from "@/styles/colors";
@@ -41,7 +39,7 @@ export default function MailingListForm({ locale }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const t = copy[locale];
 
-  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     // Honeypot: if bot-field is filled, silently discard
@@ -49,21 +47,18 @@ export default function MailingListForm({ locale }: Props) {
       setStatus("success");
       return;
     }
-    // Email format check
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value ?? "";
     if (!emailRegex.test(email)) {
       setStatus("invalid-email");
       return;
     }
+    const name = (form.elements.namedItem("name") as HTMLInputElement)?.value ?? "";
     setStatus("loading");
-    const body = Array.from(new FormData(form))
-      .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v.toString())}`)
-      .join("&");
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, name }),
       });
       if (res.ok) {
         setStatus("success");
@@ -115,15 +110,10 @@ export default function MailingListForm({ locale }: Props) {
         </p>
       ) : (
         <form
-          name="newsletter"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
           noValidate
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
         >
-          <input type="hidden" name="form-name" value="newsletter" />
           {/* Honeypot — hidden from humans, bots fill it and get silently rejected */}
           <input type="text" name="bot-field" style={{ display: "none" }} aria-hidden="true" />
           <label htmlFor="newsletter-name" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
