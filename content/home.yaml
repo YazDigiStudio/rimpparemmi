@@ -51,4 +51,8 @@ hero_slides:
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466132856-Print_Size_Fistful_of_funk-35.webp?alt=media
-news_items: []
+news_items:
+  - card_title: Testi
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776403015426-_DSC6280.webp?alt=media
+    body: tämä on testi uustiselle
+    title: TESTI
