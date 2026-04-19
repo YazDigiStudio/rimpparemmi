@@ -43,3 +43,5 @@ is_touring: true
 vierailuesitys: false
 duration_fi: 40 min
 duration_en: 40 min
+age_recommendation_fi: aikuiset, ikäihmiset
+age_recommendation_en: ""
