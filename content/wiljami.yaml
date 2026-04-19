@@ -14,6 +14,13 @@ sections:
       muassa Tanssiteatteri Rimpparemmi, Lapin Ylioppilasteatteri ja
       Elokuvakerho Cinema esittävät täällä ohjelmistoaan.
     title_fi: Kulttuuritalo Wiljami
+    text_en: Wiljami Cultural Center, also known as Kansantalo, is a cultural center
+      located in Rovaniemi that offers a diverse program spanning various art
+      forms. The building was completed in 1947 and serves as a home venue for
+      several cultural organizations in Rovaniemi—including Dance Theater
+      Rimpparemmi, the Lapland Student Theater, and the Cinema Film Club, which
+      all present their programs here.
+    title_en: Culturehouse Wiljami
   - image_orientation: landscape
     image_position: left
     title_fi: Sijainti
@@ -25,6 +32,13 @@ sections:
 
 
       Wiljamiin on helppo tulla olitpa liikkeellä kävellen, pyörällä, bussilla tai autolla.
+    text_en: >-
+      Our performance will take place at Kulttuuritalo Wiljami, near downtown
+      Rovaniemi. Address: Urheilukatu 1, 96100 Rovaniemi.
+
+
+      Wiljami is easy to get to, whether you’re walking, biking, taking the bus, or driving.
+    title_en: Location
   - image_orientation: landscape
     image_position: left
     title_fi: Saapuminen & pysäköinti
@@ -37,6 +51,16 @@ sections:
 
 
       Rovaniemen paikallisliikenteen bussit kulkevat keskustan kautta, ja Wiljamiin on lyhyt kävelymatka useilta pysäkeiltä. Aikataulut ja reitit löydät Rovaniemen paikallisliikenteen sivuilta.
+    text_en: >-
+      Parking spaces are located on Urheilukatu and in front of the Wiljami
+      Cultural Center. Parking is subject to a fee during the day.
+
+
+      When arriving for evening performances, you’ll usually find a spot easily—but we recommend arriving early so your evening can begin without the stress of finding parking.
+
+
+      Rovaniemi’s local buses run through the city center, and Wiljami is a short walk from several stops. You can find schedules and routes on the Rovaniemi local transport website.
+    title_en: Arrival and parking
   - image_orientation: landscape
     image_position: left
     title_fi: Esteettömyys & saavutettavuus
@@ -49,6 +73,15 @@ sections:
 
 
       Jos sinulla on erityistarpeita, kerrothan niistä etukäteen – tehdään illasta sujuva yhdessä.
+    text_en: >-
+      Wiljami Cultural Center is not fully accessible. Access is nearly
+      barrier-free via the back door, and there is an elevator inside with a
+      weight limit of 200 kg. There are two wheelchair-accessible seats in the
+      auditorium, and our staff will be happy to assist you upon arrival.
+
+
+      If you have any special needs, please let us know in advance—together, we’ll make sure your evening goes smoothly.
+    title_en: Accessibility
   - image_orientation: square
     image_position: left
     title_fi: Ovet & liput
@@ -65,6 +98,16 @@ sections:
 
       Myös kulttuuriedut (esim. ePassi, Smartum, Edenred) käyvät maksuvälineenä.
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673791882-_DSC1634.webp?alt=media
+    text_en: >-
+      Doors usually open 1 hour before the show. Tickets are available at the
+      Pystybaari Wiljami bar, provided the show is not sold out.
+
+
+      However, we recommend purchasing tickets in advance. Advance tickets are available online at NetTicket and in Rovaniemi at Osviitta in the city center at Koskikatu 19.
+
+
+      We accept major credit cards and cash. Cultural benefits (e.g., ePassi, Smartum, Edenred) are also accepted as payment.
+    title_en: Doors and tickets
   - image_orientation: landscape
     image_position: left
     title_fi: Narikka
@@ -72,6 +115,10 @@ sections:
       Narikka on **vartioitu mutta omatoiminen**.
 
       Jätäthän isot laukut ja ulkovaatteet narikkaan kiitos, että pidämme katsomon mukavana kaikille.
+    text_en: The coat check is staffed but self-service. Please leave your large
+      bags and outerwear at the coat check so we can keep the auditorium
+      comfortable for everyone.
+    title_en: Coat check
   - image_orientation: landscape
     image_position: right
     title_fi: Baari & tarjoilu
@@ -83,6 +130,13 @@ sections:
 
       Juomat saa tuoda katsomoon (ellei toisin mainita), mutta muistetaan yhdessä teatteritunnelma.
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673559217-_DSC8161.webp?alt=media
+    text_en: >-
+      The Wiljami Bar is open before the performance and during intermission.
+      Refreshments, wine, and light snacks are available.
+
+
+      Drinks may be brought into the auditorium (unless otherwise noted), but let’s all help maintain the theater atmosphere.
+    title_en: Bar
   - image_orientation: landscape
     image_position: left
     title_fi: Milloin kannattaa tulla?
@@ -102,6 +156,25 @@ sections:
 
 
       Kun esitys alkaa, ovet sulkeutuvat. Myöhästyneet päästetään sisään sopivassa kohdassa, mikäli se on mahdollista. Emme voi taata pääsyä saliin heti esityksen alettua.
+    text_en: >-
+      Please arrive at least 20 minutes before the show starts. This will give
+      you time to:
+
+
+      ✔️ check your coat 
+
+
+      ✔️ grab a drink 
+
+
+      ✔️ catch up with friends 
+
+
+      ✔️ get into the mood
+
+
+      Once the performance begins, the doors will close. Latecomers will be admitted at an appropriate point in the performance, if possible. We cannot guarantee admission to the auditorium immediately after the performance has started.
+    title_en: When to arrive?
   - image_orientation: landscape
     image_position: left
     title_fi: Katsomo & paikat
@@ -112,18 +185,38 @@ sections:
       * 177 paikkaa laajennetulla katsomolla (katsomo ilman pöytiä)
       * 2 pyörätuolipaikkaa
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673660654-wiljami_tyhja_faboon.webp?alt=media
+    text_en: >-
+      Wiljami's seating capacity is:
+
+
+      * 114 seats in the standard seating area (which also includes tables between the chairs)
+
+      * 177 seats in the expanded seating area (seating area without tables)
+
+      * 2 wheelchair spaces
+    title_en: Seating
   - image_orientation: landscape
     image_position: left
     title_fi: WC-tilat
     text_fi: |-
       WC-tilat löytyvät alakerrasta.
       Tilassa on myös esteetön WC.
+    text_en: |-
+      The restrooms are located on the ground floor.
+
+      The facility also has an accessible restroom.
+    title_en: Restrooms
   - image_orientation: landscape
     image_position: left
     title_fi: Kuvaaminen
     text_fi: Esityksiämme ei tekijänoikeussyistä saa kuvata mutta loppukiitoksista
       voit ottaa muiston itsellesi tai jakaa sen vaikka somessa. Tägääthän
       Rimpparemmin mukaan postauksiisi niin pääsemme mukaan tunnelmointiisi.
+    text_en: For copyright reasons, you’re not allowed to record our performances,
+      but you’re welcome to take a photo of the closing credits as a keepsake or
+      share it on social media. Be sure to tag @Rimpparemmi in your posts so we
+      can join in on the fun.
+    title_en: Filming
   - image_orientation: landscape
     image_position: left
     title_fi: Kesto
@@ -134,6 +227,14 @@ sections:
 
 
       Lähes kaikissa Rimpparemmin järjestämissä illoissa on väliaika. Tämä ilmoitetaan myös aina esitystietojen yhteydessä.
+    text_en: >-
+      You can check the runtime of your performance on your ticket or on the
+      Rimpparemmi website under each performance listing. This information will
+      be posted on the website no later than the week of the premiere.
+
+
+      Almost all evenings organized by Rimpparemmi include an intermission. This is always noted in the performance details.
+    title_en: Duration
   - image_orientation: landscape
     image_position: left
     title_fi: Ensimmäistä kertaa tulossa?
@@ -144,6 +245,14 @@ sections:
 
 
       Me hoidamme loput.
+    text_en: >-
+      Wonderful. We love first-timers. At Rimpparemmi’s performances, you’ll
+      laugh, be moved, be surprised, and feel connected. You don’t need any
+      prior knowledge—just show up.
+
+
+      We’ll take care of the rest.
+    title_en: First timer?
   - image_orientation: landscape
     image_position: left
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673815303-_DSC1651.webp?alt=media
