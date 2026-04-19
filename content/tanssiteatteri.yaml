@@ -42,7 +42,7 @@ sections:
     image: ""
     image_alt_fi: ""
   - image_orientation: landscape
-    image_position: right
+    image_position: left
     text_fi: Tänä päivänä Rimpparemmi on kansallisesti merkittävä tanssiteatteri ja
       esittävän taiteen toimija sekä työllistäjä. Rimpparemmi kiertää ympäri
       Suomea pohjoisinta Lappia myöten. Tanssin saavutettavuuden ja tunnettuuden
