@@ -1,8 +1,8 @@
 id: adele-sauros-quartet
 title_fi: Adele Sauros quartet
 title_en: Adele Sauros quartet
-subtitle_fi: Remmi Liveklubi
-subtitle_en: Remmi lLiveklubi
+subtitle_fi: Live musiikkia
+subtitle_en: Live Music
 status: archive
 category: general
 premiere_date: 2024-04-12
@@ -50,5 +50,7 @@ info_en: |-
 
   Tuomas Timonen (drums)
 sort_order: 55
+ticket_url_fallback: Remmi Liveklubi
+badge_fi: Remmi Liveclub
 is_touring: false
 vierailuesitys: true
