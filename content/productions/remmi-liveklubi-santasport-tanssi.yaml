@@ -1,8 +1,8 @@
 id: remmi-liveklubi-santasport-tanssi
 title_fi: Santasport Tanssi – Opiskelijat lavalla
 title_en: Santasport Dance – Students on Stage
-subtitle_fi: Remmi Liveklubi
-subtitle_en: Remmi Live Club
+subtitle_fi: ""
+subtitle_en: ""
 status: active
 category: general
 premiere_date: 2026-05-12
@@ -44,6 +44,8 @@ long_text_en: >-
 
   Performance duration: approx. 2 hours
 sort_order: 20
+badge_fi: Remmi Liveklubi
+badge_en: Remmi Live Club
 is_touring: false
 vierailuesitys: false
 duration_fi: n. 2h
