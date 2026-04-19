@@ -1,8 +1,8 @@
 id: m
 title_fi: M
 title_en: M
-subtitle_fi: Remmi Liveklubi
-subtitle_en: Remmi LiveKlubi
+subtitle_fi: Live musiikkia
+subtitle_en: "Live music "
 status: archive
 category: general
 premiere_date: 2025-01-24
@@ -28,7 +28,7 @@ long_text_en: >-
 
   On Friday, January 24, 2025, Minja will take the stage at [Kulttuuritalo Wiljami](https://rimpparemmi.fi/esityskalenteri/kulttuuritalo-wiljami/) alongside her trusted musicians Miikka Ahlman, Aleksi Kaufmann, Jussi-Pekka Parviainen, and Simo Saukkola. The concert will feature songs from every M album.
 sort_order: 53
-badge_fi: Vierailu
-badge_en: Guest
+badge_fi: Remmi Liveklubi
+badge_en: Remmi Liveklubi
 is_touring: false
 vierailuesitys: true
