@@ -577,38 +577,20 @@ sections:
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776587291656-Immonen.webp?alt=media
-      - name: Jukka Hannula
-        title_fi: Säveltäjä
-        title_en: Composer
-      - name: Kaija Maunula
-        title_fi: Pukusuunnittelija
-        title_en: Costume Designer
       - name: Panu Varstala
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586335587-Varstala.webp?alt=media
         bio_fi: "Kuva: Aki Loponen"
         bio_en: "Photo: Aki Loponen"
-      - name: William Iles
-        title_fi: Valosuunnittelija
-        title_en: Lighting designer
       - name: Sami Evinsalo
         title_fi: Lavastaja
         title_en: Set Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585201503-Evinsalo.webp?alt=media
-      - name: Iikka Kotaja
-        title_fi: Äänisuunnittelija
-        title_en: Sound Designer
-      - name: Riikka Vuorenmaa
-        title_fi: Valosuunnittelija
-        title_en: Lighting Designer
       - name: Jouko Pääkkönen
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585157196-Pa_a_kko_nen.webp?alt=media
-      - name: Antti Puumalainen
-        title_fi: Äänisuunnittelija
-        title_en: Sound Designer
       - name: Mika Ryynänen
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
@@ -621,9 +603,6 @@ sections:
         title_fi: Lavastussuunnittelija
         title_en: Set Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584989624-koivukangas.webp?alt=media
-      - name: Hannu Oskala
-        title_fi: Säveltäjä
-        title_en: Composer
       - name: Kaj Chydenius
         title_fi: Säveltäjä
         title_en: Composer
@@ -632,12 +611,6 @@ sections:
         title_fi: Runoilija
         title_en: Poet
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586475338-Itkonen.webp?alt=media
-      - name: Oula Kitti
-        title_fi: Taistelu koreografi
-        title_en: Fight Choreographer
-      - name: Ulla Väätäinen
-        title_fi: Tanssija
-        title_en: Dancer
       - name: Johanna "Jose" Salo
         title_fi: Ohjaaja
         title_en: Director
@@ -646,6 +619,55 @@ sections:
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584822326-Knif.webp?alt=media
+      - name: Mikko Nuorala
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584673751-Nuorala.webp?alt=media
+      - name: Mikko Laitila
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584746355-Laitila.webp?alt=media
+      - name: Janne Hast
+        title_fi: Äänisuunnittelija
+        title_en: Sound Designer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584580635-Hast.webp?alt=media
+        bio_fi: "Kuva: Ville Malja"
+        bio_en: "Photo: Ville Malja"
+      - name: Jaakko Toivonen
+        title_fi: Koreografi, Ohjaaja
+        title_en: Choreographer, Director
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584517401-Toivonen.webp?alt=media
+      - name: Valtteri Valo
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584402979-Valo.webp?alt=media
+      - name: Jukka Hannula
+        title_fi: Säveltäjä
+        title_en: Composer
+      - name: Kaija Maunula
+        title_fi: Pukusuunnittelija
+        title_en: Costume Designer
+      - name: William Iles
+        title_fi: Valosuunnittelija
+        title_en: Lighting designer
+      - name: Iikka Kotaja
+        title_fi: Äänisuunnittelija
+        title_en: Sound Designer
+      - name: Riikka Vuorenmaa
+        title_fi: Valosuunnittelija
+        title_en: Lighting Designer
+      - name: Antti Puumalainen
+        title_fi: Äänisuunnittelija
+        title_en: Sound Designer
+      - name: Hannu Oskala
+        title_fi: Säveltäjä
+        title_en: Composer
+      - name: Oula Kitti
+        title_fi: Taistelu koreografi
+        title_en: Fight Choreographer
+      - name: Ulla Väätäinen
+        title_fi: Tanssija
+        title_en: Dancer
       - name: Jukka Huitila
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
@@ -679,34 +701,12 @@ sections:
       - name: Eero Aakala
         title_fi: Muusikko
         title_en: Musician
-      - name: Mikko Nuorala
-        title_fi: Muusikko
-        title_en: Musician
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584673751-Nuorala.webp?alt=media
-      - name: Mikko Laitila
-        title_fi: Muusikko
-        title_en: Musician
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584746355-Laitila.webp?alt=media
       - name: Johanna Ruotsalainen
         title_fi: Säveltäjä, Animaattori
         title_en: Composer, Animator
-      - name: Janne Hast
-        title_fi: Äänisuunnittelija
-        title_en: Sound Designer
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584580635-Hast.webp?alt=media
-        bio_fi: "Kuva: Ville Malja"
-        bio_en: "Photo: Ville Malja"
       - name: Sanna Silvennoinen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
-      - name: Jaakko Toivonen
-        title_fi: Koreografi, Ohjaaja
-        title_en: Choreographer, Director
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584517401-Toivonen.webp?alt=media
-      - name: Valtteri Valo
-        title_fi: Muusikko
-        title_en: Musician
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584402979-Valo.webp?alt=media
       - name: Ville Köngäs
         title_fi: Tanssija
         title_en: Dancer
