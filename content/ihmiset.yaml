@@ -585,6 +585,9 @@ sections:
       - name: Panu Varstala
         title_fi: Koreografi
         title_en: Choreographer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586335587-Varstala.webp?alt=media
+        bio_fi: "Kuva: Aki Loponen"
+        bio_en: "Photo: Aki Loponen"
       - name: William Iles
         title_fi: Valosuunnittelija
         title_en: Lighting designer
@@ -623,9 +626,11 @@ sections:
       - name: Kaj Chydenius
         title_fi: Säveltäjä
         title_en: Composer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586221708-Chydis.webp?alt=media
       - name: Jukka Itkonen
         title_fi: Runoilija
         title_en: Poet
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586475338-Itkonen.webp?alt=media
       - name: Oula Kitti
         title_fi: Taistelu koreografi
         title_en: Fight Choreographer
