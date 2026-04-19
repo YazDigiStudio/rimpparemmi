@@ -1,9 +1,49 @@
 production_id: hamelnin-pillipiipari
 sort_order: 10
-trailer_url: https://www.youtube.com/watch?v=n3PM8MofY2k
+description: |-
+  Hamelnin kaupunkia vaivaa rottaongelma, varsinainen
+
+  rottastrofi. Paikalle saapuu salaperäinen pilliä soittava
+
+  muukalainen, joka lupaa karkottaa kiusanhenget
+
+  kaupungista. Mutta jos tämä pillipiipari pystyy lumoamaan
+
+  rotat soitollaan, mitä muuta hän voi saada aikaan?
+
+  Tämä koko perheen teos on kollaasi huvittavista tyypeistä
+
+  ja vauhdikkaista tilanteista. Hamelnin Pillipiipari on
+
+  klassikkosadun uusi tulkinta, jossa ei arkailla panna
+
+  ranttaliksi. Tanssia, teatteria ja sirkusta yhdistävä esitys
+
+  live-musiikin tahdittamana yllättää ja hauskuttaa. Tätä
+
+  ette takuulla odottaneet!
+
+  Ohjaus ja koreografia: Sanna Silvennoinen ja Jaakko
+
+  Toivonen
+
+  Äänisuunnittelu ja sävellys: Iiro Ollila
+
+  Lavastus ja pukusuunnittelu: Mirkka Nyrhinen
+
+  Valosuunnittelu: Vilma Vantola
+
+  Tekstit: Hannes Mikkelsson
+
+  Esiintyjät: Laura Kallas, Joni Kuokkanen, Liina Leppänen,
+
+  Lauri Uusitalo
+trailer_url: ""
 technical_requirements: |-
-  Lavan koko: 8 x 8 m
-  Lavan minimikorkeus 3,5 m
-price_info: 3000 euroo, enkä roudaa
-documentation_url: " https://www.youtube.com/watch?v=n3PM8MofY2k"
-rider_url: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2F1773381704759-Hamelnin_Pillipiipari_Raider.pdf?alt=media
+  Lavan koko: 9m x 11m
+  Lavan minimikorkeus 4,5m 
+price_info: |-
+  Hinta 1150€ + matkakulut
+  Kaksi esitystä 2000€ + matkakulut
+documentation_url: https://youtu.be/4zyArWmFjcc
+rider_url: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2F1776593458746-Pillipiipari_tekninen_raideri.pdf?alt=media
