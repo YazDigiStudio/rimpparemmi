@@ -716,3 +716,12 @@ sections:
       - name: Marika Mustajärvi
         title_fi: Muusikko
         title_en: Musician
+      - name: Elina Pirinen
+        title_fi: Koreografi
+        title_en: Choreographer
+      - name: Jani-Matti Salo
+        title_fi: Valosuunnittelija
+        title_en: Lighting Designer
+      - name: Heidi Väätänen
+        title_fi: Dramaturgi
+        title_en: Dramaturg
