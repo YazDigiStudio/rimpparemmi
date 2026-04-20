@@ -965,9 +965,36 @@ sections:
       - name: Oula Kitti
         title_fi: Taistelu koreografi
         title_en: Fight Choreographer
+        bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman
+          (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
       - name: Ulla Hyväluoma
         title_fi: Tanssija
         title_en: Dancer
+        bio_fi: >-
+          [Kertomus seitsemästä hirtetystä
+          (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
+
+
+          [Looking for REIDAR](ohjelmisto/looking-for-reidar)
+
+
+          [Liikenteessä](ohjelmisto/liikenteessa)
+
+
+          [Leiblied](ohjelmisto/leiblied)
+        bio_en: >-
+          [The story of the seven hanged
+          (2017)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+
+
+          [Looking for REIDAR](en/ohjelmisto/looking-for-reidar)
+
+
+          [In traffic](en/ohjelmisto/liikenteessa)
+
+
+          [Leiblied](en/ohjelmisto/leiblied)
       - name: Jukka Huitila
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
@@ -976,54 +1003,127 @@ sections:
       - name: Anne-Mari Kanniainen
         title_fi: Muusikko
         title_en: Musician
+        bio_fi: "[Jaques Brel - Valssiin syntiseen](ohjelmisto/valssiin-syntiseen)"
+        bio_en: "[Jaques Brel - A sinful waltz](en/ohjelmisto/valssiin-syntiseen)"
       - name: Mimosa Lindahl
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687137972-1.Mimosa_face_pic__NELIO__mustavalko_.webp?alt=media
+        bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
       - name: Arto-Oskar Reunanen
         title_fi: Skenografi
         title_en: Scenographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687153263-1._Arto-Oskar_Reunanen_kasvokuva_NELIO__black_white_musta_tausta.webp?alt=media
+        bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
       - name: Karel Šimek
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
+        bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
       - name: Mikko Lampinen
         title_fi: Videosuunnittelija
         title_en: Video Designer
+        bio_fi: "[Fade away (2021)](ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
       - name: Silver Sepp
         title_fi: Muusikko
         title_en: Musician
+        bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
       - name: Taina Mäki-Iso
         title_fi: Ohjaaja
         title_en: Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687247978-Ma_ki-iso.webp?alt=media
+        bio_fi: "[Nauru - Totisinta totta? (2022)](ohjelmisto/nauru)"
+        bio_en: "[Laughter - The serious truth (2022)](en/ohjelmisto/nauru)"
       - name: Milla Virtanen
         title_fi: Koreografi
         title_en: Choreographer
+        bio_fi: "[Kolmen näytöksen tragedia
+          (2022)](ohjelmisto/kolmen-naytoksen-tragedia)"
+        bio_en: "[A tragedy in three acts
+          (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)"
       - name: Anna Laakso
         title_fi: Muusikko
         title_en: Musician
+        bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on Jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
       - name: Eero Aakala
         title_fi: Muusikko
         title_en: Musician
+        bio_fi: >-
+          [Rimpparemmin joulushow (2022)](ohjelmisto/joulushow-2022)
+
+
+          [Hävyttömän hyvä joulushow (2023)](ohjelmisto/joulushow-2023)
+
+
+          [Rimpparemmin joulushow 2024 - Aallon harjalla (2024)](ohjelmisto/aallon-harjalla-1)
+
+
+          [Rimpparemmin joulushow 2025 - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
+        bio_en: >-
+          [Rimpparemmi's christmas show (2022)](en/ohjelmisto/joulushow-2022)
+
+
+          [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
+
+
+          [Rimpparemmi's christmas show 2024 - Riding the wave (2024)](en/ohjelmisto/aallon-harjalla-1)
+
+
+          [Rimpparemmi's christmas show 2025 - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
       - name: Johanna Ruotsalainen
         title_fi: Säveltäjä, Animaattori
         title_en: Composer, Animator
+        bio_fi: "[Depression suite (2023)](ohjelmisto/depressio-suite)"
+        bio_en: "[Depression suite (2023)](en/ohjelmisto/depressio-suite)"
       - name: Sanna Silvennoinen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
+        bio_fi: |-
+          [Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
+
+          [Hyppynarutus (2025)](ohjelmisto/hyppynarutus)
+        bio_en: >-
+          [The pied piper of Hamelin
+          (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+
+
+          [Jump roping (2025)](en/ohjelmisto/hyppynarutus)
       - name: Marika Mustajärvi
         title_fi: Muusikko
         title_en: Musician
+        bio_fi: "[Jaques Brel - Valssiin syntiseen](ohjelmisto/valssiin-syntiseen)"
+        bio_en: "[Jaques Brel - A sinful waltz](en/ohjelmisto/valssiin-syntiseen)"
       - name: Elina Pirinen
         title_fi: Koreografi
         title_en: Choreographer
+        bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
       - name: Jani-Matti Salo
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
+        bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
       - name: Heidi Väätänen
         title_fi: Dramaturgi
         title_en: Dramaturg
+        bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+      - name: Veera Syvävirta
+        title_fi: Tanssija
+        title_en: Dancer
+        bio_fi: |-
+          [Ankkalampi (2009)](ohjelmisto/ankkalampi)
+
+          [Mie oon kuitenki onnelline (2009)](ohjelmisto/moko)
+        bio_en: |-
+          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+
+          [But I'm happy anyways (2009)](en/ohjelmisto/moko)
       - name: Ville Köngäs
         title_fi: Tanssija
         title_en: Dancer
@@ -1034,6 +1134,7 @@ sections:
       - name: Kaija Maunula
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
-      - name: Veera Syvävirta
-        title_fi: Tanssija
-        title_en: Dancer
+        bio_fi: "[Kertomus seitsemästä hirtetystä
+          (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
+        bio_en: "[The story of the seven hanged
+          (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)"
