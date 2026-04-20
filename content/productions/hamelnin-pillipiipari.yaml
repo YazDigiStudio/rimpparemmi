@@ -60,8 +60,9 @@ info_fi: |-
 
   Kesto: n. 45 min
   Suositusikä: 4–12 vuotta
-additional_info_en: "Original production: Dance Theatre Raatikko. Premiere in
-  Rovaniemi at Kulttuuritalo Wiljami: 25 September 2024"
+additional_info_en: |-
+  Original production: Dance Theatre Raatikko 
+  Premiere in Rovaniemi at Kulttuuritalo Wiljami: 25 September 2024
 sort_order: 11
 ticket_url_fallback: https://www.netticket.fi/hamelnin-pillipiipari-rovaniemi
 badge_en: On tour
@@ -77,8 +78,9 @@ info_en: |-
 
   Duration: approx. 45 min
   Recommended age: 4–12 years
-additional_info_fi: "Alkuperäisteos: Tanssiteatteri Raatikko. Ensi-ilta
-  Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024"
+additional_info_fi: |-
+  Alkuperäisteos: Tanssiteatteri Raatikko 
+  Ensi-ilta Rovaniemellä Kulttuuritalo Wiljamissa: 25.9.2024
 badge_fi: Kiertueella
 is_touring: true
 duration_fi: n. 45 min
