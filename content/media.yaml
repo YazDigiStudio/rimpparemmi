@@ -1,3 +1,7 @@
 show_active: true
 show_archived: false
-items: []
+items:
+  - type: video
+    title_fi: Sillat
+    title_en: Bridges
+    url: https://www.youtube.com/watch?v=VFPJRWkgRXA&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=4
