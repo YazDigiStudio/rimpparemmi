@@ -710,9 +710,11 @@ sections:
       - name: Mimosa Lindahl
         title_fi: Koreografi
         title_en: Choreographer
-      - name: Oskari Reunanen
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687137972-1.Mimosa_face_pic__NELIO__mustavalko_.webp?alt=media
+      - name: Arto-Oskar Reunanen
         title_fi: Skenografi
         title_en: Scenographer
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687153263-1._Arto-Oskar_Reunanen_kasvokuva_NELIO__black_white_musta_tausta.webp?alt=media
       - name: Karel Šimek
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
