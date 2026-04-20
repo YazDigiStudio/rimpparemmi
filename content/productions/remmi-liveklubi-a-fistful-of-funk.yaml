@@ -1,6 +1,6 @@
 id: remmi-liveklubi-a-fistful-of-funk
-title_fi: "Remmi Liveklubi: We Will Funk For Food - A Fistful of Funk"
-title_en: "Remmi Live Club: We Will Funk For Food - A Fistful of Funk"
+title_fi: "Remmi Liveklubi: Will Funk For Food - A Fistful of Funk"
+title_en: "Remmi Live Club: Will Funk For Food - A Fistful of Funk"
 subtitle_fi: Katutanssia, absurdia teatteria ja livemusiikkia
 subtitle_en: Street dance, absurd theatre and live music
 status: active
@@ -80,7 +80,7 @@ info_en: >
 additional_info_fi: ""
 additional_info_en: ""
 sort_order: 10
-ticket_url_fallback: https://www.netticket.fi/we-will-funk-for-food-a-fistful-of-funk-rovaniemi
+ticket_url_fallback: https://www.netticket.fi/will-funk-for-food-a-fistful-of-funk-rovaniemi
 badge_fi: Vierailu
 badge_en: Guest
 is_touring: false
