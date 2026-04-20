@@ -449,6 +449,18 @@ collections:
         file: "content/media.yaml"
         fields:
 
+          - label: "Näytä aktiiviset tuotannot / Show active productions"
+            name: "show_active"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Näytä arkistoidut tuotannot / Show archived productions"
+            name: "show_archived"
+            widget: "boolean"
+            default: false
+            required: false
+
           - label: "Mediaosiot / Media items"
             name: "items"
             widget: "list"

@@ -230,6 +230,8 @@ export type MediaLinkItem = {
 export type MediaItem = MediaVideoItem | MediaImageItem | MediaLinkItem;
 
 export type MediaData = {
+  show_active?: boolean;
+  show_archived?: boolean;
   items: MediaItem[];
 };
 

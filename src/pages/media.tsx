@@ -511,8 +511,15 @@ export default function MediaPage({ productions, mediaData }: Props) {
   const t = copy[locale];
 
   // All productions with at least one production image, sorted by sort_order
+  const showActive = mediaData.show_active ?? true;
+  const showArchived = mediaData.show_archived ?? false;
   const mediaProductions = productions
-    .filter((p) => (p.production_images ?? []).length > 0)
+    .filter((p) => {
+      if ((p.production_images ?? []).length === 0) return false;
+      if (p.status === "active") return showActive;
+      if (p.status === "archive") return showArchived;
+      return false;
+    })
     .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
 
   const hasGeneralMedia = mediaData.items.length > 0;
