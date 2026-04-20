@@ -46,7 +46,7 @@ export default async function handler(
     },
     body: JSON.stringify({
       email_address: email,
-      status: "subscribed",
+      status: "pending",
       merge_fields: {
         FNAME: firstName,
         LNAME: lastName,
