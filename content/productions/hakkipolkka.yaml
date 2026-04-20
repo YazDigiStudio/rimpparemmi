@@ -22,11 +22,15 @@ long_text_en: Caged polka is a depiction of life in the aftermath of an
   their lives more meaningful, they begin to dance and sing. They develop their
   own unique culture, to which each person contributes everything they have seen
   and experienced.
-info_fi: Koreografia Matti PaloniemiSävellys Jukka HannulaÄänisuunnitteluJukka
-  Hannula ja Janne TeivainenValo- ja lavastussuunnittelu Janne
-  TeivainenPukusuunnittelu Kaija MaunulaTanssijat Atte Herd, Helmi Järvensivu,
-  Jarmo Lind ja Anni PilhjärtaMuusikot Henri Haakana ja Valtteri
-  ValoTuotantoTanssiteatteri Rimpparemmi
+info_fi: |-
+  Koreografia: Matti Paloniemi\
+  Sävellys: Jukka Hannula\
+  Äänisuunnittelu: Jukka Hannula ja Janne Teivainen\
+  Valo- ja lavastussuunnittelu: Janne Teivainen\
+  Pukusuunnittelu: Kaija Maunula\
+  Tanssijat: Atte Herd, Helmi Järvensivu, Jarmo Lind ja Anni Pilhjärta\
+  Muusikot; Henri Haakana ja Valtteri Valo\
+  Tuotanto: Tanssiteatteri Rimpparemmi
 info_en: |-
   Choreography by Matti Paloniemi
 
@@ -47,3 +51,4 @@ additional_info_fi: Ensi-ilta 27.7.2010, Pyhäjärvi, Täydenkuun tanssit
 additional_info_en: "Premiere July 27, 2010, Pyhäjärvi, Full Moon Dance "
 sort_order: 97
 is_touring: false
+vierailuesitys: false
