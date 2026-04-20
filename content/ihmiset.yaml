@@ -880,20 +880,55 @@ sections:
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584673751-Nuorala.webp?alt=media
+        bio_fi: |-
+          [Rimpparemmin joulushow (2022)](ohjelmisto/joulushow-2022)
+
+          [Hävyttömän hyvä joulushow (2023)](ohjelmisto/joulushow-2023)
+        bio_en: >-
+          [Rimpparemmi's Christmas show (2022)](en/ohjelmisto/joulushow-2022)
+
+
+          [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
       - name: Mikko Laitila
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584746355-Laitila.webp?alt=media
+        bio_fi: >-
+          [Rimpparemmin joulushow 2024 - Aallonharjalla
+          (2024)](ohjelmisto/aallon-harjalla-1)
+
+
+          [Rimpparemmin joulushow 2025 - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
+        bio_en: >-
+          [Rimpparemmi's christmas show 2024 - Riding the wave
+          (2024)](en/ohjelmisto/aallon-harjalla-1)
+
+
+          [Rimpparemmi's christmas show 2025 - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
       - name: Janne Hast
         title_fi: Äänisuunnittelija
         title_en: Sound Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584580635-Hast.webp?alt=media
-        bio_fi: "Kuva: Ville Malja"
-        bio_en: "Photo: Ville Malja"
+        bio_fi: |-
+          Kuva: Ville Malja
+
+          [Akka ja Luuta (2022)](ohjelmisto/akka-ja-luuta)
+        bio_en: |-
+          Photo: Ville Malja
+
+          [Akka ja luuta (2022)](en/ohjelmisto/akka-ja-luuta)
       - name: Jaakko Toivonen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584517401-Toivonen.webp?alt=media
+        bio_fi: |-
+          [Hamelnin Pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
+
+          [Hyppynarutus (2025)](ohjelmisto/hyppynarutus)
+        bio_en: |-
+          [The pied piper of Hameln (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+
+          [Jump Roping (2025)](en/ohjelmisto/hyppynarutus)
       - name: Valtteri Valo
         title_fi: Muusikko
         title_en: Musician
@@ -929,6 +964,8 @@ sections:
       - name: Jukka Huitila
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
+        bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
+        bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
       - name: Anne-Mari Kanniainen
         title_fi: Muusikko
         title_en: Musician
