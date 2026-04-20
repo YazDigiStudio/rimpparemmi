@@ -709,10 +709,44 @@ sections:
 
 
           [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
-      - name: Anttti Lindholm
+      - name: Antti Lindholm
         title_fi: Suunnittelija
         title_en: Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775631612210-Lindholm.webp?alt=media
+        bio_fi: >-
+          [Johtajan vapaapäivä (2017)](ohjelmisto/johtajan-vapaapaiva)
+
+
+          [Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [Lookin for REIDAR (2018)](ohjelmisto/looking-for-reidar)
+
+
+          [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
+
+
+          [Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)
+
+
+          [Ammattieläin (2021)](ohjelmisto/ammattielain)
+        bio_en: >-
+          [The director's day off (2017)](en/ohjelmisto/johtajan-vapaapaiva)
+
+
+          [Ten songs about a woman (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)
+
+
+          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+
+
+          [Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)
+
+
+          [Professional animal (2021)](en/ohjelmisto/ammattielain)
       - name: Janne Rosenval
         title_fi: Käsikirjoittaja, Ohjaaja
         title_en: Writer, Director
@@ -739,28 +773,64 @@ sections:
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776587291656-Immonen.webp?alt=media
+        bio_fi: |-
+          [Ankkalampi (2009)](ohjelmisto/ankkalampi)
+
+          [Mä ja Niko (2011)](ohjelmisto/ma-ja-niko)
+
+          [Liikenteessä (2011)](ohjelmisto/liikenteessa)
+
+          [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
+        bio_en: |-
+          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+
+          [Niko and I (2011)](en/ohjelmisto/ma-ja-niko)
+
+          [In traffic (2011)](en/ohjelmisto/liikenteessa)
+
+          [The Fools (2015)](en/ohjelmisto/holmolaiset)
       - name: Panu Varstala
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586335587-Varstala.webp?alt=media
-        bio_fi: "Kuva: Aki Loponen"
-        bio_en: "Photo: Aki Loponen"
+        bio_fi: |-
+          Kuva: Aki Loponen
+
+          [Minä ja kuu (2010)](ohjelmisto/mina-ja-kuu)
+        bio_en: |-
+          Photo: Aki Loponen
+
+          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
       - name: Sami Evinsalo
         title_fi: Lavastaja
         title_en: Set Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585201503-Evinsalo.webp?alt=media
+        bio_fi: "[Mä ja Niko (2011)](ohjelmisto/ma-ja-niko)"
+        bio_en: "[Niko and I (2011)](en/ohjelmisto/ma-ja-niko)"
       - name: Jouko Pääkkönen
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585157196-Pa_a_kko_nen.webp?alt=media
+        bio_fi: "[Dreams (2012)](ohjelmisto/dreams)"
+        bio_en: "[Dreams (2012)](en/ohjelmisto/dreams)"
       - name: Mika Ryynänen
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585119872-Ryyna_nen.webp?alt=media
+        bio_fi: |-
+          [Kinos - Kasa pohjoista tanssia (2013)](ohjelmisto/kinos)
+
+          [Aikalainen (2013)](ohjelmisto/aikalainen)
+        bio_en: |-
+          [Kinos - A pile of northern dance (2013)](en/ohjelmisto/kinos)
+
+          [Contemporary (2013)](en/ohjelmisto/aikalainen)
       - name: Sampo Kerola
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585053605-Kerola.webp?alt=media
+        bio_fi: "[YOLO (2014)](ohjelmisto/yolo)"
+        bio_en: "[YOLO (2014)](en/ohjelmisto/yolo)"
       - name: Aku Koivukangas
         title_fi: Lavastussuunnittelija
         title_en: Set Designer
