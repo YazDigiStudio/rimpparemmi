@@ -1,7 +1,7 @@
 id: uroslive
 title_fi: Uros Live
 title_en: Male Live
-status: archive
+status: active
 category: general
 premiere_date: 2025-02-14
 primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775045315622-Uros-Live-kuvalogolla-720-x-720-px.webp?alt=media
@@ -89,6 +89,8 @@ info_en: |-
 additional_info_fi: Ensi-ilta 14.2.2025, Kulttuuritalo Wiljami, Rovaniemi
 additional_info_en: Premiere February 14, 2025, Wiljami Cultural Center, Rovaniemi
 sort_order: 51
+badge_fi: Kiertueelli
+badge_en: On tour
 is_touring: true
 vierailuesitys: false
 duration_fi: 45 min. Saatavana myös teatteritilan 60 min. versio aikuisille. Kysy lisää.
