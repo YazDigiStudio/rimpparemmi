@@ -14,6 +14,9 @@ short_text_en: Dreams is a program featuring three short dance performances. All
   director of Dance Theater Rimpparemmi; Mikko Orpana from Helsinki; and Marjo
   Selin from Rovaniemi.
 long_text_fi: >-
+  Ensi-ilta 31.10.2012
+
+
   ## Bad Company
 
 
@@ -58,8 +61,6 @@ long_text_fi: >-
 
   Voiko tämän kaiken sulattaa… onko se vain unelmaa?
 
-
-  ## 
 
   Sarabande
 
@@ -200,3 +201,4 @@ long_text_en: >-
   “The nature of the sarabande compels the composer to create harmonies that elevate the listener’s mood and inspire in them admiration and respect.”
 sort_order: 89
 is_touring: false
+vierailuesitys: false
