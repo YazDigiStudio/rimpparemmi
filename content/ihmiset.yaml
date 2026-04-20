@@ -476,6 +476,9 @@ sections:
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584822326-Knif.webp?alt=media
         bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
         bio_en: "[Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)"
+      - name: Johanna Keiski
+        title_fi: Tanssija
+        title_en: Dancer
       - name: Aku Koivukangas
         title_fi: Lavastussuunnittelija
         title_en: Set Designer
@@ -500,6 +503,9 @@ sections:
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776669336019-Kotaja.webp?alt=media
+      - name: Jaana Kurttila
+        title_fi: Pukusuunnittelija
+        title_en: Costume designer
       - name: Marjo Kuusela
         title_fi: Koreografi
         title_en: Choreographer
@@ -1292,6 +1298,9 @@ sections:
           (2022)](ohjelmisto/kolmen-naytoksen-tragedia)"
         bio_en: "[A tragedy in three acts
           (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)"
+      - name: Aino Voutilainen
+        title_fi: Esiintyjä
+        title_en: Performer
       - name: Riikka Vuorenmaa
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
