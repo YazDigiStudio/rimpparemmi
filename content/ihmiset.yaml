@@ -929,10 +929,6 @@ sections:
           [The pied piper of Hameln (2024)](en/ohjelmisto/hamelnin-pillipiipari)
 
           [Jump Roping (2025)](en/ohjelmisto/hyppynarutus)
-      - name: Valtteri Valo
-        title_fi: Muusikko
-        title_en: Musician
-        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584402979-Valo.webp?alt=media
       - name: Iikka Kotaja
         title_fi: Äänisuunnittelija
         title_en: Sound Designer
@@ -940,9 +936,6 @@ sections:
       - name: Jukka Hannula
         title_fi: Säveltäjä
         title_en: Composer
-      - name: Kaija Maunula
-        title_fi: Pukusuunnittelija
-        title_en: Costume Designer
       - name: William Iles
         title_fi: Valosuunnittelija
         title_en: Lighting designer
@@ -1005,12 +998,6 @@ sections:
       - name: Sanna Silvennoinen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
-      - name: Ville Köngäs
-        title_fi: Tanssija
-        title_en: Dancer
-      - name: Veera Syvävirta
-        title_fi: Tanssija
-        title_en: Dancer
       - name: Marika Mustajärvi
         title_fi: Muusikko
         title_en: Musician
@@ -1023,3 +1010,16 @@ sections:
       - name: Heidi Väätänen
         title_fi: Dramaturgi
         title_en: Dramaturg
+      - name: Ville Köngäs
+        title_fi: Tanssija
+        title_en: Dancer
+      - name: Valtteri Valo
+        title_fi: Muusikko
+        title_en: Musician
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584402979-Valo.webp?alt=media
+      - name: Kaija Maunula
+        title_fi: Pukusuunnittelija
+        title_en: Costume Designer
+      - name: Veera Syvävirta
+        title_fi: Tanssija
+        title_en: Dancer
