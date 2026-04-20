@@ -54,6 +54,8 @@ info_en: |-
 additional_info_fi: "Ensi-ilta: syyskuu 2026"
 additional_info_en: "Premiere: September 2026"
 sort_order: 11
+badge_fi: Kiertueella
+badge_en: On tour
 is_touring: true
 vierailuesitys: false
 duration_fi: 40 min.
