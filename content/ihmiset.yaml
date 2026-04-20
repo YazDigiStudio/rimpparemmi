@@ -930,12 +930,20 @@ sections:
 
           [Jump Roping (2025)](en/ohjelmisto/hyppynarutus)
       - name: Iikka Kotaja
-        title_fi: Äänisuunnittelija
-        title_en: Sound Designer
+        title_fi: Säveltäjä
+        title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776669336019-Kotaja.webp?alt=media
       - name: Jukka Hannula
         title_fi: Säveltäjä
         title_en: Composer
+        bio_fi: |-
+          [Mie oon kuitenki onnelline (2009)](ohjelmisto/moko)
+
+          [Häkkipolkka (2010)](ohjelmisto/hakkipolkka)
+        bio_en: |-
+          [But I'm happy anyways (2009)](en/ohjelmisto/moko)
+
+          [Cages polka (2010)](en/ohjelmisto/hakkipolkka)
       - name: William Iles
         title_fi: Valosuunnittelija
         title_en: Lighting designer
@@ -945,9 +953,15 @@ sections:
       - name: Antti Puumalainen
         title_fi: Äänisuunnittelija
         title_en: Sound Designer
+        bio_fi: "[Dreams (2012)](ohjelmisto/dreams)"
+        bio_en: "[Dreams (2012)](en/ohjelmisto/dreams)"
       - name: Hannu Oskala
         title_fi: Säveltäjä
         title_en: Composer
+        bio_fi: "[Karja arktisessa paratiisissa
+          (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
+        bio_en: "[Cattle in an arctic paradise
+          (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)"
       - name: Oula Kitti
         title_fi: Taistelu koreografi
         title_en: Fight Choreographer
