@@ -835,22 +835,47 @@ sections:
         title_fi: Lavastussuunnittelija
         title_en: Set Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584989624-koivukangas.webp?alt=media
+        bio_fi: >-
+          [YOLO (2014)](ohjelmisto/yolo)
+
+
+          [Karja arktisessa paratiisissa (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
+
+
+          [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
+        bio_en: >-
+          [YOLO (2014)](en/ohjelmisto/yolo)
+
+
+          [Cattle in an arctic paradise (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)
+
+
+          [The Fools (2015)](en/ohjelmisto/holmolaiset)
       - name: Kaj Chydenius
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586221708-Chydis.webp?alt=media
+        bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
       - name: Jukka Itkonen
         title_fi: Runoilija
         title_en: Poet
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586475338-Itkonen.webp?alt=media
+        bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman
+          (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
       - name: Johanna "Jose" Salo
         title_fi: Ohjaaja
         title_en: Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584936496-Salo.webp?alt=media
+        bio_fi: "[Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)"
+        bio_en: "[Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)"
       - name: Carl Knif
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584822326-Knif.webp?alt=media
+        bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
+        bio_en: "[Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)"
       - name: Mikko Nuorala
         title_fi: Muusikko
         title_en: Musician
