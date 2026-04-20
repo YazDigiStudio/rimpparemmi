@@ -1,7 +1,7 @@
 id: hyppynarutus
 title_fi: Hyppynarutus
 title_en: Jump Roping
-status: archive
+status: active
 category: children
 premiere_date: 2025-03-31
 primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775047935092-www_1920x1080_HyppyNar_OTS-2.webp?alt=media
@@ -57,7 +57,9 @@ info_en: >-
 
 
   Original production: Dance Theater Raatikko
-sort_order: 48
+sort_order: 11
+badge_fi: Kiertueella
+badge_en: On tour
 is_touring: true
 vierailuesitys: false
 duration_fi: 45 min; kiertueversio 35 min
