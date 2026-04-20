@@ -11,11 +11,13 @@ short_text_en: A group of dancers, carried by the wind, has gathered together.
   Choreographers Matti Paloniemi, Kira Riikonen, and Satu Tuomisto are creating
   a snow scene.
 long_text_fi: >-
+  Ensi-ilta 22.7.2013
+
+
   ## Sinua
 
 
   *Sinua on ensitapaaminen, puusauna, pitkä litania verbejä ja häävalssi. Ilman valssia.*
-
 
 
   **Koreografia** Satu Tuomisto (JoJo)
@@ -30,7 +32,6 @@ long_text_fi: >-
 
 
   ## Omenavaras
-
 
 
   *Nainen, mies ja omena. Välissä olettamukset, odotukset ja menneisyyden muistot. Sekunnin sadasosa ja silmänräpäys.* 
@@ -50,7 +51,6 @@ long_text_fi: >-
   ## Aikalainen
 
 
-
   *Kaksi naista aikalaista, seremonia on epäselvä.*
 
 
@@ -62,12 +62,13 @@ long_text_fi: >-
 
   **Pukusuunnittelu** Kaija Maunula (Rimpparemmi)
 long_text_en: >-
+  Premiere 22.7.2013
+
+
   ## You
 
 
   You is a first meeting, a wood-fired sauna, a long litany of verbs, and a wedding waltz. Without the waltz.
-
-
 
 
   Choreography by Satu Tuomisto (JoJo)
@@ -85,16 +86,10 @@ long_text_en: >-
   Costumes by Kaija Maunula (Rimpparemmi)
 
 
-
-
   ## The Apple Thief
 
 
-
-
   A woman, a man, and an apple. In between: assumptions, expectations, and memories of the past. A hundredth of a second and the blink of an eye. 
-
-
 
 
   Choreography by Kira Riikonen (Routa)
@@ -112,16 +107,10 @@ long_text_en: >-
   Costumes by Heidi Kesti (JoJo)
 
 
-
-
   ## Contemporary
 
 
-
-
   Two women of the same generation; the nature of the ceremony is unclear.
-
-
 
 
   Choreography by Matti Paloniemi (Rimpparemmi)
@@ -136,3 +125,4 @@ long_text_en: >-
   Costume design by Kaija Maunula (Rimpparemmi)
 sort_order: 88
 is_touring: false
+vierailuesitys: false
