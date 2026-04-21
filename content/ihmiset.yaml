@@ -133,13 +133,13 @@ sections:
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776756872993-Elina.webp?alt=media
         bio_fi: |-
-          [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
 
           [Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)
         bio_en: |-
-          [Looking for REIDAR (2018)](/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
 
-          [Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)
+          [Piaf event (2024)](ohjelmisto/tapahtuma-piaf)
       - name: Eero Aakala
         title_fi: Muusikko
         title_en: Musician
