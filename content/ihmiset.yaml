@@ -512,6 +512,10 @@ sections:
       - name: Jaana Kurttila
         title_fi: Pukusuunnittelija
         title_en: Costume designer
+        bio_fi: "[Karja arktisessa paratiisissa
+          (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
+        bio_en: "[Cattle in an arctic paradise
+          (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)"
       - name: Marjo Kuusela
         title_fi: Koreografi
         title_en: Choreographer
