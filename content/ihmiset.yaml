@@ -413,13 +413,12 @@ sections:
         title_en: Performer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775630742902-Iles.webp?alt=media
         bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
-        bio_en: "[Ten songs about a woman
-          (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
       - name: William Iles
         title_fi: Valosuunnittelija
         title_en: Lighting designer
         bio_fi: "[Minä ja kuu (2010)](ohjelmisto/mina-ja-kuu)"
-        bio_en: "[Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)"
+        bio_en: "[Me and the moon (2010)](ohjelmisto/mina-ja-kuu)"
       - name: Riku Immonen
         title_fi: Koreografi
         title_en: Choreographer
@@ -433,54 +432,52 @@ sections:
 
           [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
         bio_en: |-
-          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
-          [Niko and I (2011)](en/ohjelmisto/ma-ja-niko)
+          [Niko and I (2011)](ohjelmisto/ma-ja-niko)
 
-          [In traffic (2011)](en/ohjelmisto/liikenteessa)
+          [In traffic (2011)](ohjelmisto/liikenteessa)
 
-          [The Fools (2015)](en/ohjelmisto/holmolaiset)
+          [The Fools (2015)](ohjelmisto/holmolaiset)
       - name: Jaana Isokangas
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1774351029292-Jaana_Isokangas.webp?alt=media
         bio_fi: "[Asetelmia (2022)](ohjelmisto/astelmia)"
-        bio_en: "[Stills (2022)](en/ohjelmisto/astelmia)"
+        bio_en: "[Stills (2022)](ohjelmisto/astelmia)"
       - name: Jukka Itkonen
         title_fi: Runoilija
         title_en: Poet
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776586475338-Itkonen.webp?alt=media
         bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
-        bio_en: "[Ten songs about a woman
-          (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
       - name: Anne-Mari Kanniainen
         title_fi: Muusikko
         title_en: Musician
         bio_fi: "[Jaques Brel - Valssiin syntiseen](ohjelmisto/valssiin-syntiseen)"
-        bio_en: "[Jaques Brel - A sinful waltz](en/ohjelmisto/valssiin-syntiseen)"
+        bio_en: "[Jaques Brel - A sinful waltz](ohjelmisto/valssiin-syntiseen)"
       - name: Sampo Kerola
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585053605-Kerola.webp?alt=media
         bio_fi: "[YOLO (2014)](ohjelmisto/yolo)"
-        bio_en: "[YOLO (2014)](en/ohjelmisto/yolo)"
+        bio_en: "[YOLO (2014)](ohjelmisto/yolo)"
       - name: Oula Kitti
         title_fi: Taistelu koreografi
         title_en: Fight Choreographer
         bio_fi: "[Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
-        bio_en: "[Ten songs about a woman
-          (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)"
+        bio_en: "[Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)"
       - name: Carl Knif
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584822326-Knif.webp?alt=media
         bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
-        bio_en: "[Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)"
+        bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
       - name: Johanna Keiski
         title_fi: Tanssija
         title_en: Dancer
         bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
-        bio_en: "[Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)"
+        bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
       - name: Aku Koivukangas
         title_fi: Lavastussuunnittelija
         title_en: Set Designer
@@ -494,26 +491,26 @@ sections:
 
           [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
         bio_en: >-
-          [YOLO (2014)](en/ohjelmisto/yolo)
+          [YOLO (2014)](ohjelmisto/yolo)
 
 
-          [Cattle in an arctic paradise (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)
+          [Cattle in an arctic paradise (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
 
 
-          [The Fools (2015)](en/ohjelmisto/holmolaiset)
+          [The Fools (2015)](ohjelmisto/holmolaiset)
       - name: Iikka Kotaja
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776669336019-Kotaja.webp?alt=media
         bio_fi: "[Mä ja Niko (2011)](ohjelmisto/ma-ja-niko)"
-        bio_en: "[Niko and I (2011)](en/ohjelmisto/ma-ja-niko)"
+        bio_en: "[Niko and I (2011)](ohjelmisto/ma-ja-niko)"
       - name: Jaana Kurttila
         title_fi: Pukusuunnittelija
         title_en: Costume designer
         bio_fi: "[Karja arktisessa paratiisissa
           (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
         bio_en: "[Cattle in an arctic paradise
-          (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)"
+          (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
       - name: Marjo Kuusela
         title_fi: Koreografi
         title_en: Choreographer
@@ -522,17 +519,16 @@ sections:
           [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
           [Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)
-        bio_en: >-
-          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+        bio_en: |-
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
-
-          [Ten songs about a woman (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)
+          [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
       - name: Harri Kuusijärvi
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403866681-_DSF1488.webp?alt=media
         bio_fi: "[Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)"
-        bio_en: "[Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)"
+        bio_en: "[Piaf event (2024)](ohjelmisto/tapahtuma-piaf)"
       - name: Ville Köngäs
         title_fi: Tanssija
         title_en: Dancer
@@ -541,9 +537,9 @@ sections:
 
           [Mie oon kuitenki onnelline (2009)](ohjelmisto/moko)
         bio_en: |-
-          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
-          [But I'm happy anyways (2009)](en/ohjelmisto/moko)
+          [But I'm happy anyways (2009)](ohjelmisto/moko)
       - name: Anna Laakso
         title_fi: Muusikko
         title_en: Musician
