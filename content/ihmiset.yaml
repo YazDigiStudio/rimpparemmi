@@ -544,7 +544,7 @@ sections:
         title_fi: Muusikko
         title_en: Musician
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
-        bio_en: "[You vomited on Jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on Jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
       - name: Mikko Laitila
         title_fi: Muusikko
         title_en: Musician
@@ -557,15 +557,15 @@ sections:
           [Rimpparemmin joulushow 2025 - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
         bio_en: >-
           [Rimpparemmi's christmas show 2024 - Riding the wave
-          (2024)](en/ohjelmisto/aallon-harjalla-1)
+          (2024)](ohjelmisto/aallon-harjalla-1)
 
 
-          [Rimpparemmi's christmas show 2025 - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
+          [Rimpparemmi's christmas show 2025 - Rhythm and splash (2025)](ohjelmisto/rytmia-ja-roiskeita)
       - name: Mikko Lampinen
         title_fi: Videosuunnittelija
         title_en: Video Designer
         bio_fi: "[Fade away (2021)](ohjelmisto/fades-away)"
-        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](ohjelmisto/fades-away)"
       - name: Liina Leppänen
         title_fi: Sirkustaiteilija
         title_en: Circus artist
@@ -579,14 +579,13 @@ sections:
 
           [Joulushow - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
         bio_en: >-
-          [The pied piper of Hamelin
-          (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+          [The pied piper of Hamelin (2024)](ohjelmisto/hamelnin-pillipiipari)
 
 
-          [Christmas show - Riding the wave (2024)](en/ohjelmisto/aallon-harjalla-1)
+          [Christmas show - Riding the wave (2024)](ohjelmisto/aallon-harjalla-1)
 
 
-          [Christmas show - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
+          [Christmas show - Rhythm and splash (2025)](ohjelmisto/rytmia-ja-roiskeita)
       - name: Jarmo Lind
         title_fi: Tanssija
         title_en: Dancer
@@ -608,21 +607,21 @@ sections:
 
           [Dreams (2012)](ohjelmisto/dreams)
         bio_en: |-
-          [Caged polka (2010)](en/ohjelmisto/hakkipolkka)
+          [Caged polka (2010)](ohjelmisto/hakkipolkka)
 
-          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+          [Me and the moon (2010)](ohjelmisto/mina-ja-kuu)
 
-          [Charmers and pleasure tax (2011)](en/ohjelmisto/huhu)
+          [Charmers and pleasure tax (2011)](ohjelmisto/huhu)
 
-          [Sahara (2011)](en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
-          [Niko And I (2011)](en/ohjelmisto/ma-ja-niko)
+          [Niko And I (2011)](ohjelmisto/ma-ja-niko)
 
-          [Christmas wish (2011)](en/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
-          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
-          [Dreams (2012)](en/ohjelmisto/dreams)
+          [Dreams (2012)](ohjelmisto/dreams)
       - name: Mimosa Lindahl
         title_fi: Koreografi
         title_en: Choreographer
