@@ -47,32 +47,31 @@ sections:
         title_en: Lighting and Set designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403647946-_DSF1495.webp?alt=media
         bio_fi: >-
-          [Ankkalampi
-          (2009)](https://rimpparemmi.netlify.app/ohjelmisto/ankkalampi)
+          [Ankkalampi (2009)](ohjelmisto/ankkalampi)
 
 
-          [Sahara (2011)](https://rimpparemmi.netlify.app/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
 
-          [Christmas wish (2011)](https://rimpparemmi.netlify.app/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
 
           [Dreams (2012)](ohjelmisto/dreams)
 
 
-          [Yolo (2014)](https://rimpparemmi.netlify.app/ohjelmisto/yolo)
+          [Yolo (2014)](ohjelmisto/yolo)
 
 
-          [Karja arktisessa paratiisissa (2014)](https://rimpparemmi.netlify.app/ohjelmisto/karja-akrtisessa-paratiisissa)
+          [Karja arktisessa paratiisissa (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
 
 
-          [Hölmöläiset (2015)](https://rimpparemmi.netlify.app/ohjelmisto/holmolaiset)
+          [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
 
 
-          [Oravan laulu (2015)](https://rimpparemmi.netlify.app/ohjelmisto/oravan-laulu)
+          [Oravan laulu (2015)](ohjelmisto/oravan-laulu)
 
 
-          [Kertomus seitsemästä hirtetystä (2019)](https://rimpparemmi.netlify.app/en/ohjelmisto/oravan-laulu)
+          [Kertomus s](ohjelmisto/kertomus-seitsemasta-hirtetysta)[eitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
           [Nauru - totisinta totta? (2022)](ohjelmisto/nauru)
@@ -89,47 +88,46 @@ sections:
 
           [Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)
         bio_en: >-
-          [The duck lake
-          (2009)](https://rimpparemmi.netlify.app/en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
 
-          [Sahara (2011)](https://rimpparemmi.netlify.app/en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
 
-          [Christmas wish (2011)](https://rimpparemmi.netlify.app/en/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
 
-          [Dreams (2012)](https://rimpparemmi.netlify.app/en/ohjelmisto/dreams)
+          [Dreams (2012)](ohjelmisto/dreams)
 
 
-          [Yolo (2014)](https://rimpparemmi.netlify.app/en/ohjelmisto/yolo)
+          [Yolo (2014)](ohjelmisto/yolo)
 
 
-          [Cattle in a Arctic paradise (2014)](https://rimpparemmi.netlify.app/en/ohjelmisto/karja-akrtisessa-paratiisissa)
+          [Cattle in a Arctic paradise (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
 
 
-          [The fools (2015)](https://rimpparemmi.netlify.app/en/ohjelmisto/holmolaiset)
+          [The fools (2015)](ohjelmisto/holmolaiset)
 
 
-          [Squirrel's song (2015)](https://rimpparemmi.netlify.app/en/ohjelmisto/oravan-laulu)
+          [Squirrel's song (2015)](ohjelmisto/oravan-laulu)
 
 
-          [The story of the seven hanged (2019)](https://rimpparemmi.netlify.app/en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+          [The story of the seven hanged (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
-          [Laughter - The serious truth? (2022)](en/ohjelmisto/nauru)
+          [Laughter - The serious truth? (2022)](ohjelmisto/nauru)
 
 
-          [A tragedy in three acts (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)
+          [A tragedy in three acts (2022)](ohjelmisto/kolmen-naytoksen-tragedia)
 
 
           [Stills (2022)](ohjelmisto/astelmia)
 
 
-          [Depression suite (2023)](en/ohjelmisto/depressio-suite)
+          [Depression suite (2023)](ohjelmisto/depressio-suite)
 
 
-          [Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)
+          [Piaf event (2024)](ohjelmisto/tapahtuma-piaf)
       - name: Elina Vasko
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
