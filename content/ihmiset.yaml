@@ -352,7 +352,7 @@ sections:
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775592916067-joona.webp?alt=media
         bio_fi: "[Akka ja luuta (2022)](ohjelmisto/akka-ja-luuta)"
-        bio_en: "[Akka ja luuta (2022)](en/ohjelmisto/akka-ja-luuta)"
+        bio_en: "[Akka ja luuta (2022)](ohjelmisto/akka-ja-luuta)"
       - name: Jukka Hannula
         title_fi: Säveltäjä
         title_en: Composer
@@ -361,9 +361,9 @@ sections:
 
           [Häkkipolkka (2010)](ohjelmisto/hakkipolkka)
         bio_en: |-
-          [But I'm happy anyways (2009)](en/ohjelmisto/moko)
+          [But I'm happy anyways (2009)](ohjelmisto/moko)
 
-          [Cages polka (2010)](en/ohjelmisto/hakkipolkka)
+          [Cages polka (2010)](ohjelmisto/hakkipolkka)
       - name: Janne Hast
         title_fi: Äänisuunnittelija
         title_en: Sound Designer
@@ -375,7 +375,7 @@ sections:
         bio_en: |-
           Photo: Ville Malja
 
-          [Akka ja luuta (2022)](en/ohjelmisto/akka-ja-luuta)
+          [Akka ja luuta (2022)](ohjelmisto/akka-ja-luuta)
       - name: Jukka Huitila
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
@@ -398,16 +398,16 @@ sections:
           [Leiblied](ohjelmisto/leiblied)
         bio_en: >-
           [The story of the seven hanged
-          (2017)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+          (2017)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
-          [Looking for REIDAR](en/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR](ohjelmisto/looking-for-reidar)
 
 
-          [In traffic](en/ohjelmisto/liikenteessa)
+          [In traffic](ohjelmisto/liikenteessa)
 
 
-          [Leiblied](en/ohjelmisto/leiblied)
+          [Leiblied](ohjelmisto/leiblied)
       - name: Reetta-Kaisa Iles
         title_fi: Esiintyjä
         title_en: Performer
