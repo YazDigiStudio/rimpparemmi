@@ -1119,11 +1119,10 @@ sections:
       - name: Veera Syvävirta
         title_fi: Tanssija
         title_en: Dancer
-        bio_fi: |-
-          [Ankkalampi (2009)](ohjelmisto/ankkalampi)
-
-          [Mie oon kuitenki onnelline (2009)](ohjelmisto/moko)
-        bio_en: "[](en/ohjelmisto/ankkalampi)"
+        bio_fi: "[Kertomus seitsemästä hirtetystä
+          (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
+        bio_en: "[The story of the seven hanged
+          (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)"
       - name: Jarno Tastula
         title_fi: Muusikko
         title_en: Musician
