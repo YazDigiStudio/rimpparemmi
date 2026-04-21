@@ -706,52 +706,52 @@ sections:
 
           [Johtajan vapaapäivä (2017)](ohjelmisto/johtajan-vapaapaiva)
         bio_en: |-
-          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
-          [But I'm happy anyways (2009)](en/ohjelmisto/moko)
+          [But I'm happy anyways (2009)](ohjelmisto/moko)
 
-          [Caged polka (2010)](en/ohjelmisto/hakkipolkka)
+          [Caged polka (2010)](ohjelmisto/hakkipolkka)
 
-          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+          [Me and the moon (2010)](ohjelmisto/mina-ja-kuu)
 
-          [Charmers and pleasure tax (2011)](en/ohjelmisto/huhu)
+          [Charmers and pleasure tax (2011)](ohjelmisto/huhu)
 
-          [Sahara (2011)](en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
-          [Niko and I (2011)](en/ohjelmisto/ma-ja-niko)
+          [Niko and I (2011)](ohjelmisto/ma-ja-niko)
 
-          [In traffic (2011)](en/ohjelmisto/liikenteessa)
+          [In traffic (2011)](ohjelmisto/liikenteessa)
 
-          [Christmas wish (2011)](en/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
-          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
-          [Dreams (2012)](en/ohjelmisto/dreams)
+          [Dreams (2012)](ohjelmisto/dreams)
 
-          [Kinos - A pile of northern dance (2013)](en/ohjelmisto/kinos)
+          [Kinos - A pile of northern dance (2013)](ohjelmisto/kinos)
 
-          [YOLO (2014)](en/ohjelmisto/yolo)
+          [YOLO (2014)](ohjelmisto/yolo)
 
           [The Fools (2015)](ohjelmisto/holmolaiset)
 
           [Squirrel's song (2015)](ohjelmisto/oravan-laulu)
 
-          [Leiblied (2015)](en/ohjelmisto/leiblied)
+          [Leiblied (2015)](ohjelmisto/leiblied)
 
-          [You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)
+          [You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)
 
-          [The director's day off (2017)](en/ohjelmisto/johtajan-vapaapaiva)
+          [The director's day off (2017)](ohjelmisto/johtajan-vapaapaiva)
       - name: Marika Mustajärvi
         title_fi: Muusikko
         title_en: Musician
         bio_fi: "[Jaques Brel - Valssiin syntiseen](ohjelmisto/valssiin-syntiseen)"
-        bio_en: "[Jaques Brel - A sinful waltz](en/ohjelmisto/valssiin-syntiseen)"
+        bio_en: "[Jaques Brel - A sinful waltz](ohjelmisto/valssiin-syntiseen)"
       - name: Taina Mäki-Iso
         title_fi: Ohjaaja
         title_en: Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687247978-Ma_ki-iso.webp?alt=media
         bio_fi: "[Nauru - Totisinta totta? (2022)](ohjelmisto/nauru)"
-        bio_en: "[Laughter - The serious truth (2022)](en/ohjelmisto/nauru)"
+        bio_en: "[Laughter - The serious truth (2022)](ohjelmisto/nauru)"
       - name: Ari Numminen
         title_fi: Koreografi
         title_en: Choreographer
@@ -761,9 +761,9 @@ sections:
 
           [Tapahtuma Piaf (2024)](ohjelmisto/tapahtuma-piaf)
         bio_en: |-
-          [Sahara (2011)](en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
-          [Piaf event (2024)](en/ohjelmisto/tapahtuma-piaf)
+          [Piaf event (2024)](ohjelmisto/tapahtuma-piaf)
       - name: Mikko Nuorala
         title_fi: Muusikko
         title_en: Musician
@@ -772,11 +772,10 @@ sections:
           [Rimpparemmin joulushow (2022)](ohjelmisto/joulushow-2022)
 
           [Hävyttömän hyvä joulushow (2023)](ohjelmisto/joulushow-2023)
-        bio_en: >-
-          [Rimpparemmi's Christmas show (2022)](en/ohjelmisto/joulushow-2022)
+        bio_en: |-
+          [Rimpparemmi's Christmas show (2022)](ohjelmisto/joulushow-2022)
 
-
-          [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
+          [The wildly awesome christmas show (2023)](ohjelmisto/joulushow-2023)
       - name: Mirkka Nyrhinen
         title_fi: Pukusuunnittelija
         title_en: Costume Designer
@@ -808,37 +807,37 @@ sections:
           [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
 
-          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+          [The story of the seven hanged (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
 
 
-          [Laughter - The serious truth? (2022)](en/ohjelmisto/nauru)
+          [Laughter - The serious truth? (2022)](ohjelmisto/nauru)
 
 
-          [A tragedy in three acts (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)
+          [A tragedy in three acts (2022)](ohjelmisto/kolmen-naytoksen-tragedia)
 
 
-          [The pied piper of Hamelin (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+          [The pied piper of Hamelin (2024)](ohjelmisto/hamelnin-pillipiipari)
 
 
-          [Male Live (2025)](en/ohjelmisto/uroslive)
+          [Male Live (2025)](ohjelmisto/uroslive)
 
 
-          [Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)
+          [Forbidden moves (2025)](ohjelmisto/kielletyt-liikkeet)
 
 
-          [Christmas show - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
+          [Christmas show - Rhythm and splash (2025)](ohjelmisto/rytmia-ja-roiskeita)
       - name: Hannu Oskala
         title_fi: Säveltäjä
         title_en: Composer
         bio_fi: "[Karja arktisessa paratiisissa
           (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
         bio_en: "[Cattle in an arctic paradise
-          (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)"
+          (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)"
       - name: Sari Palmgren
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403577247-Sari_B_W.webp?alt=media
-        bio_en: "[Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)"
+        bio_en: "[Forbidden moves (2025)](ohjelmisto/kielletyt-liikkeet)"
         bio_fi: "[Kielletyt liikkeet (2025)](ohjelmisto/kielletyt-liikkeet)"
       - name: Anni Pilhjärta
         title_fi: Tanssija
@@ -910,98 +909,98 @@ sections:
 
           [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
         bio_en: >-
-          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
 
-          [I'm happy anyways (2009)](en/ohjelmisto/moko)
+          [I'm happy anyways (2009)](ohjelmisto/moko)
 
 
-          [Cages polka (2010)](en/ohjelmisto/hakkipolkka)
+          [Cages polka (2010)](ohjelmisto/hakkipolkka)
 
 
-          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+          [Me and the moon (2010)](ohjelmisto/mina-ja-kuu)
 
 
-          [Charmers and pleasure tax (2011)](en/ohjelmisto/huhu)
+          [Charmers and pleasure tax (2011)](ohjelmisto/huhu)
 
 
-          [Sahara (2011)](en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
 
-          [In traffic (2011)](en/ohjelmisto/liikenteessa)
+          [In traffic (2011)](ohjelmisto/liikenteessa)
 
 
-          [Christmas wish (2011)](en/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
 
-          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
 
-          [Dreams (2012)](en/ohjelmisto/dreams)
+          [Dreams (2012)](ohjelmisto/dreams)
 
 
-          [Kinos - A pile of northern dance (2013)](en/ohjelmisto/kinos)
+          [Kinos - A pile of northern dance (2013)](ohjelmisto/kinos)
 
 
-          [YOLO (2014)](en/ohjelmisto/yolo)
+          [YOLO (2014)](ohjelmisto/yolo)
 
 
-          [Cattle in an arctic paradise (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)
+          [Cattle in an arctic paradise (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
 
 
-          [The Fools (2015)](en/ohjelmisto/holmolaiset)
+          [The Fools (2015)](ohjelmisto/holmolaiset)
 
 
-          [Squirrel's song (2015)](en/ohjelmisto/oravan-laulu)
+          [Squirrel's song (2015)](ohjelmisto/oravan-laulu)
 
 
-          [Leiblied (2015)](en/ohjelmisto/leiblied)
+          [Leiblied (2015)](ohjelmisto/leiblied)
 
 
           [You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)
 
 
-          [Christmas story (2016)](en/ohjelmisto/joulutarina)
+          [Christmas story (2016)](ohjelmisto/joulutarina)
 
 
-          [The director's day off (2017)](en/ohjelmisto/johtajan-vapaapaiva)
+          [The director's day off (2017)](ohjelmisto/johtajan-vapaapaiva)
 
 
-          [Ten songs about a woman (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)
+          [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
 
-          [Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
 
 
-          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+          [The story of the seven hanged (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
       - name: Elina Pirinen
         title_fi: Koreografi
         title_en: Choreographer
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
-        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
       - name: Urmas Poolamets
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775630481965-Poolamets.webp?alt=media
         bio_fi: "[Leiblied (2015)](ohjelmisto/leiblied)"
-        bio_en: "[Leiblied (2015)](en/ohjelmisto/leiblied)"
+        bio_en: "[Leiblied (2015)](ohjelmisto/leiblied)"
       - name: Antti Puumalainen
         title_fi: Äänisuunnittelija
         title_en: Sound Designer
         bio_fi: "[Dreams (2012)](ohjelmisto/dreams)"
-        bio_en: "[Dreams (2012)](en/ohjelmisto/dreams)"
+        bio_en: "[Dreams (2012)](ohjelmisto/dreams)"
       - name: Jouko Pääkkönen
         title_fi: Säveltäjä
         title_en: Composer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776585157196-Pa_a_kko_nen.webp?alt=media
         bio_fi: "[Dreams (2012)](ohjelmisto/dreams)"
-        bio_en: "[Dreams (2012)](en/ohjelmisto/dreams)"
+        bio_en: "[Dreams (2012)](ohjelmisto/dreams)"
       - name: Arto-Oskar Reunanen
         title_fi: Skenografi
         title_en: Scenographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776687153263-1._Arto-Oskar_Reunanen_kasvokuva_NELIO__black_white_musta_tausta.webp?alt=media
         bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
-        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](ohjelmisto/fades-away)"
       - name: Kaisa Ristiluoma
         title_fi: Muusikko
         title_en: Musician
@@ -1017,17 +1016,14 @@ sections:
 
 
           [Kielletyt liikkeet (2025)](ohjelmisto/kielletyt-liikkeet)
-        bio_en: >-
-          [Island](en/ohjelmisto/saari)
+        bio_en: |-
+          [Island](ohjelmisto/saari)
 
+          [Jacques Brel - A sinful waltz (2019)](ohjelmisto/valssiin-syntiseen)
 
-          [Jacques Brel - A sinful waltz (2019)](en/ohjelmisto/valssiin-syntiseen)
+          [The wildly awesome christmas show (2023)](ohjelmisto/joulushow-2023)
 
-
-          [The wildly awesome christmas show (2023)](en/ohjelmisto/joulushow-2023)
-
-
-          [Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)
+          [Forbidden moves (2025)](ohjelmisto/kielletyt-liikkeet)
       - name: Janne Rosenval
         title_fi: Käsikirjoittaja, Ohjaaja
         title_en: Writer, Director
@@ -1038,15 +1034,15 @@ sections:
 
           [Kertomus seitsemästä hirtetystä (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
         bio_en: >-
-          [Looking for REIDAR (2017)](en/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR (2017)](ohjelmisto/looking-for-reidar)
 
 
-          [The story of the seven hanged (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)
+          [The story of the seven hanged (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)
       - name: Johanna Ruotsalainen
         title_fi: Säveltäjä, Animaattori
         title_en: Composer, Animator
         bio_fi: "[Depression suite (2023)](ohjelmisto/depressio-suite)"
-        bio_en: "[Depression suite (2023)](en/ohjelmisto/depressio-suite)"
+        bio_en: "[Depression suite (2023)](ohjelmisto/depressio-suite)"
       - name: Mika Ryynänen
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
@@ -1056,20 +1052,20 @@ sections:
 
           [Aikalainen (2013)](ohjelmisto/aikalainen)
         bio_en: |-
-          [Kinos - A pile of northern dance (2013)](en/ohjelmisto/kinos)
+          [Kinos - A pile of northern dance (2013)](ohjelmisto/kinos)
 
-          [Contemporary (2013)](en/ohjelmisto/aikalainen)
+          [Contemporary (2013)](ohjelmisto/aikalainen)
       - name: Jani-Matti Salo
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
-        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
       - name: Johanna "Jose" Salo
         title_fi: Ohjaaja
         title_en: Director
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584936496-Salo.webp?alt=media
         bio_fi: "[Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)"
-        bio_en: "[Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)"
+        bio_en: "[Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)"
       - name: Marjo Selin
         title_fi: Tanssija, Koreografi
         title_en: Tanssija, Choreographer
@@ -1081,16 +1077,16 @@ sections:
 
           [Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)
         bio_en: |-
-          [Dreams / LabBOratorio](en/ohjelmisto/dreams)
+          [Dreams / LabBOratorio](ohjelmisto/dreams)
 
-          [Contemporary (2019)](en/ohjelmisto/aikalainen)
+          [Contemporary (2019)](ohjelmisto/aikalainen)
 
-          [Spaces / Universes (2020)](en/ohjelmisto/tiloja-avaruuksia)
+          [Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)
       - name: Silver Sepp
         title_fi: Muusikko
         title_en: Musician
         bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
-        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](ohjelmisto/fades-away)"
       - name: Sanna Silvennoinen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
@@ -1098,24 +1094,22 @@ sections:
           [Hamelnin pillipiipari (2024)](ohjelmisto/hamelnin-pillipiipari)
 
           [Hyppynarutus (2025)](ohjelmisto/hyppynarutus)
-        bio_en: >-
-          [The pied piper of Hamelin
-          (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+        bio_en: |-
+          [The pied piper of Hamelin (2024)](ohjelmisto/hamelnin-pillipiipari)
 
-
-          [Jump roping (2025)](en/ohjelmisto/hyppynarutus)
+          [Jump roping (2025)](ohjelmisto/hyppynarutus)
       - name: Karel Šimek
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
         bio_fi: "[Fades away (2021)](ohjelmisto/fades-away)"
-        bio_en: "[Fades away (2021)](en/ohjelmisto/fades-away)"
+        bio_en: "[Fades away (2021)](ohjelmisto/fades-away)"
       - name: Veera Syvävirta
         title_fi: Tanssija
         title_en: Dancer
         bio_fi: "[Kertomus seitsemästä hirtetystä
           (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
         bio_en: "[The story of the seven hanged
-          (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)"
+          (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
       - name: Jarno Tastula
         title_fi: Muusikko
         title_en: Musician
@@ -1123,23 +1117,22 @@ sections:
         bio_fi: "[Kertomus seitsemästä hirtetystä
           (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
         bio_en: "[A story of the seven hanged
-          (2019)](en/ohjelmisto/kertomus-seitsemasta-hirtetysta)"
+          (2019)](ohjelmisto/kertomus-seitsemasta-hirtetysta)"
       - name: Janne Teivainen
         title_fi: Valo- ja Lavastussunnittelija
         title_en: Lighting and Set designer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773403145526-Teivainen.webp?alt=media
         bio_fi: >-
-          [Mie oon kuitenki onnellinen
-          (2009)](https://rimpparemmi.netlify.app/ohjelmisto/moko)
+          [Mie oon kuitenki onnellinen (2009)](ohjelmisto/moko)
 
 
-          [Häkkipolkka (2010)](https://rimpparemmi.netlify.app/ohjelmisto/hakkipolkka)
+          [Häkkipolkka (2010)](ohjelmisto/hakkipolkka)
 
 
-          [Leiblied (2015)](https://rimpparemmi.netlify.app/ohjelmisto/leiblied)
+          [Leiblied (2015)](ohjelmisto/leiblied)
 
 
-          [Kymmenen laula naisesta (2017)](https://rimpparemmi.netlify.app/ohjelmisto/kymmenen-laulua-naisesta)
+          [Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
 
           [Joulushow - Aallon harjalla (2024)](ohjelmisto/aallon-harjalla-1)
@@ -1153,29 +1146,28 @@ sections:
 
           [Joulushow - Rytmiä ja roiskeita (2025)](ohjelmisto/rytmia-ja-roiskeita)
         bio_en: >-
-          [But I'm happy
-          anyways](https://rimpparemmi.netlify.app/en/ohjelmisto/moko) (2009)
+          [But I'm happy anyways](ohjelmisto/moko) (2009)
 
 
-          [Caged polka](https://rimpparemmi.netlify.app/en/ohjelmisto/hakkipolkka) (2010)
+          [Caged polka](ohjelmisto/hakkipolkka) (2010)
 
 
-          [Leiblied](https://rimpparemmi.netlify.app/en/ohjelmisto/leiblied) (2015)
+          [Leiblied](ohjelmisto/leiblied) (2015)
 
 
-          [Ten songs about a woman (2017)](https://rimpparemmi.netlify.app/en/ohjelmisto/kymmenen-laulua-naisesta)
+          [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
 
-          [Christmas show - Riding the wave (2024)](en/ohjelmisto/aallon-harjalla-1)
+          [Christmas show - Riding the wave (2024)](ohjelmisto/aallon-harjalla-1)
 
 
-          [Male Live (2025)](en/ohjelmisto/uroslive)
+          [Male Live (2025)](ohjelmisto/uroslive)
 
 
-          [Forbidden moves (2025)](en/ohjelmisto/kielletyt-liikkeet)
+          [Forbidden moves (2025)](ohjelmisto/kielletyt-liikkeet)
 
 
-          [Christmas show - Rhythm and splash (2025)](en/ohjelmisto/rytmia-ja-roiskeita)
+          [Christmas show - Rhythm and splash (2025)](ohjelmisto/rytmia-ja-roiskeita)
       - name: Jaakko Toivonen
         title_fi: Koreografi, Ohjaaja
         title_en: Choreographer, Director
@@ -1185,9 +1177,9 @@ sections:
 
           [Hyppynarutus (2025)](ohjelmisto/hyppynarutus)
         bio_en: |-
-          [The pied piper of Hameln (2024)](en/ohjelmisto/hamelnin-pillipiipari)
+          [The pied piper of Hameln (2024)](ohjelmisto/hamelnin-pillipiipari)
 
-          [Jump Roping (2025)](en/ohjelmisto/hyppynarutus)
+          [Jump Roping (2025)](ohjelmisto/hyppynarutus)
       - name: Valtteri Valo
         title_fi: Muusikko
         title_en: Musician
@@ -1240,52 +1232,52 @@ sections:
 
           [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
         bio_en: >-
-          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+          [The duck lake (2009)](ohjelmisto/ankkalampi)
 
 
-          [Caged polka (2010)](en/ohjelmisto/hakkipolkka)
+          [Caged polka (2010)](ohjelmisto/hakkipolkka)
 
 
-          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+          [Me and the moon (2010)](ohjelmisto/mina-ja-kuu)
 
 
-          [Charmers and pleasure tax (2011)](en/ohjelmisto/huhu)
+          [Charmers and pleasure tax (2011)](ohjelmisto/huhu)
 
 
-          [Sahara (2011)](en/ohjelmisto/sahara)
+          [Sahara (2011)](ohjelmisto/sahara)
 
 
-          [Christmas wish (2011)](en/ohjelmisto/christmas-wish)
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
 
 
-          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
 
 
-          [Lad's ballad (2012)](en/ohjelmisto/jatkan-balladi)
+          [Lad's ballad (2012)](ohjelmisto/jatkan-balladi)
 
 
-          [Dreams (2012)](en/ohjelmisto/dreams)
+          [Dreams (2012)](ohjelmisto/dreams)
 
 
-          [YOLO (2014)](en/ohjelmisto/yolo)
+          [YOLO (2014)](ohjelmisto/yolo)
 
 
-          [Cattle in an arctic paradise (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)
+          [Cattle in an arctic paradise (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
 
 
-          [The Fools (2015)](en/ohjelmisto/holmolaiset)
+          [The Fools (2015)](ohjelmisto/holmolaiset)
 
 
-          [Leiblied (2015)](en/ohjelmisto/leiblied)
+          [Leiblied (2015)](ohjelmisto/leiblied)
 
 
-          [The director's day off (2017)](en/ohjelmisto/johtajan-vapaapaiva)
+          [The director's day off (2017)](ohjelmisto/johtajan-vapaapaiva)
 
 
-          [Ten songs about a woman (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)
+          [Ten songs about a woman (2017)](ohjelmisto/kymmenen-laulua-naisesta)
 
 
-          [Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
       - name: Panu Varstala
         title_fi: Koreografi
         title_en: Choreographer
@@ -1297,26 +1289,25 @@ sections:
         bio_en: |-
           Photo: Aki Loponen
 
-          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+          [Me and the moon (2010)](ohjelmisto/mina-ja-kuu)
       - name: Milla Virtanen
         title_fi: Koreografi
         title_en: Choreographer
         bio_fi: "[Kolmen näytöksen tragedia
           (2022)](ohjelmisto/kolmen-naytoksen-tragedia)"
-        bio_en: "[A tragedy in three acts
-          (2022)](en/ohjelmisto/kolmen-naytoksen-tragedia)"
+        bio_en: "[A tragedy in three acts (2022)](ohjelmisto/kolmen-naytoksen-tragedia)"
       - name: Aino Voutilainen
         title_fi: Esiintyjä
         title_en: Performer
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
-        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
       - name: Riikka Vuorenmaa
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
         bio_fi: "[HuiJaUsko (2012)](ohjelmisto/huijausko)"
-        bio_en: "[HuiJaUsko (2012)](en/ohjelmisto/huijausko)"
+        bio_en: "[HuiJaUsko (2012)](ohjelmisto/huijausko)"
       - name: Heidi Väätänen
         title_fi: Dramaturgi
         title_en: Dramaturg
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
-        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
