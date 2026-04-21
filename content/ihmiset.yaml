@@ -1320,6 +1320,8 @@ sections:
       - name: Riikka Vuorenmaa
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
+        bio_fi: "[HuiJaUsko (2012)](ohjelmisto/huijausko)"
+        bio_en: "[HuiJaUsko (2012)](en/ohjelmisto/huijausko)"
       - name: Heidi Väätänen
         title_fi: Dramaturgi
         title_en: Dramaturg
