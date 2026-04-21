@@ -1199,6 +1199,100 @@ sections:
         title_fi: Muusikko
         title_en: Musician
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584402979-Valo.webp?alt=media
+        bio_fi: >-
+          [Ankkalampi (2009)](ohjelmisto/ankkalampi)
+
+
+          [Häkkipolkka (2010)](ohjelmisto/hakkipolkka)
+
+
+          [Minä ja kuu (2010)](ohjelmisto/mina-ja-kuu)
+
+
+          [Hurmureita ja huviveroa (2011)](ohjelmisto/huhu)
+
+
+          [Sahara (2011)](ohjelmisto/sahara)
+
+
+          [Christmas wish (2011)](ohjelmisto/christmas-wish)
+
+
+          [HuiJaUsko (2012)](ohjelmisto/huijausko)
+
+
+          [Jätkänballadi (2012)](ohjelmisto/jatkan-balladi)
+
+
+          [Dreams (2012)](ohjelmisto/dreams)
+
+
+          [YOLO (2014)](ohjelmisto/yolo)
+
+
+          [Karja arktisessa paratiisissa (2014)](ohjelmisto/karja-akrtisessa-paratiisissa)
+
+
+          [Hölmöläiset (2015)](ohjelmisto/holmolaiset)
+
+
+          [Leiblied (2015)](ohjelmisto/leiblied)
+
+
+          [Johtajan vapaapäivä (2017)](ohjelmisto/johtajan-vapaapaiva)
+
+
+          [Kymmenen laulua naisesta (2017)](ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [Looking for REIDAR (2018)](ohjelmisto/looking-for-reidar)
+        bio_en: >-
+          [The duck lake (2009)](en/ohjelmisto/ankkalampi)
+
+
+          [Caged polka (2010)](en/ohjelmisto/hakkipolkka)
+
+
+          [Me and the moon (2010)](en/ohjelmisto/mina-ja-kuu)
+
+
+          [Charmers and pleasure tax (2011)](en/ohjelmisto/huhu)
+
+
+          [Sahara (2011)](en/ohjelmisto/sahara)
+
+
+          [Christmas wish (2011)](en/ohjelmisto/christmas-wish)
+
+
+          [HuiJaUsko (2012)](en/ohjelmisto/huijausko)
+
+
+          [Lad's ballad (2012)](en/ohjelmisto/jatkan-balladi)
+
+
+          [Dreams (2012)](en/ohjelmisto/dreams)
+
+
+          [YOLO (2014)](en/ohjelmisto/yolo)
+
+
+          [Cattle in an arctic paradise (2014)](en/ohjelmisto/karja-akrtisessa-paratiisissa)
+
+
+          [The Fools (2015)](en/ohjelmisto/holmolaiset)
+
+
+          [Leiblied (2015)](en/ohjelmisto/leiblied)
+
+
+          [The director's day off (2017)](en/ohjelmisto/johtajan-vapaapaiva)
+
+
+          [Ten songs about a woman (2017)](en/ohjelmisto/kymmenen-laulua-naisesta)
+
+
+          [Looking for REIDAR (2018)](en/ohjelmisto/looking-for-reidar)
       - name: Panu Varstala
         title_fi: Koreografi
         title_en: Choreographer
