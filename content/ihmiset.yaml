@@ -1315,6 +1315,8 @@ sections:
       - name: Aino Voutilainen
         title_fi: Esiintyjä
         title_en: Performer
+        bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
+        bio_en: "[You vomited on jupiter (2016)](en/ohjelmisto/oksensitte-jupiteria)"
       - name: Riikka Vuorenmaa
         title_fi: Valosuunnittelija
         title_en: Lighting Designer
