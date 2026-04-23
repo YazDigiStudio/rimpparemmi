@@ -458,6 +458,12 @@ sections:
         title_en: Musician
         bio_fi: "[Jaques Brel - Valssiin syntiseen](ohjelmisto/valssiin-syntiseen)"
         bio_en: "[Jaques Brel - A sinful waltz](ohjelmisto/valssiin-syntiseen)"
+      - name: Johanna Keiski
+        title_fi: Tanssija
+        title_en: Dancer
+        bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
+        bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
+        image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776955006836-Keiski.webp?alt=media
       - name: Sampo Kerola
         title_fi: Koreografi
         title_en: Choreographer
@@ -473,11 +479,6 @@ sections:
         title_fi: Koreografi
         title_en: Choreographer
         image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1776584822326-Knif.webp?alt=media
-        bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
-        bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
-      - name: Johanna Keiski
-        title_fi: Tanssija
-        title_en: Dancer
         bio_fi: "[Tiloja / Avaruuksia (2020)](ohjelmisto/tiloja-avaruuksia)"
         bio_en: "[Spaces / Universes (2020)](ohjelmisto/tiloja-avaruuksia)"
       - name: Aku Koivukangas
