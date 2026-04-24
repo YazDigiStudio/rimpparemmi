@@ -1,6 +1,6 @@
 id: remmi-liveklubi-a-fistful-of-funk
-title_fi: "Remmi Liveklubi: Will Funk For Food - A Fistful of Funk"
-title_en: "Remmi Live Club: Will Funk For Food - A Fistful of Funk"
+title_fi: Will Funk For Food - A Fistful of Funk
+title_en: Will Funk For Food - A Fistful of Funk
 subtitle_fi: Katutanssia, absurdia teatteria ja livemusiikkia
 subtitle_en: Street dance, absurd theatre and live music
 status: active
@@ -81,11 +81,11 @@ additional_info_fi: Rovaniemellä 9.5.2026
 additional_info_en: In Rovaniemi 9.5.2025
 sort_order: 10
 ticket_url_fallback: https://www.netticket.fi/will-funk-for-food-a-fistful-of-funk-rovaniemi
-badge_fi: Vierailu
-badge_en: Guest
+badge_fi: Remmi Liveklubi
+badge_en: Remmi Liveclub
 is_touring: false
 vierailuesitys: true
-duration_fi: ""
-duration_en: ""
+duration_fi: "65"
+duration_en: "65"
 age_recommendation_fi: ""
 age_recommendation_en: ""
