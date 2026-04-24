@@ -1,7 +1,7 @@
 id: adele-sauros-quartet
 title_fi: Adele Sauros quartet
 title_en: Adele Sauros quartet
-subtitle_fi: Livemusiikkia
+subtitle_fi: Live musiikkia
 subtitle_en: Live Music
 status: archive
 category: general
@@ -53,6 +53,7 @@ additional_info_fi: Remmi Liveklubilla 12.4.2024
 additional_info_en: In Remmi Liveclub 12.4.2024
 sort_order: 55
 ticket_url_fallback: Remmi Liveklubi
-badge_fi: Remmi Liveclub
+badge_fi: Remmi Liveklubi
+badge_en: Remmi Liveclub
 is_touring: false
 vierailuesitys: true
