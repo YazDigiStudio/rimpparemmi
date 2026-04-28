@@ -2,7 +2,7 @@
 // Highlighted days are clickable and reveal event details + ticket link below the grid.
 // Events come as props; will be driven by CMS data via getStaticProps in future.
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { colors } from "@/styles/colors";
 import { toEmbedUrl, isEmbedTicket } from "@/lib/netticketUtils";
@@ -63,10 +63,15 @@ export default function CalendarWidget({
   selectedProductionId,
   hideTitle = false,
 }: Props) {
-  const today = new Date();
-  const [viewDate, setViewDate] = useState(
-    new Date(today.getFullYear(), today.getMonth(), 1)
-  );
+  const [today, setToday] = useState<Date | null>(null);
+  const [viewDate, setViewDate] = useState(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
+
+  useEffect(() => {
+    setToday(new Date());
+  }, []);
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   const year = viewDate.getFullYear();
@@ -104,10 +109,14 @@ export default function CalendarWidget({
     }
   };
 
-  const isToday = (day: number): boolean =>
-    day === today.getDate() &&
-    month === today.getMonth() &&
-    year === today.getFullYear();
+  const isToday = (day: number): boolean => {
+    if (!today) return false;
+    return (
+      day === today.getDate() &&
+      month === today.getMonth() &&
+      year === today.getFullYear()
+    );
+  };
 
   // Grid cells: null = empty padding slot, number = day of month
   const cells: (number | null)[] = [
