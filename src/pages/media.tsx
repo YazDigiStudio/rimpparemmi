@@ -1,7 +1,5 @@
 // Media page — /media
-// Tab buttons: one per active production with production_images, plus optional
-// "Yleinen media" tab if media.yaml has items.
-// Production tabs show a photo gallery. General media tab shows videos, images, links.
+// Two sections: Pressikuvat (press photos per production) and Videot (YouTube videos from CMS).
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -25,24 +23,28 @@ const copy = {
   fi: {
     meta: "Media – Tanssiteatteri Rimpparemmi",
     pageTitle: "Media",
-    generalTab: "Yleinen media",
+    pressImages: "Pressikuvat",
+    videos: "Videot",
     photo: "Kuva",
     downloadImage: "Lataa kuva",
     downloadZip: "Lataa kuvat (ZIP)",
     close: "Sulje",
+    noVideos: "Ei videoita.",
   },
   en: {
     meta: "Media – Dance Theatre Rimpparemmi",
     pageTitle: "Media",
-    generalTab: "General media",
+    pressImages: "Press images",
+    videos: "Videos",
     photo: "Photo",
     downloadImage: "Download image",
     downloadZip: "Download photos (ZIP)",
     close: "Close",
+    noVideos: "No videos.",
   },
 } as const;
 
-type Tab = { kind: "production"; production: Production } | { kind: "general" };
+type Section = "press" | "videos";
 
 type Props = {
   productions: Production[];
@@ -55,17 +57,26 @@ type ModalImage = {
   alt?: string;
 };
 
-function normalizeUrl(url: string): string {
-  const trimmed = url.trim();
-  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
-  return "https://" + trimmed;
-}
-
 function toOriginalUrl(url: string): string {
   return url
     .replace(/%2Fweb%2F/i, "%2Foriginals%2F")
     .replace(/\.webp(\?|$)/, ".jpg$1");
 }
+
+const sectionBtnStyle = (active: boolean): React.CSSProperties => ({
+  padding: "0.6rem 1.5rem",
+  borderRadius: "2px",
+  fontSize: "0.85rem",
+  fontWeight: 700,
+  letterSpacing: "0.06em",
+  textTransform: "uppercase",
+  cursor: "pointer",
+  border: `2px solid ${colors.nearBlack}`,
+  backgroundColor: active ? colors.nearBlack : "transparent",
+  color: active ? colors.white : colors.nearBlack,
+  transition: "background-color 0.15s, color 0.15s",
+  whiteSpace: "nowrap" as const,
+});
 
 const tabBtnStyle = (active: boolean): React.CSSProperties => ({
   padding: "0.5rem 1.25rem",
@@ -267,239 +278,63 @@ function PhotoGrid({ production, locale, onImageClick }: {
   );
 }
 
-
-function SectionHeading({ item, locale }: {
-  item: { title_fi?: string; title_en?: string; subtitle_fi?: string; subtitle_en?: string };
-  locale: Locale;
-}) {
-  const title = locale === "fi" ? item.title_fi : (item.title_en ?? item.title_fi);
-  const subtitle = locale === "fi" ? item.subtitle_fi : (item.subtitle_en ?? item.subtitle_fi);
-  if (!title && !subtitle) return null;
-  return (
-    <div style={{ marginBottom: "0.75rem" }}>
-      {title && (
-        <h2 style={{
-          color: colors.nearBlack,
-          fontSize: "clamp(1rem, 2vw, 1.3rem)",
-          fontWeight: 700,
-          letterSpacing: "0.05em",
-          textTransform: "uppercase",
-          lineHeight: 1.2,
-        }}>
-          {title}
-        </h2>
-      )}
-      {subtitle && (
-        <p style={{ color: colors.muted, fontSize: "0.85rem", marginTop: "0.25rem" }}>
-          {subtitle}
-        </p>
-      )}
-    </div>
-  );
-}
-
-function GeneralMedia({ items, locale, onImageClick }: {
-  items: MediaItem[];
-  locale: Locale;
-  onImageClick: (img: ModalImage) => void;
-}) {
+function VideoList({ items, locale }: { items: MediaItem[]; locale: Locale }) {
   const t = copy[locale];
 
-  // Group consecutive images without titles together for a grid layout
-  type Chunk = { kind: "image"; items: Extract<MediaItem, { type: "image" }>[] }
-    | { kind: "single"; item: MediaItem };
-
-  const chunks: Chunk[] = [];
-  for (const item of items) {
-    if (item.type === "image" && !item.title_fi && !item.title_en) {
-      const last = chunks[chunks.length - 1];
-      if (last?.kind === "image") {
-        last.items.push(item);
-      } else {
-        chunks.push({ kind: "image", items: [item] });
-      }
-    } else {
-      chunks.push({ kind: "single", item });
-    }
+  if (items.length === 0) {
+    return <p style={{ color: colors.muted, fontSize: "0.9rem" }}>{t.noVideos}</p>;
   }
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-      {chunks.map((chunk, ci) => {
-        if (chunk.kind === "image") {
-          return (
-            <div
-              key={ci}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-                gap: "1rem",
-              }}
-            >
-              {chunk.items.map((img, ii) => {
-                const alt = locale === "fi" ? (img.alt_fi ?? "") : (img.alt_en ?? img.alt_fi ?? "");
-                return (
-                  <button
-                    key={ii}
-                    onClick={() => onImageClick({
-                      src: img.src,
-                      photographer: img.photographer,
-                      alt,
-                    })}
-                    style={{
-                      display: "block", background: "none", border: "none",
-                      padding: 0, cursor: "pointer", textAlign: "left",
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: "relative",
-                        aspectRatio: "3/2",
-                        overflow: "hidden",
-                        borderRadius: "4px",
-                      }}
-                    >
-                      <Image
-                        src={img.src}
-                        alt={alt}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      {img.photographer && (
-                        <span
-                          style={{
-                            position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                            backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                            fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                            pointerEvents: "none",
-                          }}
-                        >
-                          {t.photo}: {img.photographer}
-                        </span>
-                      )}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          );
-        }
-
-        const { item } = chunk;
-
-        if (item.type === "image") {
-          // Single image with title — natural aspect ratio, centered
-          const alt = locale === "fi" ? (item.alt_fi ?? "") : (item.alt_en ?? item.alt_fi ?? "");
-          return (
-            <div key={ci}>
-              <SectionHeading item={item} locale={locale} />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-              <button
-                onClick={() => onImageClick({ src: item.src, photographer: item.photographer, alt })}
-                style={{ display: "block", background: "none", border: "none", padding: 0, cursor: "pointer", position: "relative", maxWidth: "800px" }}
-              >
-                <Image
-                  src={item.src}
-                  alt={alt}
-                  width={0}
-                  height={0}
-                  sizes="(max-width: 800px) 100vw, 800px"
-                  style={{ width: "100%", height: "auto", borderRadius: "4px", display: "block" }}
-                />
-                {item.photographer && (
-                  <span style={{
-                    position: "absolute", bottom: "0.4rem", right: "0.5rem",
-                    backgroundColor: "rgba(0,0,0,0.45)", color: "#fff",
-                    fontSize: "0.65rem", padding: "0.15rem 0.4rem", borderRadius: "2px",
-                    pointerEvents: "none",
+      {items.map((item, i) => {
+        const title = locale === "fi" ? item.title_fi : (item.title_en ?? item.title_fi);
+        const subtitle = locale === "fi" ? item.subtitle_fi : (item.subtitle_en ?? item.subtitle_fi);
+        return (
+          <div key={i}>
+            {(title || subtitle) && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                {title && (
+                  <h2 style={{
+                    color: colors.nearBlack,
+                    fontSize: "clamp(1rem, 2vw, 1.3rem)",
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    lineHeight: 1.2,
                   }}>
-                    {t.photo}: {item.photographer}
-                  </span>
+                    {title}
+                  </h2>
                 )}
-              </button>
+                {subtitle && (
+                  <p style={{ color: colors.muted, fontSize: "0.85rem", marginTop: "0.25rem" }}>
+                    {subtitle}
+                  </p>
+                )}
               </div>
-            </div>
-          );
-        }
-
-        if (item.type === "video") {
-          return (
-            <div key={ci}>
-              <SectionHeading item={item} locale={locale} />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <div
-                  style={{
-                    position: "relative",
-                    aspectRatio: "16/9",
-                    width: "100%",
-                    maxWidth: "800px",
-                    borderRadius: "4px",
-                    overflow: "hidden",
-                    backgroundColor: "#000",
-                  }}
-                >
-                  <iframe
-                    src={toNoCookiesEmbed(item.url)}
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        }
-
-        if (item.type === "link") {
-          const label = locale === "fi" ? item.label_fi : (item.label_en ?? item.label_fi);
-          const desc = locale === "fi" ? item.description_fi : (item.description_en ?? item.description_fi);
-          return (
-            <div key={ci}>
-              <SectionHeading item={item} locale={locale} />
-              <div style={{ display: "flex", justifyContent: "center" }}>
-              <a
-                href={normalizeUrl(item.url)}
-                target="_blank"
-                rel="noopener noreferrer"
+            )}
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.75rem",
-                  backgroundColor: colors.white,
-                  border: `1px solid ${colors.borderLight}`,
+                  position: "relative",
+                  aspectRatio: "16/9",
+                  width: "100%",
+                  maxWidth: "800px",
                   borderRadius: "4px",
-                  padding: "1rem 1.5rem",
-                  textDecoration: "none",
-                  maxWidth: "600px",
-                  transition: "box-shadow 0.15s ease",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
+                  overflow: "hidden",
+                  backgroundColor: "#000",
                 }}
-                className="media-link-card"
               >
-                <div style={{ flex: 1 }}>
-                  <span
-                    style={{
-                      color: colors.brandFuchsia,
-                      fontSize: "0.95rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.03em",
-                    }}
-                  >
-                    {label}
-                  </span>
-                  {desc && (
-                    <span style={{ display: "block", color: colors.muted, fontSize: "0.8rem", marginTop: "0.2rem" }}>{desc}</span>
-                  )}
-                </div>
-                <span style={{ color: colors.brandFuchsia, fontSize: "1.1rem", flexShrink: 0 }}>→</span>
-              </a>
+                <iframe
+                  src={toNoCookiesEmbed(item.url)}
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none" }}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
-          );
-        }
-
-        return null;
+          </div>
+        );
       })}
     </div>
   );
@@ -510,7 +345,6 @@ export default function MediaPage({ productions, mediaData }: Props) {
   const locale: Locale = routerLocale === "en" ? "en" : "fi";
   const t = copy[locale];
 
-  // All productions with at least one production image, sorted by sort_order
   const showActive = mediaData.show_active ?? true;
   const showArchived = mediaData.show_archived ?? false;
   const mediaProductions = productions
@@ -522,15 +356,8 @@ export default function MediaPage({ productions, mediaData }: Props) {
     })
     .sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
 
-  const hasGeneralMedia = mediaData.items.length > 0;
-
-  const tabs: Tab[] = [
-    ...mediaProductions.map((p): Tab => ({ kind: "production", production: p })),
-    ...(hasGeneralMedia ? [{ kind: "general" } as Tab] : []),
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeTab = tabs[activeIndex];
+  const [activeSection, setActiveSection] = useState<Section>("press");
+  const [activePressIndex, setActivePressIndex] = useState(0);
   const [modalImage, setModalImage] = useState<ModalImage | null>(null);
 
   return (
@@ -538,8 +365,8 @@ export default function MediaPage({ productions, mediaData }: Props) {
       <Seo
         title={t.meta}
         description={locale === "fi"
-          ? "Tanssiteatteri Rimpparemmin mediasisältö: videot, kuvat ja lehdistömateriaali."
-          : "Dance Theatre Rimpparemmi media: videos, photos and press material."}
+          ? "Tanssiteatteri Rimpparemmin mediasisältö: videot ja lehdistömateriaali."
+          : "Dance Theatre Rimpparemmi media: videos and press material."}
         path="/media"
         locale={locale}
         breadcrumbs={[
@@ -570,51 +397,53 @@ export default function MediaPage({ productions, mediaData }: Props) {
             {t.pageTitle}
           </h1>
 
-          {tabs.length === 0 ? null : (
-            <>
-              {/* Tab buttons */}
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "0.5rem",
-                  marginBottom: "2.5rem",
-                }}
-              >
-                {tabs.map((tab, i) => {
-                  const label = tab.kind === "general"
-                    ? t.generalTab
-                    : (locale === "fi"
-                        ? tab.production.title_fi
-                        : (tab.production.title_en ?? tab.production.title_fi));
-                  return (
-                    <button
-                      key={i}
-                      style={tabBtnStyle(i === activeIndex)}
-                      onClick={() => setActiveIndex(i)}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
+          {/* Section buttons */}
+          <div style={{ display: "flex", gap: "0.75rem", marginBottom: "2.5rem" }}>
+            <button
+              style={sectionBtnStyle(activeSection === "press")}
+              onClick={() => setActiveSection("press")}
+            >
+              {t.pressImages}
+            </button>
+            <button
+              style={sectionBtnStyle(activeSection === "videos")}
+              onClick={() => setActiveSection("videos")}
+            >
+              {t.videos}
+            </button>
+          </div>
 
-              {/* Tab content */}
-              {activeTab?.kind === "production" && (
-                <PhotoGrid
-                  production={activeTab.production}
-                  locale={locale}
-                  onImageClick={setModalImage}
-                />
-              )}
-              {activeTab?.kind === "general" && (
-                <GeneralMedia
-                  items={mediaData.items}
-                  locale={locale}
-                  onImageClick={setModalImage}
-                />
+          {/* Pressikuvat */}
+          {activeSection === "press" && (
+            <>
+              {mediaProductions.length === 0 ? null : (
+                <>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2rem" }}>
+                    {mediaProductions.map((prod, i) => (
+                      <button
+                        key={i}
+                        style={tabBtnStyle(i === activePressIndex)}
+                        onClick={() => setActivePressIndex(i)}
+                      >
+                        {locale === "fi" ? prod.title_fi : (prod.title_en ?? prod.title_fi)}
+                      </button>
+                    ))}
+                  </div>
+                  {mediaProductions[activePressIndex] && (
+                    <PhotoGrid
+                      production={mediaProductions[activePressIndex]}
+                      locale={locale}
+                      onImageClick={setModalImage}
+                    />
+                  )}
+                </>
               )}
             </>
+          )}
+
+          {/* Videot */}
+          {activeSection === "videos" && (
+            <VideoList items={mediaData.items} locale={locale} />
           )}
 
         </div>

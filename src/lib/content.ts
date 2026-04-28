@@ -202,32 +202,7 @@ export type MediaVideoItem = {
   subtitle_en?: string;
 };
 
-export type MediaImageItem = {
-  type: "image";
-  src: string;
-  photographer?: string;
-  alt_fi?: string;
-  alt_en?: string;
-  title_fi?: string;
-  title_en?: string;
-  subtitle_fi?: string;
-  subtitle_en?: string;
-};
-
-export type MediaLinkItem = {
-  type: "link";
-  url: string;
-  label_fi: string;
-  label_en?: string;
-  description_fi?: string;
-  description_en?: string;
-  title_fi?: string;
-  title_en?: string;
-  subtitle_fi?: string;
-  subtitle_en?: string;
-};
-
-export type MediaItem = MediaVideoItem | MediaImageItem | MediaLinkItem;
+export type MediaItem = MediaVideoItem;
 
 export type MediaData = {
   show_active?: boolean;
