@@ -17,6 +17,7 @@ import {
   type Performance,
 } from "@/lib/content";
 import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
+import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 
 type Locale = "fi" | "en";
 
@@ -364,6 +365,33 @@ export default function ProductionPage({ production, performances }: Props) {
               </div>
             )}
           </div>
+
+          {/* Trailer */}
+          {production.trailer_url && (
+            <div style={{ marginTop: "3.5rem" }}>
+              <h2
+                style={{
+                  color: colors.nearBlack,
+                  fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                {locale === "fi" ? "Traileri" : "Trailer"}
+              </h2>
+              <div style={{ position: "relative", aspectRatio: "16/9", maxWidth: "640px" }}>
+                <iframe
+                  src={toNoCookiesEmbed(production.trailer_url)}
+                  title={locale === "fi" ? production.title_fi : (production.title_en ?? production.title_fi)}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+                />
+              </div>
+            </div>
+          )}
 
           {/* Press photos */}
           {pressImages.length > 0 && (

@@ -666,6 +666,12 @@ collections:
           - { label: "Kuva / Image", name: "src", widget: "image" }
           - { label: "Valokuvaaja / Photographer", name: "photographer", widget: "string", required: false }
 
+      - label: "Traileri / Trailer URL"
+        name: "trailer_url"
+        widget: "string"
+        required: false
+        hint: "YouTube URL — muunnetaan automaattisesti evästettömään muotoon"
+
       - label: "Pressikuvat ZIP-paketti / Press photos ZIP"
         name: "press_zip_url"
         widget: "file"
