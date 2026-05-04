@@ -1,3 +1,21 @@
 show_active: true
 show_archived: false
-items: []
+items:
+  - title_fi: Kylttyyri
+    url: https://www.youtube.com/watch?v=eakMsRtkGxc&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4
+    title_en: Kylttyyri
+  - title_fi: Lähellä
+    title_en: Closeness
+    url: https://www.youtube.com/watch?v=avSe5n02unc&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=2
+  - title_fi: Mööse
+    title_en: Mööse
+    url: https://www.youtube.com/watch?v=cLiN98CyJE8&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=3
+  - title_fi: Sillat
+    title_en: Bridges
+    url: https://www.youtube.com/watch?v=VFPJRWkgRXA&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=4
+  - title_fi: Sammonkatu
+    title_en: Sammonkatu
+    url: https://www.youtube.com/watch?v=RnIrfa_7Ikw&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=5
+  - title_fi: Kuppilan lohet
+    title_en: Kuppilan lohet
+    url: https://www.youtube.com/watch?v=GysF8QSIr84&list=PLOnhzzdoD-FadFZqCUqXjC5tfSlctwHd4&index=6
