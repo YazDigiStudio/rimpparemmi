@@ -53,7 +53,7 @@ additional_info_fi: Remmi Liveklubilla 12.4.2024
 additional_info_en: In Remmi Liveclub 12.4.2024
 sort_order: 55
 ticket_url_fallback: Remmi Liveklubi
-badge_fi: Remmi Liveklubi
-badge_en: Remmi Liveclub
+badge_fi: Vierailu
+badge_en: Guest
 is_touring: false
 vierailuesitys: true
