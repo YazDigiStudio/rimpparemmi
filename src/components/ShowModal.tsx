@@ -317,25 +317,27 @@ export default function ShowModal({ info, onClose }: Props) {
                   >
                     {perf.date}{perf.time ? ` · ${perf.time}` : ""}
                   </span>
-                  <a
-                    href={toEmbedUrl(perf.ticketUrl)}
-                    target={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "_blank"}
-                    rel={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "noopener noreferrer"}
-                    aria-label={`Osta liput – ${info.title} ${perf.date}${perf.time ? ` ${perf.time}` : ""}`}
-                    style={{
-                      backgroundColor: colors.brandFuchsia,
-                      color: colors.white,
-                      padding: "0.3rem 0.75rem",
-                      borderRadius: "2px",
-                      fontSize: "0.7rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.05em",
-                      whiteSpace: "nowrap",
-                      flexShrink: 0,
-                    }}
-                  >
-                    Osta liput
-                  </a>
+                  {perf.ticketUrl && (
+                    <a
+                      href={toEmbedUrl(perf.ticketUrl)}
+                      target={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "_blank"}
+                      rel={isEmbedTicket(toEmbedUrl(perf.ticketUrl)) ? undefined : "noopener noreferrer"}
+                      aria-label={`Osta liput – ${info.title} ${perf.date}${perf.time ? ` ${perf.time}` : ""}`}
+                      style={{
+                        backgroundColor: colors.brandFuchsia,
+                        color: colors.white,
+                        padding: "0.3rem 0.75rem",
+                        borderRadius: "2px",
+                        fontSize: "0.7rem",
+                        fontWeight: 600,
+                        letterSpacing: "0.05em",
+                        whiteSpace: "nowrap",
+                        flexShrink: 0,
+                      }}
+                    >
+                      Osta liput
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
