@@ -528,25 +528,27 @@ export default function Home({ productions, performances, homeData }: HomeProps)
                     </button>
                   )}
                 </div>
-                <Link
-                  href={event.ticketUrl}
-                  target={isEmbedTicket(event.ticketUrl) ? undefined : "_blank"}
-                  rel={isEmbedTicket(event.ticketUrl) ? undefined : "noopener noreferrer"}
-                  aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
-                  style={{
-                    backgroundColor: colors.brandFuchsia,
-                    color: colors.white,
-                    padding: "0.35rem 0.65rem",
-                    borderRadius: "2px",
-                    fontSize: "clamp(0.8rem, 1.4vw, 1rem)",
-                    fontWeight: 600,
-                    letterSpacing: "0.05em",
-                    whiteSpace: "nowrap",
-                    flexShrink: 0,
-                  }}
-                >
-                  {t.buyTickets}
-                </Link>
+                {event.ticketUrl && (
+                  <Link
+                    href={event.ticketUrl}
+                    target={isEmbedTicket(event.ticketUrl) ? undefined : "_blank"}
+                    rel={isEmbedTicket(event.ticketUrl) ? undefined : "noopener noreferrer"}
+                    aria-label={`${t.buyTickets} – ${event.title} ${event.date}`}
+                    style={{
+                      backgroundColor: colors.brandFuchsia,
+                      color: colors.white,
+                      padding: "0.35rem 0.65rem",
+                      borderRadius: "2px",
+                      fontSize: "clamp(0.8rem, 1.4vw, 1rem)",
+                      fontWeight: 600,
+                      letterSpacing: "0.05em",
+                      whiteSpace: "nowrap",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {t.buyTickets}
+                  </Link>
+                )}
               </div>
             ))}
             </div>

@@ -324,25 +324,27 @@ export default function CalendarWidget({
                   </button>
                 )}
               </div>
-              <Link
-                href={toEmbedUrl(event.ticketUrl)}
-                target={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "_blank"}
-                rel={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "noopener noreferrer"}
-                aria-label={`${buyTickets} – ${event.title} ${event.date}`}
-                style={{
-                  backgroundColor: colors.brandFuchsia,
-                  color: colors.white,
-                  padding: "0.4rem 0.875rem",
-                  borderRadius: "2px",
-                  fontSize: "0.75rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.05em",
-                  whiteSpace: "nowrap",
-                  flexShrink: 0,
-                }}
-              >
-                {buyTickets}
-              </Link>
+              {event.ticketUrl && (
+                <Link
+                  href={toEmbedUrl(event.ticketUrl)}
+                  target={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "_blank"}
+                  rel={isEmbedTicket(toEmbedUrl(event.ticketUrl)) ? undefined : "noopener noreferrer"}
+                  aria-label={`${buyTickets} – ${event.title} ${event.date}`}
+                  style={{
+                    backgroundColor: colors.brandFuchsia,
+                    color: colors.white,
+                    padding: "0.4rem 0.875rem",
+                    borderRadius: "2px",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.05em",
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
+                  }}
+                >
+                  {buyTickets}
+                </Link>
+              )}
             </div>
           ))}
         </div>
