@@ -51,7 +51,7 @@ info_fi: >-
   Ohjaus: Matti Paloniemi
 
 
-  Esiintyjät: Helmi Järvensivu, Atte Herd, Janette Husso, Karri Kallas, Laura Kallas, Joni Kuokkanen, Viljami Pekkala 
+  Esiintyjät: Helmi Järvensivu, Atte Herd, Janette Husso, Laura Kallas, Joni Kuokkanen, Viljami Pekkala 
 
 
   Dramaturgia: Joni Kuokkanen, Matti Paloniemi
@@ -74,7 +74,7 @@ info_en: >-
   Direction: Matti Paloniemi
 
 
-  Performers: Helmi Järvensivu, Atte Herd, Janette Husso, Karri Kallas, Laura Kallas, Joni Kuokkanen, Viljami Pekkala 
+  Performers: Helmi Järvensivu, Atte Herd, Janette Husso, Laura Kallas, Joni Kuokkanen, Viljami Pekkala 
 
 
   Dramaturgy: Joni Kuokkanen, Matti Paloniemi
@@ -93,14 +93,8 @@ info_en: >-
 
 
   Costume Design: Elina Vasko
-additional_info_fi: |-
-  Liput tulevat myyntiin elokuussa 2026!
-  Ryhmämyynti nyt käynnissä.
-  myynti@rimpparemmi.fi
-additional_info_en: |-
-  Tickets will go on sale in August 2026!
-  Group sales are now open. 
-  myynti@rimpparemmi.fi
+additional_info_fi: ""
+additional_info_en: ""
 sort_order: 10
 badge_fi: syksyn suurteos
 is_touring: false
