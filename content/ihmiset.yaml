@@ -1324,3 +1324,10 @@ sections:
         title_en: Dramaturg
         bio_fi: "[Oksensitte jupiteria (2016)](ohjelmisto/oksensitte-jupiteria)"
         bio_en: "[You vomited on jupiter (2016)](ohjelmisto/oksensitte-jupiteria)"
+      - name: Viljami Pekkala
+        title_fi: Tanssija
+        title_en: Dancer
+        bio_fi: "[Birgitta - linnutkin itkevät taivaalla
+          (2026)](https://rimpparemmi.fi/ohjelmisto/birgitta)"
+        bio_en: "[Birgitta - even the birds weep in the sky
+          (2026)](https://rimpparemmi.fi/en/ohjelmisto/birgitta)"
