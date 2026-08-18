@@ -9,13 +9,13 @@ billing_address_fi: |-
   Välittäjä: Maventa
   Välittäjätunnus: 003721291126
 
-  PDF-laskut: invoice-08713021@kollektor.fi
+  PDF-laskut: FI-08713021@scan.maventa.com
 
   Paperiset laskut osoitteella:
   Rimpparemmi Ry
-  08713021
-  PL 100
-  80020 Kollektor Scan
+  AIFI36060 P.O. Box 110
+  01301
+  Vantaa
 billing_address_en: ""
 contacts:
   - name: Matti Paloniemi
