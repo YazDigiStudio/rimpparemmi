@@ -33,9 +33,6 @@ intro_text_en: >-
 
   Come experience the dancestage of the North.
 hero_slides:
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1789038659756-Birgitta_-_vaaka_1920x1080.webp?alt=media
   - show_on: desktop
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466025253-_DSC0228.webp?alt=media
@@ -45,9 +42,6 @@ hero_slides:
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466064780-_DSC6029.webp?alt=media
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1789038781517-Birgitta_-_vaaka_1920x1080.webp?alt=media
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466084522-_DSC6632.webp?alt=media
