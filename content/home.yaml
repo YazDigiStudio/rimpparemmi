@@ -47,6 +47,9 @@ hero_slides:
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466064780-_DSC6029.webp?alt=media
   - show_on: both
     overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1789038781517-Birgitta_-_vaaka_1920x1080.webp?alt=media
+  - show_on: both
+    overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466084522-_DSC6632.webp?alt=media
   - show_on: both
     overlay_active: false
