@@ -18,11 +18,17 @@ export default function MarkdownText({
   return (
     <ReactMarkdown
       components={{
-        p: ({ children: c }) => (
-          <p style={{ color: colors.nearBlack, fontSize, lineHeight, opacity: 0.85, marginBottom: "1rem" }}>
-            {c}
-          </p>
-        ),
+        p: ({ node, children: c }) => {
+          const onlyChild = node?.children.length === 1 ? node.children[0] : undefined;
+          const isImageOnly =
+            onlyChild?.type === "element" && onlyChild.tagName === "img";
+          if (isImageOnly) return <>{c}</>;
+          return (
+            <p style={{ color: colors.nearBlack, fontSize, lineHeight, opacity: 0.85, marginBottom: "1rem" }}>
+              {c}
+            </p>
+          );
+        },
         h1: ({ children: c }) => (
           <h2 style={{ color: colors.nearBlack, fontSize: "1.6rem", fontWeight: 700, letterSpacing: "0.04em", marginBottom: "0.75rem" }}>
             {c}
