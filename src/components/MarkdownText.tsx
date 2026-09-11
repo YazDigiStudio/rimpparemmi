@@ -79,6 +79,19 @@ export default function MarkdownText({
         li: ({ children: c }) => (
           <li style={{ marginBottom: "0.25rem" }}>{c}</li>
         ),
+        img: ({ src, alt }) => (
+          <img
+            src={typeof src === "string" ? src : undefined}
+            alt={alt ?? ""}
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              borderRadius: "4px",
+              marginBottom: "1rem",
+            }}
+          />
+        ),
         blockquote: ({ children: c }) => (
           <blockquote style={{
             borderLeft: `3px solid ${colors.brandFuchsia}`,
