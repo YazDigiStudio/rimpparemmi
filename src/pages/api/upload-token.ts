@@ -24,17 +24,37 @@ function getAdminApp(): admin.app.App {
   });
 }
 
-async function verifyToken(authHeader: string | undefined): Promise<boolean> {
-  if (!authHeader?.startsWith("Bearer ")) return false;
+type AdminCheck = "unauthorized" | "forbidden" | "ok";
+
+// Verifies the token is valid AND belongs to the admin/staff CMS account —
+// not just any signed-in Firebase user.
+async function verifyAdminToken(authHeader: string | undefined): Promise<AdminCheck> {
+  if (!authHeader?.startsWith("Bearer ")) return "unauthorized";
   const token = authHeader.slice(7);
   try {
     const app = getAdminApp();
-    await admin.auth(app).verifyIdToken(token);
-    return true;
+    const claims = await admin.auth(app).verifyIdToken(token);
+    return claims.admin || claims.staff ? "ok" : "forbidden";
   } catch {
-    return false;
+    return "unauthorized";
   }
 }
+
+const IMAGE_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/heic",
+  "image/heif",
+]);
+const PASS_THROUGH_TYPES = new Set([
+  "application/pdf",
+  "image/svg+xml",
+  "video/mp4",
+  "video/quicktime",
+  "video/webm",
+  "application/zip",
+]);
 
 export default async function handler(
   req: NextApiRequest,
@@ -44,9 +64,12 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const authorized = await verifyToken(req.headers.authorization);
-  if (!authorized) {
+  const authCheck = await verifyAdminToken(req.headers.authorization);
+  if (authCheck === "unauthorized") {
     return res.status(401).json({ error: "Unauthorized" });
+  }
+  if (authCheck === "forbidden") {
+    return res.status(403).json({ error: "Forbidden" });
   }
 
   const { filename, contentType } = req.body as {
@@ -56,6 +79,10 @@ export default async function handler(
 
   if (!filename || !contentType) {
     return res.status(400).json({ error: "Missing filename or contentType" });
+  }
+
+  if (!IMAGE_TYPES.has(contentType) && !PASS_THROUGH_TYPES.has(contentType)) {
+    return res.status(400).json({ error: `Unsupported file type: ${contentType}` });
   }
 
   try {

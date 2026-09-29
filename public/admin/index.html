@@ -10,6 +10,11 @@
   <body>
     <!-- Prevent Decap CMS from auto-initialising so we can register the media adapter first -->
     <script>window.CMS_MANUAL_INIT = true;</script>
+    <!-- Netlify Identity widget — Decap's git-gateway backend already logs in through this
+         same library internally; loading it here just exposes the current login session
+         (window.netlifyIdentity) to other scripts on this page, e.g. the media adapter below,
+         so it can prove who is asking before it requests a Firebase upload token. -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <!-- Firebase Storage media adapter — registers before CMS.init() -->

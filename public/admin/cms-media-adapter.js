@@ -19,7 +19,19 @@ var PROCESS_URL =
   async function getToken() {
     if (cachedToken && Date.now() < tokenExpiresAt) return cachedToken;
 
-    var res = await fetch("/api/cms-token", { method: "POST" });
+    // Prove who is asking: /api/cms-token only mints a Firebase token for a
+    // real, currently logged-in CMS editor — send their Netlify Identity login
+    // token so the server can check that before handing one out.
+    var identityUser = window.netlifyIdentity && window.netlifyIdentity.currentUser();
+    if (!identityUser) {
+      throw new Error("You need to be logged in to the CMS to upload files.");
+    }
+    var identityToken = await identityUser.jwt();
+
+    var res = await fetch("/api/cms-token", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + identityToken },
+    });
     if (!res.ok) throw new Error("Failed to get upload token");
     var data = await res.json();
     cachedToken = data.token;

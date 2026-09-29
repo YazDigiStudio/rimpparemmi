@@ -49,7 +49,8 @@ export const processImage = onRequest(
       return;
     }
 
-    // Verify Firebase Auth token
+    // Verify Firebase Auth token, and that it belongs to the admin/staff CMS
+    // account — not just any signed-in Firebase user.
     const authHeader = req.headers.authorization;
     if (!authHeader?.startsWith("Bearer ")) {
       res.status(401).json({ error: "Unauthorized" });
@@ -57,7 +58,11 @@ export const processImage = onRequest(
     }
 
     try {
-      await admin.auth().verifyIdToken(authHeader.slice(7));
+      const claims = await admin.auth().verifyIdToken(authHeader.slice(7));
+      if (!claims.admin && !claims.staff) {
+        res.status(403).json({ error: "Forbidden" });
+        return;
+      }
     } catch {
       res.status(401).json({ error: "Invalid token" });
       return;
@@ -75,6 +80,14 @@ export const processImage = onRequest(
       res
         .status(400)
         .json({ error: "Missing storagePath, filename, or contentType" });
+      return;
+    }
+
+    // This endpoint only ever processes a file this same flow just staged —
+    // never an arbitrary path elsewhere in the bucket (e.g. an existing
+    // "original" or "web" file, or another production's files).
+    if (!storagePath.startsWith("staging/")) {
+      res.status(400).json({ error: "Invalid storagePath" });
       return;
     }
 
