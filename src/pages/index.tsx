@@ -280,8 +280,18 @@ export default function Home({ productions, performances, homeData }: HomeProps)
         ? prod.additional_info_fi
         : (prod.additional_info_en ?? prod.additional_info_fi);
       const extra = addInfo ? [addInfo] : undefined;
+      // Only upcoming performances — past dates must not show in the modal
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
       const prodPerfs: ShowPerformance[] = performances
-        .filter((p) => p.production_id === prod.id)
+        .filter((p) => {
+          const [yyyy, mm, dd] = p.date.split("-").map(Number);
+          return (
+            p.production_id === prod.id &&
+            new Date(yyyy, mm - 1, dd) >= today
+          );
+        })
+        .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
         .map((p) => {
           const [yyyy, mm, dd] = p.date.split("-");
           return {
