@@ -1,7 +1,8 @@
 id: hupsis
 title_fi: Hupsis!
-title_en: ""
+title_en: Wopsie!
 subtitle_fi: Sanojen ja liikkeiden laboratorio
+subtitle_en: The Words and Movement Lab
 status: active
 category: children
 primary_image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792479107520-Hupsis-1920-1080.webp?alt=media
@@ -9,7 +10,9 @@ short_text_fi: Hupsis! on päiväkoti-ikäisille lapsille suunnattu
   vuorovaikutteinen esitys, jossa kaksi esiintyjä-professoria saapuu lasten
   luokse tutkimaan sanojen, liikkeiden ja musiikin yhteiseloa. Mikä niistä
   onkaan ollut ensin?
-short_text_en: ""
+short_text_en: Whoopsie! is an interactive performance for preschool-aged
+  children, in which two professor-performers visit the children to explore how
+  words, movement and music come together. But which of them came first?
 long_text_fi: >-
   Mistä syntyvät laulu, tanssi ja runo?\
 
@@ -43,7 +46,7 @@ long_text_fi: >-
   Ja koska yksikään kunnon tutkimus ei onnistu ilman apulaisia, myös yleisön pienet tutkijat pääsevät mukaan kokeisiin.
 
 
-  **Hupsis!** on leikkisä ja osallistava esitys sanojen, musiikin ja liikkeen ihmeellisestä yhteiselosta.\
+  **Hupsis!** on leikkisä ja osallistava esitys sanojen, musiikin ja liikkeen ihmeellisestä yhteiselosta.
 
 
   Hinta & Matkakulut + majoitus
@@ -53,24 +56,64 @@ long_text_fi: >-
   Kaksi esitystä 850€ + matkakulut + mahd. majoitus\
 
   Kysy useamman esityksen pakettitarjousta.
+long_text_en: >-
+  Where do song, dance and poetry come from?
+
+
+
+  Professor Sananen and Professor Liikkeinen are two slightly eccentric researchers looking for an answer to a big question. Professor Sananen is convinced that everything begins with words and sounds. Professor Liikkeinen, on the other hand, is absolutely certain that it all starts with movement.
+
+
+  To settle the matter, the professors set up a laboratory of words and movement. There, words, sounds and movements are collected, measured, classified and studied. All very scientifically, of course.
+
+
+  But soon, strange things begin to happen.
+
+
+  Can a word jump? What does fluffy look like? Can movement speak? And what does a bounce sound like?
+
+
+  As words turn into movements, movements into sounds and sounds into melodies, the professors' carefully planned experiment starts to take an unexpected turn. The laboratory fills with dance, music, rhymes and new discoveries.
+
+
+  And since no proper scientific experiment can succeed without assistants, the young researchers in the audience are invited to join in the experiments too!
+
+
+  Whopsie! is a playful and interactive performance exploring the curious ways in which words, music and movement come together.
+
+
+  One performance: €475 + travel expenses and accommodation if required\
+
+  Two performances: €850 + travel expenses and accommodation if required
+
+
+  Contact us for a quote for multiple performance
 info_fi: |-
-  Esiintyjät: Helmi Järvensivu ja Jukka Nurmela
-
-  Ohjaus ja käsikirjoitus: Matti Paloniemi
-
-  Koreografia: Matti Paloniemi ja Helmi Järvensivu
-
-  Sävellys: Jukka Nurmela
-
-  Lavastus/rekvisiitta: Matti Paloniemi
-
+  Esiintyjät: Helmi Järvensivu ja Jukka Nurmela\
+  Ohjaus ja käsikirjoitus: Matti Paloniemi\
+  Koreografia: Matti Paloniemi ja Helmi Järvensivu\
+  Sävellys: Jukka Nurmela\
+  Lavastus/rekvisiitta: Matti Paloniemi\
   Puvut: Matti Paloniemi ja työryhmä
 info_en: |-
-  Tilavaatimukset
-  Esitystila vähintään noin 4m x 4m
+  Performers: Helmi Järvensivu and Jukka Nurmela
+  Direction and Script: Matti Paloniemi
+  Choreography: Matti Paloniemi and Helmi Järvensivu
+  Music: Jukka Nurmela
+  Set Design and Props: Matti Paloniemi
+  Costumes: Matti Paloniemi and the creative team
+additional_info_fi: |-
+  Tilavaatimus
+  Vähintään noin 4m x 4m
+additional_info_en: |-
+  Space Requirements
+  Minimum approximately 4 × 4 m
 sort_order: 10
 badge_fi: Kiertueella
+badge_en: On tour
 is_touring: true
 vierailuesitys: false
 duration_fi: 35 min
+duration_en: 35 min
 age_recommendation_fi: 3-6-vuotiaat
+age_recommendation_en: Ages 3-6
