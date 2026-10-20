@@ -23,6 +23,7 @@ import {
   type HomeData,
 } from "@/lib/content";
 import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
+import { splitInfoLines } from "@/lib/textUtils";
 
 type Locale = "fi" | "en";
 
@@ -273,9 +274,7 @@ export default function Home({ productions, performances, homeData }: HomeProps)
       const infoText = locale === "fi"
         ? prod.info_fi
         : (prod.info_en ?? prod.info_fi);
-      const credits = infoText
-        ? infoText.trim().split("\n").filter(Boolean)
-        : [];
+      const credits = infoText ? splitInfoLines(infoText) : [];
       const addInfo = locale === "fi"
         ? prod.additional_info_fi
         : (prod.additional_info_en ?? prod.additional_info_fi);

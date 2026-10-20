@@ -17,6 +17,7 @@ import {
   type Performance,
 } from "@/lib/content";
 import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
+import { splitInfoLines } from "@/lib/textUtils";
 import { toNoCookiesEmbed } from "@/lib/mediaUtils";
 
 type Locale = "fi" | "en";
@@ -83,9 +84,7 @@ export default function ProductionPage({ production, performances }: Props) {
     return `${parseInt(dd, 10)}.${parseInt(mm, 10)}.${yyyy}`;
   };
 
-  const infoLines = infoText
-    ? infoText.trim().split("\n").filter(Boolean)
-    : [];
+  const infoLines = infoText ? splitInfoLines(infoText) : [];
 
   const pressImages = production.production_images ?? [];
 

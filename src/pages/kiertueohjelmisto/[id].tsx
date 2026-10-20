@@ -12,6 +12,7 @@ import ImageCarousel from "@/components/ImageCarousel";
 import MarkdownText from "@/components/MarkdownText";
 import { colors } from "@/styles/colors";
 import { getProductions, type Production } from "@/lib/content";
+import { splitInfoLines } from "@/lib/textUtils";
 
 type Locale = "fi" | "en";
 
@@ -65,7 +66,7 @@ export default function TourProductionPage({ production }: Props) {
     ? production.age_recommendation_fi
     : (production.age_recommendation_en ?? production.age_recommendation_fi);
 
-  const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
+  const infoLines = infoText ? splitInfoLines(infoText) : [];
   const galleryImages = production.production_images ?? [];
 
   const infoBlockStyle: React.CSSProperties = {

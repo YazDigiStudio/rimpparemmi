@@ -17,6 +17,7 @@ import {
   type SalesEntry,
 } from "@/lib/content";
 import { toNoCookiesEmbed } from "@/lib/mediaUtils";
+import { splitInfoLines } from "@/lib/textUtils";
 
 type Props = { production: Production; sales: SalesEntry };
 
@@ -28,7 +29,7 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
   const duration = production.duration_fi;
   const ageRecommendation = production.age_recommendation_fi;
 
-  const infoLines = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
+  const infoLines = infoText ? splitInfoLines(infoText) : [];
   const techLines = sales.technical_requirements
     ? sales.technical_requirements.trim().split("\n").filter(Boolean)
     : [];

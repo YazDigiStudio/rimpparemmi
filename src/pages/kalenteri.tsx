@@ -24,6 +24,7 @@ import {
   type SectionPageData,
 } from "@/lib/content";
 import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
+import { splitInfoLines } from "@/lib/textUtils";
 
 type Locale = "fi" | "en";
 type View = "calendar" | "tickets";
@@ -125,7 +126,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
       const longText = locale === "fi" ? prod.long_text_fi : (prod.long_text_en ?? prod.long_text_fi);
       const description = longText ? longText.trim().split(/\n\n+/) : [prod.short_text_fi];
       const infoText = locale === "fi" ? prod.info_fi : (prod.info_en ?? prod.info_fi);
-      const credits = infoText ? infoText.trim().split("\n").filter(Boolean) : [];
+      const credits = infoText ? splitInfoLines(infoText) : [];
       const prodPerfs: ShowPerformance[] = performances
         .filter((p) => p.production_id === prod.id && p.date >= today)
         .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
@@ -194,7 +195,7 @@ export default function Kalenteri({ productions, performances, liputData }: Prop
     ? (locale === "fi" ? selectedProduction.info_fi : (selectedProduction.info_en ?? selectedProduction.info_fi))
     : null;
 
-  const infoLines = selectedInfoText ? selectedInfoText.trim().split("\n").filter(Boolean) : [];
+  const infoLines = selectedInfoText ? splitInfoLines(selectedInfoText) : [];
 
   const tabBtn = (active: boolean): React.CSSProperties => ({
     padding: "0.5rem 1.5rem",
