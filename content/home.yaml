@@ -35,10 +35,16 @@ intro_text_en: >-
 hero_slides:
   - show_on: both
     overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1789042340360-IMG_5234.webp?alt=media
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670431356-IMG_5699.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670145601-IMG_5704.webp?alt=media
   - show_on: desktop
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466025253-_DSC0228.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670214872-IMG_5718.webp?alt=media
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1789039643930-IMG_5185.webp?alt=media
@@ -57,4 +63,7 @@ hero_slides:
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466115130-_DSC8175.webp?alt=media
+  - show_on: both
+    overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670347365-IMG_5701.webp?alt=media
 news_items: []
