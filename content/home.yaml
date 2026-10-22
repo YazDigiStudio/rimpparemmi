@@ -35,6 +35,9 @@ intro_text_en: >-
 hero_slides:
   - show_on: both
     overlay_active: false
+    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670347365-IMG_5701.webp?alt=media
+  - show_on: both
+    overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670431356-IMG_5699.webp?alt=media
   - show_on: both
     overlay_active: false
@@ -63,7 +66,4 @@ hero_slides:
   - show_on: both
     overlay_active: false
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1773466115130-_DSC8175.webp?alt=media
-  - show_on: both
-    overlay_active: false
-    image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1792670347365-IMG_5701.webp?alt=media
 news_items: []
