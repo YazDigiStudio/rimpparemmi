@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Tiedostot &amp; QR – Rimpparemmi</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #111; margin: 0; }
+      main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+      h1 { margin: 0.5rem 0; }
+      section, form { background: #fff; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem; }
+      label { display: block; margin: 0.9rem 0 0.25rem; font-weight: 600; }
+      input[type="text"], input[type="url"] { width: 100%; box-sizing: border-box; padding: 0.55rem; font-size: 1rem; }
+      input:disabled { background: #eee; }
+      button { padding: 0.55rem 1rem; font-size: 0.95rem; cursor: pointer; }
+      .primary { background: #c2185b; color: #fff; border: 0; border-radius: 4px; }
+      .hint { color: #555; font-size: 0.9rem; }
+      .error { color: #b00020; }
+      .row { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+      #resultQr svg { width: 240px; height: 240px; border: 1px solid #ddd; }
+      ul { list-style: none; padding: 0; margin: 0; }
+      li { border-top: 1px solid #eee; padding: 0.75rem 0; }
+      li small { display: block; color: #666; word-break: break-all; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="/admin/">← Takaisin sisällönhallintaan</a></p>
+      <h1>Tiedostot &amp; QR</h1>
+      <p class="hint">
+        Lataa PDF tai kuva, tai liitä verkko-osoite. Saat lyhyen linkin ja
+        QR-koodin, jonka voi tulostaa.
+      </p>
+
+      <section id="loginBox" hidden>
+        <p>Kirjaudu sisään sisällönhallinnan tunnuksilla.</p>
+        <button id="loginBtn" class="primary">Kirjaudu</button>
+      </section>
+
+      <div id="app" hidden>
+        <form id="linkForm">
+          <h2 id="formTitle">Uusi linkki</h2>
+          <div class="row">
+            <label><input type="radio" name="kind" value="file" checked /> Tiedosto (PDF tai kuva)</label>
+            <label><input type="radio" name="kind" value="url" /> Verkko-osoite</label>
+          </div>
+
+          <div id="fileRow">
+            <label for="fileInput">Tiedosto</label>
+            <input id="fileInput" type="file"
+              accept="application/pdf,image/jpeg,image/png,image/webp,image/heic,image/heif" />
+          </div>
+          <div id="urlRow" hidden>
+            <label for="urlInput">Verkko-osoite</label>
+            <input id="urlInput" type="url" placeholder="https://..." />
+          </div>
+
+          <label for="labelInput">Nimi (näkyy vain tässä listassa)</label>
+          <input id="labelInput" type="text" maxlength="100" />
+
+          <label for="slugInput">Linkin tunnus</label>
+          <input id="slugInput" type="text" maxlength="60" />
+          <p class="hint">Linkki: <strong id="slugPreview"></strong></p>
+
+          <div class="row">
+            <button id="submitBtn" class="primary" type="submit">Luo linkki ja QR</button>
+            <button id="cancelBtn" type="button" hidden>Peruuta</button>
+          </div>
+          <p id="status" class="hint" role="status"></p>
+        </form>
+
+        <section id="result" hidden>
+          <h2>Valmis</h2>
+          <label for="resultUrl">Lyhyt linkki</label>
+          <div class="row">
+            <input id="resultUrl" type="text" readonly style="flex:1" />
+            <button id="copyBtn" type="button">Kopioi</button>
+          </div>
+          <div id="resultQr" style="margin:1rem 0"></div>
+          <div class="row">
+            <button id="downloadSvg" type="button">Lataa SVG (painoon)</button>
+            <button id="downloadPng" type="button">Lataa PNG</button>
+          </div>
+        </section>
+
+        <section>
+          <h2>Aiemmat linkit</h2>
+          <ul id="linkList"></ul>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="/admin/files.js"></script>
+  </body>
+</html>
