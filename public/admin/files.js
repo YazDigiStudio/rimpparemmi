@@ -191,7 +191,11 @@ async function refreshList() {
     var title = document.createElement("strong");
     title.textContent = link.label;
     var info = document.createElement("small");
-    info.textContent = shortUrl(link.slug) + " → " + link.url;
+    // Uploaded files: short link only. Web addresses: also show the target.
+    info.textContent =
+      link.kind === "url"
+        ? shortUrl(link.slug) + " → " + link.url
+        : shortUrl(link.slug);
     var buttons = document.createElement("div");
     buttons.className = "row";
     buttons.append(
