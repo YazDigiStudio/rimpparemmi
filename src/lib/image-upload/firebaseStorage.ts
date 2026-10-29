@@ -5,7 +5,7 @@
 
 import * as admin from "firebase-admin";
 
-function getAdminApp(): admin.app.App {
+export function getAdminApp(): admin.app.App {
   if (admin.apps.length > 0) return admin.apps[0]!;
 
   return admin.initializeApp({
