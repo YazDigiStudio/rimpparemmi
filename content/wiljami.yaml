@@ -197,10 +197,7 @@ sections:
     text_fi: |-
       WC-tilat löytyvät alakerrasta.
       Tilassa on myös esteetön WC.
-    text_en: |-
-      The restrooms are located on the ground floor.
-
-      The facility also has an accessible restroom.
+    text_en: The toilets, including accessible toilet, are on the lower ground floor.
     title_en: Toilets
   - image_orientation: landscape
     image_position: left
