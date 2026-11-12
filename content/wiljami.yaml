@@ -100,10 +100,10 @@ sections:
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673791882-_DSC1634.webp?alt=media
     text_en: >-
       Doors usually open 1 hour before the show. Tickets are available at the
-      Pystybaari Wiljami bar, provided the show is not sold out.
+      Pystybaari Wiljami bar, provided if the show is not sold out.
 
 
-      However, we recommend purchasing tickets in advance. Advance tickets are available online at NetTicket and in Rovaniemi at Osviitta in the city center at Koskikatu 19.
+      However, we recommend purchasing tickets in advance. Advance tickets are available online at NetTicket and in at Osviitta at Koskikatu 19 in the city center of Rovaniemi.
 
 
       We accept major credit cards and cash. Cultural benefits (e.g., ePassi, Smartum, Edenred) are also accepted as payment.
@@ -114,9 +114,9 @@ sections:
     text_fi: >-
       Narikka on **vartioitu mutta omatoiminen**.
 
-      Jätäthän isot laukut ja ulkovaatteet narikkaan kiitos, että pidämme katsomon mukavana kaikille.
-    text_en: The coat check is staffed but self-service. Please leave your large
-      bags and outerwear at the coat check so we can keep the auditorium
+      Jätäthän isot laukut ja ulkovaatteet narikkaan, että pidämme katsomon mukavana kaikille, kiitos.
+    text_en: The coat check is **supervised but self-service**. Please leave your
+      large bags and outerwear at the coat check so we can keep the auditorium
       comfortable for everyone.
     title_en: Coat check
   - image_orientation: landscape
@@ -135,7 +135,7 @@ sections:
       Refreshments, wine, and light snacks are available.
 
 
-      Drinks may be brought into the auditorium (unless otherwise noted), but let’s all help maintain the theater atmosphere.
+      Drinks may be brought into the auditorium (unless otherwise noted), but let’s all help maintain the theatre atmosphere.
     title_en: Bar
   - image_orientation: landscape
     image_position: left
@@ -159,23 +159,20 @@ sections:
 
       Kun esitys alkaa, ovet sulkeutuvat. Myöhästyneet päästetään sisään sopivassa kohdassa, mikäli se on mahdollista. Emme voi taata pääsyä saliin heti esityksen alettua.
     text_en: >-
-      Please arrive at least 20 minutes before the show starts. This will give
-      you time to:
+      Please arrive at least 20 minutes before the show starts. This gives you
+      time to:
 
 
-      ✔️ check your coat 
+      ✔️ check your coat \
 
+      ✔️ grab a drink \
 
-      ✔️ grab a drink 
-
-
-      ✔️ catch up with friends 
-
+      ✔️ catch up with friends \
 
       ✔️ get into the mood
 
 
-      Once the performance begins, the doors will close. Latecomers will be admitted at an appropriate point in the performance, if possible. We cannot guarantee admission to the auditorium immediately after the performance has started.
+      The doors will be closed when the performance begins. Where possible, latecomers will be admitted at a suitable point during the performance. We cannot guarantee entry to the auditorium immediately after the performance has started.
     title_en: When to arrive?
   - image_orientation: landscape
     image_position: left
