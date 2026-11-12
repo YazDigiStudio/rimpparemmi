@@ -184,15 +184,12 @@ sections:
       * 177 paikkaa laajennetulla katsomolla (katsomo ilman pöytiä)
       * 2 pyörätuolipaikkaa
     image: https://firebasestorage.googleapis.com/v0/b/rimpparemmi-b3154.firebasestorage.app/o/cms%2Fweb%2F1775673660654-wiljami_tyhja_faboon.webp?alt=media
-    text_en: >-
-      Wiljami's seating capacity is:
+    text_en: |-
+      Wiljami's seating capacity:
 
-
-      * 114 seats in the standard seating area (which also includes tables between the chairs)
-
-      * 177 seats in the expanded seating area (seating area without tables)
-
-      * 2 wheelchair spaces
+      * 114 seats in the standard layout (with tables between seats)
+      * 177 seats in the expanded layout (without tables)
+      * 2 additional wheelchair spaces in either layout
     title_en: Seating
   - image_orientation: landscape
     image_position: left
