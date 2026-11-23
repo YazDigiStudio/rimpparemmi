@@ -16,7 +16,7 @@ import {
   type Production,
   type SalesEntry,
 } from "@/lib/content";
-import { toNoCookiesEmbed } from "@/lib/mediaUtils";
+import { toNoCookiesEmbed, isYoutubeShort } from "@/lib/mediaUtils";
 import { splitInfoLines } from "@/lib/textUtils";
 
 type Props = { production: Production; sales: SalesEntry };
@@ -222,7 +222,13 @@ export default function MyyntiDetailPage({ production, sales }: Props) {
           {sales.trailer_url && (
             <div style={{ marginBottom: "3.5rem" }}>
               <h2 style={sectionHeadingStyle}>Traileri</h2>
-              <div style={{ position: "relative", aspectRatio: "16/9", maxWidth: "640px" }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: isYoutubeShort(sales.trailer_url) ? "9/16" : "16/9",
+                  maxWidth: isYoutubeShort(sales.trailer_url) ? "360px" : "640px",
+                }}
+              >
                 <iframe
                   src={toNoCookiesEmbed(sales.trailer_url)}
                   title={title}
