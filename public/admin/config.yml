@@ -681,6 +681,12 @@ collections:
         default: false
         hint: "Merkitse, jos tämä on vieraileva esitys (ei Rimpparemmin oma tuotanto)"
 
+      - label: "Remmiklubikevät 2027 -sivulla / On the Remmiklubikevät 2027 page"
+        name: "remmiklubi"
+        widget: "boolean"
+        default: false
+        hint: "Näkyy Remmiklubikevät 2027 -sivulla eikä Ohjelmisto-sivulla"
+
       - label: "Kesto (FI)"
         name: "duration_fi"
         widget: "string"
