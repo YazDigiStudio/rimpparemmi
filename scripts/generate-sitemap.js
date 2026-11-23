@@ -21,6 +21,7 @@ const staticPages = [
   { path: "/saapuminen", priority: "0.5", changefreq: "monthly" },
   { path: "/media", priority: "0.5", changefreq: "monthly" },
   { path: "/kiertueohjelmisto", priority: "0.5", changefreq: "monthly" },
+  { path: "/remmiklubikevat2027", priority: "0.8", changefreq: "weekly" },
   { path: "/myynti", priority: "0.4", changefreq: "monthly" },
   { path: "/tietosuojaseloste", priority: "0.2", changefreq: "yearly" },
   { path: "/saavutettavuus", priority: "0.2", changefreq: "yearly" },

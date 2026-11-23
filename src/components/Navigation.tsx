@@ -22,6 +22,7 @@ const labels = {
     contact: "Yhteystiedot",
     media: "Media",
     tourProgramme: "Kiertueohjelmisto",
+    clubSeason: "Remmiklubikevät 2027",
     arrival: "Saapuminen",
     openMenu: "Avaa valikko",
     closeMenu: "Sulje valikko",
@@ -39,6 +40,7 @@ const labels = {
     contact: "Contact",
     media: "Media",
     tourProgramme: "Tour Programme",
+    clubSeason: "Remmi Club Spring 2027",
     arrival: "Getting here",
     openMenu: "Open menu",
     closeMenu: "Close menu",
@@ -236,6 +238,9 @@ export default function Navigation() {
               <Link href="/kiertueohjelmisto" style={dropdownLinkStyle}>
                 {t.tourProgramme}
               </Link>
+              <Link href="/remmiklubikevat2027" style={dropdownLinkStyle}>
+                {t.clubSeason}
+              </Link>
             </div>
           )}
         </div>
@@ -350,6 +355,9 @@ export default function Navigation() {
           </Link>
           <Link href="/kiertueohjelmisto" style={{ ...mobileLinkStyle, fontSize: "1rem", paddingLeft: "0.75rem", opacity: 0.75 }}>
             {t.tourProgramme}
+          </Link>
+          <Link href="/remmiklubikevat2027" style={{ ...mobileLinkStyle, fontSize: "1rem", paddingLeft: "0.75rem", opacity: 0.75 }}>
+            {t.clubSeason}
           </Link>
 
           <Link href="/saapuminen" style={{ ...mobileLinkStyle, fontSize: "1.1rem" }}>

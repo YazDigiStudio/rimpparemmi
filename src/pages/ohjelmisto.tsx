@@ -40,9 +40,12 @@ export default function Ohjelmisto({ productions }: Props) {
 
   const [filter, setFilter] = useState<"active" | "archive" | "guest">("active");
 
-  const visible = productions.filter((p) =>
-    filter === "guest" ? p.vierailuesitys === true : p.status === filter
-  );
+  // Productions ticked for the Remmiklubikevät page are listed there instead
+  const visible = productions
+    .filter((p) => p.remmiklubi !== true)
+    .filter((p) =>
+      filter === "guest" ? p.vierailuesitys === true : p.status === filter
+    );
 
   const filterBtnStyle = (active: boolean): React.CSSProperties => ({
     background: active ? colors.nearBlack : "transparent",
