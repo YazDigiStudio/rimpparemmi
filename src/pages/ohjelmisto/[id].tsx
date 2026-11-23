@@ -18,7 +18,7 @@ import {
 } from "@/lib/content";
 import { resolveTicketUrl, isEmbedTicket } from "@/lib/netticketUtils";
 import { splitInfoLines } from "@/lib/textUtils";
-import { toNoCookiesEmbed } from "@/lib/mediaUtils";
+import { toNoCookiesEmbed, isYoutubeShort } from "@/lib/mediaUtils";
 
 type Locale = "fi" | "en";
 
@@ -380,7 +380,13 @@ export default function ProductionPage({ production, performances }: Props) {
               >
                 {locale === "fi" ? "Traileri" : "Trailer"}
               </h2>
-              <div style={{ position: "relative", aspectRatio: "16/9", maxWidth: "640px" }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: isYoutubeShort(production.trailer_url) ? "9/16" : "16/9",
+                  maxWidth: isYoutubeShort(production.trailer_url) ? "360px" : "640px",
+                }}
+              >
                 <iframe
                   src={toNoCookiesEmbed(production.trailer_url)}
                   title={locale === "fi" ? production.title_fi : (production.title_en ?? production.title_fi)}

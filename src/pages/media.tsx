@@ -8,7 +8,7 @@ import { type GetStaticProps } from "next";
 import Navigation from "@/components/Navigation";
 import Seo from "@/components/Seo";
 import { colors } from "@/styles/colors";
-import { toNoCookiesEmbed } from "@/lib/mediaUtils";
+import { toNoCookiesEmbed, isYoutubeShort } from "@/lib/mediaUtils";
 import {
   getProductions,
   getMediaData,
@@ -317,9 +317,9 @@ function VideoList({ items, locale }: { items: MediaItem[]; locale: Locale }) {
               <div
                 style={{
                   position: "relative",
-                  aspectRatio: "16/9",
+                  aspectRatio: isYoutubeShort(item.url) ? "9/16" : "16/9",
                   width: "100%",
-                  maxWidth: "800px",
+                  maxWidth: isYoutubeShort(item.url) ? "360px" : "800px",
                   borderRadius: "4px",
                   overflow: "hidden",
                   backgroundColor: "#000",
