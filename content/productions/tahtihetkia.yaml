@@ -43,8 +43,9 @@ additional_info_en: "Premiere: 14.5.2025"
 sort_order: 49
 badge_fi: Kiertueella
 badge_en: On tour
-is_touring: true
+is_touring: false
 vierailuesitys: false
+remmiklubi: false
 duration_fi: 40 min
 duration_en: 40 min
 age_recommendation_fi: aikuiset, ikäihmiset
